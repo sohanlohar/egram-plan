@@ -1,0 +1,17 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+
+# Output and runtime artifacts
+screenshots/
+logs/
+data/output.xlsx
+data/*.xlsx
+
+# OS files
+.DS_Store
+Thumbs.db

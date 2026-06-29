@@ -6080,3 +6080,312 @@ Call log:
 2026-06-29 16:41:30 | WARNING  | row 14 attempt 3 FAIL: [start_month] 'September' not found in #startMonthId. Available (3): ['January', 'February', 'March']
 2026-06-29 16:41:30 | ERROR    | row 14 FAILED after all retries
 2026-06-29 16:41:30 | INFO     | DONE 643s total=15 success=5 failed=10 rate=33.3%
+2026-06-29 17:09:35 | INFO     | ============================================================
+2026-06-29 17:09:35 | INFO     | eGramSwaraj Bot START (v5)
+2026-06-29 17:09:35 | INFO     | ============================================================
+2026-06-29 17:09:35 | INFO     | rows: total=15 done=0 pending=15
+2026-06-29 17:09:39 | INFO     | Waiting for manual login -> addactivity.htm ...
+2026-06-29 17:11:03 | INFO     | Form ready at: https://egramswaraj.gov.in/addactivity.htm
+2026-06-29 17:11:12 | INFO     | -- row 0 | Activities realted to Record keeping /Maintainance of data b
+2026-06-29 17:11:18 | INFO     | row 0 SUCCESS (attempt 1)
+2026-06-29 17:11:18 | INFO     | -- row 1 | Awareness generation for use of natural products in daily li
+2026-06-29 17:11:23 | INFO     | row 1 SUCCESS (attempt 1)
+2026-06-29 17:11:23 | INFO     | -- row 2 | Awareness camp on behavioural issues of Mission LiFE
+2026-06-29 17:11:29 | INFO     | row 2 SUCCESS (attempt 1)
+2026-06-29 17:11:29 | INFO     | -- row 3 | Awareness campaign on SHG-PRI Convergence
+2026-06-29 17:11:34 | WARNING  | row=3 field=activity_nature 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 17:11:35 | ERROR    | FAIL | row=3 field=activity_nature | 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 17:11:35 | WARNING  | row 3 attempt 1 FAIL: [activity_nature] 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 17:11:42 | WARNING  | row=3 field=activity_nature 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 17:11:42 | ERROR    | FAIL | row=3 field=activity_nature | 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 17:11:43 | WARNING  | row 3 attempt 2 FAIL: [activity_nature] 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 17:11:50 | WARNING  | row=3 field=activity_nature 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 17:11:50 | ERROR    | FAIL | row=3 field=activity_nature | 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 17:11:51 | WARNING  | row 3 attempt 3 FAIL: [activity_nature] 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 17:11:51 | ERROR    | row 3 FAILED after all retries
+2026-06-29 17:11:51 | INFO     | -- row 4 | Amrit Sarovar/Pond/Farm Pond
+2026-06-29 17:11:57 | INFO     | row 4 SUCCESS (attempt 1)
+2026-06-29 17:11:57 | INFO     | -- row 5 | Awareness for active participation in Gram Sabha, Ward Sabha
+2026-06-29 17:12:02 | INFO     | row 5 SUCCESS (attempt 1)
+2026-06-29 17:12:02 | INFO     | -- row 6 | Awareness Campaign  pension
+2026-06-29 17:12:09 | WARNING  | row=6 field=activity_nature 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 17:12:09 | ERROR    | FAIL | row=6 field=activity_nature | 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 17:12:10 | WARNING  | row=6 field=start_month 'January' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:12:10 | ERROR    | FAIL | row=6 field=start_month | 'January' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:12:10 | WARNING  | row 6 attempt 1 FAIL: [activity_nature] 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh'] | [start_month] 'January' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:12:17 | WARNING  | row=6 field=activity_nature 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 17:12:17 | ERROR    | FAIL | row=6 field=activity_nature | 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 17:12:17 | WARNING  | row=6 field=start_month 'January' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:12:18 | ERROR    | FAIL | row=6 field=start_month | 'January' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:12:18 | WARNING  | row 6 attempt 2 FAIL: [activity_nature] 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh'] | [start_month] 'January' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:12:31 | WARNING  | row=6 field=activity_nature 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 17:12:31 | ERROR    | FAIL | row=6 field=activity_nature | 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 17:12:32 | WARNING  | row=6 field=start_month 'January' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:12:32 | ERROR    | FAIL | row=6 field=start_month | 'January' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:12:32 | WARNING  | row 6 attempt 3 FAIL: [activity_nature] 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh'] | [start_month] 'January' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:12:33 | ERROR    | row 6 FAILED after all retries
+2026-06-29 17:12:33 | INFO     | -- row 7 | Awareness on Public Services/ Service Delivery Provisions/ R
+2026-06-29 17:12:38 | WARNING  | row=7 field=start_month 'February' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:12:39 | ERROR    | FAIL | row=7 field=start_month | 'February' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:12:39 | WARNING  | row 7 attempt 1 FAIL: [start_month] 'February' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:12:47 | WARNING  | row=7 field=start_month 'February' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:12:47 | ERROR    | FAIL | row=7 field=start_month | 'February' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:12:48 | WARNING  | row 7 attempt 2 FAIL: [start_month] 'February' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:12:55 | WARNING  | row=7 field=start_month 'February' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:12:55 | ERROR    | FAIL | row=7 field=start_month | 'February' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:12:56 | WARNING  | row 7 attempt 3 FAIL: [start_month] 'February' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:12:56 | ERROR    | row 7 FAILED after all retries
+2026-06-29 17:12:56 | INFO     | -- row 8 | Annual Expenses - Water Charges, Postal, Electricity Bills, 
+2026-06-29 17:13:01 | WARNING  | row=8 field=activity_nature 'New/Fresh' not found in #workTypId. Available (1): ['Operational']
+2026-06-29 17:13:01 | ERROR    | FAIL | row=8 field=activity_nature | 'New/Fresh' not found in #workTypId. Available (1): ['Operational']
+2026-06-29 17:13:02 | WARNING  | row 8 attempt 1 FAIL: [activity_nature] 'New/Fresh' not found in #workTypId. Available (1): ['Operational']
+2026-06-29 17:13:09 | WARNING  | row=8 field=activity_nature 'New/Fresh' not found in #workTypId. Available (1): ['Operational']
+2026-06-29 17:13:09 | ERROR    | FAIL | row=8 field=activity_nature | 'New/Fresh' not found in #workTypId. Available (1): ['Operational']
+2026-06-29 17:13:10 | WARNING  | row 8 attempt 2 FAIL: [activity_nature] 'New/Fresh' not found in #workTypId. Available (1): ['Operational']
+2026-06-29 17:13:16 | WARNING  | row=8 field=activity_nature 'New/Fresh' not found in #workTypId. Available (1): ['Operational']
+2026-06-29 17:13:17 | ERROR    | FAIL | row=8 field=activity_nature | 'New/Fresh' not found in #workTypId. Available (1): ['Operational']
+2026-06-29 17:13:17 | WARNING  | row 8 attempt 3 FAIL: [activity_nature] 'New/Fresh' not found in #workTypId. Available (1): ['Operational']
+2026-06-29 17:13:17 | ERROR    | row 8 FAILED after all retries
+2026-06-29 17:13:17 | INFO     | -- row 9 | Awareness on disaster preparedness and mitigation
+2026-06-29 17:13:22 | WARNING  | row=9 field=activity_nature 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 17:13:22 | ERROR    | FAIL | row=9 field=activity_nature | 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 17:13:23 | WARNING  | row=9 field=start_month 'April' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:13:23 | ERROR    | FAIL | row=9 field=start_month | 'April' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:13:23 | WARNING  | row 9 attempt 1 FAIL: [activity_nature] 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh'] | [start_month] 'April' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:13:31 | WARNING  | row=9 field=activity_nature 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 17:13:31 | ERROR    | FAIL | row=9 field=activity_nature | 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 17:13:31 | WARNING  | row=9 field=start_month 'April' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:13:31 | ERROR    | FAIL | row=9 field=start_month | 'April' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:13:31 | WARNING  | row 9 attempt 2 FAIL: [activity_nature] 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh'] | [start_month] 'April' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:13:38 | WARNING  | row=9 field=activity_nature 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 17:13:39 | ERROR    | FAIL | row=9 field=activity_nature | 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 17:13:39 | WARNING  | row=9 field=start_month 'April' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:13:39 | ERROR    | FAIL | row=9 field=start_month | 'April' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:13:40 | WARNING  | row 9 attempt 3 FAIL: [activity_nature] 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh'] | [start_month] 'April' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:13:40 | ERROR    | row 9 FAILED after all retries
+2026-06-29 17:13:40 | INFO     | -- row 10 | Awareness on inclusion of beneficiaries under different sche
+2026-06-29 17:13:45 | WARNING  | row=10 field=start_month 'May' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:13:45 | ERROR    | FAIL | row=10 field=start_month | 'May' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:13:46 | WARNING  | row 10 attempt 1 FAIL: [start_month] 'May' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:13:53 | WARNING  | row=10 field=start_month 'May' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:13:53 | ERROR    | FAIL | row=10 field=start_month | 'May' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:13:53 | WARNING  | row 10 attempt 2 FAIL: [start_month] 'May' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:14:01 | WARNING  | row=10 field=start_month 'May' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:14:01 | ERROR    | FAIL | row=10 field=start_month | 'May' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:14:01 | WARNING  | row 10 attempt 3 FAIL: [start_month] 'May' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:14:01 | ERROR    | row 10 FAILED after all retries
+2026-06-29 17:14:01 | INFO     | -- row 11 | Awareness Campaign on services of ICDS
+2026-06-29 17:14:06 | WARNING  | row=11 field=start_month 'June' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:14:06 | ERROR    | FAIL | row=11 field=start_month | 'June' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:14:07 | WARNING  | row 11 attempt 1 FAIL: [start_month] 'June' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:14:15 | WARNING  | row=11 field=start_month 'June' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:14:15 | ERROR    | FAIL | row=11 field=start_month | 'June' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:14:15 | WARNING  | row 11 attempt 2 FAIL: [start_month] 'June' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:14:24 | WARNING  | row=11 field=start_month 'June' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:14:24 | ERROR    | FAIL | row=11 field=start_month | 'June' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:14:24 | WARNING  | row 11 attempt 3 FAIL: [start_month] 'June' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:14:25 | ERROR    | row 11 FAILED after all retries
+2026-06-29 17:14:25 | INFO     | -- row 12 | Capacity Building & Training of Elected Representatives & Fu
+2026-06-29 17:14:31 | WARNING  | row=12 field=activity_nature 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 17:14:31 | ERROR    | FAIL | row=12 field=activity_nature | 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 17:14:32 | WARNING  | row=12 field=start_month 'July' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:14:32 | ERROR    | FAIL | row=12 field=start_month | 'July' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:14:32 | WARNING  | row 12 attempt 1 FAIL: [activity_nature] 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh'] | [start_month] 'July' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:14:41 | WARNING  | row=12 field=activity_nature 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 17:14:41 | ERROR    | FAIL | row=12 field=activity_nature | 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 17:14:42 | WARNING  | row=12 field=start_month 'July' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:14:42 | ERROR    | FAIL | row=12 field=start_month | 'July' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:14:42 | WARNING  | row 12 attempt 2 FAIL: [activity_nature] 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh'] | [start_month] 'July' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:14:49 | WARNING  | row=12 field=activity_nature 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 17:14:50 | ERROR    | FAIL | row=12 field=activity_nature | 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 17:14:50 | WARNING  | row=12 field=start_month 'July' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:14:50 | ERROR    | FAIL | row=12 field=start_month | 'July' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:14:51 | WARNING  | row 12 attempt 3 FAIL: [activity_nature] 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh'] | [start_month] 'July' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:14:51 | ERROR    | row 12 FAILED after all retries
+2026-06-29 17:14:51 | INFO     | -- row 13 | Access to Maternal Benefits
+2026-06-29 17:14:57 | WARNING  | row=13 field=start_month 'August' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:14:57 | ERROR    | FAIL | row=13 field=start_month | 'August' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:14:57 | WARNING  | row 13 attempt 1 FAIL: [start_month] 'August' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:15:06 | WARNING  | row=13 field=start_month 'August' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:15:06 | ERROR    | FAIL | row=13 field=start_month | 'August' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:15:06 | WARNING  | row 13 attempt 2 FAIL: [start_month] 'August' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:15:14 | WARNING  | row=13 field=start_month 'August' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:15:14 | ERROR    | FAIL | row=13 field=start_month | 'August' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:15:14 | WARNING  | row 13 attempt 3 FAIL: [start_month] 'August' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:15:15 | ERROR    | row 13 FAILED after all retries
+2026-06-29 17:15:15 | INFO     | -- row 14 | Charages / Fees and other activites for ISO Certification
+2026-06-29 17:15:20 | WARNING  | row=14 field=start_month 'September' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:15:20 | ERROR    | FAIL | row=14 field=start_month | 'September' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:15:21 | WARNING  | row 14 attempt 1 FAIL: [start_month] 'September' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:15:29 | WARNING  | row=14 field=start_month 'September' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:15:29 | ERROR    | FAIL | row=14 field=start_month | 'September' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:15:29 | WARNING  | row 14 attempt 2 FAIL: [start_month] 'September' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:15:37 | WARNING  | row=14 field=start_month 'September' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:15:37 | ERROR    | FAIL | row=14 field=start_month | 'September' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:15:37 | WARNING  | row 14 attempt 3 FAIL: [start_month] 'September' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:15:37 | ERROR    | row 14 FAILED after all retries
+2026-06-29 17:15:38 | INFO     | DONE 363s total=15 success=5 failed=10 rate=33.3%
+2026-06-29 17:22:33 | INFO     | ============================================================
+2026-06-29 17:22:33 | INFO     | eGramSwaraj Bot START (v5)
+2026-06-29 17:22:33 | INFO     | ============================================================
+2026-06-29 17:22:33 | INFO     | rows: total=15 done=0 pending=15
+2026-06-29 17:22:38 | INFO     | Waiting for manual login -> addactivity.htm ...
+2026-06-29 17:23:58 | INFO     | Form ready at: https://egramswaraj.gov.in/addactivity.htm
+2026-06-29 17:24:03 | INFO     | -- row 0 | Activities realted to Record keeping /Maintainance of data b
+2026-06-29 17:24:09 | WARNING  | row=0 field=activity_nature 'New/Fresh' not found in #workTypId. Available (1): ['Maintenance']
+2026-06-29 17:24:09 | ERROR    | FAIL | row=0 field=activity_nature | 'New/Fresh' not found in #workTypId. Available (1): ['Maintenance']
+2026-06-29 17:24:10 | WARNING  | row 0 attempt 1 FAIL: [activity_nature] 'New/Fresh' not found in #workTypId. Available (1): ['Maintenance']
+2026-06-29 17:24:17 | WARNING  | row=0 field=activity_nature 'New/Fresh' not found in #workTypId. Available (1): ['Maintenance']
+2026-06-29 17:24:18 | ERROR    | FAIL | row=0 field=activity_nature | 'New/Fresh' not found in #workTypId. Available (1): ['Maintenance']
+2026-06-29 17:24:18 | WARNING  | row 0 attempt 2 FAIL: [activity_nature] 'New/Fresh' not found in #workTypId. Available (1): ['Maintenance']
+2026-06-29 17:24:26 | WARNING  | row=0 field=activity_nature 'New/Fresh' not found in #workTypId. Available (1): ['Maintenance']
+2026-06-29 17:24:26 | ERROR    | FAIL | row=0 field=activity_nature | 'New/Fresh' not found in #workTypId. Available (1): ['Maintenance']
+2026-06-29 17:24:27 | WARNING  | row 0 attempt 3 FAIL: [activity_nature] 'New/Fresh' not found in #workTypId. Available (1): ['Maintenance']
+2026-06-29 17:24:27 | ERROR    | row 0 FAILED after all retries
+2026-06-29 17:24:27 | INFO     | -- row 1 | Awareness generation for use of natural products in daily li
+2026-06-29 17:24:35 | INFO     | row 1 SUCCESS (attempt 1)
+2026-06-29 17:24:35 | INFO     | -- row 2 | Awareness camp on behavioural issues of Mission LiFE
+2026-06-29 17:24:43 | INFO     | row 2 SUCCESS (attempt 1)
+2026-06-29 17:24:43 | INFO     | -- row 3 | Awareness campaign on SHG-PRI Convergence
+2026-06-29 17:24:51 | INFO     | row 3 SUCCESS (attempt 1)
+2026-06-29 17:24:51 | INFO     | -- row 4 | Amrit Sarovar/Pond/Farm Pond
+2026-06-29 17:24:57 | INFO     | row 4 SUCCESS (attempt 1)
+2026-06-29 17:24:57 | INFO     | -- row 5 | Awareness for active participation in Gram Sabha, Ward Sabha
+2026-06-29 17:25:05 | INFO     | row 5 SUCCESS (attempt 1)
+2026-06-29 17:25:05 | INFO     | -- row 6 | Awareness Campaign  pension
+2026-06-29 17:25:11 | WARNING  | row=6 field=start_month 'January' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:25:11 | ERROR    | FAIL | row=6 field=start_month | 'January' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:25:11 | WARNING  | row 6 attempt 1 FAIL: [start_month] 'January' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:25:20 | WARNING  | row=6 field=start_month 'January' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:25:20 | ERROR    | FAIL | row=6 field=start_month | 'January' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:25:20 | WARNING  | row 6 attempt 2 FAIL: [start_month] 'January' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:25:31 | WARNING  | row=6 field=start_month 'January' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:25:31 | ERROR    | FAIL | row=6 field=start_month | 'January' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:25:31 | WARNING  | row 6 attempt 3 FAIL: [start_month] 'January' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:25:31 | ERROR    | row 6 FAILED after all retries
+2026-06-29 17:25:31 | INFO     | -- row 7 | Awareness on Public Services/ Service Delivery Provisions/ R
+2026-06-29 17:25:38 | WARNING  | row=7 field=start_month 'February' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:25:38 | ERROR    | FAIL | row=7 field=start_month | 'February' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:25:39 | WARNING  | row 7 attempt 1 FAIL: [start_month] 'February' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:25:47 | WARNING  | row=7 field=start_month 'February' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:25:47 | ERROR    | FAIL | row=7 field=start_month | 'February' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:25:47 | WARNING  | row 7 attempt 2 FAIL: [start_month] 'February' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:25:56 | WARNING  | row=7 field=start_month 'February' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:25:56 | ERROR    | FAIL | row=7 field=start_month | 'February' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:25:56 | WARNING  | row 7 attempt 3 FAIL: [start_month] 'February' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 17:25:56 | ERROR    | row 7 FAILED after all retries
+2026-06-29 17:25:56 | INFO     | -- row 8 | Annual Expenses - Water Charges, Postal, Electricity Bills, 
+2026-06-29 17:26:03 | WARNING  | row=8 field=activity_nature 'New/Fresh' not found in #workTypId. Available (1): ['Operational']
+2026-06-29 17:26:03 | ERROR    | FAIL | row=8 field=activity_nature | 'New/Fresh' not found in #workTypId. Available (1): ['Operational']
+2026-06-29 17:26:04 | WARNING  | row 8 attempt 1 FAIL: [activity_nature] 'New/Fresh' not found in #workTypId. Available (1): ['Operational']
+2026-06-29 17:26:12 | WARNING  | row=8 field=activity_nature 'New/Fresh' not found in #workTypId. Available (1): ['Operational']
+2026-06-29 17:26:12 | ERROR    | FAIL | row=8 field=activity_nature | 'New/Fresh' not found in #workTypId. Available (1): ['Operational']
+2026-06-29 17:26:13 | WARNING  | row 8 attempt 2 FAIL: [activity_nature] 'New/Fresh' not found in #workTypId. Available (1): ['Operational']
+2026-06-29 17:26:21 | WARNING  | row=8 field=activity_nature 'New/Fresh' not found in #workTypId. Available (1): ['Operational']
+2026-06-29 17:26:21 | ERROR    | FAIL | row=8 field=activity_nature | 'New/Fresh' not found in #workTypId. Available (1): ['Operational']
+2026-06-29 17:26:22 | WARNING  | row 8 attempt 3 FAIL: [activity_nature] 'New/Fresh' not found in #workTypId. Available (1): ['Operational']
+2026-06-29 17:26:22 | ERROR    | row 8 FAILED after all retries
+2026-06-29 17:26:22 | INFO     | -- row 9 | Awareness on disaster preparedness and mitigation
+2026-06-29 17:26:29 | WARNING  | row=9 field=start_month 'April' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:26:29 | ERROR    | FAIL | row=9 field=start_month | 'April' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:26:29 | WARNING  | row 9 attempt 1 FAIL: [start_month] 'April' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:26:38 | WARNING  | row=9 field=start_month 'April' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:26:38 | ERROR    | FAIL | row=9 field=start_month | 'April' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:26:38 | WARNING  | row 9 attempt 2 FAIL: [start_month] 'April' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:26:48 | WARNING  | row=9 field=start_month 'April' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:26:48 | ERROR    | FAIL | row=9 field=start_month | 'April' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:26:48 | WARNING  | row 9 attempt 3 FAIL: [start_month] 'April' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:26:48 | ERROR    | row 9 FAILED after all retries
+2026-06-29 17:26:48 | INFO     | -- row 10 | Awareness on inclusion of beneficiaries under different sche
+2026-06-29 17:26:55 | WARNING  | row=10 field=start_month 'May' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:26:55 | ERROR    | FAIL | row=10 field=start_month | 'May' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:26:55 | WARNING  | row 10 attempt 1 FAIL: [start_month] 'May' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:27:03 | WARNING  | row=10 field=start_month 'May' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:27:03 | ERROR    | FAIL | row=10 field=start_month | 'May' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:27:03 | WARNING  | row 10 attempt 2 FAIL: [start_month] 'May' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:27:11 | WARNING  | row=10 field=start_month 'May' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:27:11 | ERROR    | FAIL | row=10 field=start_month | 'May' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:27:11 | WARNING  | row 10 attempt 3 FAIL: [start_month] 'May' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:27:11 | ERROR    | row 10 FAILED after all retries
+2026-06-29 17:27:11 | INFO     | -- row 11 | Awareness Campaign on services of ICDS
+2026-06-29 17:27:18 | WARNING  | row=11 field=start_month 'June' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:27:18 | ERROR    | FAIL | row=11 field=start_month | 'June' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:27:18 | WARNING  | row 11 attempt 1 FAIL: [start_month] 'June' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:27:27 | WARNING  | row=11 field=start_month 'June' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:27:27 | ERROR    | FAIL | row=11 field=start_month | 'June' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:27:27 | WARNING  | row 11 attempt 2 FAIL: [start_month] 'June' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:27:36 | WARNING  | row=11 field=start_month 'June' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:27:36 | ERROR    | FAIL | row=11 field=start_month | 'June' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:27:36 | WARNING  | row 11 attempt 3 FAIL: [start_month] 'June' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:27:36 | ERROR    | row 11 FAILED after all retries
+2026-06-29 17:27:36 | INFO     | -- row 12 | Capacity Building & Training of Elected Representatives & Fu
+2026-06-29 17:27:43 | WARNING  | row=12 field=start_month 'July' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:27:43 | ERROR    | FAIL | row=12 field=start_month | 'July' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:27:43 | WARNING  | row 12 attempt 1 FAIL: [start_month] 'July' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:27:51 | WARNING  | row=12 field=start_month 'July' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:27:52 | ERROR    | FAIL | row=12 field=start_month | 'July' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:27:52 | WARNING  | row 12 attempt 2 FAIL: [start_month] 'July' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:28:00 | WARNING  | row=12 field=start_month 'July' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:28:00 | ERROR    | FAIL | row=12 field=start_month | 'July' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:28:00 | WARNING  | row 12 attempt 3 FAIL: [start_month] 'July' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:28:00 | ERROR    | row 12 FAILED after all retries
+2026-06-29 17:28:00 | INFO     | -- row 13 | Access to Maternal Benefits
+2026-06-29 17:28:06 | WARNING  | row=13 field=start_month 'August' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:28:06 | ERROR    | FAIL | row=13 field=start_month | 'August' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:28:06 | WARNING  | row 13 attempt 1 FAIL: [start_month] 'August' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:28:14 | WARNING  | row=13 field=start_month 'August' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:28:14 | ERROR    | FAIL | row=13 field=start_month | 'August' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:28:14 | WARNING  | row 13 attempt 2 FAIL: [start_month] 'August' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:28:23 | WARNING  | row=13 field=start_month 'August' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:28:23 | ERROR    | FAIL | row=13 field=start_month | 'August' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:28:23 | WARNING  | row 13 attempt 3 FAIL: [start_month] 'August' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:28:24 | ERROR    | row 13 FAILED after all retries
+2026-06-29 17:28:24 | INFO     | -- row 14 | Charages / Fees and other activites for ISO Certification
+2026-06-29 17:28:30 | WARNING  | row=14 field=start_month 'September' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:28:30 | ERROR    | FAIL | row=14 field=start_month | 'September' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:28:30 | WARNING  | row 14 attempt 1 FAIL: [start_month] 'September' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:28:39 | WARNING  | row=14 field=start_month 'September' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:28:39 | ERROR    | FAIL | row=14 field=start_month | 'September' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:28:40 | WARNING  | row 14 attempt 2 FAIL: [start_month] 'September' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:28:48 | WARNING  | row=14 field=start_month 'September' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:28:48 | ERROR    | FAIL | row=14 field=start_month | 'September' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:28:48 | WARNING  | row 14 attempt 3 FAIL: [start_month] 'September' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 17:28:48 | ERROR    | row 14 FAILED after all retries
+2026-06-29 17:28:48 | INFO     | DONE 376s total=15 success=5 failed=10 rate=33.3%
+2026-06-29 17:39:55 | INFO     | ============================================================
+2026-06-29 17:39:55 | INFO     | eGramSwaraj Bot START (v5)
+2026-06-29 17:39:55 | INFO     | ============================================================
+2026-06-29 17:39:55 | INFO     | rows: total=15 done=0 pending=15
+2026-06-29 17:39:59 | INFO     | Waiting for manual login -> addactivity.htm ...
+2026-06-29 17:41:10 | INFO     | Form ready at: https://egramswaraj.gov.in/addactivity.htm
+2026-06-29 17:41:14 | INFO     | -- row 0 | Activities realted to Record keeping /Maintainance of data b
+2026-06-29 17:41:19 | INFO     | row 0 SUCCESS (attempt 1)
+2026-06-29 17:41:19 | INFO     | -- row 1 | Awareness generation for use of natural products in daily li
+2026-06-29 17:41:25 | INFO     | row 1 SUCCESS (attempt 1)
+2026-06-29 17:41:25 | INFO     | -- row 2 | Awareness camp on behavioural issues of Mission LiFE
+2026-06-29 17:41:30 | INFO     | row 2 SUCCESS (attempt 1)
+2026-06-29 17:41:30 | INFO     | -- row 3 | Awareness campaign on SHG-PRI Convergence
+2026-06-29 17:41:36 | INFO     | row 3 SUCCESS (attempt 1)
+2026-06-29 17:41:36 | INFO     | -- row 4 | Amrit Sarovar/Pond/Farm Pond
+2026-06-29 17:41:41 | INFO     | row 4 SUCCESS (attempt 1)
+2026-06-29 17:41:41 | INFO     | -- row 5 | Awareness for active participation in Gram Sabha, Ward Sabha
+2026-06-29 17:41:46 | INFO     | row 5 SUCCESS (attempt 1)
+2026-06-29 17:41:46 | INFO     | -- row 6 | Awareness Campaign  pension
+2026-06-29 17:41:51 | INFO     | row 6 SUCCESS (attempt 1)
+2026-06-29 17:41:51 | INFO     | -- row 7 | Awareness on Public Services/ Service Delivery Provisions/ R
+2026-06-29 17:41:57 | INFO     | row 7 SUCCESS (attempt 1)
+2026-06-29 17:41:57 | INFO     | -- row 8 | Annual Expenses - Water Charges, Postal, Electricity Bills, 
+2026-06-29 17:42:02 | INFO     | row 8 SUCCESS (attempt 1)
+2026-06-29 17:42:02 | INFO     | -- row 9 | Awareness on disaster preparedness and mitigation
+2026-06-29 17:42:08 | INFO     | row 9 SUCCESS (attempt 1)
+2026-06-29 17:42:08 | INFO     | -- row 10 | Awareness on inclusion of beneficiaries under different sche
+2026-06-29 17:42:15 | INFO     | row 10 SUCCESS (attempt 1)
+2026-06-29 17:42:15 | INFO     | -- row 11 | Awareness Campaign on services of ICDS
+2026-06-29 17:42:20 | INFO     | row 11 SUCCESS (attempt 1)
+2026-06-29 17:42:20 | INFO     | -- row 12 | Capacity Building & Training of Elected Representatives & Fu
+2026-06-29 17:42:26 | INFO     | row 12 SUCCESS (attempt 1)
+2026-06-29 17:42:26 | INFO     | -- row 13 | Access to Maternal Benefits
+2026-06-29 17:42:32 | INFO     | row 13 SUCCESS (attempt 1)
+2026-06-29 17:42:32 | INFO     | -- row 14 | Charages / Fees and other activites for ISO Certification
+2026-06-29 17:42:40 | INFO     | row 14 SUCCESS (attempt 1)
+2026-06-29 17:42:40 | INFO     | DONE 165s total=15 success=15 failed=0 rate=100.0%

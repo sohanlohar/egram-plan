@@ -66,9 +66,19 @@ def _hdr_cell(ws, row: int, col: int, value: str,
     c.border    = _BORDER
 
 
-def _data_cell(ws, row: int, col: int, value: str,
+def _normalize_cell_value(value: object) -> str:
+    if value is None:
+        return ""
+    if isinstance(value, float) and pd.isna(value):
+        return ""
+    if pd.isna(value):
+        return ""
+    return str(value)
+
+
+def _data_cell(ws, row: int, col: int, value: object,
                fill: PatternFill | None = None) -> None:
-    c = ws.cell(row=row, column=col, value=value)
+    c = ws.cell(row=row, column=col, value=_normalize_cell_value(value))
     c.font      = Font(name=FONT_NAME, size=FONT_SIZE)
     c.alignment = Alignment(vertical="top", wrap_text=False)
     c.border    = _BORDER
@@ -93,15 +103,43 @@ class ResultWriter:
 
     def _get_df(self) -> pd.DataFrame:
         if self._df is None:
-            src = self.output_path if self.output_path.exists() else self.input_path
-            df = pd.read_excel(src, sheet_name=SHEET_NAME, dtype=str, keep_default_na=False)
-            df.columns = [c.strip().lower().replace(" ", "_") for c in df.columns]
-            # Keep only known columns, add missing ones, enforce order
-            df = df[[c for c in df.columns if c in ALL_COLUMNS]]
+            # Base the output on the input workbook so the actual form values are preserved.
+            base_df = pd.read_excel(
+                self.input_path,
+                sheet_name=SHEET_NAME,
+                dtype=str,
+                keep_default_na=False,
+            )
+            base_df.columns = [c.strip().lower().replace(" ", "_") for c in base_df.columns]
+            base_df = base_df[[c for c in base_df.columns if c in ALL_COLUMNS]]
             for col in ALL_COLUMNS:
-                if col not in df.columns:
-                    df[col] = ""
-            self._df = df[ALL_COLUMNS]
+                if col not in base_df.columns:
+                    base_df[col] = ""
+            base_df = base_df[ALL_COLUMNS]
+
+            # If an output workbook already exists, preserve any bot status columns from it.
+            if self.output_path.exists():
+                try:
+                    prev_df = pd.read_excel(
+                        self.output_path,
+                        sheet_name=SHEET_NAME,
+                        dtype=str,
+                        keep_default_na=False,
+                    )
+                    prev_df.columns = [c.strip().lower().replace(" ", "_") for c in prev_df.columns]
+                    prev_df = prev_df[[c for c in prev_df.columns if c in ALL_COLUMNS]]
+                    for col in ALL_COLUMNS:
+                        if col not in prev_df.columns:
+                            prev_df[col] = ""
+                    prev_df = prev_df[ALL_COLUMNS]
+
+                    for col in BOT_COLUMNS:
+                        if col in prev_df.columns:
+                            base_df[col] = prev_df[col].reset_index(drop=True).reindex(base_df.index, fill_value="")
+                except Exception:
+                    pass
+
+            self._df = base_df
         return self._df
 
     # ── Per-row update (O(1) in memory) ──────────────────────────────────────
@@ -141,7 +179,7 @@ class ResultWriter:
             status_val = str(row.get("status", "")).strip().upper()
             row_fill   = STATUS_FILLS.get(status_val)
             for col_idx, col_name in enumerate(ALL_COLUMNS, 1):
-                val = str(row.get(col_name, "") or "")
+                val = row.get(col_name, "")
                 # Status cell always gets colour; other cells get it only on success/fail rows
                 cell_fill = row_fill if col_name in ("status", "processed_time", "error_message") else None
                 _data_cell(ws, r_idx, col_idx, val, fill=cell_fill)
