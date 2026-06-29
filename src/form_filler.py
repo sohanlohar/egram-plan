@@ -145,9 +145,31 @@ def open_checkbox_panel(page: Page, container_selector: str, panel_id: str) -> N
     """
     Open a custom multiselect panel by clicking its .selectBox trigger,
     scoped to the specific container to avoid hitting the wrong panel.
+    Falls back to JavaScript if click doesn't work immediately.
     """
-    page.locator(f"{container_selector} .selectBox").click()
-    page.locator(f"#{panel_id}").wait_for(state="visible", timeout=SELECTOR_TIMEOUT)
+    selectbox_sel = f"{container_selector} .selectBox"
+    panel_sel = f"#{panel_id}"
+    
+    # Try clicking the selectBox to trigger onclick
+    page.locator(selectbox_sel).click()
+    page.wait_for_timeout(200)  # Give JavaScript time to execute
+    
+    # Check if panel is now visible
+    if not page.locator(panel_sel).is_visible():
+        # If click didn't work, try using JavaScript to call the show function
+        # Map panel_id to the JS function name (e.g., "checkboxes" → "showCheckboxes", "checkboxess" → "showCheckboxess")
+        show_func = f"show{panel_id[0].upper() + panel_id[1:]}"
+        try:
+            page.evaluate(f"window.{show_func}?.()")
+            page.wait_for_timeout(200)
+        except Exception:
+            pass  # Function might not exist, that's okay
+        
+        # Finally, try making it visible via CSS as fallback
+        page.evaluate(f"document.getElementById('{panel_id}').style.display = 'block'")
+    
+    # Now wait for it to be visible
+    page.locator(panel_sel).wait_for(state="visible", timeout=SELECTOR_TIMEOUT)
 
 
 def tick_checkboxes(page: Page, panel_id: str, values_csv: str) -> None:

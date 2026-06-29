@@ -5592,3 +5592,491 @@ Call log:
 
 2026-06-29 14:59:54 | WARNING  | Session expired at row 13 | URL: https://egramswaraj.gov.in/welcome.do?ERROR=This+session+has+been+terminated+due+to+a+login+detected+from+another+device+or+browser.
 2026-06-29 14:59:54 | INFO     | Waiting for manual login → addactivity.htm ...
+2026-06-29 16:07:59 | INFO     | ============================================================
+2026-06-29 16:07:59 | INFO     | eGramSwaraj Bot START (v5)
+2026-06-29 16:07:59 | INFO     | ============================================================
+2026-06-29 16:07:59 | INFO     | rows: total=15 done=0 pending=15
+2026-06-29 16:08:03 | INFO     | Waiting for manual login → addactivity.htm ...
+2026-06-29 16:09:30 | INFO     | Form ready at: https://egramswaraj.gov.in/addactivity.htm
+2026-06-29 16:09:33 | INFO     | ── row 0 | Activities realted to Record keeping /Maintainance of data b
+2026-06-29 16:09:52 | WARNING  | row=0 field=targeted_populace Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:09:52 | ERROR    | FAIL | row=0 field=targeted_populace | Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:09:53 | WARNING  | row 0 attempt 1 FAIL: [targeted_populace] Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:10:14 | WARNING  | row=0 field=targeted_populace Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:10:14 | ERROR    | FAIL | row=0 field=targeted_populace | Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:10:15 | WARNING  | row 0 attempt 2 FAIL: [targeted_populace] Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:10:36 | WARNING  | row=0 field=targeted_populace Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:10:36 | ERROR    | FAIL | row=0 field=targeted_populace | Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:10:37 | WARNING  | row 0 attempt 3 FAIL: [targeted_populace] Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:11:05 | INFO     | ============================================================
+2026-06-29 16:11:05 | INFO     | eGramSwaraj Bot START (v5)
+2026-06-29 16:11:05 | INFO     | ============================================================
+2026-06-29 16:11:05 | INFO     | rows: total=15 done=0 pending=15
+2026-06-29 16:11:08 | INFO     | Waiting for manual login → addactivity.htm ...
+2026-06-29 16:12:33 | INFO     | Form ready at: https://egramswaraj.gov.in/addactivity.htm
+2026-06-29 16:12:34 | INFO     | ── row 0 | Activities realted to Record keeping /Maintainance of data b
+2026-06-29 16:12:53 | WARNING  | row=0 field=targeted_populace Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:12:53 | ERROR    | FAIL | row=0 field=targeted_populace | Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:12:54 | WARNING  | row 0 attempt 1 FAIL: [targeted_populace] Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:13:15 | WARNING  | row=0 field=targeted_populace Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:13:15 | ERROR    | FAIL | row=0 field=targeted_populace | Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:13:16 | WARNING  | row 0 attempt 2 FAIL: [targeted_populace] Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:13:37 | WARNING  | row=0 field=targeted_populace Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:13:37 | ERROR    | FAIL | row=0 field=targeted_populace | Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:13:38 | WARNING  | row 0 attempt 3 FAIL: [targeted_populace] Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:14:04 | INFO     | ============================================================
+2026-06-29 16:14:04 | INFO     | eGramSwaraj Bot START (v5)
+2026-06-29 16:14:04 | INFO     | ============================================================
+2026-06-29 16:14:04 | INFO     | rows: total=15 done=0 pending=15
+2026-06-29 16:14:08 | INFO     | Waiting for manual login → addactivity.htm ...
+2026-06-29 16:14:54 | INFO     | Form ready at: https://egramswaraj.gov.in/addactivity.htm
+2026-06-29 16:14:56 | INFO     | ── row 0 | Activities realted to Record keeping /Maintainance of data b
+2026-06-29 16:15:15 | WARNING  | row=0 field=targeted_populace Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:15:16 | ERROR    | FAIL | row=0 field=targeted_populace | Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:15:16 | WARNING  | row 0 attempt 1 FAIL: [targeted_populace] Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:15:37 | WARNING  | row=0 field=targeted_populace Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:15:38 | ERROR    | FAIL | row=0 field=targeted_populace | Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:15:38 | WARNING  | row 0 attempt 2 FAIL: [targeted_populace] Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:15:59 | WARNING  | row=0 field=targeted_populace Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:16:00 | ERROR    | FAIL | row=0 field=targeted_populace | Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:16:00 | WARNING  | row 0 attempt 3 FAIL: [targeted_populace] Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:16:00 | ERROR    | row 0 FAILED after all retries
+2026-06-29 16:16:00 | INFO     | ── row 1 | Awareness generation for use of natural products in daily li
+2026-06-29 16:16:19 | WARNING  | row=1 field=targeted_populace Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:16:19 | ERROR    | FAIL | row=1 field=targeted_populace | Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:16:20 | WARNING  | row 1 attempt 1 FAIL: [targeted_populace] Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:16:42 | WARNING  | row=1 field=targeted_populace Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:16:42 | ERROR    | FAIL | row=1 field=targeted_populace | Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:16:42 | WARNING  | row 1 attempt 2 FAIL: [targeted_populace] Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:16:52 | INFO     | ============================================================
+2026-06-29 16:16:52 | INFO     | eGramSwaraj Bot START (v5)
+2026-06-29 16:16:52 | INFO     | ============================================================
+2026-06-29 16:16:52 | INFO     | rows: total=15 done=0 pending=15
+2026-06-29 16:17:04 | WARNING  | row=1 field=targeted_populace Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:17:04 | ERROR    | FAIL | row=1 field=targeted_populace | Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:17:04 | WARNING  | row 1 attempt 3 FAIL: [targeted_populace] Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:17:05 | ERROR    | row 1 FAILED after all retries
+2026-06-29 16:17:05 | INFO     | ── row 2 | Awareness camp on behavioural issues of Mission LiFE
+2026-06-29 16:17:14 | INFO     | ============================================================
+2026-06-29 16:17:14 | INFO     | eGramSwaraj Bot START (v5)
+2026-06-29 16:17:14 | INFO     | ============================================================
+2026-06-29 16:17:14 | INFO     | rows: total=15 done=0 pending=15
+2026-06-29 16:17:24 | WARNING  | row=2 field=targeted_populace Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:17:24 | ERROR    | FAIL | row=2 field=targeted_populace | Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:17:24 | WARNING  | row 2 attempt 1 FAIL: [targeted_populace] Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:17:41 | INFO     | ============================================================
+2026-06-29 16:17:41 | INFO     | eGramSwaraj Bot START (v5)
+2026-06-29 16:17:41 | INFO     | ============================================================
+2026-06-29 16:17:41 | INFO     | rows: total=15 done=0 pending=15
+2026-06-29 16:17:45 | INFO     | Waiting for manual login → addactivity.htm ...
+2026-06-29 16:17:45 | WARNING  | row=2 field=targeted_populace Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:17:46 | ERROR    | FAIL | row=2 field=targeted_populace | Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:17:46 | WARNING  | row 2 attempt 2 FAIL: [targeted_populace] Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#checkboxess") to be visible
+    33 × locator resolved to hidden <div id="checkboxess" class="checkboxes">…</div>
+
+2026-06-29 16:17:49 | WARNING  | row 2 attempt 3 FAIL: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://egramswaraj.gov.in/addactivity.htm", waiting until "domcontentloaded"
+
+2026-06-29 16:17:49 | ERROR    | row 2 FAILED after all retries
+2026-06-29 16:17:49 | INFO     | ── row 3 | Awareness campaign on SHG-PRI Convergence
+2026-06-29 16:17:49 | WARNING  | row 3 attempt 1 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:17:51 | WARNING  | row 3 attempt 2 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:17:53 | WARNING  | row 3 attempt 3 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:17:53 | ERROR    | row 3 FAILED after all retries
+2026-06-29 16:17:53 | INFO     | ── row 4 | Amrit Sarovar/Pond/Farm Pond
+2026-06-29 16:17:53 | WARNING  | row 4 attempt 1 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:17:55 | WARNING  | row 4 attempt 2 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:17:57 | WARNING  | row 4 attempt 3 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:17:57 | ERROR    | row 4 FAILED after all retries
+2026-06-29 16:17:57 | INFO     | ── row 5 | Awareness for active participation in Gram Sabha, Ward Sabha
+2026-06-29 16:17:57 | WARNING  | row 5 attempt 1 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:17:59 | WARNING  | row 5 attempt 2 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:18:01 | WARNING  | row 5 attempt 3 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:18:01 | ERROR    | row 5 FAILED after all retries
+2026-06-29 16:18:01 | INFO     | ── row 6 | Awareness Campaign  pension
+2026-06-29 16:18:01 | WARNING  | row 6 attempt 1 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:18:03 | WARNING  | row 6 attempt 2 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:18:05 | WARNING  | row 6 attempt 3 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:18:05 | ERROR    | row 6 FAILED after all retries
+2026-06-29 16:18:05 | INFO     | ── row 7 | Awareness on Public Services/ Service Delivery Provisions/ R
+2026-06-29 16:18:05 | WARNING  | row 7 attempt 1 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:18:07 | WARNING  | row 7 attempt 2 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:18:09 | WARNING  | row 7 attempt 3 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:18:09 | ERROR    | row 7 FAILED after all retries
+2026-06-29 16:18:09 | INFO     | ── row 8 | Annual Expenses - Water Charges, Postal, Electricity Bills, 
+2026-06-29 16:18:09 | WARNING  | row 8 attempt 1 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:18:11 | WARNING  | row 8 attempt 2 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:18:13 | WARNING  | row 8 attempt 3 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:18:14 | ERROR    | row 8 FAILED after all retries
+2026-06-29 16:18:14 | INFO     | ── row 9 | Awareness on disaster preparedness and mitigation
+2026-06-29 16:18:14 | WARNING  | row 9 attempt 1 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:18:16 | WARNING  | row 9 attempt 2 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:18:18 | WARNING  | row 9 attempt 3 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:18:18 | ERROR    | row 9 FAILED after all retries
+2026-06-29 16:18:18 | INFO     | ── row 10 | Awareness on inclusion of beneficiaries under different sche
+2026-06-29 16:18:18 | WARNING  | row 10 attempt 1 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:18:20 | WARNING  | row 10 attempt 2 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:18:22 | WARNING  | row 10 attempt 3 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:18:22 | ERROR    | row 10 FAILED after all retries
+2026-06-29 16:18:22 | INFO     | ── row 11 | Awareness Campaign on services of ICDS
+2026-06-29 16:18:22 | WARNING  | row 11 attempt 1 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:18:24 | WARNING  | row 11 attempt 2 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:18:26 | WARNING  | row 11 attempt 3 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:18:26 | ERROR    | row 11 FAILED after all retries
+2026-06-29 16:18:26 | INFO     | ── row 12 | Capacity Building & Training of Elected Representatives & Fu
+2026-06-29 16:18:26 | WARNING  | row 12 attempt 1 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:18:28 | WARNING  | row 12 attempt 2 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:18:30 | WARNING  | row 12 attempt 3 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:18:30 | ERROR    | row 12 FAILED after all retries
+2026-06-29 16:18:30 | INFO     | ── row 13 | Access to Maternal Benefits
+2026-06-29 16:18:30 | WARNING  | row 13 attempt 1 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:18:32 | WARNING  | row 13 attempt 2 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:18:33 | INFO     | Form ready at: https://egramswaraj.gov.in/addactivity.htm
+2026-06-29 16:18:34 | WARNING  | row 13 attempt 3 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:18:34 | ERROR    | row 13 FAILED after all retries
+2026-06-29 16:18:34 | INFO     | ── row 14 | Charages / Fees and other activites for ISO Certification
+2026-06-29 16:18:34 | WARNING  | row 14 attempt 1 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:18:36 | WARNING  | row 14 attempt 2 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:18:38 | WARNING  | row 14 attempt 3 FAIL: Page.goto: Target page, context or browser has been closed
+2026-06-29 16:18:38 | ERROR    | row 14 FAILED after all retries
+2026-06-29 16:18:39 | INFO     | DONE 275s total=15 success=0 failed=15 rate=0.0%
+2026-06-29 16:18:50 | INFO     | ============================================================
+2026-06-29 16:18:50 | INFO     | eGramSwaraj Bot START (v5)
+2026-06-29 16:18:50 | INFO     | ============================================================
+2026-06-29 16:18:50 | INFO     | rows: total=15 done=0 pending=15
+2026-06-29 16:18:54 | INFO     | Waiting for manual login -> addactivity.htm ...
+2026-06-29 16:19:59 | INFO     | Form ready at: https://egramswaraj.gov.in/addactivity.htm
+2026-06-29 16:20:16 | INFO     | ============================================================
+2026-06-29 16:20:16 | INFO     | eGramSwaraj Bot START (v5)
+2026-06-29 16:20:16 | INFO     | ============================================================
+2026-06-29 16:20:16 | INFO     | rows: total=15 done=0 pending=15
+2026-06-29 16:20:20 | INFO     | Waiting for manual login -> addactivity.htm ...
+2026-06-29 16:21:10 | INFO     | Form ready at: https://egramswaraj.gov.in/addactivity.htm
+2026-06-29 16:26:25 | INFO     | -- row 0 | Activities realted to Record keeping /Maintainance of data b
+2026-06-29 16:26:32 | INFO     | row 0 SUCCESS (attempt 1)
+2026-06-29 16:26:32 | INFO     | -- row 1 | Awareness generation for use of natural products in daily li
+2026-06-29 16:26:40 | INFO     | row 1 SUCCESS (attempt 1)
+2026-06-29 16:26:40 | INFO     | -- row 2 | Awareness camp on behavioural issues of Mission LiFE
+2026-06-29 16:26:46 | INFO     | row 2 SUCCESS (attempt 1)
+2026-06-29 16:26:46 | INFO     | -- row 3 | Awareness campaign on SHG-PRI Convergence
+2026-06-29 16:26:51 | WARNING  | row=3 field=activity_nature 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:26:52 | ERROR    | FAIL | row=3 field=activity_nature | 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:26:52 | WARNING  | row 3 attempt 1 FAIL: [activity_nature] 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:27:00 | WARNING  | row=3 field=activity_nature 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:27:00 | ERROR    | FAIL | row=3 field=activity_nature | 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:27:01 | WARNING  | row 3 attempt 2 FAIL: [activity_nature] 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:27:09 | WARNING  | row=3 field=activity_nature 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:27:09 | ERROR    | FAIL | row=3 field=activity_nature | 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:27:10 | WARNING  | row 3 attempt 3 FAIL: [activity_nature] 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:30:47 | INFO     | ============================================================
+2026-06-29 16:30:47 | INFO     | eGramSwaraj Bot START (v5)
+2026-06-29 16:30:47 | INFO     | ============================================================
+2026-06-29 16:30:47 | INFO     | rows: total=15 done=0 pending=15
+2026-06-29 16:30:51 | INFO     | Waiting for manual login -> addactivity.htm ...
+2026-06-29 16:37:16 | INFO     | Form ready at: https://egramswaraj.gov.in/addactivity.htm
+2026-06-29 16:37:20 | INFO     | -- row 0 | Activities realted to Record keeping /Maintainance of data b
+2026-06-29 16:37:26 | INFO     | row 0 SUCCESS (attempt 1)
+2026-06-29 16:37:26 | INFO     | -- row 1 | Awareness generation for use of natural products in daily li
+2026-06-29 16:37:30 | INFO     | row 1 SUCCESS (attempt 1)
+2026-06-29 16:37:30 | INFO     | -- row 2 | Awareness camp on behavioural issues of Mission LiFE
+2026-06-29 16:37:35 | INFO     | row 2 SUCCESS (attempt 1)
+2026-06-29 16:37:35 | INFO     | -- row 3 | Awareness campaign on SHG-PRI Convergence
+2026-06-29 16:37:40 | WARNING  | row=3 field=activity_nature 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:37:40 | ERROR    | FAIL | row=3 field=activity_nature | 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:37:41 | WARNING  | row 3 attempt 1 FAIL: [activity_nature] 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:37:48 | WARNING  | row=3 field=activity_nature 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:37:48 | ERROR    | FAIL | row=3 field=activity_nature | 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:37:49 | WARNING  | row 3 attempt 2 FAIL: [activity_nature] 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:37:56 | WARNING  | row=3 field=activity_nature 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:37:56 | ERROR    | FAIL | row=3 field=activity_nature | 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:37:56 | WARNING  | row 3 attempt 3 FAIL: [activity_nature] 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:37:57 | ERROR    | row 3 FAILED after all retries
+2026-06-29 16:37:57 | INFO     | -- row 4 | Amrit Sarovar/Pond/Farm Pond
+2026-06-29 16:38:02 | INFO     | row 4 SUCCESS (attempt 1)
+2026-06-29 16:38:02 | INFO     | -- row 5 | Awareness for active participation in Gram Sabha, Ward Sabha
+2026-06-29 16:38:08 | INFO     | row 5 SUCCESS (attempt 1)
+2026-06-29 16:38:08 | INFO     | -- row 6 | Awareness Campaign  pension
+2026-06-29 16:38:12 | WARNING  | row=6 field=activity_nature 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:38:12 | ERROR    | FAIL | row=6 field=activity_nature | 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:38:13 | WARNING  | row=6 field=start_month 'January' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 16:38:13 | ERROR    | FAIL | row=6 field=start_month | 'January' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 16:38:13 | WARNING  | row 6 attempt 1 FAIL: [activity_nature] 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh'] | [start_month] 'January' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 16:38:20 | WARNING  | row=6 field=activity_nature 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:38:20 | ERROR    | FAIL | row=6 field=activity_nature | 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:38:20 | WARNING  | row=6 field=start_month 'January' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 16:38:20 | ERROR    | FAIL | row=6 field=start_month | 'January' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 16:38:21 | WARNING  | row 6 attempt 2 FAIL: [activity_nature] 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh'] | [start_month] 'January' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 16:38:27 | WARNING  | row=6 field=activity_nature 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:38:28 | ERROR    | FAIL | row=6 field=activity_nature | 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:38:28 | WARNING  | row=6 field=start_month 'January' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 16:38:28 | ERROR    | FAIL | row=6 field=start_month | 'January' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 16:38:28 | WARNING  | row 6 attempt 3 FAIL: [activity_nature] 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh'] | [start_month] 'January' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 16:38:28 | ERROR    | row 6 FAILED after all retries
+2026-06-29 16:38:28 | INFO     | -- row 7 | Awareness on Public Services/ Service Delivery Provisions/ R
+2026-06-29 16:38:33 | WARNING  | row=7 field=start_month 'February' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 16:38:33 | ERROR    | FAIL | row=7 field=start_month | 'February' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 16:38:33 | WARNING  | row 7 attempt 1 FAIL: [start_month] 'February' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 16:38:41 | WARNING  | row=7 field=start_month 'February' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 16:38:41 | ERROR    | FAIL | row=7 field=start_month | 'February' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 16:38:41 | WARNING  | row 7 attempt 2 FAIL: [start_month] 'February' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 16:38:48 | WARNING  | row=7 field=start_month 'February' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 16:38:49 | ERROR    | FAIL | row=7 field=start_month | 'February' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 16:38:49 | WARNING  | row 7 attempt 3 FAIL: [start_month] 'February' not found in #startMonthId. Available (9): ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+2026-06-29 16:38:49 | ERROR    | row 7 FAILED after all retries
+2026-06-29 16:38:49 | INFO     | -- row 8 | Annual Expenses - Water Charges, Postal, Electricity Bills, 
+2026-06-29 16:38:53 | WARNING  | row=8 field=activity_nature 'New/Fresh' not found in #workTypId. Available (1): ['Operational']
+2026-06-29 16:38:53 | ERROR    | FAIL | row=8 field=activity_nature | 'New/Fresh' not found in #workTypId. Available (1): ['Operational']
+2026-06-29 16:38:54 | WARNING  | row 8 attempt 1 FAIL: [activity_nature] 'New/Fresh' not found in #workTypId. Available (1): ['Operational']
+2026-06-29 16:39:01 | WARNING  | row=8 field=activity_nature 'New/Fresh' not found in #workTypId. Available (1): ['Operational']
+2026-06-29 16:39:01 | ERROR    | FAIL | row=8 field=activity_nature | 'New/Fresh' not found in #workTypId. Available (1): ['Operational']
+2026-06-29 16:39:01 | WARNING  | row 8 attempt 2 FAIL: [activity_nature] 'New/Fresh' not found in #workTypId. Available (1): ['Operational']
+2026-06-29 16:39:08 | WARNING  | row=8 field=activity_nature 'New/Fresh' not found in #workTypId. Available (1): ['Operational']
+2026-06-29 16:39:08 | ERROR    | FAIL | row=8 field=activity_nature | 'New/Fresh' not found in #workTypId. Available (1): ['Operational']
+2026-06-29 16:39:08 | WARNING  | row 8 attempt 3 FAIL: [activity_nature] 'New/Fresh' not found in #workTypId. Available (1): ['Operational']
+2026-06-29 16:39:08 | ERROR    | row 8 FAILED after all retries
+2026-06-29 16:39:08 | INFO     | -- row 9 | Awareness on disaster preparedness and mitigation
+2026-06-29 16:39:14 | WARNING  | row=9 field=activity_nature 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:39:14 | ERROR    | FAIL | row=9 field=activity_nature | 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:39:14 | WARNING  | row=9 field=start_month 'April' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:39:14 | ERROR    | FAIL | row=9 field=start_month | 'April' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:39:14 | WARNING  | row 9 attempt 1 FAIL: [activity_nature] 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh'] | [start_month] 'April' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:39:21 | WARNING  | row=9 field=activity_nature 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:39:21 | ERROR    | FAIL | row=9 field=activity_nature | 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:39:22 | WARNING  | row=9 field=start_month 'April' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:39:22 | ERROR    | FAIL | row=9 field=start_month | 'April' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:39:22 | WARNING  | row 9 attempt 2 FAIL: [activity_nature] 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh'] | [start_month] 'April' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:39:30 | WARNING  | row=9 field=activity_nature 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:39:30 | ERROR    | FAIL | row=9 field=activity_nature | 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:39:31 | WARNING  | row=9 field=start_month 'April' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:39:31 | ERROR    | FAIL | row=9 field=start_month | 'April' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:39:31 | WARNING  | row 9 attempt 3 FAIL: [activity_nature] 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh'] | [start_month] 'April' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:39:31 | ERROR    | row 9 FAILED after all retries
+2026-06-29 16:39:31 | INFO     | -- row 10 | Awareness on inclusion of beneficiaries under different sche
+2026-06-29 16:39:37 | WARNING  | row=10 field=start_month 'May' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:39:37 | ERROR    | FAIL | row=10 field=start_month | 'May' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:39:37 | WARNING  | row 10 attempt 1 FAIL: [start_month] 'May' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:39:45 | WARNING  | row=10 field=start_month 'May' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:39:45 | ERROR    | FAIL | row=10 field=start_month | 'May' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:39:45 | WARNING  | row 10 attempt 2 FAIL: [start_month] 'May' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:39:54 | WARNING  | row=10 field=start_month 'May' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:39:54 | ERROR    | FAIL | row=10 field=start_month | 'May' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:39:54 | WARNING  | row 10 attempt 3 FAIL: [start_month] 'May' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:39:54 | ERROR    | row 10 FAILED after all retries
+2026-06-29 16:39:54 | INFO     | -- row 11 | Awareness Campaign on services of ICDS
+2026-06-29 16:40:01 | WARNING  | row=11 field=start_month 'June' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:40:01 | ERROR    | FAIL | row=11 field=start_month | 'June' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:40:01 | WARNING  | row 11 attempt 1 FAIL: [start_month] 'June' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:40:10 | WARNING  | row=11 field=start_month 'June' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:40:10 | ERROR    | FAIL | row=11 field=start_month | 'June' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:40:10 | WARNING  | row 11 attempt 2 FAIL: [start_month] 'June' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:40:20 | WARNING  | row=11 field=start_month 'June' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:40:20 | ERROR    | FAIL | row=11 field=start_month | 'June' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:40:20 | WARNING  | row 11 attempt 3 FAIL: [start_month] 'June' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:40:21 | ERROR    | row 11 FAILED after all retries
+2026-06-29 16:40:21 | INFO     | -- row 12 | Capacity Building & Training of Elected Representatives & Fu
+2026-06-29 16:40:26 | WARNING  | row=12 field=activity_nature 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:40:26 | ERROR    | FAIL | row=12 field=activity_nature | 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:40:26 | WARNING  | row=12 field=start_month 'July' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:40:27 | ERROR    | FAIL | row=12 field=start_month | 'July' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:40:27 | WARNING  | row 12 attempt 1 FAIL: [activity_nature] 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh'] | [start_month] 'July' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:40:34 | WARNING  | row=12 field=activity_nature 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:40:34 | ERROR    | FAIL | row=12 field=activity_nature | 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:40:35 | WARNING  | row=12 field=start_month 'July' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:40:35 | ERROR    | FAIL | row=12 field=start_month | 'July' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:40:35 | WARNING  | row 12 attempt 2 FAIL: [activity_nature] 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh'] | [start_month] 'July' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:40:43 | WARNING  | row=12 field=activity_nature 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:40:43 | ERROR    | FAIL | row=12 field=activity_nature | 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh']
+2026-06-29 16:40:43 | WARNING  | row=12 field=start_month 'July' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:40:43 | ERROR    | FAIL | row=12 field=start_month | 'July' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:40:43 | WARNING  | row 12 attempt 3 FAIL: [activity_nature] 'Maintenance' not found in #workTypId. Available (1): ['New/Fresh'] | [start_month] 'July' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:40:44 | ERROR    | row 12 FAILED after all retries
+2026-06-29 16:40:44 | INFO     | -- row 13 | Access to Maternal Benefits
+2026-06-29 16:40:49 | WARNING  | row=13 field=start_month 'August' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:40:49 | ERROR    | FAIL | row=13 field=start_month | 'August' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:40:49 | WARNING  | row 13 attempt 1 FAIL: [start_month] 'August' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:40:58 | WARNING  | row=13 field=start_month 'August' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:40:58 | ERROR    | FAIL | row=13 field=start_month | 'August' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:40:58 | WARNING  | row 13 attempt 2 FAIL: [start_month] 'August' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:41:06 | WARNING  | row=13 field=start_month 'August' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:41:06 | ERROR    | FAIL | row=13 field=start_month | 'August' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:41:07 | WARNING  | row 13 attempt 3 FAIL: [start_month] 'August' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:41:07 | ERROR    | row 13 FAILED after all retries
+2026-06-29 16:41:07 | INFO     | -- row 14 | Charages / Fees and other activites for ISO Certification
+2026-06-29 16:41:12 | WARNING  | row=14 field=start_month 'September' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:41:12 | ERROR    | FAIL | row=14 field=start_month | 'September' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:41:12 | WARNING  | row 14 attempt 1 FAIL: [start_month] 'September' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:41:20 | WARNING  | row=14 field=start_month 'September' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:41:20 | ERROR    | FAIL | row=14 field=start_month | 'September' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:41:20 | WARNING  | row 14 attempt 2 FAIL: [start_month] 'September' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:41:29 | WARNING  | row=14 field=start_month 'September' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:41:29 | ERROR    | FAIL | row=14 field=start_month | 'September' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:41:30 | WARNING  | row 14 attempt 3 FAIL: [start_month] 'September' not found in #startMonthId. Available (3): ['January', 'February', 'March']
+2026-06-29 16:41:30 | ERROR    | row 14 FAILED after all retries
+2026-06-29 16:41:30 | INFO     | DONE 643s total=15 success=5 failed=10 rate=33.3%

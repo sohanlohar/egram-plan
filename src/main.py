@@ -97,7 +97,7 @@ def _goto_form(page: Page, timeout_ms: int = FORM_READY_TIMEOUT) -> None:
 def _wait_for_login(page: Page, log) -> None:
     """Poll until user is on addactivity.htm with form loaded."""
     deadline = time.time() + MAX_SESSION_WAIT_MIN * 60
-    log.info("Waiting for manual login → addactivity.htm ...")
+    log.info("Waiting for manual login -> addactivity.htm ...")
     while True:
         if time.time() > deadline:
             raise TimeoutError(
@@ -116,7 +116,7 @@ def _wait_for_login(page: Page, log) -> None:
 def _handle_expiry(page: Page, log, row: int) -> None:
     log.warning("Session expired at row %d | URL: %s", row, page.url)
     print("\n" + "=" * 60)
-    print("  🔒  SESSION EXPIRED")
+    print("  [SESSION] SESSION EXPIRED")
     print("  Please log in again in the browser window.")
     print(f"  Then navigate to: {FORM_URL}")
     print("  Automation will resume automatically.")
@@ -163,26 +163,26 @@ def run(config: dict, filter_rows: list[int] | None = None) -> None:
         print("\n" + "=" * 60)
         print("  eGramSwaraj Activity Planning Bot  (v5)")
         print("=" * 60)
-        print(f"\n  🌐  Opening {LOGIN_URL} ...")
+        print(f"\n  [BROWSER] Opening {LOGIN_URL} ...")
         page.goto(LOGIN_URL, wait_until="domcontentloaded",
                   timeout=config.get("page_timeout_ms", 30_000))
 
-        print("  ✅  Browser ready.")
-        print("\n  👤  Please log in and navigate to:")
-        print(f"      {FORM_URL}")
+        print("  [OK] Browser ready.")
+        print("\n  [LOGIN] Please log in and navigate to:")
+        print(f"         {FORM_URL}")
         print("\n  The bot will wait automatically.\n")
 
         # ── Wait for manual login ─────────────────────────────────────────────
         _wait_for_login(page, log)
 
-        # ── ENTER gate ────────────────────────────────────────────────────────
-        print("\n" + "─" * 60)
-        print(f"  ✅  Form detected")
-        print(f"  📋  Pending records : {pending}")
-        print(f"  📂  Output file     : {config['output_file']}")
-        print("─" * 60)
+        # -- ENTER gate ---------------------------------------------------------------
+        print("\n" + "-" * 60)
+        print(f"  [OK] Form detected")
+        print(f"  [DATA] Pending records : {pending}")
+        print(f"  [FILE] Output file     : {config['output_file']}")
+        print("-" * 60)
         try:
-            input("\n  ▶  Press ENTER to start automation ... ")
+            input("\n  [READY] Press ENTER to start automation ... ")
         except EOFError:
             pass
         print()
@@ -199,8 +199,8 @@ def run(config: dict, filter_rows: list[int] | None = None) -> None:
                 continue
 
             label = (record.get("activity_name") or f"Row-{row_index}")[:60]
-            log.info("── row %d | %s", row_index, label)
-            print(f"  ▶  [{row_index + 1}/{total}]  {label}")
+            log.info("-- row %d | %s", row_index, label)
+            print(f"  [ROW] [{row_index + 1}/{total}]  {label}")
 
             last_err  = ""
             succeeded = False
@@ -221,7 +221,7 @@ def run(config: dict, filter_rows: list[int] | None = None) -> None:
 
                     writer.write_result(row_index=row_index, status="SUCCESS")
                     log.info("row %d SUCCESS (attempt %d)", row_index, attempt)
-                    print(f"       ✅  SUCCESS")
+                    print(f"       [OK] SUCCESS")
                     success_count += 1
                     break
 
@@ -250,7 +250,7 @@ def run(config: dict, filter_rows: list[int] | None = None) -> None:
                     error_message=last_err[:2000],
                 )
                 log.error("row %d FAILED after all retries", row_index)
-                print(f"       ❌  FAILED  (see logs/automation.log)")
+                print(f"       [FAIL] FAILED  (see logs/automation.log)")
 
         browser.close()
 
