@@ -1,0 +1,14 @@
+{
+  "headless": false,
+  "retry_count": 3,
+  "page_timeout_ms": 30000,
+  "selector_timeout_ms": 15000,
+  "input_file": "data/input.xlsx",
+  "output_file": "data/output.xlsx",
+  "log_file": "logs/automation.log",
+  "screenshots_dir": "screenshots",
+  "submit_form": true,
+  "submit_action": "save_and_forward",
+  "take_success_screenshots": false,
+  "debug_mode": false
+}
