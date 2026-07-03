@@ -231,6 +231,125 @@ class FormFiller:
         self.shots_dir = Path(screenshots_dir)
         self.shots_dir.mkdir(parents=True, exist_ok=True)
 
+    def _get_optional_value(self, record: dict, *keys: str) -> str:
+        for key in keys:
+            value = _v(record, key)
+            if value:
+                return value
+        return ""
+
+    def _select_value(self, selector: str, value: str) -> None:
+        if not value:
+            return
+        try:
+            select_by_text(self.page, selector, value)
+        except Exception:
+            try:
+                self.page.locator(selector).select_option(value=value)
+            except Exception:
+                pass
+
+    def _fill_asset_popup(self, record: dict) -> None:
+        """Handle the dynamic Asset Details popup if the Activity Output is Asset."""
+        output_value = self._get_optional_value(record, "activity_output", "output_type", "asset_output").strip().lower()
+        if output_value and output_value not in {"asset", "assets", "101", "yes", "true"}:
+            return
+
+        radio = self.page.locator("#outputActvityAstId101")
+        if radio.count() == 0:
+            return
+
+        try:
+            radio.first.wait_for(state="visible", timeout=SELECTOR_TIMEOUT)
+            radio.first.click()
+        except Exception:
+            self.page.evaluate("document.getElementById('outputActvityAstId101').click()")
+
+        self.page.evaluate("document.getElementById('ouptputTypId').value = '101'")
+        self.page.evaluate("""
+            if (window.showAssetDetailsPopup) {
+                window.showAssetDetailsPopup('addassetdtlsDiv101', 'outputActvityAstId101');
+            } else {
+                const modal = document.getElementById('showAssetDetailsPopup');
+                if (modal) {
+                    modal.style.display = 'block';
+                    modal.classList.add('in');
+                    document.body.classList.add('modal-open');
+                }
+            }
+        """)
+        self.page.wait_for_timeout(800)
+
+        modal = self.page.locator("#showAssetDetailsPopup")
+        if not modal.count():
+            return
+
+        try:
+            modal.wait_for(state="visible", timeout=SELECTOR_TIMEOUT)
+        except Exception:
+            pass
+
+        asset_type = self._get_optional_value(record, "asset_type")
+        if asset_type:
+            self._select_value("#showAssetDetailsPopup #astTypId", asset_type)
+        else:
+            self._select_value("#showAssetDetailsPopup #astTypId", "Immovable")
+        _wait_idle(self.page)
+
+        asset_category = self._get_optional_value(record, "asset_category")
+        if asset_category:
+            self._select_value("#showAssetDetailsPopup #assetCategoryId", asset_category)
+        else:
+            self._select_value("#showAssetDetailsPopup #assetCategoryId", "")
+        _wait_idle(self.page)
+
+        asset_sub_category = self._get_optional_value(record, "asset_sub_category")
+        if asset_sub_category:
+            self._select_value("#showAssetDetailsPopup #astSubCtgryId", asset_sub_category)
+        else:
+            self._select_value("#showAssetDetailsPopup #astSubCtgryId", "")
+        _wait_idle(self.page)
+
+        total_units = self._get_optional_value(record, "asset_total_units", "total_units")
+        if total_units:
+            safe_fill(self.page, "#showAssetDetailsPopup #totalUntId", total_units)
+        else:
+            safe_fill(self.page, "#showAssetDetailsPopup #totalUntId", "1")
+
+        unit_cost = self._get_optional_value(record, "asset_unit_cost", "unit_cost")
+        if unit_cost:
+            safe_fill(self.page, "#showAssetDetailsPopup #untCostId", unit_cost)
+        else:
+            safe_fill(self.page, "#showAssetDetailsPopup #untCostId", "1000")
+
+        coverage = self._get_optional_value(record, "asset_coverage_area", "coverage_area").strip().lower()
+        if coverage in {"a", "area", "1", "yes", "true"}:
+            self.page.locator("#showAssetDetailsPopup #assetCovgeAreaId").check()
+        else:
+            self.page.locator("#showAssetDetailsPopup #assetCovgeAreaId").check()
+
+        for source_id, move_btn_selector in [
+            ("#showAssetDetailsPopup #avlPlanUnitsBPId", "#showAssetDetailsPopup #selectedPlanUnitsForBPId input.btn-warning[value='>>']"),
+            ("#showAssetDetailsPopup #avlPlanUnitsGPId", "#showAssetDetailsPopup #selectedPlanUnitsForGPId input.btn-warning[value='>>']"),
+            ("#showAssetDetailsPopup #avlPlanUnitsVillId", "#showAssetDetailsPopup #selectedPlanUnitsForVillId input.btn-warning[value='>>']"),
+        ]:
+            select = self.page.locator(source_id)
+            if not select.count():
+                continue
+            options = select.locator("option")
+            if options.count() == 0:
+                continue
+            values = [opt.get_attribute("value") or "" for opt in options.all() if (opt.get_attribute("value") or "")]
+            if values:
+                try:
+                    select.select_option(values=values[:1])
+                    self.page.locator(move_btn_selector).first.click()
+                except Exception:
+                    pass
+
+        self.page.locator("#showAssetDetailsPopup .modal-footer .btn-success").first.click()
+        self.page.wait_for_timeout(500)
+
     # ── Public entry point ────────────────────────────────────────────────────
 
     def fill_form(self, record: dict, row_index: int) -> dict[str, str]:
@@ -345,7 +464,13 @@ class FormFiller:
         attempt("estimated_total_cost",
                 lambda: safe_fill(p, "#totalCostId", _v(record, "estimated_total_cost")))
 
-        # ── 15. Form submission ───────────────────────────────────────────────
+        # ── 15. Activity Output / Asset Details popup ────────────────────────
+        try:
+            self._fill_asset_popup(record)
+        except Exception as exc:
+            logger.warning("row=%d activity_output_popup %s", row_index, str(exc)[:200])
+
+        # ── 16. Form submission ───────────────────────────────────────────────
         app_number = ""
         txn_id     = ""
 

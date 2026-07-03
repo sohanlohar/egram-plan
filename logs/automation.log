@@ -6389,3 +6389,57 @@ Call log:
 2026-06-29 17:42:32 | INFO     | -- row 14 | Charages / Fees and other activites for ISO Certification
 2026-06-29 17:42:40 | INFO     | row 14 SUCCESS (attempt 1)
 2026-06-29 17:42:40 | INFO     | DONE 165s total=15 success=15 failed=0 rate=100.0%
+2026-06-29 18:05:03 | INFO     | ============================================================
+2026-06-29 18:05:03 | INFO     | eGramSwaraj Bot START (v5)
+2026-06-29 18:05:03 | INFO     | ============================================================
+2026-06-29 18:05:03 | INFO     | rows: total=1 done=0 pending=1
+2026-06-29 18:05:07 | INFO     | Waiting for manual login -> addactivity.htm ...
+2026-06-29 18:09:54 | INFO     | Form ready at: https://egramswaraj.gov.in/addactivity.htm
+2026-06-29 18:10:02 | INFO     | -- row 0 | Annual Expenses - Water Charges, Postal, Electricity Bills, 
+2026-06-29 18:10:25 | WARNING  | row=0 activity_output_popup Locator.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#outputActvityAstId101, input[name='outputTyp'][value='101']").first
+    - locator resolved to <input value="" type="radio" 
+2026-06-29 18:10:25 | INFO     | row 0 SUCCESS (attempt 1)
+2026-06-29 18:10:25 | INFO     | DONE 322s total=1 success=1 failed=0 rate=100.0%
+2026-06-29 18:13:19 | INFO     | ============================================================
+2026-06-29 18:13:19 | INFO     | eGramSwaraj Bot START (v5)
+2026-06-29 18:13:19 | INFO     | ============================================================
+2026-06-29 18:13:19 | INFO     | rows: total=1 done=0 pending=1
+2026-06-29 18:13:23 | INFO     | Waiting for manual login -> addactivity.htm ...
+2026-06-29 18:17:27 | INFO     | Form ready at: https://egramswaraj.gov.in/addactivity.htm
+2026-06-29 18:17:52 | INFO     | -- row 0 | Annual Expenses - Water Charges, Postal, Electricity Bills, 
+2026-06-29 18:18:29 | WARNING  | row=0 activity_output_popup Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#showAssetDetailsPopup") to be visible
+    33 × locator resolved to hidden <div role="dialog" id="showAssetDetailsPopup" 
+2026-06-29 18:18:29 | INFO     | row 0 SUCCESS (attempt 1)
+2026-06-29 18:18:29 | INFO     | DONE 310s total=1 success=1 failed=0 rate=100.0%
+2026-06-30 13:28:53 | INFO     | ============================================================
+2026-06-30 13:28:53 | INFO     | eGramSwaraj Bot START (v5)
+2026-06-30 13:28:53 | INFO     | ============================================================
+2026-06-30 13:28:53 | INFO     | rows: total=1 done=0 pending=1
+2026-06-30 18:15:30 | INFO     | ============================================================
+2026-06-30 18:15:30 | INFO     | eGramSwaraj Bot START (v5)
+2026-06-30 18:15:30 | INFO     | ============================================================
+2026-06-30 18:15:30 | INFO     | rows: total=1 done=0 pending=1
+2026-06-30 18:15:35 | INFO     | Waiting for manual login -> addactivity.htm ...
+2026-06-30 18:16:32 | INFO     | Form ready at: https://egramswaraj.gov.in/addactivity.htm
+2026-06-30 18:16:36 | INFO     | -- row 0 | Annual Expenses - Water Charges, Postal, Electricity Bills, 
+2026-06-30 18:17:56 | WARNING  | row=0 activity_output_popup Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#showAssetDetailsPopup #totalUntId") to be visible
+    33 × locator resolved to hidden <input value="" type="text" maxlen
+2026-06-30 18:17:57 | WARNING  | row 0 attempt 1 FAIL: [validation] Please check atlest one Mission Antyodyaya(MA) Gap(s)
+2026-06-30 18:19:21 | WARNING  | row=0 activity_output_popup Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#showAssetDetailsPopup #totalUntId") to be visible
+    33 × locator resolved to hidden <input value="" type="text" maxlen
+2026-06-30 18:19:21 | WARNING  | row 0 attempt 2 FAIL: [validation] Please check atlest one Mission Antyodyaya(MA) Gap(s)
+2026-06-30 18:20:47 | WARNING  | row=0 activity_output_popup Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#showAssetDetailsPopup #totalUntId") to be visible
+    33 × locator resolved to hidden <input value="" type="text" maxlen
+2026-06-30 18:20:47 | WARNING  | row 0 attempt 3 FAIL: [validation] Please check atlest one Mission Antyodyaya(MA) Gap(s)
+2026-06-30 18:20:47 | ERROR    | row 0 FAILED after all retries
+2026-06-30 18:20:48 | INFO     | DONE 317s total=1 success=0 failed=1 rate=0.0%
