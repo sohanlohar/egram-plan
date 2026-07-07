@@ -488,28 +488,6 @@ def select_multiselect_checkboxes(page: Page, panel_id: str, excel_values: str,
                              row, field_name, visible_text, str(js_err)[:100])
 
 
-def tick_checkboxes(page: Page, panel_id: str, values_csv: str) -> None:
-    """
-    Legacy function for backward compatibility. 
-    Tick checkboxes whose label text matches any value in the comma-separated string.
-    Case-insensitive. Skips already-checked boxes.
-    
-    Deprecated: Use select_multiselect_checkboxes() instead for better error handling.
-    """
-    if not values_csv.strip():
-        return
-    targets = {v.strip().lower() for v in values_csv.split(",")}
-    for label in page.locator(f"#{panel_id} label").all():
-        label_text = (label.inner_text() or "").strip().lower()
-        if label_text in targets:
-            cb = label.locator("input[type='checkbox']")
-            if cb.count() and not cb.is_checked():
-                try:
-                    cb.click()
-                except Exception:
-                    pass
-
-
 # ══════════════════════════════════════════════════════════════════════════════
 # Debug snapshot (only on field failure)
 # ══════════════════════════════════════════════════════════════════════════════
@@ -1032,17 +1010,6 @@ class FormFiller:
             if value:
                 return value
         return ""
-
-    def _select_value(self, selector: str, value: str) -> None:
-        if not value:
-            return
-        try:
-            select_by_text(self.page, selector, value)
-        except Exception:
-            try:
-                self.page.locator(selector).select_option(value=value)
-            except Exception:
-                pass
 
     def _normalize_output_type(self, value: str) -> str:
         return normalize_output_type(value)

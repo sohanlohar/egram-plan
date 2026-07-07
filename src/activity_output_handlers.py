@@ -5,7 +5,6 @@ import logging
 from playwright.sync_api import Page, TimeoutError as PlaywrightTimeout, expect
 
 from activity_output_registry import (
-    ACTIVITY_OUTPUT_DEFINITIONS,
     ActivityOutputDefinition,
     get_output_definition,
 )
@@ -175,7 +174,7 @@ class TrainingOutputHandler(BaseOutputHandler):
         logger.info("[%s] Detail Sheet: %s", activity_key, self.definition.sheet_name)
         logger.info("[%s] Radio: %s", activity_key, self.definition.radio_id)
 
-        self._open_modal(activity_key, row_index)
+        self._open_modal(activity_key)
         self._verify_modal_title(activity_key)
         self._fill_fields(detail_record)
         self._verify_filled_values(detail_record, activity_key)
@@ -189,7 +188,7 @@ class TrainingOutputHandler(BaseOutputHandler):
         self._submit(activity_key)
         self._verify_output_retained(activity_key)
 
-    def _open_modal(self, activity_key: str, row_index: int) -> None:
+    def _open_modal(self, activity_key: str) -> None:
         section = self.page.locator("#outputActvityTypeDivId")
         section.wait_for(state="visible", timeout=SELECTOR_TIMEOUT)
 
@@ -476,6 +475,3 @@ class ActivityOutputHandlerRegistry:
 
         return UnsupportedOutputHandler(self.page, definition)
 
-    @staticmethod
-    def supported_definitions() -> list[ActivityOutputDefinition]:
-        return list(ACTIVITY_OUTPUT_DEFINITIONS.values())

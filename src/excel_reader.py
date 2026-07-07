@@ -9,7 +9,6 @@ from activity_output_registry import get_output_definition
 
 ACTIVITY_SHEET_NAME = "Activities"
 LEGACY_ACTIVITY_SHEET_NAME = "eGram Activity Data"
-TRAINING_SHEET_NAME = "Training"
 
 # Main form columns expected from Activities sheet
 FORM_COLUMNS = [
@@ -51,7 +50,6 @@ FORM_COLUMNS = [
 BOT_COLUMNS = ["status", "processed_time", "error_message"]
 
 ALL_COLUMNS = FORM_COLUMNS + BOT_COLUMNS
-SHEET_NAME = ACTIVITY_SHEET_NAME
 STATUS_COL = "status"
 
 HEADER_ALIASES = {

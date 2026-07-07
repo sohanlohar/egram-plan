@@ -150,21 +150,18 @@ Dependencies declared in `requirements.txt`:
   - `_normalize_multiselect_text()` - Normalize text for robust matching
 - Contains **enhanced multiselect handler**:
   - `select_multiselect_checkboxes()` - Robust checkbox selection with error handling, debug logging, pipe/comma delimiter support, validation, and JavaScript fallback
-  - `tick_checkboxes()` - Legacy backward-compatible version (deprecated in favor of new handler)
 - Contains `FormFiller` class with:
   - `fill_form(record, row_index)` - Main entry point; fills all 25+ form fields in dependency order with comprehensive error handling
   - Field-specific helper methods for optional value retrieval and activity output type normalization
 - Contains **Activity Output automation**:
-  - `TrainingActivityOutputHandler` - Full support for Training/Capacity Building modal including validation, selection, filling, submission, and verification
+  - `TrainingOutputHandler` - Full support for Training/Capacity Building modal including validation, selection, filling, submission, and verification
   - `ActivityOutputError` - Custom exception for Activity Output failures
-  - `OUTPUT_TYPE_ALIASES` - Mapping of user-friendly and portal names to internal types
-  - `OUTPUT_RADIO_IDS` - Mapping of output types to radio element IDs
-  - `SUPPORTED_ACTIVITY_OUTPUTS = {"training"}` - Currently active types (Asset, Community Service, Beneficiaries, VPRP intentionally not active)
+  - Type alias and registry mapping are implemented through `activity_output_registry.py`
 - Depends on Playwright `Page`, portal DOM IDs, config flags, row dictionaries from `ExcelReader`, and comprehensive logging.
 
 `src/excel_reader.py`
 
-- Reads `data/input.xlsx`, sheet `eGram Activity Data`.
+- Reads `data/input.xlsx`, sheet `Activities` (falls back to `eGram Activity Data`).
 - Defines the canonical in-code column list: `FORM_COLUMNS` (now 45 columns including new conditional fields), `BOT_COLUMNS`, `ALL_COLUMNS`.
 - Normalizes workbook headers through `normalize_header()`, lowercases, converts separators to underscores, and applies known aliases including:
   - `Activity Output` → `activity_output_type`
@@ -175,15 +172,15 @@ Dependencies declared in `requirements.txt`:
 - Drops columns not in `ALL_COLUMNS`.
 - Adds missing expected columns as empty strings (supports appending new fields to existing workbooks).
 - Supplies pending rows (status != SUCCESS) and success counts.
-- Does not read separate Activity Output sheets found in template workbooks; Training data lives inline on main activity rows.
+- Builds Activity Output detail indexes from separate sheets (`Training`, `Community_Service`, `Beneficiaries`, `Asset`) using `Activity_Key`.
 
 `src/result_writer.py`
 
 - Writes `data/output.xlsx`.
-- Imports `FORM_COLUMNS`, `BOT_COLUMNS`, `ALL_COLUMNS`, and `SHEET_NAME` from `excel_reader.py`.
+- Imports `BOT_COLUMNS`, `ALL_COLUMNS`, and sheet-name constants from `excel_reader.py`.
 - Rebuilds a styled workbook from the input sheet and preserves previous bot status columns from existing output.
 - Writes `Automation_Summary` at the end.
-- It only writes the main `eGram Activity Data` sheet plus summary; it does not preserve `Valid Options Reference` or Activity Output sheets.
+- It writes the normalized activity sheet (`Activities`) plus summary; it does not preserve auxiliary sheets in output.
 
 `src/logger.py`
 
@@ -195,7 +192,7 @@ Dependencies declared in `requirements.txt`:
 `config/config.json`
 
 - Runtime configuration.
-- Current values set `submit_form: true` and `submit_action: save_and_forward`.
+- Current values include `submit_form: true` and `take_success_screenshots`.
 - `headless` is present but overridden to `False` by `load_config()`.
 
 `data/input.xlsx`
@@ -352,13 +349,13 @@ Radio buttons:
 
 - Direct funding radio: `yes/1/true` clicks `#activityForCostlessFlagNoId`; otherwise clicks `#activityForCostlessFlagYesId`.
 - Shareable activity (if visible): `yes/true/1` clicks `input[name='shareable'][value='true']`; otherwise clicks `value='false'`.
-- Activity Output Training radio selection is handled by `TrainingActivityOutputHandler._select_radio()`.
+- Activity Output Training radio selection/opening is handled by `TrainingOutputHandler._open_modal()`.
 
 Checkboxes and multi-selects:
 
 - Custom checkbox panels are opened by `open_checkbox_panel()`.
 - It clicks a scoped `.selectBox`, waits briefly, may call JavaScript show functions, and may force visibility via CSS.
-- **Enhanced multiselect handler `select_multiselect_checkboxes()`**: Replaces legacy `tick_checkboxes()` for improved reliability:
+- **Enhanced multiselect handler `select_multiselect_checkboxes()`**:
   - Supports `|` or `,` as delimiter for multiple indicator labels.
   - Normalizes whitespace in visible label text for robust matching.
   - Validates that all requested indicators exist before attempting selection.
@@ -367,7 +364,6 @@ Checkboxes and multi-selects:
   - Implements fallback to JavaScript click if normal click fails.
   - Verifies each checkbox's final selected state.
   - Raises meaningful error if requested indicator not found or selection fails.
-- Legacy `tick_checkboxes()` retained for backward compatibility (comma-separated values, case-insensitive exact-or-substring matching).
 - Used for PDI indicators (`#maDivId`, `#checkboxes`) with new enhanced handler and targeted populace (`#checkboxess`) with new enhanced handler.
 
 Dynamic fields:
@@ -388,16 +384,16 @@ Activity Output:
 
 - Detection is implemented in `FormFiller._fill_activity_output()`.
 - Supported aliases map human-readable `Training/Capacity Building` and internal value `102` to `training`.
-- Current active support is restricted by `SUPPORTED_ACTIVITY_OUTPUTS = {"training"}`.
-- `TrainingActivityOutputHandler` validates Training Excel data, clicks `#outputActvityAstId102`, waits for the Training modal fields, fills the modal, submits via `validationTraining()`, waits for closure, and verifies the radio remains checked.
+- `TrainingOutputHandler` validates Training detail data, opens modal `#showTrainingDetailsPopup`, fills fields, submits via `validationTraining()`, and verifies retention.
 - Asset, Community Service, Beneficiaries, and VPRP Beneficiaries are intentionally not implemented in the active workflow yet.
 
 Buttons and Save/Forward:
 
 - If `submit_form` is false, no submit button is clicked.
 - If `submit_form` is true, `_check_page_errors()` runs first.
-- `submit_action == "save_and_forward"` clicks `#saveAndForwardId`.
-- Otherwise it clicks `#saveAsDraftId`.
+- Final Action from the current row controls submit:
+  - `Save and Forward` clicks `#saveAndForwardId`.
+  - `Save` clicks `#saveAsDraftId`.
 - Application number and transaction ID are scraped loosely but not written to the output workbook.
 
 ## 8. Activity Processing Workflow
@@ -549,7 +545,6 @@ Status/result tracking:
   - Operational Type (conditional), Operational Remarks (conditional)
 - Select2 activity name handling with search and selection.
 - **Enhanced multiselect checkbox handling**: `select_multiselect_checkboxes()` with pipe-or-comma delimiters, text normalization, validation, error reporting, and debug logging.
-- Legacy `tick_checkboxes()` retained for backward compatibility.
 - **Explicit dependency waits** between cascading dropdowns (Theme→Activity→Focus→Type, Start Year→Month, Activity Nature→Major/Minor, Flagship→Department).
 - Row-level retries with configurable retry count.
 - Session-expiry detection, pause, and resume.
@@ -557,17 +552,17 @@ Status/result tracking:
 - Per-row attempt screenshots.
 - Styled output workbook with all form and bot columns, formatted header, color-coded status rows.
 - Automation summary sheet with row counts and statistics.
-- Save as Draft and Save and Forward button selection via config.
-- Full inline Activity Output handling for Training/Capacity Building with modal validation and registration verification.
+- Save as Draft and Save and Forward button selection via row-level `Final Action`.
+- Activity Output handling for Training/Capacity Building via `Activity_Key` lookup in `Training` sheet and modal validation/registration verification.
 - Comprehensive logging (DEBUG to file, INFO to console) with field-specific diagnostic messages.
 
 ## 12. Partially Implemented Features
 
 - Activity Output automation: Training/Capacity Building is fully supported; other Activity Output forms (Asset, Community Service, Beneficiaries, VPRP) are intentionally not active yet.
-- Separate Activity Output sheets: templates exist, but code does not read/write them. Training data currently lives inline on each main activity row.
+- Separate Activity Output sheets are indexed by `ExcelReader`; only Training is currently implemented end-to-end.
 - Asset/service/beneficiary/VPRP Activity Output handling: not supported in the active Activity Output workflow yet.
 - Application number / transaction ID capture: values are attempted but not persisted to output.
-- Configurable option timeout/debug mode: config keys/documentation exist, but not all are fully wired into `form_filler.py`.
+- Option timeout uses module constants in `form_filler.py`; timeout values are not fully externalized to config.
 
 ## 13. Fixed Issues (July 7, 2026 Implementation)
 
@@ -614,24 +609,21 @@ Data/workflow risks:
 
 Operational risks:
 
-- Runtime artifacts are tracked in git despite `.gitignore`.
-- The root contains an unused literal directory named `{data,logs,screenshots,config,src}`.
+- Runtime artifacts should remain ignored by `.gitignore` to keep the source tree clean.
 
 ## 15. Dead, Legacy, and Unused Code
 
-- `tick_checkboxes()`: Retained for backward compatibility but deprecated in favor of `select_multiselect_checkboxes()`.
-- `asset_coverage_area`: Listed and width-configured but Asset is not fully implemented in Activity Output workflow.
-- `vprp_select_all`: Listed in `FORM_COLUMNS` but VPRP Beneficiaries not implemented yet.
+- `asset_coverage_area`: not part of the current normalized `FORM_COLUMNS`; Asset output is not implemented yet.
+- `vprp_select_all`: VPRP Beneficiaries output is not implemented yet.
 - `application_number` and `transaction_id` arguments in `ResultWriter.write_result()`: reserved but not written.
-- `debug_mode` config: not used by current code.
 - `data/input_ACTIVITY_OUTPUT_TEMPLATE.xlsx` and `data/input_template_with_activity_output.xlsx`: useful as templates but unused by current runtime.
 
 ## 16. Recommended Development Priorities
 
 P0 - Critical blockers
 
-- Decide whether the Activity Output architecture will remain inline or move to separate sheets; maintain consistency across reader/writer/filler.
-- Align `submit_form` default/documentation with safe operational expectations (currently defaults to true/save_and_forward).
+- Keep Activity Output architecture consistent across reader/writer/filler and extend implementations as needed.
+- Align `submit_form` default/documentation with safe operational expectations.
 
 P1 - Important reliability issues
 

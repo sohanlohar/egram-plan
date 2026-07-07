@@ -1,10 +1,10 @@
-# eGramSwaraj Activity Planning Bot (v3)
+# eGramSwaraj Activity Planning Bot (v5)
 
-Automated form filler for eGramSwaraj GPDP Activity Planning portal.
-Supports manual login, ENTER-to-start gate, session expiry recovery,
-and resume from last completed row.
-
----
+Automation for the eGramSwaraj Add Activity workflow with:
+- Manual login in visible Chromium
+- Resume-by-status row processing
+- Activity Output handler architecture (Training implemented)
+- Row-level Save / Save and Forward via Excel Final Action
 
 ## Setup
 
@@ -13,142 +13,89 @@ pip install -r requirements.txt
 playwright install chromium
 ```
 
----
-
-## Running
+## Run
 
 ```bash
 python src/main.py
 ```
 
-### Process specific rows only (0-indexed):
+Process specific rows (0-indexed):
+
 ```bash
 python src/main.py --rows 0,1,2
 ```
 
-### Custom config path:
+Custom config file:
+
 ```bash
 python src/main.py --config config/config.json
 ```
 
----
+## Runtime Flow
 
-## Workflow
+1. Browser opens at https://egramswaraj.gov.in.
+2. You log in manually and navigate to https://egramswaraj.gov.in/addactivity.htm.
+3. Bot waits for form readiness (#themeId), then ENTER gate starts processing.
+4. Bot iterates pending rows from Excel (rows not marked SUCCESS).
+5. For each row:
+   - Fills main form in dependency order
+   - Handles Activity Output for that row (if configured)
+   - Runs Save or Save and Forward based on row Final Action
+   - Writes SUCCESS/FAILED with timestamp and error to output workbook
+6. If session expires, bot pauses for re-login and resumes.
 
-```
-1. Bot launches Chromium and opens https://egramswaraj.gov.in
-2. YOU log in manually in the browser window
-3. YOU navigate to: https://egramswaraj.gov.in/addactivity.htm
-4. Bot detects the form and prints: "Press ENTER to start automation"
-5. YOU press ENTER
-6. Bot processes each Excel row:
-   - Navigates to addactivity.htm (reuses your session)
-   - Fills all fields respecting AJAX dependency chain
-   - Saves result to output.xlsx
-7. If session expires mid-run:
-   - Bot pauses and prints: "SESSION EXPIRED — please log in again"
-   - YOU log in and navigate back to addactivity.htm
-   - Bot resumes automatically from where it stopped
-```
-
----
-
-## Configuration (`config/config.json`)
+## Configuration (config/config.json)
 
 | Key | Description |
-|-----|-------------|
-| `retry_count` | Retries per row on failure (default 3) |
-| `submit_form` | `true` to click Save, `false` for dry-run (fill only) |
-| `selector_timeout_ms` | Max wait for any element (default 20000ms) |
-| `options_timeout_ms` | Max wait for AJAX dropdown to populate (default 20000ms) |
-| `take_success_screenshots` | Save screenshot after each successful fill |
-| `debug_mode` | Extra logging of all select states on failure |
+|---|---|
+| retry_count | Retries per row on failure |
+| page_timeout_ms | Page navigation timeout |
+| selector_timeout_ms | Default Playwright selector timeout |
+| input_file | Input workbook path |
+| output_file | Output workbook path |
+| log_file | Log file path |
+| screenshots_dir | Screenshot/HTML snapshot directory |
+| submit_form | true to submit, false for fill-only dry run |
+| take_success_screenshots | Capture success screenshot per row |
 
-> **Note:** `headless` is always forced to `false` — the browser must be visible
-> so you can log in. Do not set headless in config.
+Notes:
+- Browser is always forced to visible mode in code for manual login.
+- Save vs Save and Forward is controlled by each row Final Action value.
 
----
+## Excel and Sheets
 
-## AJAX Dependency Chain
+Supported activity sheet names (input):
+- Activities (preferred)
+- eGram Activity Data (legacy fallback)
 
-The form uses cascading AJAX dropdowns. The bot handles them in this exact order:
+Activity Output detail sheet mapping:
+- Training -> implemented
+- Community_Service -> mapped, not implemented
+- Beneficiaries -> mapped, not implemented
+- Asset -> mapped, not implemented
 
-```
-#themeId  (select theme)
-    ↓ onchange → AJAX loads activity names
-#themeActivityNameID  (Select2 widget — search by typing)
-    ↓ onchange → AJAX loads focus areas
-#focusAreaId  (select focus area)
-    ↓ onchange → AJAX loads activity types + PDI indicators
-#activityTypeListId  (select activity type)
-#maDivId checkboxes  (PDI indicators — click panel to open)
-#activityFor  (select "All / GEN / SC / ST")
-#checkboxess  (targeted populace checkboxes)
-#workTypId  (activity nature: Fresh / Maintenance / Upgradation)
-    ↓ onchange → conditionally shows major/minor head divs
-#submjrPrmptId  (major head — only if #subMajorHeadDivId visible)
-#minorPrmptId   (minor head — only if #subMinorHeadDivId visible)
-```
-
-Each step uses `wait_for_options()` which polls the dropdown until real options
-appear — never a blind timer.
-
----
-
-## Field Mapping
-
-| Excel Column | HTML Element | Type |
-|---|---|---|
-| `theme` | `#themeId` | select |
-| `activity_name` | `#themeActivityNameID` | Select2 |
-| `focus_area` | `#focusAreaId` | select (AJAX) |
-| `activity_type` | `#activityTypeListId` | select (AJAX) |
-| `activity_description` | `#activityDescId` | textarea |
-| `pdi_indicator` | `#maDivId` checkboxes | multi-checkbox |
-| `activity_for` | `#activityFor` | select |
-| `targeted_populace` | `#checkboxess` | multi-checkbox |
-| `activity_nature` | `#workTypId` | select (AJAX) |
-| `is_directly_funded_by_panchayat` | radio buttons | Yes/No |
-| `estimated_completion_year` | `#totDurYearId` | text |
-| `estimated_completion_month` | `#totDurMonId` | text |
-| `estimated_completion_days` | `#totDurDayId` | text |
-| `start_year` | `#startYearId` | select |
-| `start_month` | `#startMonthId` | select |
-| `expected_beneficiary_general` | `#expctdMenGenId` | text |
-| `expected_beneficiary_sc` | `#expctdMenScId` | text |
-| `expected_beneficiary_st` | `#expctdMenStId` | text |
-| `estimated_total_cost` | `#totalCostId` | text |
-
----
+Training lookup is by Activity_Key through the Training sheet.
 
 ## Output
 
-- `data/output.xlsx` — original data + status per row
-- `logs/automation.log` — full debug log
-- `screenshots/row_N_success.png` — after each successful fill
-- `screenshots/row_N_attemptK_error.png` — on failure
-- `screenshots/rowN_FIELD_error.html` — full page HTML snapshot on field failure
+Generated workbook: data/output.xlsx
 
-### Status columns added to output.xlsx:
+Status columns written per row:
+- status
+- processed_time
+- error_message
 
-| Column | Values |
-|---|---|
-| `status` | `SUCCESS` or `FAILED` |
-| `processed_time` | Timestamp |
-| `application_number` | From confirmation (if submit_form=true) |
-| `transaction_id` | From confirmation (if submit_form=true) |
-| `error_message` | Detailed error for FAILED rows |
+Application/transaction IDs may be read from UI during submit but are not persisted to output.
 
----
+## Testing
 
-## Resume Feature
+```bash
+python -m unittest discover -s tests -v
+```
 
-Rows already marked `SUCCESS` in output.xlsx are skipped automatically.
-If the run stops at row 12, re-run — it picks up from row 13.
-
----
-
-## Dry Run (default)
-
-By default `submit_form` is `false` — the bot fills all fields but does NOT
-click Save. Verify the filled form visually before setting `submit_form: true`.
+Current architecture tests cover:
+- Activity_Key validation and normalization
+- Output type normalization
+- Registry behavior
+- Training record validation
+- Output sheet lookup constraints

@@ -82,10 +82,3 @@ def get_output_definition(value: str) -> ActivityOutputDefinition | None:
     if not canonical:
         return None
     return ACTIVITY_OUTPUT_DEFINITIONS.get(canonical)
-
-
-def normalize_output_visible_name(value: str) -> str:
-    definition = get_output_definition(value)
-    if not definition:
-        return ""
-    return definition.visible_name

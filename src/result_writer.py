@@ -11,7 +11,6 @@ from openpyxl.utils import get_column_letter
 import pandas as pd
 
 from excel_reader import (
-    FORM_COLUMNS,
     BOT_COLUMNS,
     ALL_COLUMNS,
     ACTIVITY_SHEET_NAME,
@@ -233,7 +232,6 @@ class ResultWriter:
         ws2.column_dimensions["A"].width = 24
         ws2.column_dimensions["B"].width = 18
 
-        headers = [("Metric", "Value")]
         rows = [
             ("Total Records",       str(total)),
             ("Successful",          str(success)),

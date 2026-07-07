@@ -31,7 +31,6 @@ from pathlib import Path
 
 from playwright.sync_api import (
     sync_playwright, Browser, BrowserContext, Page,
-    TimeoutError as PlaywrightTimeout,
 )
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -214,7 +213,7 @@ def run(config: dict, filter_rows: list[int] | None = None) -> None:
                         _handle_expiry(page, log, row_index)
                         _goto_form(page, config.get("page_timeout_ms", 30_000))
 
-                    result    = filler.fill_form(record, row_index)
+                    filler.fill_form(record, row_index)
                     succeeded = True
 
                     if config.get("take_success_screenshots", False):

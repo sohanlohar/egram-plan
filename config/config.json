@@ -8,7 +8,5 @@
   "log_file": "logs/automation.log",
   "screenshots_dir": "screenshots",
   "submit_form": true,
-  "submit_action": "save_and_forward",
-  "take_success_screenshots": false,
-  "debug_mode": false
+  "take_success_screenshots": false
 }
