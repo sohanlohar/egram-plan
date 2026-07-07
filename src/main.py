@@ -191,6 +191,7 @@ def run(config: dict, filter_rows: list[int] | None = None) -> None:
             page=page,
             config=config,
             screenshots_dir=config.get("screenshots_dir", "screenshots"),
+            output_repository=reader,
         )
 
         # ── Process rows ──────────────────────────────────────────────────────
@@ -240,7 +241,7 @@ def run(config: dict, filter_rows: list[int] | None = None) -> None:
                         continue   # retry without counting this as an attempt
 
                     if attempt < config.get("retry_count", 3):
-                        time.sleep(RETRY_DELAY)
+                        page.wait_for_timeout(RETRY_DELAY * 1000)
 
             if not succeeded:
                 fail_count += 1

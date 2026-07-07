@@ -10,7 +10,14 @@ from openpyxl.styles import (
 from openpyxl.utils import get_column_letter
 import pandas as pd
 
-from excel_reader import FORM_COLUMNS, BOT_COLUMNS, ALL_COLUMNS, SHEET_NAME
+from excel_reader import (
+    FORM_COLUMNS,
+    BOT_COLUMNS,
+    ALL_COLUMNS,
+    ACTIVITY_SHEET_NAME,
+    LEGACY_ACTIVITY_SHEET_NAME,
+    normalize_header,
+)
 
 
 # ── Styling constants (match the input template exactly) ─────────────────────
@@ -30,6 +37,7 @@ SUMMARY_HDR_BG = "ED7D31"       # orange — matches Valid Options sheet
 
 COL_WIDTHS = {
     "theme":                         40,
+    "activity_key":                  14,
     "activity_name":                 45,
     "focus_area":                    32,
     "activity_type":                 20,
@@ -47,7 +55,19 @@ COL_WIDTHS = {
     "expected_beneficiary_general":  12,
     "expected_beneficiary_sc":        9,
     "expected_beneficiary_st":        9,
+    "indicative_unit_cost":          14,
+    "total_indicative_cost":         16,
+    "expected_results":              40,
+    "flagship_scheme":               35,
+    "select_supported_department":   24,
     "estimated_total_cost":          16,
+    "shareable":                     12,
+    "major_head_choice":             24,
+    "minor_head_choice":             24,
+    "operation_type":                18,
+    "operation_remarks":             30,
+    "activity_output_type":          22,
+    "final_action":                  18,
     "status":                        12,
     "processed_time":                20,
     "error_message":                 60,
@@ -98,19 +118,32 @@ class ResultWriter:
         self.input_path  = Path(input_path)
         self.output_path = Path(output_path)
         self._df: pd.DataFrame | None = None
+        self._sheet_name: str | None = None
+
+    def _resolve_sheet_name(self, workbook_path: Path) -> str:
+        with pd.ExcelFile(workbook_path) as xls:
+            if ACTIVITY_SHEET_NAME in xls.sheet_names:
+                return ACTIVITY_SHEET_NAME
+            if LEGACY_ACTIVITY_SHEET_NAME in xls.sheet_names:
+                return LEGACY_ACTIVITY_SHEET_NAME
+        raise ValueError(
+            f"Activities sheet not found in {workbook_path}. "
+            f"Expected '{ACTIVITY_SHEET_NAME}'"
+        )
 
     # ── In-memory DataFrame ───────────────────────────────────────────────────
 
     def _get_df(self) -> pd.DataFrame:
         if self._df is None:
+            self._sheet_name = self._resolve_sheet_name(self.input_path)
             # Base the output on the input workbook so the actual form values are preserved.
             base_df = pd.read_excel(
                 self.input_path,
-                sheet_name=SHEET_NAME,
+                sheet_name=self._sheet_name,
                 dtype=str,
                 keep_default_na=False,
             )
-            base_df.columns = [c.strip().lower().replace(" ", "_") for c in base_df.columns]
+            base_df.columns = [normalize_header(c) for c in base_df.columns]
             base_df = base_df[[c for c in base_df.columns if c in ALL_COLUMNS]]
             for col in ALL_COLUMNS:
                 if col not in base_df.columns:
@@ -120,13 +153,14 @@ class ResultWriter:
             # If an output workbook already exists, preserve any bot status columns from it.
             if self.output_path.exists():
                 try:
+                    out_sheet = self._resolve_sheet_name(self.output_path)
                     prev_df = pd.read_excel(
                         self.output_path,
-                        sheet_name=SHEET_NAME,
+                        sheet_name=out_sheet,
                         dtype=str,
                         keep_default_na=False,
                     )
-                    prev_df.columns = [c.strip().lower().replace(" ", "_") for c in prev_df.columns]
+                    prev_df.columns = [normalize_header(c) for c in prev_df.columns]
                     prev_df = prev_df[[c for c in prev_df.columns if c in ALL_COLUMNS]]
                     for col in ALL_COLUMNS:
                         if col not in prev_df.columns:
@@ -166,7 +200,7 @@ class ResultWriter:
 
         wb = openpyxl.Workbook()
         ws = wb.active
-        ws.title = SHEET_NAME
+        ws.title = ACTIVITY_SHEET_NAME
         ws.row_dimensions[1].height = HDR_HEIGHT
 
         # Header row
