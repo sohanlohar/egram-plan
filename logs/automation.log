@@ -142,3 +142,288 @@
 2026-07-07 17:42:29 | WARNING  | row=0 non-fatal field issues: [select_supported_department] Supported Department option not found: Department of Food & Public Distribution
 2026-07-07 17:42:29 | INFO     | row 0 SUCCESS (attempt 1)
 2026-07-07 17:42:30 | INFO     | DONE 80s total=1 success=1 failed=0 rate=100.0%
+2026-07-07 17:50:00 | INFO     | ============================================================
+2026-07-07 17:50:00 | INFO     | eGramSwaraj Bot START (v5)
+2026-07-07 17:50:00 | INFO     | ============================================================
+2026-07-07 17:50:00 | INFO     | rows: total=1 done=0 pending=1
+2026-07-07 17:50:09 | INFO     | Waiting for manual login -> addactivity.htm ...
+2026-07-07 17:51:02 | INFO     | Form ready at: https://egramswaraj.gov.in/addactivity.htm
+2026-07-07 17:51:07 | INFO     | -- row 0 | Awareness camp on behavioural issues of Mission LiFE
+2026-07-07 17:51:11 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-07-07 17:51:12 | DEBUG    | row=0: watchId spinner finished, checkboxes should be loaded
+2026-07-07 17:51:12 | DEBUG    | row=0 pdi: #checkboxes not visible, attempting to open
+2026-07-07 17:51:12 | DEBUG    | row=0 pdi: requested (1): ['Neonatal mortality rate (per 1,000 live births)']
+2026-07-07 17:51:12 | DEBUG    | row=0 pdi: found 12 checkbox inputs in panel
+2026-07-07 17:51:12 | DEBUG    | row=0 pdi: skipping invalid checkbox: value=0 label='None'
+2026-07-07 17:51:12 | DEBUG    | row=0 pdi: available checkbox id=missionAdId1 value=218 label='Whether the nurseries created in the school in the GP' enabled=True checked=False
+2026-07-07 17:51:12 | DEBUG    | row=0 pdi: available checkbox id=missionAdId2 value=45 label='Neonatal mortality rate (per 1,000 live births)' enabled=True checked=False
+2026-07-07 17:51:12 | DEBUG    | row=0 pdi: available checkbox id=missionAdId3 value=200 label='Percentage of household using clean cooking fuel' enabled=True checked=False
+2026-07-07 17:51:12 | DEBUG    | row=0 pdi: available checkbox id=missionAdId4 value=540 label='Proportion of women (aged 30-49) screened under the Non Communicable Disease (NCD) programme for cervical/breast cancer' enabled=True checked=False
+2026-07-07 17:51:12 | DEBUG    | row=0 pdi: available checkbox id=missionAdId5 value=60 label='Total GP spending on Health to the total expenditure' enabled=True checked=False
+2026-07-07 17:51:12 | DEBUG    | row=0 pdi: skipping invalid checkbox: value=0 label='None'
+2026-07-07 17:51:12 | DEBUG    | row=0 pdi: available checkbox id=missionAdId1 value=218 label='Whether the nurseries created in the school in the GP' enabled=True checked=False
+2026-07-07 17:51:12 | DEBUG    | row=0 pdi: duplicate label instance ignored to preserve canonical checkbox: 'Whether the nurseries created in the school in the GP' id=missionAdId1
+2026-07-07 17:51:12 | DEBUG    | row=0 pdi: available checkbox id=missionAdId2 value=45 label='Neonatal mortality rate (per 1,000 live births)' enabled=True checked=False
+2026-07-07 17:51:12 | DEBUG    | row=0 pdi: duplicate label instance ignored to preserve canonical checkbox: 'Neonatal mortality rate (per 1,000 live births)' id=missionAdId2
+2026-07-07 17:51:12 | DEBUG    | row=0 pdi: available checkbox id=missionAdId3 value=200 label='Percentage of household using clean cooking fuel' enabled=True checked=False
+2026-07-07 17:51:12 | DEBUG    | row=0 pdi: duplicate label instance ignored to preserve canonical checkbox: 'Percentage of household using clean cooking fuel' id=missionAdId3
+2026-07-07 17:51:12 | DEBUG    | row=0 pdi: available checkbox id=missionAdId4 value=540 label='Proportion of women (aged 30-49) screened under the Non Communicable Disease (NCD) programme for cervical/breast cancer' enabled=True checked=False
+2026-07-07 17:51:12 | DEBUG    | row=0 pdi: duplicate label instance ignored to preserve canonical checkbox: 'Proportion of women (aged 30-49) screened under the Non Communicable Disease (NCD) programme for cervical/breast cancer' id=missionAdId4
+2026-07-07 17:51:12 | DEBUG    | row=0 pdi: available checkbox id=missionAdId5 value=60 label='Total GP spending on Health to the total expenditure' enabled=True checked=False
+2026-07-07 17:51:12 | DEBUG    | row=0 pdi: duplicate label instance ignored to preserve canonical checkbox: 'Total GP spending on Health to the total expenditure' id=missionAdId5
+2026-07-07 17:51:12 | DEBUG    | row=0 pdi: clicking checkbox id=missionAdId2 value=45 label='Neonatal mortality rate (per 1,000 live births)'
+2026-07-07 17:51:13 | DEBUG    | row=0 pdi: after click - is_selected=True dom_checked=True for 'Neonatal mortality rate (per 1,000 live births)'
+2026-07-07 17:51:13 | DEBUG    | row=0 pdi: total selected indicators: 1
+2026-07-07 17:51:13 | INFO     | row=0 pdi: selection complete
+2026-07-07 17:51:13 | DEBUG    | row=0 pdi: duplicate label counts={'whether the nurseries created in the school in the gp': 2, 'neonatal mortality rate (per 1,000 live births)': 2, 'percentage of household using clean cooking fuel': 2, 'proportion of women (aged 30-49) screened under the non communicable disease (ncd) programme for cervical/breast cancer': 2, 'total gp spending on health to the total expenditure': 2}
+2026-07-07 17:51:13 | DEBUG    | row=0 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': False, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': True}, {'checked': False, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': False}], 'missionAdId1': [{'checked': False, 'value': '218', 'name': 'missionAntodayaDet[1].maCode', 'disabled': False}, {'checked': False, 'value': '218', 'name': 'missionAntodayaDet[1].maCode', 'disabled': False}], 'missionAdId2': [{'checked': True, 'value': '45', 'name': 'missionAntodayaDet[2].maCode', 'disabled': False}, {'checked': False, 'value': '45', 'name': 'missionAntodayaDet[2].maCode', 'disabled': False}], 'missionAdId3': [{'checked': False, 'value': '200', 'name': 'missionAntodayaDet[3].maCode', 'disabled': False}, {'checked': False, 'value': '200', 'name': 'missionAntodayaDet[3].maCode', 'disabled': False}], 'missionAdId4': [{'checked': False, 'value': '540', 'name': 'missionAntodayaDet[4].maCode', 'disabled': False}, {'checked': False, 'value': '540', 'name': 'missionAntodayaDet[4].maCode', 'disabled': False}], 'missionAdId5': [{'checked': False, 'value': '60', 'name': 'missionAntodayaDet[5].maCode', 'disabled': False}, {'checked': False, 'value': '60', 'name': 'missionAntodayaDet[5].maCode', 'disabled': False}]}, 'visibleError': False}
+2026-07-07 17:51:13 | DEBUG    | row=0 targeted_populace: requested indicators (1): ['All']
+2026-07-07 17:51:13 | DEBUG    | row=0 targeted_populace: found 1 total labels in panel
+2026-07-07 17:51:13 | DEBUG    | row=0 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-07-07 17:51:13 | DEBUG    | row=0 targeted_populace: clicking checkbox: 'All'
+2026-07-07 17:51:13 | DEBUG    | row=0 targeted_populace: checkbox selected successfully: 'All'
+2026-07-07 17:51:14 | DEBUG    | start_month: requested raw='March' normalized='march' selector=#startMonthId
+2026-07-07 17:51:14 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-07-07 17:51:14 | DEBUG    | start_month: options before select=['1:January', '2:February', '3:March']
+2026-07-07 17:51:14 | DEBUG    | start_month: matched option text='March' value='3'
+2026-07-07 17:51:14 | DEBUG    | start_month: value immediately after select_option='3'
+2026-07-07 17:51:14 | DEBUG    | start_month: value after events='3' selected_option='3:March'
+2026-07-07 17:51:14 | DEBUG    | start_month: final confirmed value='3' selected_option='3:March'
+2026-07-07 17:51:14 | DEBUG    | row=0: total indicative cost calculated as: 300 (excel: 35)
+2026-07-07 17:51:14 | WARNING  | row=0: total indicative cost mismatch ignored because portal recalculates from live inputs (excel=35, portal=300)
+2026-07-07 17:51:14 | DEBUG    | row=0: Supported Department - requesting: 'Department of Food & Public Distribution'
+2026-07-07 17:51:14 | DEBUG    | row=0: Waiting for supported_department options to populate
+2026-07-07 17:51:14 | DEBUG    | row=0: supported_department options available: 1 options
+2026-07-07 17:51:14 | DEBUG    | row=0: supported_department options=[{'value': '5', 'text': 'Ministry of MSME'}]
+2026-07-07 17:51:14 | WARNING  | row=0: supported_department option not found: Supported Department option not found: Department of Food & Public Distribution
+2026-07-07 17:51:14 | WARNING  | row=0 field=select_supported_department non-fatal Supported Department option not found: Department of Food & Public Distribution
+2026-07-07 17:51:14 | WARNING  | NON_FATAL | row=0 field=select_supported_department | Supported Department option not found: Department of Food & Public Distribution
+2026-07-07 17:51:15 | DEBUG    | row=0: estimated total cost section not visible
+2026-07-07 17:51:15 | DEBUG    | row=0 activity_output: requested='Training/Capacity Building' normalized='training' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Beneficiaries'}, {'id': 'outputActvityAstId110', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'VPRP Beneficiaries'}]
+2026-07-07 17:51:15 | DEBUG    | [ACT-0001] pre_training_validation_state={'checked': [{'id': 'missionAdId2', 'value': '45', 'name': 'missionAntodayaDet[2].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-07-07 17:51:15 | INFO     | [ACT-0001] Activity Output detail record found
+2026-07-07 17:51:15 | INFO     | [ACT-0001] Activity Output: Training/Capacity Building
+2026-07-07 17:51:15 | INFO     | [ACT-0001] Handler: TrainingOutputHandler
+2026-07-07 17:51:15 | INFO     | [ACT-0001] Detail Sheet: Training
+2026-07-07 17:51:15 | INFO     | [ACT-0001] Radio: outputActvityAstId102
+2026-07-07 17:51:15 | INFO     | [ACT-0001] Modal opened: showTrainingDetailsPopup
+2026-07-07 17:51:20 | WARNING  | row=0 activity_output_popup Training fields verification failed for Activity_Key ACT-0001: Training Category
+2026-07-07 17:51:20 | ERROR    | FAIL | row=0 field=activity_output | Training fields verification failed for Activity_Key ACT-0001: Training Category
+2026-07-07 17:51:20 | WARNING  | row 0 attempt 1 FAIL: [activity_output] Training fields verification failed for Activity_Key ACT-0001: Training Category
+2026-07-07 17:51:26 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-07-07 17:51:26 | DEBUG    | row=0: watchId spinner finished, checkboxes should be loaded
+2026-07-07 17:51:27 | DEBUG    | row=0 pdi: #checkboxes not visible, attempting to open
+2026-07-07 17:51:27 | DEBUG    | row=0 pdi: requested (1): ['Neonatal mortality rate (per 1,000 live births)']
+2026-07-07 17:51:27 | DEBUG    | row=0 pdi: found 12 checkbox inputs in panel
+2026-07-07 17:51:27 | DEBUG    | row=0 pdi: skipping invalid checkbox: value=0 label='None'
+2026-07-07 17:51:27 | DEBUG    | row=0 pdi: available checkbox id=missionAdId1 value=218 label='Whether the nurseries created in the school in the GP' enabled=True checked=False
+2026-07-07 17:51:27 | DEBUG    | row=0 pdi: available checkbox id=missionAdId2 value=45 label='Neonatal mortality rate (per 1,000 live births)' enabled=True checked=False
+2026-07-07 17:51:27 | DEBUG    | row=0 pdi: available checkbox id=missionAdId3 value=200 label='Percentage of household using clean cooking fuel' enabled=True checked=False
+2026-07-07 17:51:27 | DEBUG    | row=0 pdi: available checkbox id=missionAdId4 value=540 label='Proportion of women (aged 30-49) screened under the Non Communicable Disease (NCD) programme for cervical/breast cancer' enabled=True checked=False
+2026-07-07 17:51:27 | DEBUG    | row=0 pdi: available checkbox id=missionAdId5 value=60 label='Total GP spending on Health to the total expenditure' enabled=True checked=False
+2026-07-07 17:51:27 | DEBUG    | row=0 pdi: skipping invalid checkbox: value=0 label='None'
+2026-07-07 17:51:27 | DEBUG    | row=0 pdi: available checkbox id=missionAdId1 value=218 label='Whether the nurseries created in the school in the GP' enabled=True checked=False
+2026-07-07 17:51:27 | DEBUG    | row=0 pdi: duplicate label instance ignored to preserve canonical checkbox: 'Whether the nurseries created in the school in the GP' id=missionAdId1
+2026-07-07 17:51:27 | DEBUG    | row=0 pdi: available checkbox id=missionAdId2 value=45 label='Neonatal mortality rate (per 1,000 live births)' enabled=True checked=False
+2026-07-07 17:51:27 | DEBUG    | row=0 pdi: duplicate label instance ignored to preserve canonical checkbox: 'Neonatal mortality rate (per 1,000 live births)' id=missionAdId2
+2026-07-07 17:51:27 | DEBUG    | row=0 pdi: available checkbox id=missionAdId3 value=200 label='Percentage of household using clean cooking fuel' enabled=True checked=False
+2026-07-07 17:51:27 | DEBUG    | row=0 pdi: duplicate label instance ignored to preserve canonical checkbox: 'Percentage of household using clean cooking fuel' id=missionAdId3
+2026-07-07 17:51:27 | DEBUG    | row=0 pdi: available checkbox id=missionAdId4 value=540 label='Proportion of women (aged 30-49) screened under the Non Communicable Disease (NCD) programme for cervical/breast cancer' enabled=True checked=False
+2026-07-07 17:51:27 | DEBUG    | row=0 pdi: duplicate label instance ignored to preserve canonical checkbox: 'Proportion of women (aged 30-49) screened under the Non Communicable Disease (NCD) programme for cervical/breast cancer' id=missionAdId4
+2026-07-07 17:51:27 | DEBUG    | row=0 pdi: available checkbox id=missionAdId5 value=60 label='Total GP spending on Health to the total expenditure' enabled=True checked=False
+2026-07-07 17:51:27 | DEBUG    | row=0 pdi: duplicate label instance ignored to preserve canonical checkbox: 'Total GP spending on Health to the total expenditure' id=missionAdId5
+2026-07-07 17:51:27 | DEBUG    | row=0 pdi: clicking checkbox id=missionAdId2 value=45 label='Neonatal mortality rate (per 1,000 live births)'
+2026-07-07 17:51:28 | DEBUG    | row=0 pdi: after click - is_selected=True dom_checked=True for 'Neonatal mortality rate (per 1,000 live births)'
+2026-07-07 17:51:28 | DEBUG    | row=0 pdi: total selected indicators: 1
+2026-07-07 17:51:28 | INFO     | row=0 pdi: selection complete
+2026-07-07 17:51:28 | DEBUG    | row=0 pdi: duplicate label counts={'whether the nurseries created in the school in the gp': 2, 'neonatal mortality rate (per 1,000 live births)': 2, 'percentage of household using clean cooking fuel': 2, 'proportion of women (aged 30-49) screened under the non communicable disease (ncd) programme for cervical/breast cancer': 2, 'total gp spending on health to the total expenditure': 2}
+2026-07-07 17:51:28 | DEBUG    | row=0 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': False, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': True}, {'checked': False, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': False}], 'missionAdId1': [{'checked': False, 'value': '218', 'name': 'missionAntodayaDet[1].maCode', 'disabled': False}, {'checked': False, 'value': '218', 'name': 'missionAntodayaDet[1].maCode', 'disabled': False}], 'missionAdId2': [{'checked': True, 'value': '45', 'name': 'missionAntodayaDet[2].maCode', 'disabled': False}, {'checked': False, 'value': '45', 'name': 'missionAntodayaDet[2].maCode', 'disabled': False}], 'missionAdId3': [{'checked': False, 'value': '200', 'name': 'missionAntodayaDet[3].maCode', 'disabled': False}, {'checked': False, 'value': '200', 'name': 'missionAntodayaDet[3].maCode', 'disabled': False}], 'missionAdId4': [{'checked': False, 'value': '540', 'name': 'missionAntodayaDet[4].maCode', 'disabled': False}, {'checked': False, 'value': '540', 'name': 'missionAntodayaDet[4].maCode', 'disabled': False}], 'missionAdId5': [{'checked': False, 'value': '60', 'name': 'missionAntodayaDet[5].maCode', 'disabled': False}, {'checked': False, 'value': '60', 'name': 'missionAntodayaDet[5].maCode', 'disabled': False}]}, 'visibleError': False}
+2026-07-07 17:51:28 | DEBUG    | row=0 targeted_populace: requested indicators (1): ['All']
+2026-07-07 17:51:28 | DEBUG    | row=0 targeted_populace: found 1 total labels in panel
+2026-07-07 17:51:28 | DEBUG    | row=0 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-07-07 17:51:28 | DEBUG    | row=0 targeted_populace: clicking checkbox: 'All'
+2026-07-07 17:51:28 | DEBUG    | row=0 targeted_populace: checkbox selected successfully: 'All'
+2026-07-07 17:51:29 | DEBUG    | start_month: requested raw='March' normalized='march' selector=#startMonthId
+2026-07-07 17:51:29 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-07-07 17:51:29 | DEBUG    | start_month: options before select=['1:January', '2:February', '3:March']
+2026-07-07 17:51:29 | DEBUG    | start_month: matched option text='March' value='3'
+2026-07-07 17:51:29 | DEBUG    | start_month: value immediately after select_option='3'
+2026-07-07 17:51:29 | DEBUG    | start_month: value after events='3' selected_option='3:March'
+2026-07-07 17:51:29 | DEBUG    | start_month: final confirmed value='3' selected_option='3:March'
+2026-07-07 17:51:29 | DEBUG    | row=0: total indicative cost calculated as: 300 (excel: 35)
+2026-07-07 17:51:29 | WARNING  | row=0: total indicative cost mismatch ignored because portal recalculates from live inputs (excel=35, portal=300)
+2026-07-07 17:51:29 | DEBUG    | row=0: Supported Department - requesting: 'Department of Food & Public Distribution'
+2026-07-07 17:51:29 | DEBUG    | row=0: Waiting for supported_department options to populate
+2026-07-07 17:51:29 | DEBUG    | row=0: supported_department options available: 1 options
+2026-07-07 17:51:29 | DEBUG    | row=0: supported_department options=[{'value': '5', 'text': 'Ministry of MSME'}]
+2026-07-07 17:51:29 | WARNING  | row=0: supported_department option not found: Supported Department option not found: Department of Food & Public Distribution
+2026-07-07 17:51:29 | WARNING  | row=0 field=select_supported_department non-fatal Supported Department option not found: Department of Food & Public Distribution
+2026-07-07 17:51:29 | WARNING  | NON_FATAL | row=0 field=select_supported_department | Supported Department option not found: Department of Food & Public Distribution
+2026-07-07 17:51:29 | DEBUG    | row=0: estimated total cost section not visible
+2026-07-07 17:51:30 | DEBUG    | row=0 activity_output: requested='Training/Capacity Building' normalized='training' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Beneficiaries'}, {'id': 'outputActvityAstId110', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'VPRP Beneficiaries'}]
+2026-07-07 17:51:30 | DEBUG    | [ACT-0001] pre_training_validation_state={'checked': [{'id': 'missionAdId2', 'value': '45', 'name': 'missionAntodayaDet[2].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-07-07 17:51:30 | INFO     | [ACT-0001] Activity Output detail record found
+2026-07-07 17:51:30 | INFO     | [ACT-0001] Activity Output: Training/Capacity Building
+2026-07-07 17:51:30 | INFO     | [ACT-0001] Handler: TrainingOutputHandler
+2026-07-07 17:51:30 | INFO     | [ACT-0001] Detail Sheet: Training
+2026-07-07 17:51:30 | INFO     | [ACT-0001] Radio: outputActvityAstId102
+2026-07-07 17:51:30 | INFO     | [ACT-0001] Modal opened: showTrainingDetailsPopup
+2026-07-07 17:51:30 | INFO     | [ACT-0001] Training fields verified: 5/5
+2026-07-07 17:51:30 | INFO     | [ACT-0001] Training popup submitted successfully
+2026-07-07 17:51:31 | INFO     | [ACT-0001] Final Action: Save and Forward
+2026-07-07 17:51:33 | WARNING  | browser_pageerror: Cannot read properties of null (reading 'addEventListener')
+2026-07-07 17:51:35 | WARNING  | row=0 non-fatal field issues: [select_supported_department] Supported Department option not found: Department of Food & Public Distribution
+2026-07-07 17:51:35 | INFO     | row 0 SUCCESS (attempt 2)
+2026-07-07 17:51:35 | INFO     | DONE 94s total=1 success=1 failed=0 rate=100.0%
+2026-07-09 12:07:18 | INFO     | ============================================================
+2026-07-09 12:07:18 | INFO     | eGramSwaraj Bot START (v5)
+2026-07-09 12:07:18 | INFO     | ============================================================
+2026-07-09 12:07:19 | INFO     | rows: total=1 done=0 pending=1
+2026-07-09 12:07:31 | INFO     | ============================================================
+2026-07-09 12:07:31 | INFO     | eGramSwaraj Bot START (v5)
+2026-07-09 12:07:31 | INFO     | ============================================================
+2026-07-09 12:07:31 | INFO     | rows: total=1 done=0 pending=1
+2026-07-09 12:09:14 | INFO     | ============================================================
+2026-07-09 12:09:14 | INFO     | eGramSwaraj Bot START (v5)
+2026-07-09 12:09:14 | INFO     | ============================================================
+2026-07-09 12:09:14 | INFO     | rows: total=1 done=0 pending=1
+2026-07-09 12:09:30 | INFO     | Waiting for manual login -> addactivity.htm ...
+2026-07-09 12:10:28 | INFO     | Form ready at: https://egramswaraj.gov.in/addactivity.htm
+2026-07-09 12:10:35 | INFO     | -- row 0 | Awareness camp on behavioural issues of Mission LiFE
+2026-07-09 12:10:39 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-07-09 12:10:39 | DEBUG    | row=0: watchId spinner finished, checkboxes should be loaded
+2026-07-09 12:10:39 | DEBUG    | row=0 pdi: #checkboxes not visible, attempting to open
+2026-07-09 12:10:39 | DEBUG    | row=0 pdi: requested (1): ['Neonatal mortality rate (per 1,000 live births)']
+2026-07-09 12:10:39 | DEBUG    | row=0 pdi: found 12 checkbox inputs in panel
+2026-07-09 12:10:39 | DEBUG    | row=0 pdi: skipping invalid checkbox: value=0 label='None'
+2026-07-09 12:10:39 | DEBUG    | row=0 pdi: available checkbox id=missionAdId1 value=218 label='Whether the nurseries created in the school in the GP' enabled=True checked=False
+2026-07-09 12:10:39 | DEBUG    | row=0 pdi: available checkbox id=missionAdId2 value=45 label='Neonatal mortality rate (per 1,000 live births)' enabled=True checked=False
+2026-07-09 12:10:40 | DEBUG    | row=0 pdi: available checkbox id=missionAdId3 value=200 label='Percentage of household using clean cooking fuel' enabled=True checked=False
+2026-07-09 12:10:40 | DEBUG    | row=0 pdi: available checkbox id=missionAdId4 value=540 label='Proportion of women (aged 30-49) screened under the Non Communicable Disease (NCD) programme for cervical/breast cancer' enabled=True checked=False
+2026-07-09 12:10:40 | DEBUG    | row=0 pdi: available checkbox id=missionAdId5 value=60 label='Total GP spending on Health to the total expenditure' enabled=True checked=False
+2026-07-09 12:10:40 | DEBUG    | row=0 pdi: skipping invalid checkbox: value=0 label='None'
+2026-07-09 12:10:40 | DEBUG    | row=0 pdi: available checkbox id=missionAdId1 value=218 label='Whether the nurseries created in the school in the GP' enabled=True checked=False
+2026-07-09 12:10:40 | DEBUG    | row=0 pdi: duplicate label instance ignored to preserve canonical checkbox: 'Whether the nurseries created in the school in the GP' id=missionAdId1
+2026-07-09 12:10:40 | DEBUG    | row=0 pdi: available checkbox id=missionAdId2 value=45 label='Neonatal mortality rate (per 1,000 live births)' enabled=True checked=False
+2026-07-09 12:10:40 | DEBUG    | row=0 pdi: duplicate label instance ignored to preserve canonical checkbox: 'Neonatal mortality rate (per 1,000 live births)' id=missionAdId2
+2026-07-09 12:10:40 | DEBUG    | row=0 pdi: available checkbox id=missionAdId3 value=200 label='Percentage of household using clean cooking fuel' enabled=True checked=False
+2026-07-09 12:10:40 | DEBUG    | row=0 pdi: duplicate label instance ignored to preserve canonical checkbox: 'Percentage of household using clean cooking fuel' id=missionAdId3
+2026-07-09 12:10:40 | DEBUG    | row=0 pdi: available checkbox id=missionAdId4 value=540 label='Proportion of women (aged 30-49) screened under the Non Communicable Disease (NCD) programme for cervical/breast cancer' enabled=True checked=False
+2026-07-09 12:10:40 | DEBUG    | row=0 pdi: duplicate label instance ignored to preserve canonical checkbox: 'Proportion of women (aged 30-49) screened under the Non Communicable Disease (NCD) programme for cervical/breast cancer' id=missionAdId4
+2026-07-09 12:10:40 | DEBUG    | row=0 pdi: available checkbox id=missionAdId5 value=60 label='Total GP spending on Health to the total expenditure' enabled=True checked=False
+2026-07-09 12:10:40 | DEBUG    | row=0 pdi: duplicate label instance ignored to preserve canonical checkbox: 'Total GP spending on Health to the total expenditure' id=missionAdId5
+2026-07-09 12:10:40 | DEBUG    | row=0 pdi: clicking checkbox id=missionAdId2 value=45 label='Neonatal mortality rate (per 1,000 live births)'
+2026-07-09 12:10:40 | DEBUG    | row=0 pdi: after click - is_selected=True dom_checked=True for 'Neonatal mortality rate (per 1,000 live births)'
+2026-07-09 12:10:40 | DEBUG    | row=0 pdi: total selected indicators: 1
+2026-07-09 12:10:40 | INFO     | row=0 pdi: selection complete
+2026-07-09 12:10:40 | DEBUG    | row=0 pdi: duplicate label counts={'whether the nurseries created in the school in the gp': 2, 'neonatal mortality rate (per 1,000 live births)': 2, 'percentage of household using clean cooking fuel': 2, 'proportion of women (aged 30-49) screened under the non communicable disease (ncd) programme for cervical/breast cancer': 2, 'total gp spending on health to the total expenditure': 2}
+2026-07-09 12:10:40 | DEBUG    | row=0 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': False, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': True}, {'checked': False, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': False}], 'missionAdId1': [{'checked': False, 'value': '218', 'name': 'missionAntodayaDet[1].maCode', 'disabled': False}, {'checked': False, 'value': '218', 'name': 'missionAntodayaDet[1].maCode', 'disabled': False}], 'missionAdId2': [{'checked': True, 'value': '45', 'name': 'missionAntodayaDet[2].maCode', 'disabled': False}, {'checked': False, 'value': '45', 'name': 'missionAntodayaDet[2].maCode', 'disabled': False}], 'missionAdId3': [{'checked': False, 'value': '200', 'name': 'missionAntodayaDet[3].maCode', 'disabled': False}, {'checked': False, 'value': '200', 'name': 'missionAntodayaDet[3].maCode', 'disabled': False}], 'missionAdId4': [{'checked': False, 'value': '540', 'name': 'missionAntodayaDet[4].maCode', 'disabled': False}, {'checked': False, 'value': '540', 'name': 'missionAntodayaDet[4].maCode', 'disabled': False}], 'missionAdId5': [{'checked': False, 'value': '60', 'name': 'missionAntodayaDet[5].maCode', 'disabled': False}, {'checked': False, 'value': '60', 'name': 'missionAntodayaDet[5].maCode', 'disabled': False}]}, 'visibleError': False}
+2026-07-09 12:10:41 | DEBUG    | row=0 targeted_populace: requested indicators (1): ['All']
+2026-07-09 12:10:41 | DEBUG    | row=0 targeted_populace: found 1 total labels in panel
+2026-07-09 12:10:41 | DEBUG    | row=0 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-07-09 12:10:41 | DEBUG    | row=0 targeted_populace: clicking checkbox: 'All'
+2026-07-09 12:10:41 | DEBUG    | row=0 targeted_populace: checkbox selected successfully: 'All'
+2026-07-09 12:10:41 | DEBUG    | start_month: requested raw='March' normalized='march' selector=#startMonthId
+2026-07-09 12:10:41 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-07-09 12:10:41 | DEBUG    | start_month: options before select=['1:January', '2:February', '3:March']
+2026-07-09 12:10:41 | DEBUG    | start_month: matched option text='March' value='3'
+2026-07-09 12:10:41 | DEBUG    | start_month: value immediately after select_option='3'
+2026-07-09 12:10:41 | DEBUG    | start_month: value after events='3' selected_option='3:March'
+2026-07-09 12:10:41 | DEBUG    | start_month: final confirmed value='3' selected_option='3:March'
+2026-07-09 12:10:42 | DEBUG    | row=0: total indicative cost calculated as: 300 (excel: 35)
+2026-07-09 12:10:42 | WARNING  | row=0: total indicative cost mismatch ignored because portal recalculates from live inputs (excel=35, portal=300)
+2026-07-09 12:10:42 | DEBUG    | row=0: Supported Department - requesting: 'Department of Food & Public Distribution'
+2026-07-09 12:10:42 | DEBUG    | row=0: Waiting for supported_department options to populate
+2026-07-09 12:10:42 | DEBUG    | row=0: supported_department options available: 1 options
+2026-07-09 12:10:42 | DEBUG    | row=0: supported_department options=[{'value': '5', 'text': 'Ministry of MSME'}]
+2026-07-09 12:10:42 | WARNING  | row=0: supported_department option not found: Supported Department option not found: Department of Food & Public Distribution
+2026-07-09 12:10:42 | WARNING  | row=0 field=select_supported_department non-fatal Supported Department option not found: Department of Food & Public Distribution
+2026-07-09 12:10:42 | WARNING  | NON_FATAL | row=0 field=select_supported_department | Supported Department option not found: Department of Food & Public Distribution
+2026-07-09 12:10:42 | DEBUG    | row=0: estimated total cost section not visible
+2026-07-09 12:10:42 | DEBUG    | row=0 activity_output: requested='Training/Capacity Building' normalized='training' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Beneficiaries'}, {'id': 'outputActvityAstId110', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'VPRP Beneficiaries'}]
+2026-07-09 12:10:42 | DEBUG    | [ACT-0001] pre_training_validation_state={'checked': [{'id': 'missionAdId2', 'value': '45', 'name': 'missionAntodayaDet[2].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-07-09 12:10:42 | INFO     | [ACT-0001] Activity Output detail record found
+2026-07-09 12:10:42 | INFO     | [ACT-0001] Activity Output: Training/Capacity Building
+2026-07-09 12:10:42 | INFO     | [ACT-0001] Handler: TrainingOutputHandler
+2026-07-09 12:10:42 | INFO     | [ACT-0001] Detail Sheet: Training
+2026-07-09 12:10:42 | INFO     | [ACT-0001] Radio: outputActvityAstId102
+2026-07-09 12:10:42 | INFO     | [ACT-0001] Modal opened: showTrainingDetailsPopup
+2026-07-09 12:10:43 | INFO     | [ACT-0001] Training fields verified: 5/5
+2026-07-09 12:10:43 | INFO     | [ACT-0001] Training popup submitted successfully
+2026-07-09 12:10:43 | INFO     | [ACT-0001] Final Action: Save and Forward
+2026-07-09 12:10:45 | WARNING  | browser_pageerror: Cannot read properties of null (reading 'addEventListener')
+2026-07-09 12:10:46 | WARNING  | row=0 non-fatal field issues: [select_supported_department] Supported Department option not found: Department of Food & Public Distribution
+2026-07-09 12:10:47 | INFO     | row 0 SUCCESS (attempt 1)
+2026-07-09 12:10:47 | INFO     | DONE 93s total=1 success=1 failed=0 rate=100.0%
+2026-07-09 12:12:06 | INFO     | ============================================================
+2026-07-09 12:12:06 | INFO     | eGramSwaraj Bot START (v5)
+2026-07-09 12:12:06 | INFO     | ============================================================
+2026-07-09 12:12:07 | INFO     | rows: total=1 done=0 pending=1
+2026-07-09 12:12:14 | INFO     | Waiting for manual login -> addactivity.htm ...
+2026-07-09 12:12:59 | INFO     | Form ready at: https://egramswaraj.gov.in/addactivity.htm
+2026-07-09 12:13:19 | INFO     | -- row 0 | Awareness camp on behavioural issues of Mission LiFE
+2026-07-09 12:13:22 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-07-09 12:13:23 | DEBUG    | row=0: watchId spinner finished, checkboxes should be loaded
+2026-07-09 12:13:23 | DEBUG    | row=0 pdi: #checkboxes not visible, attempting to open
+2026-07-09 12:13:23 | DEBUG    | row=0 pdi: requested (1): ['Neonatal mortality rate (per 1,000 live births)']
+2026-07-09 12:13:23 | DEBUG    | row=0 pdi: found 12 checkbox inputs in panel
+2026-07-09 12:13:23 | DEBUG    | row=0 pdi: skipping invalid checkbox: value=0 label='None'
+2026-07-09 12:13:23 | DEBUG    | row=0 pdi: available checkbox id=missionAdId1 value=218 label='Whether the nurseries created in the school in the GP' enabled=True checked=False
+2026-07-09 12:13:23 | DEBUG    | row=0 pdi: available checkbox id=missionAdId2 value=45 label='Neonatal mortality rate (per 1,000 live births)' enabled=True checked=False
+2026-07-09 12:13:23 | DEBUG    | row=0 pdi: available checkbox id=missionAdId3 value=200 label='Percentage of household using clean cooking fuel' enabled=True checked=False
+2026-07-09 12:13:23 | DEBUG    | row=0 pdi: available checkbox id=missionAdId4 value=540 label='Proportion of women (aged 30-49) screened under the Non Communicable Disease (NCD) programme for cervical/breast cancer' enabled=True checked=False
+2026-07-09 12:13:24 | DEBUG    | row=0 pdi: available checkbox id=missionAdId5 value=60 label='Total GP spending on Health to the total expenditure' enabled=True checked=False
+2026-07-09 12:13:24 | DEBUG    | row=0 pdi: skipping invalid checkbox: value=0 label='None'
+2026-07-09 12:13:24 | DEBUG    | row=0 pdi: available checkbox id=missionAdId1 value=218 label='Whether the nurseries created in the school in the GP' enabled=True checked=False
+2026-07-09 12:13:24 | DEBUG    | row=0 pdi: duplicate label instance ignored to preserve canonical checkbox: 'Whether the nurseries created in the school in the GP' id=missionAdId1
+2026-07-09 12:13:24 | DEBUG    | row=0 pdi: available checkbox id=missionAdId2 value=45 label='Neonatal mortality rate (per 1,000 live births)' enabled=True checked=False
+2026-07-09 12:13:24 | DEBUG    | row=0 pdi: duplicate label instance ignored to preserve canonical checkbox: 'Neonatal mortality rate (per 1,000 live births)' id=missionAdId2
+2026-07-09 12:13:24 | DEBUG    | row=0 pdi: available checkbox id=missionAdId3 value=200 label='Percentage of household using clean cooking fuel' enabled=True checked=False
+2026-07-09 12:13:24 | DEBUG    | row=0 pdi: duplicate label instance ignored to preserve canonical checkbox: 'Percentage of household using clean cooking fuel' id=missionAdId3
+2026-07-09 12:13:24 | DEBUG    | row=0 pdi: available checkbox id=missionAdId4 value=540 label='Proportion of women (aged 30-49) screened under the Non Communicable Disease (NCD) programme for cervical/breast cancer' enabled=True checked=False
+2026-07-09 12:13:24 | DEBUG    | row=0 pdi: duplicate label instance ignored to preserve canonical checkbox: 'Proportion of women (aged 30-49) screened under the Non Communicable Disease (NCD) programme for cervical/breast cancer' id=missionAdId4
+2026-07-09 12:13:24 | DEBUG    | row=0 pdi: available checkbox id=missionAdId5 value=60 label='Total GP spending on Health to the total expenditure' enabled=True checked=False
+2026-07-09 12:13:24 | DEBUG    | row=0 pdi: duplicate label instance ignored to preserve canonical checkbox: 'Total GP spending on Health to the total expenditure' id=missionAdId5
+2026-07-09 12:13:24 | DEBUG    | row=0 pdi: clicking checkbox id=missionAdId2 value=45 label='Neonatal mortality rate (per 1,000 live births)'
+2026-07-09 12:13:24 | DEBUG    | row=0 pdi: after click - is_selected=True dom_checked=True for 'Neonatal mortality rate (per 1,000 live births)'
+2026-07-09 12:13:24 | DEBUG    | row=0 pdi: total selected indicators: 1
+2026-07-09 12:13:24 | INFO     | row=0 pdi: selection complete
+2026-07-09 12:13:24 | DEBUG    | row=0 pdi: duplicate label counts={'whether the nurseries created in the school in the gp': 2, 'neonatal mortality rate (per 1,000 live births)': 2, 'percentage of household using clean cooking fuel': 2, 'proportion of women (aged 30-49) screened under the non communicable disease (ncd) programme for cervical/breast cancer': 2, 'total gp spending on health to the total expenditure': 2}
+2026-07-09 12:13:24 | DEBUG    | row=0 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': False, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': True}, {'checked': False, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': False}], 'missionAdId1': [{'checked': False, 'value': '218', 'name': 'missionAntodayaDet[1].maCode', 'disabled': False}, {'checked': False, 'value': '218', 'name': 'missionAntodayaDet[1].maCode', 'disabled': False}], 'missionAdId2': [{'checked': True, 'value': '45', 'name': 'missionAntodayaDet[2].maCode', 'disabled': False}, {'checked': False, 'value': '45', 'name': 'missionAntodayaDet[2].maCode', 'disabled': False}], 'missionAdId3': [{'checked': False, 'value': '200', 'name': 'missionAntodayaDet[3].maCode', 'disabled': False}, {'checked': False, 'value': '200', 'name': 'missionAntodayaDet[3].maCode', 'disabled': False}], 'missionAdId4': [{'checked': False, 'value': '540', 'name': 'missionAntodayaDet[4].maCode', 'disabled': False}, {'checked': False, 'value': '540', 'name': 'missionAntodayaDet[4].maCode', 'disabled': False}], 'missionAdId5': [{'checked': False, 'value': '60', 'name': 'missionAntodayaDet[5].maCode', 'disabled': False}, {'checked': False, 'value': '60', 'name': 'missionAntodayaDet[5].maCode', 'disabled': False}]}, 'visibleError': False}
+2026-07-09 12:13:25 | DEBUG    | row=0 targeted_populace: requested indicators (1): ['All']
+2026-07-09 12:13:25 | DEBUG    | row=0 targeted_populace: found 1 total labels in panel
+2026-07-09 12:13:25 | DEBUG    | row=0 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-07-09 12:13:25 | DEBUG    | row=0 targeted_populace: clicking checkbox: 'All'
+2026-07-09 12:13:25 | DEBUG    | row=0 targeted_populace: checkbox selected successfully: 'All'
+2026-07-09 12:13:25 | DEBUG    | start_month: requested raw='March' normalized='march' selector=#startMonthId
+2026-07-09 12:13:25 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-07-09 12:13:25 | DEBUG    | start_month: options before select=['1:January', '2:February', '3:March']
+2026-07-09 12:13:25 | DEBUG    | start_month: matched option text='March' value='3'
+2026-07-09 12:13:25 | DEBUG    | start_month: value immediately after select_option='3'
+2026-07-09 12:13:25 | DEBUG    | start_month: value after events='3' selected_option='3:March'
+2026-07-09 12:13:25 | DEBUG    | start_month: final confirmed value='3' selected_option='3:March'
+2026-07-09 12:13:25 | DEBUG    | row=0: total indicative cost calculated as: 300 (excel: 35)
+2026-07-09 12:13:25 | WARNING  | row=0: total indicative cost mismatch ignored because portal recalculates from live inputs (excel=35, portal=300)
+2026-07-09 12:13:25 | DEBUG    | row=0: Supported Department - requesting: 'Department of Food & Public Distribution'
+2026-07-09 12:13:25 | DEBUG    | row=0: Waiting for supported_department options to populate
+2026-07-09 12:13:26 | DEBUG    | row=0: supported_department options available: 1 options
+2026-07-09 12:13:26 | DEBUG    | row=0: supported_department options=[{'value': '5', 'text': 'Ministry of MSME'}]
+2026-07-09 12:13:26 | WARNING  | row=0: supported_department option not found: Supported Department option not found: Department of Food & Public Distribution
+2026-07-09 12:13:26 | WARNING  | row=0 field=select_supported_department non-fatal Supported Department option not found: Department of Food & Public Distribution
+2026-07-09 12:13:26 | WARNING  | NON_FATAL | row=0 field=select_supported_department | Supported Department option not found: Department of Food & Public Distribution
+2026-07-09 12:13:26 | DEBUG    | row=0: estimated total cost section not visible
+2026-07-09 12:13:26 | DEBUG    | row=0 activity_output: requested='Training/Capacity Building' normalized='training' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Beneficiaries'}, {'id': 'outputActvityAstId110', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'VPRP Beneficiaries'}]
+2026-07-09 12:13:26 | DEBUG    | [ACT-0001] pre_training_validation_state={'checked': [{'id': 'missionAdId2', 'value': '45', 'name': 'missionAntodayaDet[2].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-07-09 12:13:26 | INFO     | [ACT-0001] Activity Output detail record found
+2026-07-09 12:13:26 | INFO     | [ACT-0001] Activity Output: Training/Capacity Building
+2026-07-09 12:13:26 | INFO     | [ACT-0001] Handler: TrainingOutputHandler
+2026-07-09 12:13:26 | INFO     | [ACT-0001] Detail Sheet: Training
+2026-07-09 12:13:26 | INFO     | [ACT-0001] Radio: outputActvityAstId102
+2026-07-09 12:13:26 | INFO     | [ACT-0001] Modal opened: showTrainingDetailsPopup
+2026-07-09 12:13:27 | INFO     | [ACT-0001] Training fields verified: 5/5
+2026-07-09 12:13:27 | INFO     | [ACT-0001] Training popup submitted successfully
+2026-07-09 12:13:27 | INFO     | [ACT-0001] Final Action: Save and Forward
+2026-07-09 12:13:29 | WARNING  | browser_pageerror: Cannot read properties of null (reading 'addEventListener')
+2026-07-09 12:13:30 | WARNING  | row=0 non-fatal field issues: [select_supported_department] Supported Department option not found: Department of Food & Public Distribution
+2026-07-09 12:13:30 | INFO     | row 0 SUCCESS (attempt 1)
+2026-07-09 12:13:31 | INFO     | DONE 84s total=1 success=1 failed=0 rate=100.0%

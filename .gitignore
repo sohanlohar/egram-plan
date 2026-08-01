@@ -9,6 +9,8 @@ venv/
 # Output and runtime artifacts
 screenshots/
 logs/
+*.log
+logs/*.log
 data/output.xlsx
 data/*.xlsx
 
