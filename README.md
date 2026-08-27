@@ -48,7 +48,7 @@ python src/main.py --config config/config.json
 
 | Key | Description |
 |---|---|
-| retry_count | Retries per row on failure |
+| retry_count | Legacy setting; each row and field is attempted once |
 | page_timeout_ms | Page navigation timeout |
 | selector_timeout_ms | Default Playwright selector timeout |
 | input_file | Input workbook path |

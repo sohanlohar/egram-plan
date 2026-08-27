@@ -18,6 +18,7 @@ FORM_COLUMNS = [
     "focus_area",
     "activity_type",
     "activity_description",
+    "vprp_plan",
     "pdi_indicator",
     "activity_for",
     "targeted_populace",
@@ -124,6 +125,7 @@ class ExcelReader:
         self.activity_sheet_name: str = ACTIVITY_SHEET_NAME
         self._output_indexes: dict[str, dict[str, dict]] = {}
         self._output_duplicates: dict[str, set[str]] = {}
+        self._shared_output_records: dict[str, dict | None] = {}
 
     def load(self) -> None:
         with pd.ExcelFile(self.filepath) as workbook:
@@ -198,6 +200,9 @@ class ExcelReader:
 
         output_map = self._output_indexes.get(definition.canonical_name, {})
         if key not in output_map:
+            shared_record = self._shared_output_records.get(definition.canonical_name)
+            if shared_record is not None:
+                return shared_record
             raise ValueError(
                 f"{definition.sheet_name} output data not found for Activity_Key {key}"
             )
@@ -222,6 +227,7 @@ class ExcelReader:
     def _build_output_indexes(self, workbook: pd.ExcelFile) -> None:
         self._output_indexes = {}
         self._output_duplicates = {}
+        self._shared_output_records = {}
 
         for canonical in ["training", "community_service", "beneficiaries", "asset"]:
             definition = get_output_definition(canonical)
@@ -231,6 +237,7 @@ class ExcelReader:
             if definition.sheet_name not in workbook.sheet_names:
                 self._output_indexes[canonical] = {}
                 self._output_duplicates[canonical] = set()
+                self._shared_output_records[canonical] = None
                 continue
 
             raw = pd.read_excel(
@@ -253,9 +260,13 @@ class ExcelReader:
 
             detail_map: dict[str, dict] = {}
             duplicate_keys: set[str] = set()
+            shared_candidates: list[dict] = []
 
             for _, row in use_df.iterrows():
                 record = row.to_dict()  # type: ignore[arg-type]
+                if canonical == "training" and self._has_training_payload(record):
+                    shared_candidates.append(record.copy())
+
                 key = normalize_activity_key(record.get("activity_key", ""))
                 if not key:
                     continue
@@ -267,3 +278,15 @@ class ExcelReader:
 
             self._output_indexes[canonical] = detail_map
             self._output_duplicates[canonical] = duplicate_keys
+            if canonical == "training" and len(shared_candidates) == 1:
+                self._shared_output_records[canonical] = shared_candidates[0]
+            else:
+                self._shared_output_records[canonical] = None
+
+    @staticmethod
+    def _has_training_payload(record: dict) -> bool:
+        return any(
+            str(record.get(col, "") or "").strip()
+            for col in TRAINING_COLUMNS
+            if col != "activity_key"
+        )

@@ -1,6 +1,9 @@
 from __future__ import annotations
 
 import logging
+import re
+from dataclasses import dataclass
+from typing import Callable
 
 from playwright.sync_api import Page, TimeoutError as PlaywrightTimeout, expect
 
@@ -18,8 +21,27 @@ class ActivityOutputError(RuntimeError):
     """Raised when Activity Output processing cannot complete."""
 
 
+@dataclass(frozen=True)
+class OutputFieldSpec:
+    label: str
+    key: str
+    selector: str
+    field_type: str  # "select" | "text"
+    normalizer: Callable[[str], str] | None = None
+
+
 def _normalize_text(value: str) -> str:
     return " ".join(str(value or "").strip().lower().split())
+
+
+def _dropdown_match_key(value: str) -> str:
+    normalized = str(value or "").strip().lower()
+    normalized = re.sub(r"\s+", " ", normalized)
+    return re.sub(r"\s*([()])\s*", r"\1", normalized)
+
+
+def _dropdown_match_key_without_whitespace(value: str) -> str:
+    return re.sub(r"\s+", "", _dropdown_match_key(value))
 
 
 def _value(record: dict, key: str) -> str:
@@ -34,9 +56,34 @@ def _select_by_visible_text(page: Page, selector: str, text: str) -> None:
         selector,
         "el => Array.from(el.options).filter(o => o.value !== '').map(o => ({value: o.value, text: o.textContent.trim()}))",
     )
-    requested = _normalize_text(text)
+    original = str(text or "")
+    requested = original.strip()
+    normalized_requested = _dropdown_match_key(requested)
+    compact_requested = _dropdown_match_key_without_whitespace(requested)
     for option in options:
-        if _normalize_text(option["text"]) == requested:
+        option_text = str(option["text"] or "").strip()
+        if option_text == requested:
+            logger.debug(
+                "dropdown match selector=%s original=%r normalized=%r matched=%r mode=exact",
+                selector, original, normalized_requested, option_text,
+            )
+            loc.select_option(value=option["value"])
+            return
+        if _dropdown_match_key(option_text) == normalized_requested:
+            logger.info(
+                "dropdown match selector=%s original=%r normalized=%r matched=%r mode=normalized",
+                selector, original, normalized_requested, option_text,
+            )
+            loc.select_option(value=option["value"])
+            return
+
+    for option in options:
+        option_text = str(option["text"] or "").strip()
+        if _dropdown_match_key_without_whitespace(option_text) == compact_requested:
+            logger.info(
+                "dropdown match selector=%s original=%r normalized=%r matched=%r mode=normalized_no_whitespace",
+                selector, original, normalized_requested, option_text,
+            )
             loc.select_option(value=option["value"])
             return
 
@@ -46,24 +93,25 @@ def _select_by_visible_text(page: Page, selector: str, text: str) -> None:
     )
 
 
-def _select_by_visible_text_stable(page: Page, selector: str, text: str, retries: int = 3) -> None:
-    requested = _normalize_text(text)
+def _select_by_visible_text_stable(page: Page, selector: str, text: str, retries: int = 1) -> None:
+    requested = _dropdown_match_key(text)
 
     page.wait_for_function(
         """
         ({ selector, expected }) => {
             const el = document.querySelector(selector);
             if (!el) return false;
-            const norm = (v) => String(v || '').trim().toLowerCase().replace(/\\s+/g, ' ');
+            const norm = (v) => String(v || '').trim().toLowerCase().replace(/\\s+/g, ' ').replace(/\\s*([()])\\s*/g, '$1');
+            const compact = (v) => norm(v).replace(/\\s/g, '');
             const options = Array.from(el.options || []).filter(o => o.value !== '');
-            return options.some(o => norm(o.textContent) === expected);
+            return options.some(o => norm(o.textContent) === expected || compact(o.textContent) === compact(expected));
         }
         """,
         arg={"selector": selector, "expected": requested},
         timeout=SELECTOR_TIMEOUT,
     )
 
-    for attempt in range(1, retries + 1):
+    for attempt in range(1, 2):
         _select_by_visible_text(page, selector, text)
         try:
             page.wait_for_function(
@@ -71,9 +119,10 @@ def _select_by_visible_text_stable(page: Page, selector: str, text: str, retries
                 ({ selector, expected }) => {
                     const el = document.querySelector(selector);
                     if (!el) return false;
-                    const norm = (v) => String(v || '').trim().toLowerCase().replace(/\\s+/g, ' ');
+                    const norm = (v) => String(v || '').trim().toLowerCase().replace(/\\s+/g, ' ').replace(/\\s*([()])\\s*/g, '$1');
+                    const compact = (v) => norm(v).replace(/\\s/g, '');
                     const selected = el.options && el.selectedIndex >= 0 ? el.options[el.selectedIndex] : null;
-                    return !!selected && norm(selected.textContent) === expected;
+                    return !!selected && (norm(selected.textContent) === expected || compact(selected.textContent) === compact(expected));
                 }
                 """,
                 arg={"selector": selector, "expected": requested},
@@ -111,60 +160,23 @@ class BaseOutputHandler:
         raise NotImplementedError()
 
 
-class UnsupportedOutputHandler(BaseOutputHandler):
-    def process(self, activity_key: str, detail_record: dict, row_index: int) -> None:
-        raise ActivityOutputError(
-            f"Unsupported Activity Output: {self.definition.visible_name}"
-        )
+class StructuredModalOutputHandler(BaseOutputHandler):
+    """Reusable template for modal-based Activity Output handlers."""
 
-
-class TrainingOutputHandler(BaseOutputHandler):
-    REQUIRED_FIELDS = {
-        "Activity_Key": "activity_key",
-        "Training Category": "training_category",
-        "Organized By": "organized_by",
-        "Subject of Training": "subject_of_training",
-        "Total Trainees": "total_trainees",
-        "Total Duration": "total_duration",
-    }
+    TITLE_EXPECTED_TEXT = ""
+    FIELD_SPECS: tuple[OutputFieldSpec, ...] = ()
 
     @classmethod
     def validate_detail_record(cls, detail_record: dict, activity_key: str) -> None:
-        for label, key in cls.REQUIRED_FIELDS.items():
-            value = _value(detail_record, key)
-            if not value:
+        for spec in cls.FIELD_SPECS:
+            if not _value(detail_record, spec.key):
                 raise ActivityOutputError(
-                    f"Training output data invalid for Activity_Key {activity_key}: {label} is required"
+                    f"{cls._error_prefix()} output data invalid for Activity_Key {activity_key}: {spec.label} is required"
                 )
 
-        trainees = _value(detail_record, "total_trainees")
-        duration = _value(detail_record, "total_duration")
-
-        if not trainees.isdigit():
-            raise ActivityOutputError(
-                f"Training output data invalid for Activity_Key {activity_key}: Total Trainees must be numeric"
-            )
-        if int(trainees) <= 0:
-            raise ActivityOutputError(
-                f"Training output data invalid for Activity_Key {activity_key}: Total Trainees must be greater than zero"
-            )
-        if len(trainees) > 4:
-            raise ActivityOutputError(
-                f"Training output data invalid for Activity_Key {activity_key}: Total Trainees exceeds maxlength 4"
-            )
-
-        if not duration.isdigit():
-            raise ActivityOutputError(
-                f"Training output data invalid for Activity_Key {activity_key}: Total Duration must be numeric"
-            )
-        if int(duration) <= 0:
-            raise ActivityOutputError(
-                f"Training output data invalid for Activity_Key {activity_key}: Total Duration must be greater than zero"
-            )
-        if len(duration) > 3:
-            raise ActivityOutputError(
-                f"Training output data invalid for Activity_Key {activity_key}: Total Duration exceeds maxlength 3"
-            )
+    @classmethod
+    def _error_prefix(cls) -> str:
+        return cls.__name__.replace("OutputHandler", "")
 
     def process(self, activity_key: str, detail_record: dict, row_index: int) -> None:
         self.validate_detail_record(detail_record, activity_key)
@@ -182,7 +194,7 @@ class TrainingOutputHandler(BaseOutputHandler):
         pre_submit_errors = self._collect_validation_errors()
         if pre_submit_errors:
             raise ActivityOutputError(
-                f"Training validation errors before submit for Activity_Key {activity_key}: {'; '.join(pre_submit_errors)}"
+                f"{self._error_prefix()} validation errors before submit for Activity_Key {activity_key}: {'; '.join(pre_submit_errors)}"
             )
 
         self._submit(activity_key)
@@ -195,13 +207,13 @@ class TrainingOutputHandler(BaseOutputHandler):
         radio = self.page.locator(f"#{self.definition.radio_id}")
         if not radio.count():
             raise ActivityOutputError(
-                f"Training radio not found: {self.definition.radio_id}"
+                f"{self._error_prefix()} radio not found: {self.definition.radio_id}"
             )
 
         radio.wait_for(state="visible", timeout=SELECTOR_TIMEOUT)
         if not radio.is_enabled():
             raise ActivityOutputError(
-                f"Training radio is disabled: {self.definition.radio_id}"
+                f"{self._error_prefix()} radio is disabled: {self.definition.radio_id}"
             )
 
         radio.scroll_into_view_if_needed()
@@ -251,7 +263,7 @@ class TrainingOutputHandler(BaseOutputHandler):
         except PlaywrightTimeout as exc:
             diagnostics = self._collect_modal_open_diagnostics()
             raise ActivityOutputError(
-                f"Training modal did not open: {self.definition.modal_id}; diagnostics={diagnostics}"
+                f"{self._error_prefix()} modal did not open: {self.definition.modal_id}; diagnostics={diagnostics}"
             ) from exc
 
         logger.info("[%s] Modal opened: %s", activity_key, self.definition.modal_id)
@@ -313,33 +325,158 @@ class TrainingOutputHandler(BaseOutputHandler):
     def _verify_modal_title(self, activity_key: str) -> None:
         modal = self.page.locator(f"#{self.definition.modal_id}")
         title = modal.locator(".modal-title:visible").first
-        expected = "training/capacity building"
+        expected = _normalize_text(self.TITLE_EXPECTED_TEXT)
 
         if title.count():
             title_text = _normalize_text(title.inner_text())
         else:
             title_text = _normalize_text(modal.inner_text())
 
-        if expected not in title_text:
+        if expected and expected not in title_text:
             raise ActivityOutputError(
-                f"Training modal title mismatch for Activity_Key {activity_key}: '{title_text}'"
+                f"{self._error_prefix()} modal title mismatch for Activity_Key {activity_key}: '{title_text}'"
             )
 
     def _fill_fields(self, detail_record: dict) -> None:
-        _select_by_visible_text_stable(self.page, "#trngCatCdId", _value(detail_record, "training_category"))
-        _select_by_visible_text_stable(self.page, "#trngOrgByCdId", _value(detail_record, "organized_by"))
+        for spec in self.FIELD_SPECS:
+            value = _value(detail_record, spec.key)
+            if spec.field_type == "select":
+                _select_by_visible_text_stable(self.page, spec.selector, value)
+            elif spec.field_type == "text":
+                field = self.page.locator(spec.selector)
+                field.clear()
+                field.fill(value)
+            else:
+                raise ActivityOutputError(f"Unsupported field type: {spec.field_type}")
 
-        subject = self.page.locator("#trngSubjectId")
-        subject.clear()
-        subject.fill(_value(detail_record, "subject_of_training"))
+    def _verify_filled_values(self, detail_record: dict, activity_key: str) -> None:
+        def collect_failed() -> list[OutputFieldSpec]:
+            failed_specs: list[OutputFieldSpec] = []
+            for field_spec in self.FIELD_SPECS:
+                expected = _value(detail_record, field_spec.key)
+                if field_spec.field_type == "select":
+                    actual = self.page.locator(f"{field_spec.selector} option:checked").inner_text().strip()
+                else:
+                    actual = self.page.locator(field_spec.selector).input_value().strip()
 
-        trainees = self.page.locator("#totTraineesId")
-        trainees.clear()
-        trainees.fill(_value(detail_record, "total_trainees"))
+                normalize = field_spec.normalizer or (lambda v: v)
+                if normalize(actual) != normalize(expected):
+                    failed_specs.append(field_spec)
+            return failed_specs
 
-        duration = self.page.locator("#totDurationDaysId")
-        duration.clear()
-        duration.fill(_value(detail_record, "total_duration"))
+        failed_specs = collect_failed()
+
+        # Some portal flows asynchronously re-render dropdown values after callbacks.
+        # Re-apply failed select fields once before hard-failing verification.
+        if any(spec.field_type == "select" for spec in failed_specs):
+            for spec in failed_specs:
+                if spec.field_type == "select":
+                    _select_by_visible_text_stable(self.page, spec.selector, _value(detail_record, spec.key))
+            failed_specs = collect_failed()
+
+        failed = [spec.label for spec in failed_specs]
+
+        if failed:
+            raise ActivityOutputError(
+                f"{self._error_prefix()} fields verification failed for Activity_Key {activity_key}: {', '.join(failed)}"
+            )
+
+        logger.info("[%s] %s fields verified: %d/%d", activity_key, self._error_prefix(), len(self.FIELD_SPECS), len(self.FIELD_SPECS))
+
+    def _collect_validation_errors(self) -> list[str]:
+        modal = self.page.locator(f"#{self.definition.modal_id}")
+        errors: list[str] = []
+        for element in modal.locator("[id$='Error']:visible, .text-danger:visible").all():
+            text = (element.inner_text() or "").strip()
+            if text:
+                errors.append(text)
+        return errors
+
+    def _submit(self, activity_key: str) -> None:
+        modal = self.page.locator(f"#{self.definition.modal_id}")
+        submit = modal.locator("button[onclick*='validationTraining']").first
+        if not submit.count():
+            raise ActivityOutputError(
+                f"{self._error_prefix()} submit button with validationTraining() not found"
+            )
+
+        expect(submit).to_be_enabled(timeout=SELECTOR_TIMEOUT)
+        submit.click()
+
+        try:
+            modal.wait_for(state="hidden", timeout=SELECTOR_TIMEOUT)
+        except PlaywrightTimeout:
+            errors = self._collect_validation_errors()
+            if errors:
+                raise ActivityOutputError(
+                    f"{self._error_prefix()} modal remained open for Activity_Key {activity_key}: {'; '.join(errors)}"
+                )
+            raise ActivityOutputError(
+                f"{self._error_prefix()} modal remained open for Activity_Key {activity_key}"
+            )
+
+        logger.info("[%s] %s popup submitted successfully", activity_key, self._error_prefix())
+
+    def _verify_output_retained(self, activity_key: str) -> None:
+        radio = self.page.locator(f"#{self.definition.radio_id}")
+        if not radio.is_checked():
+            raise ActivityOutputError(
+                f"{self._error_prefix()} output radio is not retained for Activity_Key {activity_key}"
+            )
+
+
+class UnsupportedOutputHandler(BaseOutputHandler):
+    def process(self, activity_key: str, detail_record: dict, row_index: int) -> None:
+        raise ActivityOutputError(
+            f"Unsupported Activity Output: {self.definition.visible_name}"
+        )
+
+
+class TrainingOutputHandler(StructuredModalOutputHandler):
+    TITLE_EXPECTED_TEXT = "training/capacity building"
+    FIELD_SPECS = (
+        OutputFieldSpec("Training Category", "training_category", "#trngCatCdId", "select", _normalize_text),
+        OutputFieldSpec("Organized By", "organized_by", "#trngOrgByCdId", "select", _normalize_text),
+        OutputFieldSpec("Subject of Training", "subject_of_training", "#trngSubjectId", "text"),
+        OutputFieldSpec("Total Trainees", "total_trainees", "#totTraineesId", "text"),
+        OutputFieldSpec("Total Duration", "total_duration", "#totDurationDaysId", "text"),
+    )
+
+    @classmethod
+    def validate_detail_record(cls, detail_record: dict, activity_key: str) -> None:
+        super().validate_detail_record(detail_record, activity_key)
+
+        trainees = _value(detail_record, "total_trainees")
+        duration = _value(detail_record, "total_duration")
+
+        if not trainees.isdigit():
+            raise ActivityOutputError(
+                f"Training output data invalid for Activity_Key {activity_key}: Total Trainees must be numeric"
+            )
+        if int(trainees) <= 0:
+            raise ActivityOutputError(
+                f"Training output data invalid for Activity_Key {activity_key}: Total Trainees must be greater than zero"
+            )
+        if len(trainees) > 4:
+            raise ActivityOutputError(
+                f"Training output data invalid for Activity_Key {activity_key}: Total Trainees exceeds maxlength 4"
+            )
+
+        if not duration.isdigit():
+            raise ActivityOutputError(
+                f"Training output data invalid for Activity_Key {activity_key}: Total Duration must be numeric"
+            )
+        if int(duration) <= 0:
+            raise ActivityOutputError(
+                f"Training output data invalid for Activity_Key {activity_key}: Total Duration must be greater than zero"
+            )
+        if len(duration) > 3:
+            raise ActivityOutputError(
+                f"Training output data invalid for Activity_Key {activity_key}: Total Duration exceeds maxlength 3"
+            )
+
+    def _fill_fields(self, detail_record: dict) -> None:
+        super()._fill_fields(detail_record)
 
         # Some portal runs re-render Organized By after category callbacks settle.
         try:
@@ -359,116 +496,22 @@ class TrainingOutputHandler(BaseOutputHandler):
         except PlaywrightTimeout:
             _select_by_visible_text_stable(self.page, "#trngOrgByCdId", _value(detail_record, "organized_by"))
 
-    def _verify_filled_values(self, detail_record: dict, activity_key: str) -> None:
-        try:
-            self.page.wait_for_function(
-                """
-                ({ category, organizedBy, subject, trainees, duration }) => {
-                    const norm = (v) => String(v || '').trim().toLowerCase().replace(/\\s+/g, ' ');
-                    const selectedText = (selector) => {
-                        const el = document.querySelector(selector);
-                        if (!el || el.selectedIndex < 0) return '';
-                        return norm(el.options[el.selectedIndex].textContent);
-                    };
-                    const valueOf = (selector) => {
-                        const el = document.querySelector(selector);
-                        return el ? String(el.value || '').trim() : '';
-                    };
-
-                    return (
-                        selectedText('#trngCatCdId') === category
-                        && selectedText('#trngOrgByCdId') === organizedBy
-                        && valueOf('#trngSubjectId') === subject
-                        && valueOf('#totTraineesId') === trainees
-                        && valueOf('#totDurationDaysId') === duration
-                    );
-                }
-                """,
-                arg={
-                    "category": _normalize_text(_value(detail_record, "training_category")),
-                    "organizedBy": _normalize_text(_value(detail_record, "organized_by")),
-                    "subject": _value(detail_record, "subject_of_training"),
-                    "trainees": _value(detail_record, "total_trainees"),
-                    "duration": _value(detail_record, "total_duration"),
-                },
-                timeout=5_000,
-            )
-        except PlaywrightTimeout:
-            pass
-
-        category_selected = self.page.locator("#trngCatCdId option:checked").inner_text().strip()
-        organized_by_selected = self.page.locator("#trngOrgByCdId option:checked").inner_text().strip()
-        subject_value = self.page.locator("#trngSubjectId").input_value().strip()
-        trainees_value = self.page.locator("#totTraineesId").input_value().strip()
-        duration_value = self.page.locator("#totDurationDaysId").input_value().strip()
-
-        checks = [
-            (_normalize_text(category_selected) == _normalize_text(_value(detail_record, "training_category")), "Training Category"),
-            (_normalize_text(organized_by_selected) == _normalize_text(_value(detail_record, "organized_by")), "Organized By"),
-            (subject_value == _value(detail_record, "subject_of_training"), "Subject of Training"),
-            (trainees_value == _value(detail_record, "total_trainees"), "Total Trainees"),
-            (duration_value == _value(detail_record, "total_duration"), "Total Duration"),
-        ]
-
-        failed = [name for ok, name in checks if not ok]
-        if failed:
-            raise ActivityOutputError(
-                f"Training fields verification failed for Activity_Key {activity_key}: {', '.join(failed)}"
-            )
-
-        logger.info("[%s] Training fields verified: 5/5", activity_key)
-
-    def _collect_validation_errors(self) -> list[str]:
-        modal = self.page.locator(f"#{self.definition.modal_id}")
-        errors: list[str] = []
-        for element in modal.locator("[id$='Error']:visible, .text-danger:visible").all():
-            text = (element.inner_text() or "").strip()
-            if text:
-                errors.append(text)
-        return errors
-
-    def _submit(self, activity_key: str) -> None:
-        modal = self.page.locator(f"#{self.definition.modal_id}")
-        submit = modal.locator("button[onclick*='validationTraining']").first
-        if not submit.count():
-            raise ActivityOutputError("Training submit button with validationTraining() not found")
-
-        expect(submit).to_be_enabled(timeout=SELECTOR_TIMEOUT)
-        submit.click()
-
-        try:
-            modal.wait_for(state="hidden", timeout=SELECTOR_TIMEOUT)
-        except PlaywrightTimeout:
-            errors = self._collect_validation_errors()
-            if errors:
-                raise ActivityOutputError(
-                    f"Training modal remained open for Activity_Key {activity_key}: {'; '.join(errors)}"
-                )
-            raise ActivityOutputError(
-                f"Training modal remained open for Activity_Key {activity_key}"
-            )
-
-        logger.info("[%s] Training popup submitted successfully", activity_key)
-
-    def _verify_output_retained(self, activity_key: str) -> None:
-        radio = self.page.locator(f"#{self.definition.radio_id}")
-        if not radio.is_checked():
-            raise ActivityOutputError(
-                f"Training output radio is not retained for Activity_Key {activity_key}"
-            )
-
 
 class ActivityOutputHandlerRegistry:
     def __init__(self, page: Page) -> None:
         self.page = page
+        self._handlers: dict[str, type[BaseOutputHandler]] = {
+            "training": TrainingOutputHandler,
+        }
 
     def resolve(self, output_type: str) -> BaseOutputHandler:
         definition = get_output_definition(output_type)
         if not definition:
             raise ActivityOutputError(f"Unsupported Activity Output: {output_type}")
 
-        if definition.canonical_name == "training":
-            return TrainingOutputHandler(self.page, definition)
+        handler_cls = self._handlers.get(definition.canonical_name)
+        if handler_cls:
+            return handler_cls(self.page, definition)
 
         if definition.implemented:
             return BaseOutputHandler(self.page, definition)

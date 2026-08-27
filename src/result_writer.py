@@ -41,6 +41,7 @@ COL_WIDTHS = {
     "focus_area":                    32,
     "activity_type":                 20,
     "activity_description":          45,
+    "vprp_plan":                      24,
     "pdi_indicator":                 50,
     "activity_for":                  12,
     "targeted_populace":             30,

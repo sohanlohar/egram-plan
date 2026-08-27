@@ -5,11 +5,13 @@ import unittest
 from pathlib import Path
 
 import pandas as pd
+from unittest.mock import patch
 
 import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
+import form_filler
 from activity_output_handlers import ActivityOutputError, ActivityOutputHandlerRegistry, TrainingOutputHandler
 from activity_output_registry import normalize_output_type
 from excel_reader import ExcelReader, normalize_activity_key, normalize_final_action
@@ -160,6 +162,103 @@ class WorkbookIndexTests(unittest.TestCase):
             reader.load()
             with self.assertRaisesRegex(ValueError, "Duplicate Training output data"):
                 reader.get_output_record("Training/Capacity Building", "ACT-0001")
+
+    def test_shared_training_single_row_reused_for_all_activity_keys(self) -> None:
+        with tempfile.TemporaryDirectory() as td:
+            file_path = Path(td) / "input.xlsx"
+            self._create_workbook(
+                file_path,
+                activities=[
+                    {
+                        "Activity_Key": "ACT-0089",
+                        "Theme": "A",
+                        "Activity Output": "Training/Capacity Building",
+                        "Final Action": "Save",
+                    },
+                ],
+                training=[
+                    {
+                        "Activity_Key": "ACT-0001",
+                        "Training Category": "Skill",
+                        "Organized By": "Dept",
+                        "Subject of Training": "Topic",
+                        "Total Trainees": "12",
+                        "Total Duration": "2",
+                    },
+                ],
+            )
+
+            reader = ExcelReader(str(file_path))
+            reader.load()
+            detail = reader.get_output_record("Training/Capacity Building", "ACT-0089")
+            self.assertEqual(detail["training_category"], "Skill")
+            self.assertEqual(detail["organized_by"], "Dept")
+
+    def test_shared_training_single_row_can_have_blank_activity_key(self) -> None:
+        with tempfile.TemporaryDirectory() as td:
+            file_path = Path(td) / "input.xlsx"
+            self._create_workbook(
+                file_path,
+                activities=[
+                    {
+                        "Activity_Key": "ACT-0090",
+                        "Theme": "A",
+                        "Activity Output": "Training/Capacity Building",
+                        "Final Action": "Save",
+                    },
+                ],
+                training=[
+                    {
+                        "Activity_Key": "",
+                        "Training Category": "Awareness",
+                        "Organized By": "Govt",
+                        "Subject of Training": "ICDS",
+                        "Total Trainees": "50",
+                        "Total Duration": "5",
+                    },
+                ],
+            )
+
+            reader = ExcelReader(str(file_path))
+            reader.load()
+            detail = reader.get_output_record("Training/Capacity Building", "ACT-0090")
+            self.assertEqual(detail["training_category"], "Awareness")
+            self.assertEqual(detail["subject_of_training"], "ICDS")
+
+
+class PdiSelectionRuleTests(unittest.TestCase):
+    @patch("form_filler.random.sample")
+    @patch("form_filler.random.choice", return_value=5)
+    def test_five_plus_options_selects_four_or_five_unique(self, mock_choice, mock_sample) -> None:
+        mock_sample.return_value = ["A", "B", "C", "D", "E"]
+
+        result = form_filler._choose_random_pdi_labels(["A", "B", "C", "D", "E", "F"])
+
+        self.assertEqual(result, ["A", "B", "C", "D", "E"])
+        mock_choice.assert_called_once_with([4, 5])
+        mock_sample.assert_called_once_with(["A", "B", "C", "D", "E", "F"], k=5)
+
+    @patch("form_filler.random.sample")
+    @patch("form_filler.random.randint", return_value=2)
+    def test_three_or_four_options_selects_between_one_and_all(self, mock_randint, mock_sample) -> None:
+        mock_sample.return_value = ["X", "Y"]
+
+        result = form_filler._choose_random_pdi_labels(["X", "Y", "Z"])
+
+        self.assertEqual(result, ["X", "Y"])
+        mock_randint.assert_called_once_with(1, 3)
+        mock_sample.assert_called_once_with(["X", "Y", "Z"], k=2)
+
+    @patch("form_filler.random.sample")
+    @patch("form_filler.random.randint", return_value=1)
+    def test_one_or_two_options_selects_at_least_one(self, mock_randint, mock_sample) -> None:
+        mock_sample.return_value = ["Only"]
+
+        result = form_filler._choose_random_pdi_labels(["Only", "Second"])
+
+        self.assertEqual(result, ["Only"])
+        mock_randint.assert_called_once_with(1, 2)
+        mock_sample.assert_called_once_with(["Only", "Second"], k=1)
 
 
 if __name__ == "__main__":

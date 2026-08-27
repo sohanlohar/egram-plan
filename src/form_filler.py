@@ -28,6 +28,7 @@ import logging
 import time
 import html
 import re
+import random
 from pathlib import Path
 
 from playwright.sync_api import Page, TimeoutError as PlaywrightTimeout
@@ -45,7 +46,6 @@ SELECTOR_TIMEOUT = 15_000   # ms
 OPTIONS_POLL_MS  = 100      # ms — poll interval for AJAX dropdown readiness
 OPTIONS_TIMEOUT  = 15_000   # ms — max wait for child dropdown to populate
 NETWORK_IDLE_MS  = 8_000    # ms — max wait for networkidle after AJAX trigger
-RETRY_DELAY      = 2        # seconds between row-level retries
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -67,6 +67,17 @@ def _normalize_lookup_text(text: str) -> str:
     value = re.sub(r"[^a-z0-9\s]", " ", value)
     value = re.sub(r"\s+", " ", value).strip()
     return value
+
+
+def _dropdown_match_key(text: str) -> str:
+    """Normalize dropdown text, including whitespace around parentheses."""
+    normalized = html.unescape(str(text or "")).replace("\xa0", " ").strip().lower()
+    normalized = re.sub(r"\s+", " ", normalized)
+    return re.sub(r"\s*([()])\s*", r"\1", normalized)
+
+
+def _dropdown_match_key_without_whitespace(text: str) -> str:
+    return re.sub(r"\s+", "", _dropdown_match_key(text))
 
 
 def _parse_month_number(value: str) -> int | None:
@@ -127,7 +138,7 @@ def select_start_month(page: Page, selector: str, requested_value: str) -> None:
         "start_month: options before select=%s",
         [f"{opt.get('value', '')}:{opt.get('text', '')}" for opt in options],
     )
-    requested_normalized = _normalize_text(requested_text)
+    requested_normalized = _dropdown_match_key(requested_text)
     requested_month_num = _parse_month_number(requested_text)
     matched_option: dict | None = None
 
@@ -140,7 +151,7 @@ def select_start_month(page: Page, selector: str, requested_value: str) -> None:
             matched_option = {"value": option_value, "text": option_text}
             break
 
-        normalized_option_text = _normalize_text(option_text)
+        normalized_option_text = _dropdown_match_key(option_text)
         if normalized_option_text == requested_normalized or requested_normalized in normalized_option_text:
             matched_option = {"value": option_value, "text": option_text}
             break
@@ -227,6 +238,95 @@ def safe_fill(page: Page, selector: str, value: str) -> None:
     loc.fill(value)
 
 
+def fill_vprp_plan(page: Page, value: str) -> None:
+    """Select the Yes/No VPRP Plan radio button exposed by the portal form."""
+    requested = _normalize_text(value)
+    if not requested:
+        return
+    if requested not in {"yes", "no"}:
+        raise ValueError(f"VPRP Plan must be Yes or No, got: {value!r}")
+
+    section_selector = "#vprpPlandiv"
+    radio_selector = f"{section_selector} input[type='radio'][name='vprpplan']"
+    try:
+        page.wait_for_function(
+            """
+            ({ sectionSelector, radioSelector }) => {
+                const section = document.querySelector(sectionSelector);
+                return !!section && getComputedStyle(section).display !== 'none'
+                    && document.querySelectorAll(radioSelector).length > 0;
+            }
+            """,
+            arg={"sectionSelector": section_selector, "radioSelector": radio_selector},
+            timeout=SELECTOR_TIMEOUT,
+        )
+    except PlaywrightTimeout as exc:
+        diagnostics = page.evaluate(
+            """
+            ({ sectionSelector, radioSelector }) => {
+                const section = document.querySelector(sectionSelector);
+                return {
+                    sectionFound: !!section,
+                    sectionDisplay: section ? getComputedStyle(section).display : null,
+                    matchingRadios: Array.from(document.querySelectorAll(radioSelector)).map(radio => ({
+                        id: radio.id,
+                        name: radio.name,
+                        value: radio.value,
+                        checked: radio.checked,
+                    })),
+                };
+            }
+            """,
+            {"sectionSelector": section_selector, "radioSelector": radio_selector},
+        )
+        logger.error(
+            "vprp_plan: section/control wait failed original=%r section=%s radio_locator=%s diagnostics=%s",
+            value, section_selector, radio_selector, diagnostics,
+        )
+        raise ValueError("VPRP Plan radio section or controls were not found") from exc
+
+    diagnostics = page.locator(radio_selector).evaluate_all(
+        """
+        radios => radios.map(radio => ({
+            id: radio.id,
+            name: radio.name,
+            value: radio.value,
+            checked: radio.checked,
+            text: radio.parentElement ? radio.parentElement.textContent.trim() : '',
+        }))
+        """
+    )
+    logger.debug(
+        "vprp_plan: section_found=True original=%r normalized=%r radio_locator=%s options=%s",
+        value, requested, radio_selector, diagnostics,
+    )
+
+    expected_value = {"yes": "t", "no": "f"}[requested]
+    matched_index = next(
+        (
+            index for index, option in enumerate(diagnostics)
+            if str(option["value"]).strip().lower() == expected_value
+            or _normalize_text(option["text"]).find(requested) >= 0
+        ),
+        None,
+    )
+    if matched_index is None:
+        logger.error(
+            "vprp_plan: requested option not found original=%r normalized=%r locator=%s options=%s",
+            value, requested, radio_selector, diagnostics,
+        )
+        raise ValueError(f"VPRP Plan {value!r} radio option was not found")
+
+    control = page.locator(radio_selector).nth(matched_index)
+    logger.info(
+        "vprp_plan: selecting original=%r normalized=%r locator=%s matched=%s",
+        value, requested, radio_selector, diagnostics[matched_index],
+    )
+    control.click(force=True)
+    if not control.is_checked():
+        raise ValueError(f"VPRP Plan {value!r} radio button was not selected")
+
+
 def _dispatch_input_events(page: Page, selector: str) -> None:
     page.eval_on_selector(
         selector,
@@ -280,14 +380,84 @@ def wait_for_options(page: Page, selector: str) -> list[dict]:
 
 def select_by_text(page: Page, selector: str, text: str) -> None:
     """
-    Select a <select> option by visible text (exact match first, then substring).
+    Select one or more <select> options by visible text.
     Waits for real options to appear before trying.
     """
     opts = wait_for_options(page, selector)
-    requested = _normalize_text(text)
+    original = str(text or "")
+    requested = original.strip()
+    requested_values = [part.strip() for part in requested.split("|") if part.strip()]
+    if len(requested_values) > 1 and not page.locator(selector).get_attribute("multiple"):
+        raise ValueError(
+            f"Multiple values supplied for single-select {selector}: {requested_values}"
+        )
+
+    normalized_requested = _dropdown_match_key(requested)
+    compact_requested = _dropdown_match_key_without_whitespace(requested)
+
+    if len(requested_values) > 1:
+        selected_options: list[dict] = []
+        unmatched_values: list[str] = []
+        for requested_value in requested_values:
+            normalized_value = _dropdown_match_key(requested_value)
+            compact_value = _dropdown_match_key_without_whitespace(requested_value)
+            matched = next(
+                (
+                    opt for opt in opts
+                    if str(opt["text"] or "").strip() == requested_value
+                    or _dropdown_match_key(str(opt["text"] or "").strip()) == normalized_value
+                    or _dropdown_match_key_without_whitespace(str(opt["text"] or "").strip()) == compact_value
+                ),
+                None,
+            )
+            if matched:
+                selected_options.append(matched)
+            else:
+                unmatched_values.append(requested_value)
+
+        if unmatched_values:
+            raise ValueError(
+                f"Values {unmatched_values} not found in {selector}. "
+                f"Available: {[o['text'] for o in opts]}"
+            )
+
+        logger.info(
+            "dropdown match selector=%s original=%r normalized=%r matched=%r mode=multi_normalized",
+            selector, original, [_dropdown_match_key(v) for v in requested_values],
+            [opt["text"] for opt in selected_options],
+        )
+        page.locator(selector).select_option(
+            value=[opt["value"] for opt in selected_options]
+        )
+        return
+
     for opt in opts:
-        option_text = _normalize_text(opt["text"])
-        if option_text == requested or requested in option_text:
+        option_text = str(opt["text"] or "").strip()
+        if option_text == requested:
+            logger.debug(
+                "dropdown match selector=%s original=%r normalized=%r matched=%r mode=exact",
+                selector, original, normalized_requested, option_text,
+            )
+            page.locator(selector).select_option(value=opt["value"])
+            return
+
+    for opt in opts:
+        option_text = str(opt["text"] or "").strip()
+        if _dropdown_match_key(option_text) == normalized_requested:
+            logger.info(
+                "dropdown match selector=%s original=%r normalized=%r matched=%r mode=normalized",
+                selector, original, normalized_requested, option_text,
+            )
+            page.locator(selector).select_option(value=opt["value"])
+            return
+
+    for opt in opts:
+        option_text = str(opt["text"] or "").strip()
+        if _dropdown_match_key_without_whitespace(option_text) == compact_requested:
+            logger.info(
+                "dropdown match selector=%s original=%r normalized=%r matched=%r mode=normalized_no_whitespace",
+                selector, original, normalized_requested, option_text,
+            )
             page.locator(selector).select_option(value=opt["value"])
             return
     available = [o["text"] for o in opts]
@@ -304,29 +474,84 @@ def fill_select2(page: Page, hidden_select_id: str, search_text: str) -> None:
     all events and its onchange chain (which populates child dropdowns) only
     fires when interaction goes through the Select2 span elements.
     """
+    requested_norm = _dropdown_match_key(search_text)
     trigger = page.locator(
         f"#{hidden_select_id} + .select2-container .select2-selection"
     )
-    trigger.wait_for(state="visible", timeout=SELECTOR_TIMEOUT)
-    trigger.click()
 
-    search_box = page.locator(".select2-search__field")
-    search_box.wait_for(state="visible", timeout=SELECTOR_TIMEOUT)
-    search_box.fill(search_text)
+    for attempt in range(1, 2):
+        trigger.wait_for(state="visible", timeout=SELECTOR_TIMEOUT)
+        trigger.click()
 
-    # Wait for results list to appear in DOM (not a blind sleep)
-    page.locator(".select2-results__option").first.wait_for(
-        state="visible", timeout=SELECTOR_TIMEOUT
+        search_box = page.locator(".select2-search__field")
+        search_box.wait_for(state="visible", timeout=SELECTOR_TIMEOUT)
+        search_box.fill(search_text)
+
+        results = page.locator(
+            ".select2-results__option:not(.select2-results__option--loading):not([aria-disabled='true'])"
+        )
+        results.first.wait_for(state="visible", timeout=SELECTOR_TIMEOUT)
+
+        chosen_index = -1
+        chosen_text = ""
+        result_count = results.count()
+
+        # Pass 1: exact normalized match.
+        for idx in range(result_count):
+            candidate = (results.nth(idx).inner_text() or "").strip()
+            if _dropdown_match_key(candidate) == requested_norm:
+                chosen_index = idx
+                chosen_text = candidate
+                break
+
+        # Pass 2: substring match.
+        if chosen_index < 0:
+            for idx in range(result_count):
+                candidate = (results.nth(idx).inner_text() or "").strip()
+                candidate_norm = _dropdown_match_key(candidate)
+                if requested_norm in candidate_norm or candidate_norm in requested_norm:
+                    chosen_index = idx
+                    chosen_text = candidate
+                    break
+
+        # Pass 3: highlighted fallback.
+        if chosen_index < 0:
+            highlighted = page.locator(".select2-results__option--highlighted").first
+            if highlighted.count():
+                chosen_text = (highlighted.inner_text() or "").strip()
+                highlighted.click()
+            else:
+                chosen_text = (results.first.inner_text() or "").strip()
+                results.first.click()
+        else:
+            results.nth(chosen_index).click()
+
+        _wait_idle(page)
+
+        selected_text = page.eval_on_selector(
+            f"#{hidden_select_id} + .select2-container .select2-selection__rendered",
+            "el => (el.textContent || '').trim()",
+        )
+        selected_norm = _dropdown_match_key(selected_text)
+        expected_seen = requested_norm == selected_norm or requested_norm in selected_norm or selected_norm in requested_norm
+        selected_value = page.eval_on_selector(f"#{hidden_select_id}", "el => String(el.value || '').trim()")
+
+        if expected_seen and selected_value:
+            return
+
+        logger.warning(
+            "select2 retry %d/3 id=%s requested='%s' clicked='%s' selected='%s' value='%s'",
+            attempt,
+            hidden_select_id,
+            search_text,
+            chosen_text,
+            selected_text,
+            selected_value,
+        )
+
+    raise RuntimeError(
+        f"Select2 selection did not persist for #{hidden_select_id}: requested='{search_text}'"
     )
-
-    # Prefer highlighted result; fall back to first result
-    highlighted = page.locator(".select2-results__option--highlighted").first
-    if highlighted.count():
-        highlighted.click()
-    else:
-        page.locator(".select2-results__option").first.click()
-
-    _wait_idle(page)   # let onchange AJAX (focus_area load) settle
 
 
 def open_checkbox_panel(page: Page, container_selector: str, panel_id: str) -> None:
@@ -369,6 +594,20 @@ def open_checkbox_panel(page: Page, container_selector: str, panel_id: str) -> N
 def _normalize_multiselect_text(text: str) -> str:
     """Normalize text for multiselect matching: strip, lowercase, collapse whitespace."""
     return " ".join(text.strip().lower().split())
+
+
+def _choose_random_pdi_labels(available_labels: list[str]) -> list[str]:
+    """Choose a unique random PDI subset that follows the portal selection rules."""
+    if not available_labels:
+        return []
+
+    if len(available_labels) >= 5:
+        sample_size = random.choice([4, 5])
+    else:
+        sample_size = random.randint(1, len(available_labels))
+
+    sample_size = min(sample_size, len(available_labels))
+    return random.sample(available_labels, k=sample_size)
 
 
 def select_multiselect_checkboxes(page: Page, panel_id: str, excel_values: str, 
@@ -508,6 +747,118 @@ def _snapshot(page: Page, field: str, row: int, shots_dir: Path, err: str, fatal
         logger.warning("NON_FATAL | row=%d field=%s | %s", row, field, err[:250])
 
 
+def _capture_pdi_empty_state(page: Page, container, row: int, shots_dir: Path, reason: str) -> None:
+    """Capture targeted diagnostics when no PDI options are detected."""
+    stem = f"row{row}_pdi_indicator_no_options"
+
+    screenshot_path = shots_dir / f"{stem}.png"
+    html_path = shots_dir / f"{stem}.html"
+
+    try:
+        page.screenshot(path=str(screenshot_path), full_page=False)
+    except Exception as exc:
+        logger.warning("row=%d pdi: failed to capture no-options screenshot: %s", row, str(exc)[:120])
+
+    container_html = ""
+    element_inventory: list[dict] = []
+    try:
+        container_html = container.evaluate("el => el.outerHTML || ''")
+        element_inventory = container.evaluate(
+            """
+            el => Array.from(el.querySelectorAll('*')).map(node => {
+                const text = (node.textContent || '').replace(/\\s+/g, ' ').trim();
+                return {
+                    tag: (node.tagName || '').toLowerCase(),
+                    id: node.id || '',
+                    name: node.getAttribute('name') || '',
+                    className: node.className || '',
+                    type: node.getAttribute('type') || '',
+                    value: node.getAttribute('value') || '',
+                    visible: !!(node.offsetWidth || node.offsetHeight || node.getClientRects().length),
+                    text: text.slice(0, 120),
+                };
+            })
+            """
+        )
+    except Exception as exc:
+        logger.warning("row=%d pdi: failed to read container diagnostics: %s", row, str(exc)[:120])
+
+    try:
+        html_path.write_text(container_html, encoding="utf-8")
+    except Exception as exc:
+        logger.warning("row=%d pdi: failed to write container HTML snapshot: %s", row, str(exc)[:120])
+
+    logger.error(
+        "row=%d pdi: no options detected | reason=%s | screenshot=%s | html=%s",
+        row,
+        reason,
+        screenshot_path,
+        html_path,
+    )
+    logger.error("row=%d pdi: container element inventory count=%d", row, len(element_inventory))
+    for idx, item in enumerate(element_inventory):
+        logger.error("row=%d pdi: container element[%d]=%s", row, idx, item)
+
+
+def _wait_for_pdi_options(page: Page, container, row: int):
+    """Wait for PDI panel visibility and for checkbox options to stabilize."""
+    checkbox_panel = container.locator("#checkboxes").first
+    if not checkbox_panel.count():
+        logger.warning("row=%d pdi: #checkboxes panel does not exist", row)
+        return None, []
+
+    if not checkbox_panel.is_visible():
+        logger.debug("row=%d pdi: #checkboxes not visible, attempting to open", row)
+        try:
+            select_box = container.locator(".selectBox").first
+            if select_box.count():
+                select_box.click()
+                page.wait_for_timeout(300)
+        except Exception as exc:
+            logger.warning("row=%d pdi: failed to click selectBox: %s", row, str(exc)[:100])
+
+    try:
+        checkbox_panel.wait_for(state="visible", timeout=SELECTOR_TIMEOUT)
+    except PlaywrightTimeout:
+        logger.warning("row=%d pdi: #checkboxes failed to become visible", row)
+        return checkbox_panel, []
+
+    selector = "input[type='checkbox'][name^='missionAntodayaDet']"
+    deadline = time.time() + OPTIONS_TIMEOUT / 1000
+    last_count = -1
+    stable_checks = 0
+
+    while True:
+        current_count = checkbox_panel.locator(selector).count()
+        if current_count != last_count:
+            logger.debug(
+                "row=%d pdi: option_count_probe count=%d stable_checks=%d",
+                row,
+                current_count,
+                stable_checks,
+            )
+
+        if current_count > 0:
+            if current_count == last_count:
+                stable_checks += 1
+            else:
+                stable_checks = 0
+            if stable_checks >= 2:
+                break
+
+        last_count = current_count
+        if time.time() > deadline:
+            logger.warning(
+                "row=%d pdi: options did not stabilize before timeout (last_count=%d)",
+                row,
+                current_count,
+            )
+            break
+        page.wait_for_timeout(OPTIONS_POLL_MS)
+
+    return checkbox_panel, checkbox_panel.locator(selector).all()
+
+
 # ══════════════════════════════════════════════════════════════════════════════
 # Pre-submit validation
 # ══════════════════════════════════════════════════════════════════════════════
@@ -569,7 +920,8 @@ def _check_page_errors(page: Page) -> list[dict]:
 def select_panchayat_advancement_indicators(
     page: Page, 
     excel_values: str, 
-    row: int
+    row: int,
+    shots_dir: Path | None = None,
 ) -> None:
     """
     Portal-specific handler for Panchayat Advancement Index / Mission Antyodaya indicators.
@@ -578,11 +930,20 @@ def select_panchayat_advancement_indicators(
     Portal validation checks: element id="activityMAError"
     Portal portal handler: onclick="hideshowMaData(maCode)"
     """
-    if not excel_values or not excel_values.strip():
-        logger.debug("row=%d pdi: empty values, skipping", row)
-        return
+    raw_excel_value = str(excel_values or "")
+    logger.debug("row=%d pdi: raw excel pdi_indicator=%r", row, raw_excel_value)
+    if not raw_excel_value.strip():
+        logger.debug(
+            "row=%d pdi: excel value is empty, continuing with portal-driven auto-selection",
+            row,
+        )
     
     # Step 1: Resolve visible container instance (portal can render duplicate IDs)
+    try:
+        page.locator("#maDivId").first.wait_for(state="visible", timeout=SELECTOR_TIMEOUT)
+    except PlaywrightTimeout:
+        logger.warning("row=%d pdi: #maDivId was not visible within timeout", row)
+
     containers = page.locator("#maDivId")
     container = None
     for idx in range(containers.count()):
@@ -592,8 +953,7 @@ def select_panchayat_advancement_indicators(
             break
 
     if container is None:
-        logger.warning("row=%d pdi: container #maDivId not visible", row)
-        return
+        raise RuntimeError("PDI container #maDivId is not visible")
     
     # Step 2: Wait for portal loading to finish
     try:
@@ -613,46 +973,24 @@ def select_panchayat_advancement_indicators(
     except Exception:
         pass
     
-    # Step 3: Verify and open checkbox panel
-    checkbox_panel = container.locator("#checkboxes").first
-    if not checkbox_panel.count():
-        logger.warning("row=%d pdi: #checkboxes panel does not exist", row)
-        return
-    
-    if not checkbox_panel.is_visible():
-        logger.debug("row=%d pdi: #checkboxes not visible, attempting to open", row)
-        try:
-            select_box = container.locator(".selectBox").first
-            if select_box.count():
-                select_box.click()
-                page.wait_for_timeout(300)
-        except Exception as e:
-            logger.warning("row=%d pdi: failed to click selectBox: %s", row, str(e)[:100])
-    
-    # Verify panel is now visible
-    try:
-        checkbox_panel.wait_for(state="visible", timeout=SELECTOR_TIMEOUT)
-    except PlaywrightTimeout:
-        logger.warning("row=%d pdi: #checkboxes failed to become visible", row)
-        return
-    
-    # Step 4: Parse requested indicators
-    requested_labels = [
-        v.strip() for v in excel_values.split("|") if v.strip()
-    ] if "|" in excel_values else [excel_values.strip()]
-    requested_normalized = {_normalize_multiselect_text(label) for label in requested_labels}
-    
-    logger.debug("row=%d pdi: requested (%d): %s", row, len(requested_normalized), requested_labels)
-    
-    # Step 5: RE-QUERY checkbox inputs from current DOM (do not reuse old WebElements)
-    checkbox_inputs = checkbox_panel.locator(
-        "input[type='checkbox'][name^='missionAntodayaDet']"
-    ).all()
+    # Step 3: Verify panel and wait for options to load/stabilize
+    checkbox_panel, checkbox_inputs = _wait_for_pdi_options(page, container, row)
+    if checkbox_panel is None:
+        raise RuntimeError("PDI checkbox panel #checkboxes was not found")
+
     logger.debug("row=%d pdi: found %d checkbox inputs in panel", row, len(checkbox_inputs))
     
     if not checkbox_inputs:
-        logger.warning("row=%d pdi: no checkbox inputs found after querying", row)
-        return
+        logger.warning("row=%d pdi: no checkbox inputs found after waiting and querying", row)
+        if shots_dir is not None:
+            _capture_pdi_empty_state(
+                page,
+                container,
+                row,
+                shots_dir,
+                reason="No missionAntodayaDet checkboxes present after waits",
+            )
+        raise RuntimeError("No PDI indicator options are available on the form")
     
     # Step 6: Build map of available indicators from parent labels
     available_map = {}  # normalized_text -> {input_elem, label_text, checkbox_id, checkbox_value, is_enabled, is_checked}
@@ -675,8 +1013,8 @@ def select_panchayat_advancement_indicators(
         is_enabled = input_elem.is_enabled()
         is_checked = input_elem.is_checked()
         
-        # Skip disabled or value=0 (None) or empty labels
-        if checkbox_value == "0" or label_text.lower() in ("none", ""):
+        # Skip only empty labels; "None" can be a valid portal option.
+        if label_text == "":
             logger.debug("row=%d pdi: skipping invalid checkbox: value=%s label='%s'", 
                         row, checkbox_value, label_text)
             continue
@@ -705,36 +1043,108 @@ def select_panchayat_advancement_indicators(
             "is_enabled": is_enabled,
             "is_checked": is_checked,
         }
+
+    parsed_labels = [part.strip() for part in raw_excel_value.split("|") if part.strip()]
+    requested_labels = list(dict.fromkeys(parsed_labels))
+    logger.debug(
+        "row=%d pdi: parsed indicators from excel delimiter='|' parsed=%s deduped=%s",
+        row,
+        parsed_labels,
+        requested_labels,
+    )
+
+    if requested_labels:
+        if len(requested_labels) < 5:
+            selected_labels = random.sample(requested_labels, k=len(requested_labels))
+        else:
+            sample_size = random.choice([4, 5])
+            selected_labels = random.sample(requested_labels, k=sample_size)
+        selection_source = "excel"
+    else:
+        selected_labels = _choose_random_pdi_labels([v["label_text"] for v in available_map.values()])
+        selection_source = "auto"
+        if not selected_labels:
+            logger.warning("row=%d pdi: no valid indicators available for auto-selection", row)
+            raise RuntimeError("No valid PDI indicator options are available on the form")
+
+    requested_normalized = {
+        _normalize_multiselect_text(label) for label in selected_labels
+    }
+
+    logger.debug(
+        "row=%d pdi: random selection source=%s parsed_count=%d selected_count=%d selected_labels=%s",
+        row,
+        selection_source,
+        len(requested_labels),
+        len(selected_labels),
+        selected_labels,
+    )
+
+    portal_options = [v["label_text"] for v in available_map.values()]
+    logger.debug(
+        "row=%d pdi: portal options detected count=%d options=%s",
+        row,
+        len(portal_options),
+        portal_options,
+    )
     
-    # Step 7: Match requested labels against available
-    matched_normalized = {key for key in requested_normalized if key in available_map}
-    unmatched = requested_normalized - matched_normalized
-    
-    if unmatched:
-        available_labels = [v["label_text"] for v in available_map.values()]
-        logger.error(
-            "row=%d pdi: requested indicators NOT found: %s | available: %s",
-            row, list(unmatched), available_labels
+    # Step 7: Resolve selected labels one-by-one with detailed diagnostics
+    matched_infos: list[dict] = []
+    unmatched: list[str] = []
+    for requested_label in selected_labels:
+        normalized_text = _normalize_multiselect_text(requested_label)
+        logger.debug(
+            "row=%d pdi: searching requested indicator='%s' normalized='%s'",
+            row,
+            requested_label,
+            normalized_text,
         )
+
+        info = available_map.get(normalized_text)
+        if not info:
+            unmatched.append(requested_label)
+            logger.warning(
+                "row=%d pdi: match not found for requested indicator='%s' reason='normalized text not present in portal options'",
+                row,
+                requested_label,
+            )
+            continue
+
+        logger.debug(
+            "row=%d pdi: match found requested='%s' portal_label='%s' id=%s value=%s enabled=%s checked=%s",
+            row,
+            requested_label,
+            info["label_text"],
+            info["id"],
+            info["value"],
+            info["is_enabled"],
+            info["is_checked"],
+        )
+        matched_infos.append(info)
+
+    if unmatched:
+        logger.warning(
+            "row=%d pdi: unmatched selected indicators=%s",
+            row,
+            unmatched,
+        )
+    if not matched_infos:
         raise RuntimeError(
-            f"PDI indicators not found in portal: {unmatched} | "
-            f"Available: {available_labels}"
+            f"PDI indicators from Excel were not found on the form: {unmatched}"
         )
     
     # Step 8: Select matched checkboxes and verify checked state per checkbox
-    for normalized_text in matched_normalized:
-        info = available_map[normalized_text]
+    for info in matched_infos:
         input_elem = info["input"]
         label_text = info["label_text"]
         checkbox_id = info["id"]
         checkbox_value = info["value"]
         
         if not info["is_enabled"]:
-            logger.warning("row=%d pdi: checkbox is disabled, skipping: %s", row, label_text)
-            continue
+            raise RuntimeError(f"PDI checkbox is disabled: {label_text}")
         
         if info["is_checked"]:
-            logger.debug("row=%d pdi: checkbox already selected: %s", row, label_text)
+            logger.debug("row=%d pdi: checkbox already selected: %s | selection_success=True", row, label_text)
             continue
         
         # Step 8a: Click the checkbox
@@ -763,7 +1173,9 @@ def select_panchayat_advancement_indicators(
             )
             
             if not is_checked_after and not dom_checked:
+                logger.error("row=%d pdi: selection_success=False label='%s'", row, label_text)
                 raise RuntimeError(f"PDI checkbox not selected after click: {label_text}")
+            logger.debug("row=%d pdi: selection_success=True label='%s'", row, label_text)
         except Exception as e:
             raise RuntimeError(str(e))
     
@@ -776,7 +1188,7 @@ def select_panchayat_advancement_indicators(
         if selected_count == 0:
             raise RuntimeError("NO PDI indicators are selected after processing")
     except Exception as e:
-        logger.warning("row=%d pdi: failed to count selected indicators: %s", row, str(e)[:80])
+        raise RuntimeError(f"PDI final selection verification failed: {e}") from e
     
     logger.info("row=%d pdi: selection complete", row)
 
@@ -939,34 +1351,9 @@ def select_supported_department(
         logger.warning("row=%d: failed to check supported_department options: %s", row, str(e)[:100])
         return
     
-    # Step 4: Normalize and match by text, then fallback to contains match
+    # Step 4: Use the shared exact/normalized dropdown matcher.
     try:
-        options = page.eval_on_selector(
-            "#supportedMinistriesId",
-            "el => Array.from(el.options).filter(o => o.value !== '').map(o => ({value: o.value, text: o.textContent.trim()}))",
-        )
-        logger.debug("row=%d: supported_department options=%s", row, options)
-
-        requested = _normalize_lookup_text(department_text)
-        chosen_value = ""
-        for opt in options:
-            if _normalize_lookup_text(opt["text"]) == requested:
-                chosen_value = opt["value"]
-                break
-
-        if not chosen_value:
-            for opt in options:
-                norm = _normalize_lookup_text(opt["text"])
-                if requested and (requested in norm or norm in requested):
-                    chosen_value = opt["value"]
-                    break
-
-        if not chosen_value:
-            raise RuntimeError(
-                f"Supported Department option not found: {department_text}"
-            )
-
-        page.locator("#supportedMinistriesId").select_option(value=chosen_value)
+        select_by_text(page, "#supportedMinistriesId", department_text)
         logger.info("row=%d: supported_department selected: '%s'", row, department_text)
     except Exception as e:
         logger.warning("row=%d: supported_department option not found: %s", row, str(e)[:180])
@@ -1194,16 +1581,19 @@ class FormFiller:
         attempt("activity_description",
                 lambda: safe_fill(p, "#activityDescId", _v(record, "activity_description")))
 
-        # ── 6. PDI / Panchayat Advancement Index Indicator ───────────────────
+        # ── 6. VPRP Plan ─────────────────────────────────────────────────────
+        vprp_plan = _v(record, "vprp_plan")
+        if vprp_plan:
+            attempt("vprp_plan", lambda: fill_vprp_plan(p, vprp_plan))
+
+        # ── 7. PDI / Panchayat Advancement Index Indicator ────────────────────
         # Use dedicated portal-specific handler
         pdi = _v(record, "pdi_indicator")
         def _pdi():
-            if not pdi:
-                return
-            select_panchayat_advancement_indicators(p, pdi, row_index)
+            select_panchayat_advancement_indicators(p, pdi, row_index, self.shots_dir)
         attempt("pdi_indicator", _pdi)
 
-        # ── 7. Shareable Activity (radio, conditional) ────────────────────────
+        # ── 8. Shareable Activity (radio, conditional) ────────────────────────
         shareable = _v(record, "shareable").lower()
         def _shareable():
             if not shareable:
@@ -1413,12 +1803,25 @@ class FormFiller:
                 return
             div = p.locator("#flagshipSchemeDivId")
             if not div.count() or not div.is_visible():
-                logger.debug("row=%d: flagship scheme section not visible", row_index)
-                return
+                raise ValueError("Flagship Scheme section is not visible")
             select = p.locator("#flagshipSchemeId")
-            if select.count():
-                select_by_text(p, "#flagshipSchemeId", flagship)
-                _wait_idle(p)  # Wait for Supported Department to refresh
+            if not select.count():
+                raise ValueError("Flagship Scheme control #flagshipSchemeId was not found")
+
+            # select_by_text only accepts an exact or normalized-equivalent option;
+            # it never falls back to a different scheme.
+            select_by_text(p, "#flagshipSchemeId", flagship)
+            selected_text = select.locator("option:checked").inner_text().strip()
+            if _dropdown_match_key(selected_text) != _dropdown_match_key(flagship):
+                raise ValueError(
+                    f"Flagship Scheme selection verification failed: requested={flagship!r} "
+                    f"selected={selected_text!r}"
+                )
+            logger.info(
+                "row=%d: flagship scheme selected exact_requested=%r matched=%r",
+                row_index, flagship, selected_text,
+            )
+            _wait_idle(p)  # Wait for Supported Department to refresh
         attempt("flagship_scheme", _flagship)
 
         # ── 21. Supported Department (conditional, depends on Flagship Scheme) ─

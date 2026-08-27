@@ -16,6 +16,7 @@ ACTIVITY_HEADERS = [
     "focus_area",
     "activity_type",
     "activity_description",
+    "vprp_plan",
     "pdi_indicator",
     "activity_for",
     "targeted_populace",

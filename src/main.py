@@ -37,7 +37,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from logger        import setup_logger
 from excel_reader  import ExcelReader
-from form_filler   import FormFiller, RETRY_DELAY
+from form_filler   import FormFiller
 from result_writer import ResultWriter
 
 LOGIN_URL  = "https://egramswaraj.gov.in"
@@ -205,42 +205,36 @@ def run(config: dict, filter_rows: list[int] | None = None) -> None:
             last_err  = ""
             succeeded = False
 
-            for attempt in range(1, config.get("retry_count", 3) + 1):
-                try:
+            # Each row is processed once; field failures are logged by FormFiller
+            # and processing continues with the next field/row.
+            attempt = 1
+            try:
+                _goto_form(page, config.get("page_timeout_ms", 30_000))
+
+                if _session_expired(page):
+                    _handle_expiry(page, log, row_index)
                     _goto_form(page, config.get("page_timeout_ms", 30_000))
 
-                    if _session_expired(page):
-                        _handle_expiry(page, log, row_index)
-                        _goto_form(page, config.get("page_timeout_ms", 30_000))
+                filler.fill_form(record, row_index)
+                succeeded = True
 
-                    filler.fill_form(record, row_index)
-                    succeeded = True
+                if config.get("take_success_screenshots", False):
+                    filler.take_screenshot(f"row_{row_index}_success")
 
-                    if config.get("take_success_screenshots", False):
-                        filler.take_screenshot(f"row_{row_index}_success")
+                writer.write_result(row_index=row_index, status="SUCCESS")
+                log.info("row %d SUCCESS", row_index)
+                print(f"       [OK] SUCCESS")
+                success_count += 1
 
-                    writer.write_result(row_index=row_index, status="SUCCESS")
-                    log.info("row %d SUCCESS (attempt %d)", row_index, attempt)
-                    print(f"       [OK] SUCCESS")
-                    success_count += 1
-                    break
-
-                except Exception as exc:
-                    last_err = str(exc)
-                    log.warning("row %d attempt %d FAIL: %s",
-                                row_index, attempt, last_err[:300])
-                    try:
-                        filler.take_screenshot(
-                            f"row_{row_index}_attempt{attempt}_error")
-                    except Exception:
-                        pass
-
-                    if _session_expired(page):
-                        _handle_expiry(page, log, row_index)
-                        continue   # retry without counting this as an attempt
-
-                    if attempt < config.get("retry_count", 3):
-                        page.wait_for_timeout(RETRY_DELAY * 1000)
+            except Exception as exc:
+                last_err = str(exc)
+                log.error("row %d FAILED (single attempt): %s",
+                          row_index, last_err[:300])
+                try:
+                    filler.take_screenshot(
+                        f"row_{row_index}_attempt{attempt}_error")
+                except Exception:
+                    pass
 
             if not succeeded:
                 fail_count += 1
@@ -249,7 +243,7 @@ def run(config: dict, filter_rows: list[int] | None = None) -> None:
                     status="FAILED",
                     error_message=last_err[:2000],
                 )
-                log.error("row %d FAILED after all retries", row_index)
+                log.error("row %d FAILED after single attempt", row_index)
                 print(f"       [FAIL] FAILED  (see logs/automation.log)")
 
         browser.close()
