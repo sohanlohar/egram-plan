@@ -15,6 +15,14 @@ playwright install chromium
 
 ## Run
 
+Start Chrome once with the persistent profile and remote debugging enabled:
+
+```powershell
+& "C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222 --user-data-dir="C:\chrome_debug"
+```
+
+Log in and leave the target form open, then run the bot:
+
 ```bash
 python src/main.py
 ```
@@ -33,16 +41,21 @@ python src/main.py --config config/config.json
 
 ## Runtime Flow
 
-1. Browser opens at https://egramswaraj.gov.in.
-2. You log in manually and navigate to https://egramswaraj.gov.in/addactivity.htm.
-3. Bot waits for form readiness (#themeId), then ENTER gate starts processing.
-4. Bot iterates pending rows from Excel (rows not marked SUCCESS).
-5. For each row:
+1. The bot attaches to the already-running Chrome instance on port `9222`.
+2. Chrome uses the persistent `C:\chrome_debug` profile, so cookies and login state are retained.
+3. You log in manually and navigate to https://egramswaraj.gov.in/addactivity.htm when needed.
+4. Bot waits for form readiness (#themeId), then ENTER gate starts processing.
+5. Bot iterates pending rows from Excel (rows not marked SUCCESS).
+6. For each row:
    - Fills main form in dependency order
    - Handles Activity Output for that row (if configured)
    - Runs Save or Save and Forward based on row Final Action
    - Writes SUCCESS/FAILED with timestamp and error to output workbook
-6. If session expires, bot pauses for re-login and resumes.
+7. If session expires, bot pauses for re-login and resumes.
+
+The bot does not close or relaunch Chrome. If it fails, inspect the existing browser,
+fix the issue, and run the command again. Chrome must remain open with remote debugging
+enabled while the bot runs.
 
 ## Configuration (config/config.json)
 

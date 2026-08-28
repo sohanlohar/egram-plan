@@ -2,8 +2,8 @@
 main.py — eGramSwaraj Activity Planning Bot (v5)
 
 Workflow:
-  1. Launch Chromium (non-headless — you log in manually).
-  2. Open https://egramswaraj.gov.in
+    1. Attach to Chrome running with remote debugging (non-headless — you log in manually).
+    2. Use the existing Chrome tab/profile.
   3. You log in and navigate to addactivity.htm.
   4. Bot detects the form is ready, prints record count.
   5. You press ENTER to start.
@@ -46,6 +46,7 @@ FORM_URL   = "https://egramswaraj.gov.in/addactivity.htm"
 FORM_READY_TIMEOUT   = 30_000   # ms
 SESSION_POLL_MS      = 500      # ms
 MAX_SESSION_WAIT_MIN = 10       # minutes
+CDP_ENDPOINT          = "http://127.0.0.1:9222"
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -124,6 +125,29 @@ def _handle_expiry(page: Page, log, row: int) -> None:
     log.info("Session restored. Resuming from row %d.", row)
 
 
+def _attach_to_chrome(pw) -> tuple[Browser, BrowserContext, Page]:
+    """Attach to the user-owned Chrome instance without taking ownership of it."""
+    try:
+        browser: Browser = pw.chromium.connect_over_cdp(CDP_ENDPOINT)
+    except Exception as exc:
+        raise RuntimeError(
+            "Could not connect to Chrome at http://127.0.0.1:9222. "
+            "Start Chrome first with --remote-debugging-port=9222 "
+            "and --user-data-dir=\"C:\\chrome_debug\"."
+        ) from exc
+
+    contexts = browser.contexts
+    if not contexts:
+        raise RuntimeError("Connected Chrome has no browser context to reuse.")
+
+    context = contexts[0]
+    page = next(
+        (candidate for candidate in context.pages if "addactivity.htm" in candidate.url.lower()),
+        None,
+    ) or (context.pages[0] if context.pages else context.new_page())
+    return browser, context, page
+
+
 # ══════════════════════════════════════════════════════════════════════════════
 # Main loop
 # ══════════════════════════════════════════════════════════════════════════════
@@ -148,25 +172,15 @@ def run(config: dict, filter_rows: list[int] | None = None) -> None:
     fail_count    = 0
 
     with sync_playwright() as pw:
-        browser: Browser = pw.chromium.launch(
-            headless=False,
-            args=["--start-maximized"],
-        )
-        ctx: BrowserContext = browser.new_context(
-            viewport=None, no_viewport=True,
-        )
-        page: Page = ctx.new_page()
+        browser, ctx, page = _attach_to_chrome(pw)
         page.set_default_timeout(config.get("selector_timeout_ms", 15_000))
 
         # ── Open login page ───────────────────────────────────────────────────
         print("\n" + "=" * 60)
         print("  eGramSwaraj Activity Planning Bot  (v5)")
         print("=" * 60)
-        print(f"\n  [BROWSER] Opening {LOGIN_URL} ...")
-        page.goto(LOGIN_URL, wait_until="domcontentloaded",
-                  timeout=config.get("page_timeout_ms", 30_000))
-
-        print("  [OK] Browser ready.")
+        print("\n  [BROWSER] Attached to existing Chrome at port 9222.")
+        print("  [OK] Existing profile and browser session retained.")
         print("\n  [LOGIN] Please log in and navigate to:")
         print(f"         {FORM_URL}")
         print("\n  The bot will wait automatically.\n")
@@ -246,7 +260,8 @@ def run(config: dict, filter_rows: list[int] | None = None) -> None:
                 log.error("row %d FAILED after single attempt", row_index)
                 print(f"       [FAIL] FAILED  (see logs/automation.log)")
 
-        browser.close()
+        # Chrome is user-owned and must remain open after success or failure.
+        # Stopping Playwright below only disconnects the automation client.
 
     elapsed = time.time() - t0
     writer.write_summary(total, success_count, fail_count, elapsed)

@@ -23888,3 +23888,1418 @@ Call log:
 2026-08-28 22:05:22 | WARNING  | browser_pageerror: Cannot read properties of null (reading 'addEventListener')
 2026-08-28 22:05:23 | INFO     | row 0 SUCCESS
 2026-08-28 22:05:24 | INFO     | DONE 78s total=1 success=1 failed=0 rate=100.0%
+2026-08-28 22:30:12 | INFO     | ============================================================
+2026-08-28 22:30:12 | INFO     | eGramSwaraj Bot START (v5)
+2026-08-28 22:30:12 | INFO     | ============================================================
+2026-08-28 22:30:12 | INFO     | rows: total=22 done=0 pending=22
+2026-08-28 22:30:13 | INFO     | Waiting for manual login -> addactivity.htm ...
+2026-08-28 22:30:13 | INFO     | Form ready at: https://egramswaraj.gov.in/addactivity.htm
+2026-08-28 22:30:21 | INFO     | -- row 0 | Awareness on Discrimination against SC/ST/PVTG/religious min
+2026-08-28 22:30:23 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-28 22:30:23 | DEBUG    | dropdown match selector=#themeId original='Theme 7 - Socially Just and Socially Secured Village' normalized='theme 7 - socially just and socially secured village' matched='Theme 7 - Socially Just and Socially Secured Village' mode=exact
+2026-08-28 22:30:25 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-28 22:30:25 | DEBUG    | dropdown match selector=#focusAreaId original='Welfare of the weaker sections' normalized='welfare of the weaker sections' matched='Welfare of the weaker sections' mode=exact
+2026-08-28 22:30:25 | DEBUG    | row=0: watchId spinner finished, checkboxes should be loaded
+2026-08-28 22:30:25 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-28 22:30:25 | DEBUG    | vprp_plan: section_found=True original='No' normalized='no' radio_locator=#vprpPlandiv input[type='radio'][name='vprpplan'] options=[{'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}, {'id': 'vprpplan', 'name': 'vprpplan', 'value': 'T', 'checked': False, 'text': 'Yes'}]
+2026-08-28 22:30:25 | INFO     | vprp_plan: selecting original='No' normalized='no' locator=#vprpPlandiv input[type='radio'][name='vprpplan'] matched={'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}
+2026-08-28 22:30:25 | DEBUG    | row=0 pdi: raw excel pdi_indicator=''
+2026-08-28 22:30:25 | DEBUG    | row=0 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-28 22:30:25 | DEBUG    | row=0 pdi: #checkboxes not visible, attempting to open
+2026-08-28 22:30:25 | DEBUG    | row=0 pdi: option_count_probe count=1 stable_checks=0
+2026-08-28 22:30:26 | DEBUG    | row=0 pdi: found 1 checkbox inputs in panel
+2026-08-28 22:30:26 | DEBUG    | row=0 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-28 22:30:26 | DEBUG    | row=0 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-28 22:30:26 | DEBUG    | row=0 pdi: random selection source=auto parsed_count=0 selected_count=1 selected_labels=['None']
+2026-08-28 22:30:26 | DEBUG    | row=0 pdi: portal options detected count=1 options=['None']
+2026-08-28 22:30:26 | DEBUG    | row=0 pdi: searching requested indicator='None' normalized='none'
+2026-08-28 22:30:26 | DEBUG    | row=0 pdi: match found requested='None' portal_label='None' id=missionAdId0 value=0 enabled=True checked=False
+2026-08-28 22:30:26 | DEBUG    | row=0 pdi: clicking checkbox id=missionAdId0 value=0 label='None'
+2026-08-28 22:30:26 | DEBUG    | row=0 pdi: after click - is_selected=True dom_checked=True for 'None'
+2026-08-28 22:30:26 | DEBUG    | row=0 pdi: selection_success=True label='None'
+2026-08-28 22:30:26 | DEBUG    | row=0 pdi: total selected indicators: 1
+2026-08-28 22:30:26 | INFO     | row=0 pdi: selection complete
+2026-08-28 22:30:26 | DEBUG    | row=0 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': True, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': False}]}, 'visibleError': False}
+2026-08-28 22:30:26 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-28 22:30:26 | DEBUG    | row=0 targeted_populace: requested indicators (1): ['All']
+2026-08-28 22:30:26 | DEBUG    | row=0 targeted_populace: found 1 total labels in panel
+2026-08-28 22:30:26 | DEBUG    | row=0 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-28 22:30:26 | DEBUG    | row=0 targeted_populace: clicking checkbox: 'All'
+2026-08-28 22:30:26 | DEBUG    | row=0 targeted_populace: checkbox selected successfully: 'All'
+2026-08-28 22:30:26 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-28 22:30:27 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-28 22:30:27 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-28 22:30:27 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-28 22:30:27 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-28 22:30:27 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-28 22:30:27 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-28 22:30:27 | DEBUG    | start_month: value after events='4' selected_option='4:April'
+2026-08-28 22:30:27 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-28 22:30:27 | DEBUG    | row=0: total indicative cost calculated as: 60 (excel: 60)
+2026-08-28 22:30:27 | DEBUG    | dropdown match selector=#flagshipSchemeId original='Mahatma Gandhi National Rural Employment Guarantee Scheme (MGNREGS) - Center Scheme' normalized='mahatma gandhi national rural employment guarantee scheme(mgnregs)- center scheme' matched='Mahatma Gandhi National Rural Employment Guarantee Scheme (MGNREGS) - Center Scheme' mode=exact
+2026-08-28 22:30:27 | INFO     | row=0: flagship scheme selected exact_requested='Mahatma Gandhi National Rural Employment Guarantee Scheme (MGNREGS) - Center Scheme' matched='Mahatma Gandhi National Rural Employment Guarantee Scheme (MGNREGS) - Center Scheme'
+2026-08-28 22:30:27 | DEBUG    | row=0: Supported Department - requesting: 'Department of Food & Public Distribution'
+2026-08-28 22:30:27 | DEBUG    | row=0: Waiting for supported_department options to populate
+2026-08-28 22:30:27 | DEBUG    | row=0: supported_department options available: 1 options
+2026-08-28 22:30:27 | WARNING  | row=0: supported_department option not found: 'Department of Food & Public Distribution' not found in #supportedMinistriesId. Available (1): ['Department of Rural Development']
+2026-08-28 22:30:27 | WARNING  | row=0 field=select_supported_department non-fatal Supported Department option not found: Department of Food & Public Distribution
+2026-08-28 22:30:28 | WARNING  | NON_FATAL | row=0 field=select_supported_department | Supported Department option not found: Department of Food & Public Distribution
+2026-08-28 22:30:28 | DEBUG    | row=0 activity_output: requested='Training/Capacity Building' normalized='training' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-28 22:30:28 | DEBUG    | [ACT-0280] pre_training_validation_state={'checked': [{'id': 'missionAdId0', 'value': '0', 'name': 'missionAntodayaDet[0].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-28 22:30:28 | INFO     | [ACT-0280] Activity Output detail record found
+2026-08-28 22:30:28 | INFO     | [ACT-0280] Activity Output: Training/Capacity Building
+2026-08-28 22:30:28 | INFO     | [ACT-0280] Handler: TrainingOutputHandler
+2026-08-28 22:30:28 | INFO     | [ACT-0280] Detail Sheet: Training
+2026-08-28 22:30:28 | INFO     | [ACT-0280] Radio: outputActvityAstId102
+2026-08-28 22:30:28 | INFO     | [ACT-0280] Modal opened: showTrainingDetailsPopup
+2026-08-28 22:30:28 | DEBUG    | dropdown match selector=#trngCatCdId original='Awareness Campaign' normalized='awareness campaign' matched='Awareness Campaign' mode=exact
+2026-08-28 22:30:28 | DEBUG    | dropdown match selector=#trngOrgByCdId original='Government Institute' normalized='government institute' matched='Government Institute' mode=exact
+2026-08-28 22:30:28 | DEBUG    | dropdown match selector=#trngCatCdId original='Awareness Campaign' normalized='awareness campaign' matched='Awareness Campaign' mode=exact
+2026-08-28 22:30:28 | INFO     | [ACT-0280] Training fields verified: 5/5
+2026-08-28 22:30:29 | INFO     | [ACT-0280] Training popup submitted successfully
+2026-08-28 22:30:29 | INFO     | [ACT-0280] Final Action: Save and Forward
+2026-08-28 22:30:30 | WARNING  | browser_pageerror: Cannot read properties of null (reading 'addEventListener')
+2026-08-28 22:30:32 | WARNING  | row=0 non-fatal field issues: [select_supported_department] Supported Department option not found: Department of Food & Public Distribution
+2026-08-28 22:30:32 | INFO     | row 0 SUCCESS
+2026-08-28 22:30:32 | INFO     | -- row 1 | Awareness Campaign about UDID
+2026-08-28 22:30:33 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-28 22:30:33 | DEBUG    | dropdown match selector=#themeId original='Theme 7 - Socially Just and Socially Secured Village' normalized='theme 7 - socially just and socially secured village' matched='Theme 7 - Socially Just and Socially Secured Village' mode=exact
+2026-08-28 22:30:35 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-28 22:30:35 | DEBUG    | dropdown match selector=#focusAreaId original='Social welfare' normalized='social welfare' matched='Social welfare' mode=exact
+2026-08-28 22:30:35 | DEBUG    | row=1: watchId spinner finished, checkboxes should be loaded
+2026-08-28 22:30:35 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-28 22:30:35 | DEBUG    | row=1 pdi: raw excel pdi_indicator=''
+2026-08-28 22:30:35 | DEBUG    | row=1 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-28 22:30:35 | DEBUG    | row=1 pdi: #checkboxes not visible, attempting to open
+2026-08-28 22:30:35 | DEBUG    | row=1 pdi: option_count_probe count=2 stable_checks=0
+2026-08-28 22:30:36 | DEBUG    | row=1 pdi: found 2 checkbox inputs in panel
+2026-08-28 22:30:36 | DEBUG    | row=1 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-28 22:30:36 | DEBUG    | row=1 pdi: available checkbox id=missionAdId1 value=411 label='Percentage of Differently abled persons provided with Assistive devices in Gram Panchayat' enabled=True checked=False
+2026-08-28 22:30:36 | DEBUG    | row=1 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-28 22:30:36 | DEBUG    | row=1 pdi: random selection source=auto parsed_count=0 selected_count=2 selected_labels=['None', 'Percentage of Differently abled persons provided with Assistive devices in Gram Panchayat']
+2026-08-28 22:30:36 | DEBUG    | row=1 pdi: portal options detected count=2 options=['None', 'Percentage of Differently abled persons provided with Assistive devices in Gram Panchayat']
+2026-08-28 22:30:36 | DEBUG    | row=1 pdi: searching requested indicator='None' normalized='none'
+2026-08-28 22:30:36 | DEBUG    | row=1 pdi: match found requested='None' portal_label='None' id=missionAdId0 value=0 enabled=True checked=False
+2026-08-28 22:30:36 | DEBUG    | row=1 pdi: searching requested indicator='Percentage of Differently abled persons provided with Assistive devices in Gram Panchayat' normalized='percentage of differently abled persons provided with assistive devices in gram panchayat'
+2026-08-28 22:30:36 | DEBUG    | row=1 pdi: match found requested='Percentage of Differently abled persons provided with Assistive devices in Gram Panchayat' portal_label='Percentage of Differently abled persons provided with Assistive devices in Gram Panchayat' id=missionAdId1 value=411 enabled=True checked=False
+2026-08-28 22:30:36 | DEBUG    | row=1 pdi: clicking checkbox id=missionAdId0 value=0 label='None'
+2026-08-28 22:30:36 | DEBUG    | row=1 pdi: after click - is_selected=True dom_checked=True for 'None'
+2026-08-28 22:30:36 | DEBUG    | row=1 pdi: selection_success=True label='None'
+2026-08-28 22:30:36 | DEBUG    | row=1 pdi: clicking checkbox id=missionAdId1 value=411 label='Percentage of Differently abled persons provided with Assistive devices in Gram Panchayat'
+2026-08-28 22:30:51 | WARNING  | row=1 pdi: normal click failed: Locator.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#maD, trying label click fallback
+2026-08-28 22:31:06 | ERROR    | row=1 pdi: label click fallback also failed: Locator.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#maD
+2026-08-28 22:31:06 | DEBUG    | row=1 pdi: total selected indicators: 1
+2026-08-28 22:31:06 | INFO     | row=1 pdi: selection complete
+2026-08-28 22:31:06 | DEBUG    | row=1 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': True, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': False}], 'missionAdId1': [{'checked': False, 'value': '411', 'name': 'missionAntodayaDet[1].maCode', 'disabled': True}]}, 'visibleError': False}
+2026-08-28 22:31:06 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-28 22:31:06 | DEBUG    | row=1 targeted_populace: requested indicators (1): ['All']
+2026-08-28 22:31:06 | DEBUG    | row=1 targeted_populace: found 1 total labels in panel
+2026-08-28 22:31:06 | DEBUG    | row=1 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-28 22:31:06 | DEBUG    | row=1 targeted_populace: clicking checkbox: 'All'
+2026-08-28 22:31:07 | DEBUG    | row=1 targeted_populace: checkbox selected successfully: 'All'
+2026-08-28 22:31:07 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-28 22:31:07 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-28 22:31:07 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-28 22:31:07 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-28 22:31:07 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-28 22:31:07 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-28 22:31:07 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-28 22:31:07 | DEBUG    | start_month: value after events='4' selected_option='4:April'
+2026-08-28 22:31:07 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-28 22:31:07 | DEBUG    | row=1: total indicative cost calculated as: 54 (excel: 54)
+2026-08-28 22:31:08 | DEBUG    | dropdown match selector=#flagshipSchemeId original='Deendayal Upadhyaya Grameen Kaushalya Yojana(DDUGKY) - Center Scheme' normalized='deendayal upadhyaya grameen kaushalya yojana(ddugky)- center scheme' matched='Deendayal Upadhyaya Grameen Kaushalya Yojana(DDUGKY) - Center Scheme' mode=exact
+2026-08-28 22:31:08 | INFO     | row=1: flagship scheme selected exact_requested='Deendayal Upadhyaya Grameen Kaushalya Yojana(DDUGKY) - Center Scheme' matched='Deendayal Upadhyaya Grameen Kaushalya Yojana(DDUGKY) - Center Scheme'
+2026-08-28 22:31:08 | DEBUG    | row=1: Supported Department - requesting: 'Department of Health & Family Welfare'
+2026-08-28 22:31:08 | DEBUG    | row=1: Waiting for supported_department options to populate
+2026-08-28 22:31:08 | DEBUG    | row=1: supported_department options available: 1 options
+2026-08-28 22:31:08 | WARNING  | row=1: supported_department option not found: 'Department of Health & Family Welfare' not found in #supportedMinistriesId. Available (1): ['Department of Rural Development']
+2026-08-28 22:31:08 | WARNING  | row=1 field=select_supported_department non-fatal Supported Department option not found: Department of Health & Family Welfare
+2026-08-28 22:31:08 | WARNING  | NON_FATAL | row=1 field=select_supported_department | Supported Department option not found: Department of Health & Family Welfare
+2026-08-28 22:31:08 | DEBUG    | row=1 activity_output: requested='Training/Capacity Building' normalized='training' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-28 22:31:08 | DEBUG    | [ACT-0281] pre_training_validation_state={'checked': [{'id': 'missionAdId0', 'value': '0', 'name': 'missionAntodayaDet[0].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-28 22:31:08 | INFO     | [ACT-0281] Activity Output detail record found
+2026-08-28 22:31:08 | INFO     | [ACT-0281] Activity Output: Training/Capacity Building
+2026-08-28 22:31:08 | INFO     | [ACT-0281] Handler: TrainingOutputHandler
+2026-08-28 22:31:08 | INFO     | [ACT-0281] Detail Sheet: Training
+2026-08-28 22:31:08 | INFO     | [ACT-0281] Radio: outputActvityAstId102
+2026-08-28 22:31:08 | INFO     | [ACT-0281] Modal opened: showTrainingDetailsPopup
+2026-08-28 22:31:08 | DEBUG    | dropdown match selector=#trngCatCdId original='Awareness Campaign' normalized='awareness campaign' matched='Awareness Campaign' mode=exact
+2026-08-28 22:31:08 | DEBUG    | dropdown match selector=#trngOrgByCdId original='Government Institute' normalized='government institute' matched='Government Institute' mode=exact
+2026-08-28 22:31:09 | INFO     | [ACT-0281] Training fields verified: 5/5
+2026-08-28 22:31:09 | INFO     | [ACT-0281] Training popup submitted successfully
+2026-08-28 22:31:09 | INFO     | [ACT-0281] Final Action: Save and Forward
+2026-08-28 22:31:11 | WARNING  | browser_pageerror: Cannot read properties of null (reading 'addEventListener')
+2026-08-28 22:31:12 | WARNING  | row=1 non-fatal field issues: [select_supported_department] Supported Department option not found: Department of Health & Family Welfare
+2026-08-28 22:31:12 | INFO     | row 1 SUCCESS
+2026-08-28 22:31:12 | INFO     | -- row 2 | Awareness Campaign on Scheme related to pension
+2026-08-28 22:31:14 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-28 22:31:15 | DEBUG    | dropdown match selector=#themeId original='Theme 7 - Socially Just and Socially Secured Village' normalized='theme 7 - socially just and socially secured village' matched='Theme 7 - Socially Just and Socially Secured Village' mode=exact
+2026-08-28 22:31:17 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-28 22:31:17 | DEBUG    | dropdown match selector=#focusAreaId original='Social welfare' normalized='social welfare' matched='Social welfare' mode=exact
+2026-08-28 22:31:17 | DEBUG    | row=2: watchId spinner finished, checkboxes should be loaded
+2026-08-28 22:31:17 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-28 22:31:17 | DEBUG    | vprp_plan: section_found=True original='No' normalized='no' radio_locator=#vprpPlandiv input[type='radio'][name='vprpplan'] options=[{'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}, {'id': 'vprpplan', 'name': 'vprpplan', 'value': 'T', 'checked': False, 'text': 'Yes'}]
+2026-08-28 22:31:17 | INFO     | vprp_plan: selecting original='No' normalized='no' locator=#vprpPlandiv input[type='radio'][name='vprpplan'] matched={'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}
+2026-08-28 22:31:17 | DEBUG    | row=2 pdi: raw excel pdi_indicator=''
+2026-08-28 22:31:17 | DEBUG    | row=2 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-28 22:31:17 | DEBUG    | row=2 pdi: #checkboxes not visible, attempting to open
+2026-08-28 22:31:17 | DEBUG    | row=2 pdi: option_count_probe count=1 stable_checks=0
+2026-08-28 22:31:18 | DEBUG    | row=2 pdi: found 1 checkbox inputs in panel
+2026-08-28 22:31:18 | DEBUG    | row=2 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-28 22:31:18 | DEBUG    | row=2 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-28 22:31:18 | DEBUG    | row=2 pdi: random selection source=auto parsed_count=0 selected_count=1 selected_labels=['None']
+2026-08-28 22:31:18 | DEBUG    | row=2 pdi: portal options detected count=1 options=['None']
+2026-08-28 22:31:18 | DEBUG    | row=2 pdi: searching requested indicator='None' normalized='none'
+2026-08-28 22:31:18 | DEBUG    | row=2 pdi: match found requested='None' portal_label='None' id=missionAdId0 value=0 enabled=True checked=False
+2026-08-28 22:31:18 | DEBUG    | row=2 pdi: clicking checkbox id=missionAdId0 value=0 label='None'
+2026-08-28 22:31:18 | DEBUG    | row=2 pdi: after click - is_selected=True dom_checked=True for 'None'
+2026-08-28 22:31:18 | DEBUG    | row=2 pdi: selection_success=True label='None'
+2026-08-28 22:31:18 | DEBUG    | row=2 pdi: total selected indicators: 1
+2026-08-28 22:31:18 | INFO     | row=2 pdi: selection complete
+2026-08-28 22:31:18 | DEBUG    | row=2 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': True, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': False}]}, 'visibleError': False}
+2026-08-28 22:31:18 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-28 22:31:18 | DEBUG    | row=2 targeted_populace: requested indicators (1): ['All']
+2026-08-28 22:31:18 | DEBUG    | row=2 targeted_populace: found 1 total labels in panel
+2026-08-28 22:31:18 | DEBUG    | row=2 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-28 22:31:18 | DEBUG    | row=2 targeted_populace: clicking checkbox: 'All'
+2026-08-28 22:31:18 | DEBUG    | row=2 targeted_populace: checkbox selected successfully: 'All'
+2026-08-28 22:31:18 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-28 22:31:19 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-28 22:31:34 | DEBUG    | row=2: start month options did not populate
+2026-08-28 22:31:34 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-28 22:31:34 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-28 22:31:34 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-28 22:31:34 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-28 22:31:34 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-28 22:31:34 | DEBUG    | start_month: value after events='4' selected_option='4:April'
+2026-08-28 22:31:34 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-28 22:31:34 | DEBUG    | row=2: total indicative cost calculated as: 80 (excel: 80)
+2026-08-28 22:31:34 | DEBUG    | dropdown match selector=#flagshipSchemeId original='National Social Assistance Programme (NSAP) - Center Scheme' normalized='national social assistance programme(nsap)- center scheme' matched='National Social Assistance Programme (NSAP) - Center Scheme' mode=exact
+2026-08-28 22:31:34 | INFO     | row=2: flagship scheme selected exact_requested='National Social Assistance Programme (NSAP) - Center Scheme' matched='National Social Assistance Programme (NSAP) - Center Scheme'
+2026-08-28 22:31:34 | DEBUG    | row=2: Supported Department - requesting: 'Ministry of Women and Child Development'
+2026-08-28 22:31:34 | DEBUG    | row=2: Waiting for supported_department options to populate
+2026-08-28 22:31:34 | DEBUG    | row=2: supported_department options available: 1 options
+2026-08-28 22:31:34 | WARNING  | row=2: supported_department option not found: 'Ministry of Women and Child Development' not found in #supportedMinistriesId. Available (1): ['Department of Rural Development']
+2026-08-28 22:31:34 | WARNING  | row=2 field=select_supported_department non-fatal Supported Department option not found: Ministry of Women and Child Development
+2026-08-28 22:31:34 | WARNING  | NON_FATAL | row=2 field=select_supported_department | Supported Department option not found: Ministry of Women and Child Development
+2026-08-28 22:31:34 | DEBUG    | row=2 activity_output: requested='Training/Capacity Building' normalized='training' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-28 22:31:34 | DEBUG    | [ACT-0282] pre_training_validation_state={'checked': [{'id': 'missionAdId0', 'value': '0', 'name': 'missionAntodayaDet[0].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-28 22:31:34 | INFO     | [ACT-0282] Activity Output detail record found
+2026-08-28 22:31:34 | INFO     | [ACT-0282] Activity Output: Training/Capacity Building
+2026-08-28 22:31:34 | INFO     | [ACT-0282] Handler: TrainingOutputHandler
+2026-08-28 22:31:34 | INFO     | [ACT-0282] Detail Sheet: Training
+2026-08-28 22:31:34 | INFO     | [ACT-0282] Radio: outputActvityAstId102
+2026-08-28 22:31:35 | INFO     | [ACT-0282] Modal opened: showTrainingDetailsPopup
+2026-08-28 22:31:35 | DEBUG    | dropdown match selector=#trngCatCdId original='Awareness Campaign' normalized='awareness campaign' matched='Awareness Campaign' mode=exact
+2026-08-28 22:31:35 | DEBUG    | dropdown match selector=#trngOrgByCdId original='Government Institute' normalized='government institute' matched='Government Institute' mode=exact
+2026-08-28 22:31:35 | INFO     | [ACT-0282] Training fields verified: 5/5
+2026-08-28 22:31:35 | INFO     | [ACT-0282] Training popup submitted successfully
+2026-08-28 22:31:35 | INFO     | [ACT-0282] Final Action: Save and Forward
+2026-08-28 22:31:37 | WARNING  | browser_pageerror: Cannot read properties of null (reading 'addEventListener')
+2026-08-28 22:31:38 | WARNING  | row=2 non-fatal field issues: [select_supported_department] Supported Department option not found: Ministry of Women and Child Development
+2026-08-28 22:31:38 | INFO     | row 2 SUCCESS
+2026-08-28 22:31:38 | INFO     | -- row 3 | Awareness Campaign on different social protection scheme
+2026-08-28 22:31:40 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-28 22:31:40 | DEBUG    | dropdown match selector=#themeId original='Theme 7 - Socially Just and Socially Secured Village' normalized='theme 7 - socially just and socially secured village' matched='Theme 7 - Socially Just and Socially Secured Village' mode=exact
+2026-08-28 22:31:42 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-28 22:31:42 | DEBUG    | dropdown match selector=#focusAreaId original='Social welfare' normalized='social welfare' matched='Social welfare' mode=exact
+2026-08-28 22:31:42 | DEBUG    | row=3: watchId spinner finished, checkboxes should be loaded
+2026-08-28 22:31:42 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-28 22:31:42 | DEBUG    | row=3 pdi: raw excel pdi_indicator=''
+2026-08-28 22:31:42 | DEBUG    | row=3 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-28 22:31:42 | DEBUG    | row=3 pdi: #checkboxes not visible, attempting to open
+2026-08-28 22:31:42 | DEBUG    | row=3 pdi: option_count_probe count=2 stable_checks=0
+2026-08-28 22:31:42 | DEBUG    | row=3 pdi: found 2 checkbox inputs in panel
+2026-08-28 22:31:42 | DEBUG    | row=3 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-28 22:31:42 | DEBUG    | row=3 pdi: available checkbox id=missionAdId1 value=20 label='Percentage of Households covered by a Health Scheme /Health Insurance of State or Central Government during the reference year' enabled=True checked=False
+2026-08-28 22:31:42 | DEBUG    | row=3 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-28 22:31:42 | DEBUG    | row=3 pdi: random selection source=auto parsed_count=0 selected_count=2 selected_labels=['None', 'Percentage of Households covered by a Health Scheme /Health Insurance of State or Central Government during the reference year']
+2026-08-28 22:31:42 | DEBUG    | row=3 pdi: portal options detected count=2 options=['None', 'Percentage of Households covered by a Health Scheme /Health Insurance of State or Central Government during the reference year']
+2026-08-28 22:31:42 | DEBUG    | row=3 pdi: searching requested indicator='None' normalized='none'
+2026-08-28 22:31:42 | DEBUG    | row=3 pdi: match found requested='None' portal_label='None' id=missionAdId0 value=0 enabled=True checked=False
+2026-08-28 22:31:42 | DEBUG    | row=3 pdi: searching requested indicator='Percentage of Households covered by a Health Scheme /Health Insurance of State or Central Government during the reference year' normalized='percentage of households covered by a health scheme /health insurance of state or central government during the reference year'
+2026-08-28 22:31:42 | DEBUG    | row=3 pdi: match found requested='Percentage of Households covered by a Health Scheme /Health Insurance of State or Central Government during the reference year' portal_label='Percentage of Households covered by a Health Scheme /Health Insurance of State or Central Government during the reference year' id=missionAdId1 value=20 enabled=True checked=False
+2026-08-28 22:31:42 | DEBUG    | row=3 pdi: clicking checkbox id=missionAdId0 value=0 label='None'
+2026-08-28 22:31:43 | DEBUG    | row=3 pdi: after click - is_selected=True dom_checked=True for 'None'
+2026-08-28 22:31:43 | DEBUG    | row=3 pdi: selection_success=True label='None'
+2026-08-28 22:31:43 | DEBUG    | row=3 pdi: clicking checkbox id=missionAdId1 value=20 label='Percentage of Households covered by a Health Scheme /Health Insurance of State or Central Government during the reference year'
+2026-08-28 22:31:58 | WARNING  | row=3 pdi: normal click failed: Locator.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#maD, trying label click fallback
+2026-08-28 22:32:13 | ERROR    | row=3 pdi: label click fallback also failed: Locator.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#maD
+2026-08-28 22:32:13 | DEBUG    | row=3 pdi: total selected indicators: 1
+2026-08-28 22:32:13 | INFO     | row=3 pdi: selection complete
+2026-08-28 22:32:13 | DEBUG    | row=3 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': True, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': False}], 'missionAdId1': [{'checked': False, 'value': '20', 'name': 'missionAntodayaDet[1].maCode', 'disabled': True}]}, 'visibleError': False}
+2026-08-28 22:32:13 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-28 22:32:13 | DEBUG    | row=3 targeted_populace: requested indicators (1): ['All']
+2026-08-28 22:32:13 | DEBUG    | row=3 targeted_populace: found 1 total labels in panel
+2026-08-28 22:32:13 | DEBUG    | row=3 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-28 22:32:13 | DEBUG    | row=3 targeted_populace: clicking checkbox: 'All'
+2026-08-28 22:32:13 | DEBUG    | row=3 targeted_populace: checkbox selected successfully: 'All'
+2026-08-28 22:32:13 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-28 22:32:14 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-28 22:32:14 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-28 22:32:14 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-28 22:32:14 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-28 22:32:14 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-28 22:32:14 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-28 22:32:14 | DEBUG    | start_month: value after events='4' selected_option='4:April'
+2026-08-28 22:32:14 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-28 22:32:14 | DEBUG    | row=3: total indicative cost calculated as: 120 (excel: 120)
+2026-08-28 22:32:14 | DEBUG    | dropdown match selector=#flagshipSchemeId original='Pradhan Mantri AwasYojana Gramin PMAY (G) - Center Scheme' normalized='pradhan mantri awasyojana gramin pmay(g)- center scheme' matched='Pradhan Mantri AwasYojana Gramin PMAY (G) - Center Scheme' mode=exact
+2026-08-28 22:32:14 | INFO     | row=3: flagship scheme selected exact_requested='Pradhan Mantri AwasYojana Gramin PMAY (G) - Center Scheme' matched='Pradhan Mantri AwasYojana Gramin PMAY (G) - Center Scheme'
+2026-08-28 22:32:14 | DEBUG    | row=3: Supported Department - requesting: 'Ministry of Power'
+2026-08-28 22:32:14 | DEBUG    | row=3: Waiting for supported_department options to populate
+2026-08-28 22:32:15 | DEBUG    | row=3: supported_department options available: 1 options
+2026-08-28 22:32:15 | WARNING  | row=3: supported_department option not found: 'Ministry of Power' not found in #supportedMinistriesId. Available (1): ['Department of Rural Development']
+2026-08-28 22:32:15 | WARNING  | row=3 field=select_supported_department non-fatal Supported Department option not found: Ministry of Power
+2026-08-28 22:32:15 | WARNING  | NON_FATAL | row=3 field=select_supported_department | Supported Department option not found: Ministry of Power
+2026-08-28 22:32:15 | DEBUG    | row=3 activity_output: requested='Training/Capacity Building' normalized='training' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-28 22:32:15 | DEBUG    | [ACT-0283] pre_training_validation_state={'checked': [{'id': 'missionAdId0', 'value': '0', 'name': 'missionAntodayaDet[0].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-28 22:32:15 | INFO     | [ACT-0283] Activity Output detail record found
+2026-08-28 22:32:15 | INFO     | [ACT-0283] Activity Output: Training/Capacity Building
+2026-08-28 22:32:15 | INFO     | [ACT-0283] Handler: TrainingOutputHandler
+2026-08-28 22:32:15 | INFO     | [ACT-0283] Detail Sheet: Training
+2026-08-28 22:32:15 | INFO     | [ACT-0283] Radio: outputActvityAstId102
+2026-08-28 22:32:15 | INFO     | [ACT-0283] Modal opened: showTrainingDetailsPopup
+2026-08-28 22:32:15 | DEBUG    | dropdown match selector=#trngCatCdId original='Awareness Campaign' normalized='awareness campaign' matched='Awareness Campaign' mode=exact
+2026-08-28 22:32:15 | DEBUG    | dropdown match selector=#trngOrgByCdId original='Government Institute' normalized='government institute' matched='Government Institute' mode=exact
+2026-08-28 22:32:18 | DEBUG    | dropdown match selector=#trngOrgByCdId original='Government Institute' normalized='government institute' matched='Government Institute' mode=exact
+2026-08-28 22:32:18 | INFO     | [ACT-0283] Training fields verified: 5/5
+2026-08-28 22:32:18 | INFO     | [ACT-0283] Training popup submitted successfully
+2026-08-28 22:32:18 | INFO     | [ACT-0283] Final Action: Save and Forward
+2026-08-28 22:32:20 | WARNING  | browser_pageerror: Cannot read properties of null (reading 'addEventListener')
+2026-08-28 22:32:22 | WARNING  | row=3 non-fatal field issues: [select_supported_department] Supported Department option not found: Ministry of Power
+2026-08-28 22:32:22 | INFO     | row 3 SUCCESS
+2026-08-28 22:32:22 | INFO     | -- row 4 | Awareness on Discrimination against transgenders (Social exc
+2026-08-28 22:32:23 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-28 22:32:23 | DEBUG    | dropdown match selector=#themeId original='Theme 7 - Socially Just and Socially Secured Village' normalized='theme 7 - socially just and socially secured village' matched='Theme 7 - Socially Just and Socially Secured Village' mode=exact
+2026-08-28 22:32:25 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-28 22:32:25 | DEBUG    | dropdown match selector=#focusAreaId original='Social welfare' normalized='social welfare' matched='Social welfare' mode=exact
+2026-08-28 22:32:25 | DEBUG    | row=4: watchId spinner finished, checkboxes should be loaded
+2026-08-28 22:32:25 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-28 22:32:25 | DEBUG    | vprp_plan: section_found=True original='No' normalized='no' radio_locator=#vprpPlandiv input[type='radio'][name='vprpplan'] options=[{'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}, {'id': 'vprpplan', 'name': 'vprpplan', 'value': 'T', 'checked': False, 'text': 'Yes'}]
+2026-08-28 22:32:25 | INFO     | vprp_plan: selecting original='No' normalized='no' locator=#vprpPlandiv input[type='radio'][name='vprpplan'] matched={'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}
+2026-08-28 22:32:25 | DEBUG    | row=4 pdi: raw excel pdi_indicator=''
+2026-08-28 22:32:25 | DEBUG    | row=4 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-28 22:32:25 | DEBUG    | row=4 pdi: #checkboxes not visible, attempting to open
+2026-08-28 22:32:25 | DEBUG    | row=4 pdi: option_count_probe count=1 stable_checks=0
+2026-08-28 22:32:26 | DEBUG    | row=4 pdi: found 1 checkbox inputs in panel
+2026-08-28 22:32:26 | DEBUG    | row=4 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-28 22:32:26 | DEBUG    | row=4 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-28 22:32:26 | DEBUG    | row=4 pdi: random selection source=auto parsed_count=0 selected_count=1 selected_labels=['None']
+2026-08-28 22:32:26 | DEBUG    | row=4 pdi: portal options detected count=1 options=['None']
+2026-08-28 22:32:26 | DEBUG    | row=4 pdi: searching requested indicator='None' normalized='none'
+2026-08-28 22:32:26 | DEBUG    | row=4 pdi: match found requested='None' portal_label='None' id=missionAdId0 value=0 enabled=True checked=False
+2026-08-28 22:32:26 | DEBUG    | row=4 pdi: clicking checkbox id=missionAdId0 value=0 label='None'
+2026-08-28 22:32:26 | DEBUG    | row=4 pdi: after click - is_selected=True dom_checked=True for 'None'
+2026-08-28 22:32:26 | DEBUG    | row=4 pdi: selection_success=True label='None'
+2026-08-28 22:32:26 | DEBUG    | row=4 pdi: total selected indicators: 1
+2026-08-28 22:32:26 | INFO     | row=4 pdi: selection complete
+2026-08-28 22:32:26 | DEBUG    | row=4 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': True, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': False}]}, 'visibleError': False}
+2026-08-28 22:32:26 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-28 22:32:26 | DEBUG    | row=4 targeted_populace: requested indicators (1): ['All']
+2026-08-28 22:32:26 | DEBUG    | row=4 targeted_populace: found 1 total labels in panel
+2026-08-28 22:32:26 | DEBUG    | row=4 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-28 22:32:26 | DEBUG    | row=4 targeted_populace: clicking checkbox: 'All'
+2026-08-28 22:32:26 | DEBUG    | row=4 targeted_populace: checkbox selected successfully: 'All'
+2026-08-28 22:32:26 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-28 22:32:27 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-28 22:32:27 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-28 22:32:27 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-28 22:32:27 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-28 22:32:27 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-28 22:32:27 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-28 22:32:27 | DEBUG    | start_month: value after events='4' selected_option='4:April'
+2026-08-28 22:32:27 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-28 22:32:27 | DEBUG    | row=4: total indicative cost calculated as: 42 (excel: 42)
+2026-08-28 22:32:27 | DEBUG    | dropdown match selector=#flagshipSchemeId original='Swachh Bharat Mission (Gramin) (SBM (G)] - Center Scheme' normalized='swachh bharat mission(gramin)(sbm(g)] - center scheme' matched='Swachh Bharat Mission (Gramin) (SBM (G)] - Center Scheme' mode=exact
+2026-08-28 22:32:27 | INFO     | row=4: flagship scheme selected exact_requested='Swachh Bharat Mission (Gramin) (SBM (G)] - Center Scheme' matched='Swachh Bharat Mission (Gramin) (SBM (G)] - Center Scheme'
+2026-08-28 22:32:27 | DEBUG    | row=4 activity_output: requested='Training/Capacity Building' normalized='training' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-28 22:32:27 | DEBUG    | [ACT-0284] pre_training_validation_state={'checked': [{'id': 'missionAdId0', 'value': '0', 'name': 'missionAntodayaDet[0].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-28 22:32:27 | INFO     | [ACT-0284] Activity Output detail record found
+2026-08-28 22:32:27 | INFO     | [ACT-0284] Activity Output: Training/Capacity Building
+2026-08-28 22:32:27 | INFO     | [ACT-0284] Handler: TrainingOutputHandler
+2026-08-28 22:32:27 | INFO     | [ACT-0284] Detail Sheet: Training
+2026-08-28 22:32:27 | INFO     | [ACT-0284] Radio: outputActvityAstId102
+2026-08-28 22:32:28 | INFO     | [ACT-0284] Modal opened: showTrainingDetailsPopup
+2026-08-28 22:32:28 | DEBUG    | dropdown match selector=#trngCatCdId original='Awareness Campaign' normalized='awareness campaign' matched='Awareness Campaign' mode=exact
+2026-08-28 22:32:28 | DEBUG    | dropdown match selector=#trngOrgByCdId original='Government Institute' normalized='government institute' matched='Government Institute' mode=exact
+2026-08-28 22:32:28 | INFO     | [ACT-0284] Training fields verified: 5/5
+2026-08-28 22:32:28 | INFO     | [ACT-0284] Training popup submitted successfully
+2026-08-28 22:32:28 | INFO     | [ACT-0284] Final Action: Save and Forward
+2026-08-28 22:32:30 | WARNING  | browser_pageerror: Cannot read properties of null (reading 'addEventListener')
+2026-08-28 22:32:31 | INFO     | row 4 SUCCESS
+2026-08-28 22:32:31 | INFO     | -- row 5 | Awareness on Issues related to migrant labourers (Social exc
+2026-08-28 22:32:33 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-28 22:32:33 | DEBUG    | dropdown match selector=#themeId original='Theme 7 - Socially Just and Socially Secured Village' normalized='theme 7 - socially just and socially secured village' matched='Theme 7 - Socially Just and Socially Secured Village' mode=exact
+2026-08-28 22:32:34 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-28 22:32:35 | DEBUG    | dropdown match selector=#focusAreaId original='Poverty allevation programme' normalized='poverty allevation programme' matched='Poverty allevation programme' mode=exact
+2026-08-28 22:32:35 | DEBUG    | row=5: watchId spinner finished, checkboxes should be loaded
+2026-08-28 22:32:35 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-28 22:32:35 | DEBUG    | vprp_plan: section_found=True original='No' normalized='no' radio_locator=#vprpPlandiv input[type='radio'][name='vprpplan'] options=[{'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}, {'id': 'vprpplan', 'name': 'vprpplan', 'value': 'T', 'checked': False, 'text': 'Yes'}]
+2026-08-28 22:32:35 | INFO     | vprp_plan: selecting original='No' normalized='no' locator=#vprpPlandiv input[type='radio'][name='vprpplan'] matched={'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}
+2026-08-28 22:32:35 | DEBUG    | row=5 pdi: raw excel pdi_indicator=''
+2026-08-28 22:32:35 | DEBUG    | row=5 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-28 22:32:35 | DEBUG    | row=5 pdi: #checkboxes not visible, attempting to open
+2026-08-28 22:32:35 | DEBUG    | row=5 pdi: option_count_probe count=1 stable_checks=0
+2026-08-28 22:32:35 | DEBUG    | row=5 pdi: found 1 checkbox inputs in panel
+2026-08-28 22:32:35 | DEBUG    | row=5 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-28 22:32:35 | DEBUG    | row=5 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-28 22:32:35 | DEBUG    | row=5 pdi: random selection source=auto parsed_count=0 selected_count=1 selected_labels=['None']
+2026-08-28 22:32:35 | DEBUG    | row=5 pdi: portal options detected count=1 options=['None']
+2026-08-28 22:32:35 | DEBUG    | row=5 pdi: searching requested indicator='None' normalized='none'
+2026-08-28 22:32:35 | DEBUG    | row=5 pdi: match found requested='None' portal_label='None' id=missionAdId0 value=0 enabled=True checked=False
+2026-08-28 22:32:35 | DEBUG    | row=5 pdi: clicking checkbox id=missionAdId0 value=0 label='None'
+2026-08-28 22:32:36 | DEBUG    | row=5 pdi: after click - is_selected=True dom_checked=True for 'None'
+2026-08-28 22:32:36 | DEBUG    | row=5 pdi: selection_success=True label='None'
+2026-08-28 22:32:36 | DEBUG    | row=5 pdi: total selected indicators: 1
+2026-08-28 22:32:36 | INFO     | row=5 pdi: selection complete
+2026-08-28 22:32:36 | DEBUG    | row=5 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': True, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': False}]}, 'visibleError': False}
+2026-08-28 22:32:36 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-28 22:32:36 | DEBUG    | row=5 targeted_populace: requested indicators (1): ['All']
+2026-08-28 22:32:36 | DEBUG    | row=5 targeted_populace: found 1 total labels in panel
+2026-08-28 22:32:36 | DEBUG    | row=5 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-28 22:32:36 | DEBUG    | row=5 targeted_populace: clicking checkbox: 'All'
+2026-08-28 22:32:36 | DEBUG    | row=5 targeted_populace: checkbox selected successfully: 'All'
+2026-08-28 22:32:36 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-28 22:32:36 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-28 22:32:37 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-28 22:32:37 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-28 22:32:37 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-28 22:32:37 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-28 22:32:37 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-28 22:32:37 | DEBUG    | start_month: value after events='4' selected_option='4:April'
+2026-08-28 22:32:37 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-28 22:32:37 | DEBUG    | row=5: total indicative cost calculated as: 110 (excel: 110)
+2026-08-28 22:32:37 | DEBUG    | dropdown match selector=#flagshipSchemeId original='Jal Jeevan Mission (JJM) - Center Scheme' normalized='jal jeevan mission(jjm)- center scheme' matched='Jal Jeevan Mission (JJM) - Center Scheme' mode=exact
+2026-08-28 22:32:37 | INFO     | row=5: flagship scheme selected exact_requested='Jal Jeevan Mission (JJM) - Center Scheme' matched='Jal Jeevan Mission (JJM) - Center Scheme'
+2026-08-28 22:32:37 | DEBUG    | row=5 activity_output: requested='Training/Capacity Building' normalized='training' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-28 22:32:37 | DEBUG    | [ACT-0285] pre_training_validation_state={'checked': [{'id': 'missionAdId0', 'value': '0', 'name': 'missionAntodayaDet[0].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-28 22:32:37 | INFO     | [ACT-0285] Activity Output detail record found
+2026-08-28 22:32:37 | INFO     | [ACT-0285] Activity Output: Training/Capacity Building
+2026-08-28 22:32:37 | INFO     | [ACT-0285] Handler: TrainingOutputHandler
+2026-08-28 22:32:37 | INFO     | [ACT-0285] Detail Sheet: Training
+2026-08-28 22:32:37 | INFO     | [ACT-0285] Radio: outputActvityAstId102
+2026-08-28 22:32:38 | INFO     | [ACT-0285] Modal opened: showTrainingDetailsPopup
+2026-08-28 22:32:38 | DEBUG    | dropdown match selector=#trngCatCdId original='Awareness Campaign' normalized='awareness campaign' matched='Awareness Campaign' mode=exact
+2026-08-28 22:32:38 | DEBUG    | dropdown match selector=#trngOrgByCdId original='Government Institute' normalized='government institute' matched='Government Institute' mode=exact
+2026-08-28 22:32:38 | INFO     | [ACT-0285] Training fields verified: 5/5
+2026-08-28 22:32:38 | INFO     | [ACT-0285] Training popup submitted successfully
+2026-08-28 22:32:38 | INFO     | [ACT-0285] Final Action: Save and Forward
+2026-08-28 22:32:40 | WARNING  | browser_pageerror: Cannot read properties of null (reading 'addEventListener')
+2026-08-28 22:32:41 | INFO     | row 5 SUCCESS
+2026-08-28 22:32:41 | INFO     | -- row 6 | Awareness on Issues related to persons with disabilities (PW
+2026-08-28 22:32:43 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-28 22:32:43 | DEBUG    | dropdown match selector=#themeId original='Theme 7 - Socially Just and Socially Secured Village' normalized='theme 7 - socially just and socially secured village' matched='Theme 7 - Socially Just and Socially Secured Village' mode=exact
+2026-08-28 22:32:44 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-28 22:32:44 | DEBUG    | dropdown match selector=#focusAreaId original='Social welfare' normalized='social welfare' matched='Social welfare' mode=exact
+2026-08-28 22:32:44 | DEBUG    | row=6: watchId spinner finished, checkboxes should be loaded
+2026-08-28 22:32:44 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-28 22:32:44 | DEBUG    | vprp_plan: section_found=True original='No' normalized='no' radio_locator=#vprpPlandiv input[type='radio'][name='vprpplan'] options=[{'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}, {'id': 'vprpplan', 'name': 'vprpplan', 'value': 'T', 'checked': False, 'text': 'Yes'}]
+2026-08-28 22:32:44 | INFO     | vprp_plan: selecting original='No' normalized='no' locator=#vprpPlandiv input[type='radio'][name='vprpplan'] matched={'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}
+2026-08-28 22:32:44 | DEBUG    | row=6 pdi: raw excel pdi_indicator=''
+2026-08-28 22:32:44 | DEBUG    | row=6 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-28 22:32:44 | DEBUG    | row=6 pdi: #checkboxes not visible, attempting to open
+2026-08-28 22:32:45 | DEBUG    | row=6 pdi: option_count_probe count=2 stable_checks=0
+2026-08-28 22:32:45 | DEBUG    | row=6 pdi: found 2 checkbox inputs in panel
+2026-08-28 22:32:45 | DEBUG    | row=6 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-28 22:32:45 | DEBUG    | row=6 pdi: available checkbox id=missionAdId1 value=411 label='Percentage of Differently abled persons provided with Assistive devices in Gram Panchayat' enabled=True checked=False
+2026-08-28 22:32:45 | DEBUG    | row=6 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-28 22:32:45 | DEBUG    | row=6 pdi: random selection source=auto parsed_count=0 selected_count=1 selected_labels=['None']
+2026-08-28 22:32:45 | DEBUG    | row=6 pdi: portal options detected count=2 options=['None', 'Percentage of Differently abled persons provided with Assistive devices in Gram Panchayat']
+2026-08-28 22:32:45 | DEBUG    | row=6 pdi: searching requested indicator='None' normalized='none'
+2026-08-28 22:32:45 | DEBUG    | row=6 pdi: match found requested='None' portal_label='None' id=missionAdId0 value=0 enabled=True checked=False
+2026-08-28 22:32:45 | DEBUG    | row=6 pdi: clicking checkbox id=missionAdId0 value=0 label='None'
+2026-08-28 22:32:45 | DEBUG    | row=6 pdi: after click - is_selected=True dom_checked=True for 'None'
+2026-08-28 22:32:45 | DEBUG    | row=6 pdi: selection_success=True label='None'
+2026-08-28 22:32:45 | DEBUG    | row=6 pdi: total selected indicators: 1
+2026-08-28 22:32:45 | INFO     | row=6 pdi: selection complete
+2026-08-28 22:32:45 | DEBUG    | row=6 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': True, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': False}], 'missionAdId1': [{'checked': False, 'value': '411', 'name': 'missionAntodayaDet[1].maCode', 'disabled': True}]}, 'visibleError': False}
+2026-08-28 22:32:45 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-28 22:32:46 | DEBUG    | row=6 targeted_populace: requested indicators (1): ['All']
+2026-08-28 22:32:46 | DEBUG    | row=6 targeted_populace: found 1 total labels in panel
+2026-08-28 22:32:46 | DEBUG    | row=6 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-28 22:32:46 | DEBUG    | row=6 targeted_populace: clicking checkbox: 'All'
+2026-08-28 22:32:46 | DEBUG    | row=6 targeted_populace: checkbox selected successfully: 'All'
+2026-08-28 22:32:46 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-28 22:32:46 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-28 22:33:01 | DEBUG    | row=6: start month options did not populate
+2026-08-28 22:33:01 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-28 22:33:01 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-28 22:33:01 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-28 22:33:01 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-28 22:33:01 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-28 22:33:01 | DEBUG    | start_month: value after events='4' selected_option='4:April'
+2026-08-28 22:33:01 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-28 22:33:02 | DEBUG    | row=6: total indicative cost calculated as: 72 (excel: 72)
+2026-08-28 22:33:02 | DEBUG    | dropdown match selector=#flagshipSchemeId original='Deendayal Upadhyaya Gram Jyoti Yojana (DDUGJY) - Center Scheme' normalized='deendayal upadhyaya gram jyoti yojana(ddugjy)- center scheme' matched='Deendayal Upadhyaya Gram Jyoti Yojana (DDUGJY) - Center Scheme' mode=exact
+2026-08-28 22:33:02 | INFO     | row=6: flagship scheme selected exact_requested='Deendayal Upadhyaya Gram Jyoti Yojana (DDUGJY) - Center Scheme' matched='Deendayal Upadhyaya Gram Jyoti Yojana (DDUGJY) - Center Scheme'
+2026-08-28 22:33:02 | DEBUG    | row=6: Supported Department - requesting: 'Department of Rural Development'
+2026-08-28 22:33:02 | DEBUG    | row=6: Waiting for supported_department options to populate
+2026-08-28 22:33:02 | DEBUG    | row=6: supported_department options available: 1 options
+2026-08-28 22:33:02 | WARNING  | row=6: supported_department option not found: 'Department of Rural Development' not found in #supportedMinistriesId. Available (1): ['Ministry of Power']
+2026-08-28 22:33:02 | WARNING  | row=6 field=select_supported_department non-fatal Supported Department option not found: Department of Rural Development
+2026-08-28 22:33:02 | WARNING  | NON_FATAL | row=6 field=select_supported_department | Supported Department option not found: Department of Rural Development
+2026-08-28 22:33:02 | DEBUG    | row=6 activity_output: requested='Training/Capacity Building' normalized='training' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-28 22:33:02 | DEBUG    | [ACT-0286] pre_training_validation_state={'checked': [{'id': 'missionAdId0', 'value': '0', 'name': 'missionAntodayaDet[0].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-28 22:33:02 | INFO     | [ACT-0286] Activity Output detail record found
+2026-08-28 22:33:02 | INFO     | [ACT-0286] Activity Output: Training/Capacity Building
+2026-08-28 22:33:02 | INFO     | [ACT-0286] Handler: TrainingOutputHandler
+2026-08-28 22:33:02 | INFO     | [ACT-0286] Detail Sheet: Training
+2026-08-28 22:33:02 | INFO     | [ACT-0286] Radio: outputActvityAstId102
+2026-08-28 22:33:02 | INFO     | [ACT-0286] Modal opened: showTrainingDetailsPopup
+2026-08-28 22:33:02 | DEBUG    | dropdown match selector=#trngCatCdId original='Awareness Campaign' normalized='awareness campaign' matched='Awareness Campaign' mode=exact
+2026-08-28 22:33:02 | DEBUG    | dropdown match selector=#trngOrgByCdId original='Government Institute' normalized='government institute' matched='Government Institute' mode=exact
+2026-08-28 22:33:03 | INFO     | [ACT-0286] Training fields verified: 5/5
+2026-08-28 22:33:03 | INFO     | [ACT-0286] Training popup submitted successfully
+2026-08-28 22:33:03 | INFO     | [ACT-0286] Final Action: Save and Forward
+2026-08-28 22:33:05 | WARNING  | browser_pageerror: Cannot read properties of null (reading 'addEventListener')
+2026-08-28 22:33:06 | WARNING  | row=6 non-fatal field issues: [select_supported_department] Supported Department option not found: Department of Rural Development
+2026-08-28 22:33:06 | INFO     | row 6 SUCCESS
+2026-08-28 22:33:06 | INFO     | -- row 7 | Awareness on Issues related to sanitation workers (Social ex
+2026-08-28 22:33:08 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-28 22:33:08 | DEBUG    | dropdown match selector=#themeId original='Theme 7 - Socially Just and Socially Secured Village' normalized='theme 7 - socially just and socially secured village' matched='Theme 7 - Socially Just and Socially Secured Village' mode=exact
+2026-08-28 22:33:09 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-28 22:33:10 | DEBUG    | dropdown match selector=#focusAreaId original='Social welfare' normalized='social welfare' matched='Social welfare' mode=exact
+2026-08-28 22:33:10 | DEBUG    | row=7: watchId spinner finished, checkboxes should be loaded
+2026-08-28 22:33:10 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-28 22:33:10 | DEBUG    | vprp_plan: section_found=True original='No' normalized='no' radio_locator=#vprpPlandiv input[type='radio'][name='vprpplan'] options=[{'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}, {'id': 'vprpplan', 'name': 'vprpplan', 'value': 'T', 'checked': False, 'text': 'Yes'}]
+2026-08-28 22:33:10 | INFO     | vprp_plan: selecting original='No' normalized='no' locator=#vprpPlandiv input[type='radio'][name='vprpplan'] matched={'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}
+2026-08-28 22:33:10 | DEBUG    | row=7 pdi: raw excel pdi_indicator=''
+2026-08-28 22:33:10 | DEBUG    | row=7 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-28 22:33:10 | DEBUG    | row=7 pdi: #checkboxes not visible, attempting to open
+2026-08-28 22:33:10 | DEBUG    | row=7 pdi: option_count_probe count=2 stable_checks=0
+2026-08-28 22:33:10 | DEBUG    | row=7 pdi: found 2 checkbox inputs in panel
+2026-08-28 22:33:10 | DEBUG    | row=7 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-28 22:33:10 | DEBUG    | row=7 pdi: available checkbox id=missionAdId1 value=188 label='Percentage of villages having arrangement of Solid Waste Management' enabled=True checked=False
+2026-08-28 22:33:10 | DEBUG    | row=7 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-28 22:33:10 | DEBUG    | row=7 pdi: random selection source=auto parsed_count=0 selected_count=1 selected_labels=['None']
+2026-08-28 22:33:10 | DEBUG    | row=7 pdi: portal options detected count=2 options=['None', 'Percentage of villages having arrangement of Solid Waste Management']
+2026-08-28 22:33:10 | DEBUG    | row=7 pdi: searching requested indicator='None' normalized='none'
+2026-08-28 22:33:10 | DEBUG    | row=7 pdi: match found requested='None' portal_label='None' id=missionAdId0 value=0 enabled=True checked=False
+2026-08-28 22:33:10 | DEBUG    | row=7 pdi: clicking checkbox id=missionAdId0 value=0 label='None'
+2026-08-28 22:33:11 | DEBUG    | row=7 pdi: after click - is_selected=True dom_checked=True for 'None'
+2026-08-28 22:33:11 | DEBUG    | row=7 pdi: selection_success=True label='None'
+2026-08-28 22:33:11 | DEBUG    | row=7 pdi: total selected indicators: 1
+2026-08-28 22:33:11 | INFO     | row=7 pdi: selection complete
+2026-08-28 22:33:11 | DEBUG    | row=7 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': True, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': False}], 'missionAdId1': [{'checked': False, 'value': '188', 'name': 'missionAntodayaDet[1].maCode', 'disabled': True}]}, 'visibleError': False}
+2026-08-28 22:33:11 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-28 22:33:11 | DEBUG    | row=7 targeted_populace: requested indicators (1): ['All']
+2026-08-28 22:33:11 | DEBUG    | row=7 targeted_populace: found 1 total labels in panel
+2026-08-28 22:33:11 | DEBUG    | row=7 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-28 22:33:11 | DEBUG    | row=7 targeted_populace: clicking checkbox: 'All'
+2026-08-28 22:33:11 | DEBUG    | row=7 targeted_populace: checkbox selected successfully: 'All'
+2026-08-28 22:33:11 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-28 22:33:11 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-28 22:33:27 | DEBUG    | row=7: start month options did not populate
+2026-08-28 22:33:27 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-28 22:33:27 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-28 22:33:27 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-28 22:33:27 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-28 22:33:27 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-28 22:33:27 | DEBUG    | start_month: value after events='4' selected_option='4:April'
+2026-08-28 22:33:27 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-28 22:33:27 | DEBUG    | row=7: total indicative cost calculated as: 126 (excel: 126)
+2026-08-28 22:33:27 | DEBUG    | dropdown match selector=#flagshipSchemeId original='Pradhan Mantri Krishi Sinchayee Yojana (PMKSY) - Center Scheme' normalized='pradhan mantri krishi sinchayee yojana(pmksy)- center scheme' matched='Pradhan Mantri Krishi Sinchayee Yojana (PMKSY) - Center Scheme' mode=exact
+2026-08-28 22:33:27 | INFO     | row=7: flagship scheme selected exact_requested='Pradhan Mantri Krishi Sinchayee Yojana (PMKSY) - Center Scheme' matched='Pradhan Mantri Krishi Sinchayee Yojana (PMKSY) - Center Scheme'
+2026-08-28 22:33:27 | DEBUG    | row=7: Supported Department - requesting: 'Department of Drinking Water and Sanitation'
+2026-08-28 22:33:27 | DEBUG    | row=7: Waiting for supported_department options to populate
+2026-08-28 22:33:27 | DEBUG    | row=7: supported_department options available: 1 options
+2026-08-28 22:33:27 | WARNING  | row=7: supported_department option not found: 'Department of Drinking Water and Sanitation' not found in #supportedMinistriesId. Available (1): ['Ministry of Agriculture and Farmers Welfare']
+2026-08-28 22:33:27 | WARNING  | row=7 field=select_supported_department non-fatal Supported Department option not found: Department of Drinking Water and Sanitation
+2026-08-28 22:33:27 | WARNING  | NON_FATAL | row=7 field=select_supported_department | Supported Department option not found: Department of Drinking Water and Sanitation
+2026-08-28 22:33:27 | DEBUG    | row=7 activity_output: requested='Training/Capacity Building' normalized='training' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-28 22:33:27 | DEBUG    | [ACT-0287] pre_training_validation_state={'checked': [{'id': 'missionAdId0', 'value': '0', 'name': 'missionAntodayaDet[0].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-28 22:33:27 | INFO     | [ACT-0287] Activity Output detail record found
+2026-08-28 22:33:27 | INFO     | [ACT-0287] Activity Output: Training/Capacity Building
+2026-08-28 22:33:27 | INFO     | [ACT-0287] Handler: TrainingOutputHandler
+2026-08-28 22:33:27 | INFO     | [ACT-0287] Detail Sheet: Training
+2026-08-28 22:33:27 | INFO     | [ACT-0287] Radio: outputActvityAstId102
+2026-08-28 22:33:28 | INFO     | [ACT-0287] Modal opened: showTrainingDetailsPopup
+2026-08-28 22:33:28 | DEBUG    | dropdown match selector=#trngCatCdId original='Awareness Campaign' normalized='awareness campaign' matched='Awareness Campaign' mode=exact
+2026-08-28 22:33:28 | DEBUG    | dropdown match selector=#trngOrgByCdId original='Government Institute' normalized='government institute' matched='Government Institute' mode=exact
+2026-08-28 22:33:28 | INFO     | [ACT-0287] Training fields verified: 5/5
+2026-08-28 22:33:28 | INFO     | [ACT-0287] Training popup submitted successfully
+2026-08-28 22:33:28 | INFO     | [ACT-0287] Final Action: Save and Forward
+2026-08-28 22:33:30 | WARNING  | browser_pageerror: Cannot read properties of null (reading 'addEventListener')
+2026-08-28 22:33:31 | WARNING  | row=7 non-fatal field issues: [select_supported_department] Supported Department option not found: Department of Drinking Water and Sanitation
+2026-08-28 22:33:31 | INFO     | row 7 SUCCESS
+2026-08-28 22:33:31 | INFO     | -- row 8 | Awareness on Issues related to sex workers (Social exclusion
+2026-08-28 22:33:33 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-28 22:33:33 | DEBUG    | dropdown match selector=#themeId original='Theme 7 - Socially Just and Socially Secured Village' normalized='theme 7 - socially just and socially secured village' matched='Theme 7 - Socially Just and Socially Secured Village' mode=exact
+2026-08-28 22:33:34 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-28 22:33:34 | DEBUG    | dropdown match selector=#focusAreaId original='Social welfare' normalized='social welfare' matched='Social welfare' mode=exact
+2026-08-28 22:33:34 | DEBUG    | row=8: watchId spinner finished, checkboxes should be loaded
+2026-08-28 22:33:34 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-28 22:33:35 | DEBUG    | vprp_plan: section_found=True original='No' normalized='no' radio_locator=#vprpPlandiv input[type='radio'][name='vprpplan'] options=[{'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}, {'id': 'vprpplan', 'name': 'vprpplan', 'value': 'T', 'checked': False, 'text': 'Yes'}]
+2026-08-28 22:33:35 | INFO     | vprp_plan: selecting original='No' normalized='no' locator=#vprpPlandiv input[type='radio'][name='vprpplan'] matched={'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}
+2026-08-28 22:33:35 | DEBUG    | row=8 pdi: raw excel pdi_indicator=''
+2026-08-28 22:33:35 | DEBUG    | row=8 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-28 22:33:35 | DEBUG    | row=8 pdi: #checkboxes not visible, attempting to open
+2026-08-28 22:33:35 | DEBUG    | row=8 pdi: option_count_probe count=2 stable_checks=0
+2026-08-28 22:33:35 | DEBUG    | row=8 pdi: found 2 checkbox inputs in panel
+2026-08-28 22:33:35 | DEBUG    | row=8 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-28 22:33:35 | DEBUG    | row=8 pdi: available checkbox id=missionAdId1 value=716 label='Whether Gram Panchayat organized awareness program on Women Help Line during reference year' enabled=True checked=False
+2026-08-28 22:33:35 | DEBUG    | row=8 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-28 22:33:35 | DEBUG    | row=8 pdi: random selection source=auto parsed_count=0 selected_count=2 selected_labels=['Whether Gram Panchayat organized awareness program on Women Help Line during reference year', 'None']
+2026-08-28 22:33:35 | DEBUG    | row=8 pdi: portal options detected count=2 options=['None', 'Whether Gram Panchayat organized awareness program on Women Help Line during reference year']
+2026-08-28 22:33:35 | DEBUG    | row=8 pdi: searching requested indicator='Whether Gram Panchayat organized awareness program on Women Help Line during reference year' normalized='whether gram panchayat organized awareness program on women help line during reference year'
+2026-08-28 22:33:35 | DEBUG    | row=8 pdi: match found requested='Whether Gram Panchayat organized awareness program on Women Help Line during reference year' portal_label='Whether Gram Panchayat organized awareness program on Women Help Line during reference year' id=missionAdId1 value=716 enabled=True checked=False
+2026-08-28 22:33:35 | DEBUG    | row=8 pdi: searching requested indicator='None' normalized='none'
+2026-08-28 22:33:35 | DEBUG    | row=8 pdi: match found requested='None' portal_label='None' id=missionAdId0 value=0 enabled=True checked=False
+2026-08-28 22:33:35 | DEBUG    | row=8 pdi: clicking checkbox id=missionAdId1 value=716 label='Whether Gram Panchayat organized awareness program on Women Help Line during reference year'
+2026-08-28 22:33:35 | DEBUG    | row=8 pdi: after click - is_selected=True dom_checked=True for 'Whether Gram Panchayat organized awareness program on Women Help Line during reference year'
+2026-08-28 22:33:35 | DEBUG    | row=8 pdi: selection_success=True label='Whether Gram Panchayat organized awareness program on Women Help Line during reference year'
+2026-08-28 22:33:35 | DEBUG    | row=8 pdi: clicking checkbox id=missionAdId0 value=0 label='None'
+2026-08-28 22:33:50 | WARNING  | row=8 pdi: normal click failed: Locator.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#maD, trying label click fallback
+2026-08-28 22:34:05 | ERROR    | row=8 pdi: label click fallback also failed: Locator.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#maD
+2026-08-28 22:34:05 | DEBUG    | row=8 pdi: total selected indicators: 1
+2026-08-28 22:34:05 | INFO     | row=8 pdi: selection complete
+2026-08-28 22:34:05 | DEBUG    | row=8 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': False, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': True}], 'missionAdId1': [{'checked': True, 'value': '716', 'name': 'missionAntodayaDet[1].maCode', 'disabled': False}]}, 'visibleError': False}
+2026-08-28 22:34:05 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-28 22:34:06 | DEBUG    | row=8 targeted_populace: requested indicators (1): ['All']
+2026-08-28 22:34:06 | DEBUG    | row=8 targeted_populace: found 1 total labels in panel
+2026-08-28 22:34:06 | DEBUG    | row=8 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-28 22:34:06 | DEBUG    | row=8 targeted_populace: clicking checkbox: 'All'
+2026-08-28 22:34:06 | DEBUG    | row=8 targeted_populace: checkbox selected successfully: 'All'
+2026-08-28 22:34:06 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-28 22:34:06 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-28 22:34:07 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-28 22:34:07 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-28 22:34:07 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-28 22:34:07 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-28 22:34:07 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-28 22:34:07 | DEBUG    | start_month: value after events='4' selected_option='4:April'
+2026-08-28 22:34:07 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-28 22:34:07 | DEBUG    | row=8: total indicative cost calculated as: 182 (excel: 182)
+2026-08-28 22:34:07 | DEBUG    | dropdown match selector=#flagshipSchemeId original='National Health Mission (NHM) - Center Scheme' normalized='national health mission(nhm)- center scheme' matched='National Health Mission (NHM) - Center Scheme' mode=exact
+2026-08-28 22:34:07 | INFO     | row=8: flagship scheme selected exact_requested='National Health Mission (NHM) - Center Scheme' matched='National Health Mission (NHM) - Center Scheme'
+2026-08-28 22:34:07 | DEBUG    | row=8: Supported Department - requesting: 'Department of Health & Family Welfare'
+2026-08-28 22:34:07 | DEBUG    | row=8: Waiting for supported_department options to populate
+2026-08-28 22:34:07 | DEBUG    | row=8: supported_department options available: 1 options
+2026-08-28 22:34:07 | DEBUG    | dropdown match selector=#supportedMinistriesId original='Department of Health & Family Welfare' normalized='department of health & family welfare' matched='Department of Health & Family Welfare' mode=exact
+2026-08-28 22:34:07 | INFO     | row=8: supported_department selected: 'Department of Health & Family Welfare'
+2026-08-28 22:34:07 | DEBUG    | row=8 activity_output: requested='Training/Capacity Building' normalized='training' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-28 22:34:07 | DEBUG    | [ACT-0288] pre_training_validation_state={'checked': [{'id': 'missionAdId1', 'value': '716', 'name': 'missionAntodayaDet[1].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-28 22:34:07 | INFO     | [ACT-0288] Activity Output detail record found
+2026-08-28 22:34:07 | INFO     | [ACT-0288] Activity Output: Training/Capacity Building
+2026-08-28 22:34:07 | INFO     | [ACT-0288] Handler: TrainingOutputHandler
+2026-08-28 22:34:07 | INFO     | [ACT-0288] Detail Sheet: Training
+2026-08-28 22:34:07 | INFO     | [ACT-0288] Radio: outputActvityAstId102
+2026-08-28 22:34:08 | INFO     | [ACT-0288] Modal opened: showTrainingDetailsPopup
+2026-08-28 22:34:08 | DEBUG    | dropdown match selector=#trngCatCdId original='Awareness Campaign' normalized='awareness campaign' matched='Awareness Campaign' mode=exact
+2026-08-28 22:34:08 | DEBUG    | dropdown match selector=#trngOrgByCdId original='Government Institute' normalized='government institute' matched='Government Institute' mode=exact
+2026-08-28 22:34:08 | INFO     | [ACT-0288] Training fields verified: 5/5
+2026-08-28 22:34:08 | INFO     | [ACT-0288] Training popup submitted successfully
+2026-08-28 22:34:08 | INFO     | [ACT-0288] Final Action: Save and Forward
+2026-08-28 22:34:11 | WARNING  | browser_pageerror: Cannot read properties of null (reading 'addEventListener')
+2026-08-28 22:34:12 | INFO     | row 8 SUCCESS
+2026-08-28 22:34:12 | INFO     | -- row 9 | Awareness on Issues related to single women/widows (Social e
+2026-08-28 22:34:14 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-28 22:34:14 | DEBUG    | dropdown match selector=#themeId original='Theme 7 - Socially Just and Socially Secured Village' normalized='theme 7 - socially just and socially secured village' matched='Theme 7 - Socially Just and Socially Secured Village' mode=exact
+2026-08-28 22:34:15 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-28 22:34:16 | DEBUG    | dropdown match selector=#focusAreaId original='Social welfare' normalized='social welfare' matched='Social welfare' mode=exact
+2026-08-28 22:34:16 | DEBUG    | row=9: watchId spinner finished, checkboxes should be loaded
+2026-08-28 22:34:16 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-28 22:34:16 | DEBUG    | vprp_plan: section_found=True original='No' normalized='no' radio_locator=#vprpPlandiv input[type='radio'][name='vprpplan'] options=[{'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}, {'id': 'vprpplan', 'name': 'vprpplan', 'value': 'T', 'checked': False, 'text': 'Yes'}]
+2026-08-28 22:34:16 | INFO     | vprp_plan: selecting original='No' normalized='no' locator=#vprpPlandiv input[type='radio'][name='vprpplan'] matched={'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}
+2026-08-28 22:34:16 | DEBUG    | row=9 pdi: raw excel pdi_indicator=''
+2026-08-28 22:34:16 | DEBUG    | row=9 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-28 22:34:16 | DEBUG    | row=9 pdi: #checkboxes not visible, attempting to open
+2026-08-28 22:34:16 | DEBUG    | row=9 pdi: option_count_probe count=1 stable_checks=0
+2026-08-28 22:34:16 | DEBUG    | row=9 pdi: found 1 checkbox inputs in panel
+2026-08-28 22:34:16 | DEBUG    | row=9 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-28 22:34:16 | DEBUG    | row=9 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-28 22:34:16 | DEBUG    | row=9 pdi: random selection source=auto parsed_count=0 selected_count=1 selected_labels=['None']
+2026-08-28 22:34:16 | DEBUG    | row=9 pdi: portal options detected count=1 options=['None']
+2026-08-28 22:34:16 | DEBUG    | row=9 pdi: searching requested indicator='None' normalized='none'
+2026-08-28 22:34:16 | DEBUG    | row=9 pdi: match found requested='None' portal_label='None' id=missionAdId0 value=0 enabled=True checked=False
+2026-08-28 22:34:16 | DEBUG    | row=9 pdi: clicking checkbox id=missionAdId0 value=0 label='None'
+2026-08-28 22:34:17 | DEBUG    | row=9 pdi: after click - is_selected=True dom_checked=True for 'None'
+2026-08-28 22:34:17 | DEBUG    | row=9 pdi: selection_success=True label='None'
+2026-08-28 22:34:17 | DEBUG    | row=9 pdi: total selected indicators: 1
+2026-08-28 22:34:17 | INFO     | row=9 pdi: selection complete
+2026-08-28 22:34:17 | DEBUG    | row=9 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': True, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': False}]}, 'visibleError': False}
+2026-08-28 22:34:17 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-28 22:34:17 | DEBUG    | row=9 targeted_populace: requested indicators (1): ['All']
+2026-08-28 22:34:17 | DEBUG    | row=9 targeted_populace: found 1 total labels in panel
+2026-08-28 22:34:17 | DEBUG    | row=9 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-28 22:34:17 | DEBUG    | row=9 targeted_populace: clicking checkbox: 'All'
+2026-08-28 22:34:17 | DEBUG    | row=9 targeted_populace: checkbox selected successfully: 'All'
+2026-08-28 22:34:17 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-28 22:34:17 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-28 22:34:18 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-28 22:34:18 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-28 22:34:18 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-28 22:34:18 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-28 22:34:18 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-28 22:34:18 | DEBUG    | start_month: value after events='4' selected_option='4:April'
+2026-08-28 22:34:18 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-28 22:34:18 | DEBUG    | row=9: total indicative cost calculated as: 44 (excel: 44)
+2026-08-28 22:34:18 | DEBUG    | dropdown match selector=#flagshipSchemeId original='Mid-Day Meal Scheme (MDM) - Center Scheme' normalized='mid-day meal scheme(mdm)- center scheme' matched='Mid-Day Meal Scheme (MDM) - Center Scheme' mode=exact
+2026-08-28 22:34:18 | INFO     | row=9: flagship scheme selected exact_requested='Mid-Day Meal Scheme (MDM) - Center Scheme' matched='Mid-Day Meal Scheme (MDM) - Center Scheme'
+2026-08-28 22:34:18 | DEBUG    | row=9 activity_output: requested='Training/Capacity Building' normalized='training' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-28 22:34:18 | DEBUG    | [ACT-0289] pre_training_validation_state={'checked': [{'id': 'missionAdId0', 'value': '0', 'name': 'missionAntodayaDet[0].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-28 22:34:18 | INFO     | [ACT-0289] Activity Output detail record found
+2026-08-28 22:34:18 | INFO     | [ACT-0289] Activity Output: Training/Capacity Building
+2026-08-28 22:34:18 | INFO     | [ACT-0289] Handler: TrainingOutputHandler
+2026-08-28 22:34:18 | INFO     | [ACT-0289] Detail Sheet: Training
+2026-08-28 22:34:18 | INFO     | [ACT-0289] Radio: outputActvityAstId102
+2026-08-28 22:34:19 | INFO     | [ACT-0289] Modal opened: showTrainingDetailsPopup
+2026-08-28 22:34:19 | DEBUG    | dropdown match selector=#trngCatCdId original='Awareness Campaign' normalized='awareness campaign' matched='Awareness Campaign' mode=exact
+2026-08-28 22:34:19 | DEBUG    | dropdown match selector=#trngOrgByCdId original='Government Institute' normalized='government institute' matched='Government Institute' mode=exact
+2026-08-28 22:34:19 | INFO     | [ACT-0289] Training fields verified: 5/5
+2026-08-28 22:34:19 | INFO     | [ACT-0289] Training popup submitted successfully
+2026-08-28 22:34:20 | INFO     | [ACT-0289] Final Action: Save and Forward
+2026-08-28 22:34:21 | WARNING  | browser_pageerror: Cannot read properties of null (reading 'addEventListener')
+2026-08-28 22:34:22 | INFO     | row 9 SUCCESS
+2026-08-28 22:34:22 | INFO     | -- row 10 | Awareness on Issues related to the elderly (Social exclusion
+2026-08-28 22:34:24 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-28 22:34:25 | DEBUG    | dropdown match selector=#themeId original='Theme 7 - Socially Just and Socially Secured Village' normalized='theme 7 - socially just and socially secured village' matched='Theme 7 - Socially Just and Socially Secured Village' mode=exact
+2026-08-28 22:34:26 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-28 22:34:26 | DEBUG    | dropdown match selector=#focusAreaId original='Social welfare' normalized='social welfare' matched='Social welfare' mode=exact
+2026-08-28 22:34:26 | DEBUG    | row=10: watchId spinner finished, checkboxes should be loaded
+2026-08-28 22:34:26 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-28 22:34:26 | DEBUG    | vprp_plan: section_found=True original='No' normalized='no' radio_locator=#vprpPlandiv input[type='radio'][name='vprpplan'] options=[{'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}, {'id': 'vprpplan', 'name': 'vprpplan', 'value': 'T', 'checked': False, 'text': 'Yes'}]
+2026-08-28 22:34:26 | INFO     | vprp_plan: selecting original='No' normalized='no' locator=#vprpPlandiv input[type='radio'][name='vprpplan'] matched={'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}
+2026-08-28 22:34:26 | DEBUG    | row=10 pdi: raw excel pdi_indicator=''
+2026-08-28 22:34:26 | DEBUG    | row=10 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-28 22:34:26 | DEBUG    | row=10 pdi: #checkboxes not visible, attempting to open
+2026-08-28 22:34:26 | DEBUG    | row=10 pdi: option_count_probe count=1 stable_checks=0
+2026-08-28 22:34:27 | DEBUG    | row=10 pdi: found 1 checkbox inputs in panel
+2026-08-28 22:34:27 | DEBUG    | row=10 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-28 22:34:27 | DEBUG    | row=10 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-28 22:34:27 | DEBUG    | row=10 pdi: random selection source=auto parsed_count=0 selected_count=1 selected_labels=['None']
+2026-08-28 22:34:27 | DEBUG    | row=10 pdi: portal options detected count=1 options=['None']
+2026-08-28 22:34:27 | DEBUG    | row=10 pdi: searching requested indicator='None' normalized='none'
+2026-08-28 22:34:27 | DEBUG    | row=10 pdi: match found requested='None' portal_label='None' id=missionAdId0 value=0 enabled=True checked=False
+2026-08-28 22:34:27 | DEBUG    | row=10 pdi: clicking checkbox id=missionAdId0 value=0 label='None'
+2026-08-28 22:34:27 | DEBUG    | row=10 pdi: after click - is_selected=True dom_checked=True for 'None'
+2026-08-28 22:34:27 | DEBUG    | row=10 pdi: selection_success=True label='None'
+2026-08-28 22:34:27 | DEBUG    | row=10 pdi: total selected indicators: 1
+2026-08-28 22:34:27 | INFO     | row=10 pdi: selection complete
+2026-08-28 22:34:27 | DEBUG    | row=10 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': True, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': False}]}, 'visibleError': False}
+2026-08-28 22:34:27 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-28 22:34:27 | DEBUG    | row=10 targeted_populace: requested indicators (1): ['All']
+2026-08-28 22:34:27 | DEBUG    | row=10 targeted_populace: found 1 total labels in panel
+2026-08-28 22:34:27 | DEBUG    | row=10 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-28 22:34:27 | DEBUG    | row=10 targeted_populace: clicking checkbox: 'All'
+2026-08-28 22:34:27 | DEBUG    | row=10 targeted_populace: checkbox selected successfully: 'All'
+2026-08-28 22:34:28 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-28 22:34:28 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-28 22:34:28 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-28 22:34:28 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-28 22:34:28 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-28 22:34:28 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-28 22:34:28 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-28 22:34:28 | DEBUG    | start_month: value after events='4' selected_option='4:April'
+2026-08-28 22:34:28 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-28 22:34:28 | DEBUG    | row=10: total indicative cost calculated as: 12 (excel: 12)
+2026-08-28 22:34:28 | DEBUG    | dropdown match selector=#flagshipSchemeId original='Pradhan Mantri Matru Vandana Yojna - Center Scheme' normalized='pradhan mantri matru vandana yojna - center scheme' matched='Pradhan Mantri Matru Vandana Yojna - Center Scheme' mode=exact
+2026-08-28 22:34:28 | INFO     | row=10: flagship scheme selected exact_requested='Pradhan Mantri Matru Vandana Yojna - Center Scheme' matched='Pradhan Mantri Matru Vandana Yojna - Center Scheme'
+2026-08-28 22:34:29 | DEBUG    | row=10 activity_output: requested='Training/Capacity Building' normalized='training' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-28 22:34:29 | DEBUG    | [ACT-0290] pre_training_validation_state={'checked': [{'id': 'missionAdId0', 'value': '0', 'name': 'missionAntodayaDet[0].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-28 22:34:29 | INFO     | [ACT-0290] Activity Output detail record found
+2026-08-28 22:34:29 | INFO     | [ACT-0290] Activity Output: Training/Capacity Building
+2026-08-28 22:34:29 | INFO     | [ACT-0290] Handler: TrainingOutputHandler
+2026-08-28 22:34:29 | INFO     | [ACT-0290] Detail Sheet: Training
+2026-08-28 22:34:29 | INFO     | [ACT-0290] Radio: outputActvityAstId102
+2026-08-28 22:34:29 | INFO     | [ACT-0290] Modal opened: showTrainingDetailsPopup
+2026-08-28 22:34:29 | DEBUG    | dropdown match selector=#trngCatCdId original='Awareness Campaign' normalized='awareness campaign' matched='Awareness Campaign' mode=exact
+2026-08-28 22:34:29 | DEBUG    | dropdown match selector=#trngOrgByCdId original='Government Institute' normalized='government institute' matched='Government Institute' mode=exact
+2026-08-28 22:34:29 | INFO     | [ACT-0290] Training fields verified: 5/5
+2026-08-28 22:34:29 | INFO     | [ACT-0290] Training popup submitted successfully
+2026-08-28 22:34:30 | INFO     | [ACT-0290] Final Action: Save and Forward
+2026-08-28 22:34:31 | WARNING  | browser_pageerror: Cannot read properties of null (reading 'addEventListener')
+2026-08-28 22:34:32 | INFO     | row 10 SUCCESS
+2026-08-28 22:34:32 | INFO     | -- row 11 | Awareness on Lack of access to education for Persons with Di
+2026-08-28 22:34:34 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-28 22:34:34 | DEBUG    | dropdown match selector=#themeId original='Theme 7 - Socially Just and Socially Secured Village' normalized='theme 7 - socially just and socially secured village' matched='Theme 7 - Socially Just and Socially Secured Village' mode=exact
+2026-08-28 22:34:36 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-28 22:34:36 | DEBUG    | dropdown match selector=#focusAreaId original='Education' normalized='education' matched='Education' mode=exact
+2026-08-28 22:34:36 | DEBUG    | row=11: watchId spinner finished, checkboxes should be loaded
+2026-08-28 22:34:36 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-28 22:34:36 | DEBUG    | vprp_plan: section_found=True original='No' normalized='no' radio_locator=#vprpPlandiv input[type='radio'][name='vprpplan'] options=[{'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}, {'id': 'vprpplan', 'name': 'vprpplan', 'value': 'T', 'checked': False, 'text': 'Yes'}]
+2026-08-28 22:34:36 | INFO     | vprp_plan: selecting original='No' normalized='no' locator=#vprpPlandiv input[type='radio'][name='vprpplan'] matched={'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}
+2026-08-28 22:34:36 | DEBUG    | row=11 pdi: raw excel pdi_indicator=''
+2026-08-28 22:34:36 | DEBUG    | row=11 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-28 22:34:36 | DEBUG    | row=11 pdi: #checkboxes not visible, attempting to open
+2026-08-28 22:34:37 | DEBUG    | row=11 pdi: option_count_probe count=1 stable_checks=0
+2026-08-28 22:34:37 | DEBUG    | row=11 pdi: found 1 checkbox inputs in panel
+2026-08-28 22:34:37 | DEBUG    | row=11 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-28 22:34:37 | DEBUG    | row=11 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-28 22:34:37 | DEBUG    | row=11 pdi: random selection source=auto parsed_count=0 selected_count=1 selected_labels=['None']
+2026-08-28 22:34:37 | DEBUG    | row=11 pdi: portal options detected count=1 options=['None']
+2026-08-28 22:34:37 | DEBUG    | row=11 pdi: searching requested indicator='None' normalized='none'
+2026-08-28 22:34:37 | DEBUG    | row=11 pdi: match found requested='None' portal_label='None' id=missionAdId0 value=0 enabled=True checked=False
+2026-08-28 22:34:37 | DEBUG    | row=11 pdi: clicking checkbox id=missionAdId0 value=0 label='None'
+2026-08-28 22:34:37 | DEBUG    | row=11 pdi: after click - is_selected=True dom_checked=True for 'None'
+2026-08-28 22:34:37 | DEBUG    | row=11 pdi: selection_success=True label='None'
+2026-08-28 22:34:37 | DEBUG    | row=11 pdi: total selected indicators: 1
+2026-08-28 22:34:37 | INFO     | row=11 pdi: selection complete
+2026-08-28 22:34:37 | DEBUG    | row=11 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': True, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': False}]}, 'visibleError': False}
+2026-08-28 22:34:37 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-28 22:34:38 | DEBUG    | row=11 targeted_populace: requested indicators (1): ['All']
+2026-08-28 22:34:38 | DEBUG    | row=11 targeted_populace: found 1 total labels in panel
+2026-08-28 22:34:38 | DEBUG    | row=11 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-28 22:34:38 | DEBUG    | row=11 targeted_populace: clicking checkbox: 'All'
+2026-08-28 22:34:38 | DEBUG    | row=11 targeted_populace: checkbox selected successfully: 'All'
+2026-08-28 22:34:38 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-28 22:34:38 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-28 22:34:38 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-28 22:34:38 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-28 22:34:38 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-28 22:34:38 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-28 22:34:38 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-28 22:34:38 | DEBUG    | start_month: value after events='4' selected_option='4:April'
+2026-08-28 22:34:39 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-28 22:34:39 | DEBUG    | row=11: total indicative cost calculated as: 63 (excel: 63)
+2026-08-28 22:34:39 | DEBUG    | dropdown match selector=#flagshipSchemeId original='Pradhan Mantri Ujjwala Yojana - Center Scheme' normalized='pradhan mantri ujjwala yojana - center scheme' matched='Pradhan Mantri Ujjwala Yojana - Center Scheme' mode=exact
+2026-08-28 22:34:39 | INFO     | row=11: flagship scheme selected exact_requested='Pradhan Mantri Ujjwala Yojana - Center Scheme' matched='Pradhan Mantri Ujjwala Yojana - Center Scheme'
+2026-08-28 22:34:39 | DEBUG    | row=11: Supported Department - requesting: 'Department of Rural Development'
+2026-08-28 22:34:39 | DEBUG    | row=11: Waiting for supported_department options to populate
+2026-08-28 22:34:39 | DEBUG    | row=11: supported_department options available: 1 options
+2026-08-28 22:34:39 | WARNING  | row=11: supported_department option not found: 'Department of Rural Development' not found in #supportedMinistriesId. Available (1): ['Ministry of Petroleum and Natural Gas']
+2026-08-28 22:34:39 | WARNING  | row=11 field=select_supported_department non-fatal Supported Department option not found: Department of Rural Development
+2026-08-28 22:34:39 | WARNING  | NON_FATAL | row=11 field=select_supported_department | Supported Department option not found: Department of Rural Development
+2026-08-28 22:34:39 | DEBUG    | row=11 activity_output: requested='Training/Capacity Building' normalized='training' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-28 22:34:39 | DEBUG    | [ACT-0291] pre_training_validation_state={'checked': [{'id': 'missionAdId0', 'value': '0', 'name': 'missionAntodayaDet[0].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-28 22:34:39 | INFO     | [ACT-0291] Activity Output detail record found
+2026-08-28 22:34:39 | INFO     | [ACT-0291] Activity Output: Training/Capacity Building
+2026-08-28 22:34:39 | INFO     | [ACT-0291] Handler: TrainingOutputHandler
+2026-08-28 22:34:39 | INFO     | [ACT-0291] Detail Sheet: Training
+2026-08-28 22:34:39 | INFO     | [ACT-0291] Radio: outputActvityAstId102
+2026-08-28 22:34:40 | INFO     | [ACT-0291] Modal opened: showTrainingDetailsPopup
+2026-08-28 22:34:40 | DEBUG    | dropdown match selector=#trngCatCdId original='Awareness Campaign' normalized='awareness campaign' matched='Awareness Campaign' mode=exact
+2026-08-28 22:34:40 | DEBUG    | dropdown match selector=#trngOrgByCdId original='Government Institute' normalized='government institute' matched='Government Institute' mode=exact
+2026-08-28 22:34:40 | INFO     | [ACT-0291] Training fields verified: 5/5
+2026-08-28 22:34:40 | INFO     | [ACT-0291] Training popup submitted successfully
+2026-08-28 22:34:40 | INFO     | [ACT-0291] Final Action: Save and Forward
+2026-08-28 22:34:42 | WARNING  | browser_pageerror: Cannot read properties of null (reading 'addEventListener')
+2026-08-28 22:34:44 | WARNING  | row=11 non-fatal field issues: [select_supported_department] Supported Department option not found: Department of Rural Development
+2026-08-28 22:34:44 | INFO     | row 11 SUCCESS
+2026-08-28 22:34:44 | INFO     | -- row 12 | Awareness on Witch Hunting (Social exclusion)
+2026-08-28 22:34:45 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-28 22:34:45 | DEBUG    | dropdown match selector=#themeId original='Theme 7 - Socially Just and Socially Secured Village' normalized='theme 7 - socially just and socially secured village' matched='Theme 7 - Socially Just and Socially Secured Village' mode=exact
+2026-08-28 22:34:47 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-28 22:34:47 | DEBUG    | dropdown match selector=#focusAreaId original='Social welfare' normalized='social welfare' matched='Social welfare' mode=exact
+2026-08-28 22:34:47 | DEBUG    | row=12: watchId spinner finished, checkboxes should be loaded
+2026-08-28 22:34:47 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-28 22:34:47 | DEBUG    | vprp_plan: section_found=True original='No' normalized='no' radio_locator=#vprpPlandiv input[type='radio'][name='vprpplan'] options=[{'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}, {'id': 'vprpplan', 'name': 'vprpplan', 'value': 'T', 'checked': False, 'text': 'Yes'}]
+2026-08-28 22:34:47 | INFO     | vprp_plan: selecting original='No' normalized='no' locator=#vprpPlandiv input[type='radio'][name='vprpplan'] matched={'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}
+2026-08-28 22:34:47 | DEBUG    | row=12 pdi: raw excel pdi_indicator=''
+2026-08-28 22:34:47 | DEBUG    | row=12 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-28 22:34:47 | DEBUG    | row=12 pdi: #checkboxes not visible, attempting to open
+2026-08-28 22:34:47 | DEBUG    | row=12 pdi: option_count_probe count=1 stable_checks=0
+2026-08-28 22:34:48 | DEBUG    | row=12 pdi: found 1 checkbox inputs in panel
+2026-08-28 22:34:48 | DEBUG    | row=12 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-28 22:34:48 | DEBUG    | row=12 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-28 22:34:48 | DEBUG    | row=12 pdi: random selection source=auto parsed_count=0 selected_count=1 selected_labels=['None']
+2026-08-28 22:34:48 | DEBUG    | row=12 pdi: portal options detected count=1 options=['None']
+2026-08-28 22:34:48 | DEBUG    | row=12 pdi: searching requested indicator='None' normalized='none'
+2026-08-28 22:34:48 | DEBUG    | row=12 pdi: match found requested='None' portal_label='None' id=missionAdId0 value=0 enabled=True checked=False
+2026-08-28 22:34:48 | DEBUG    | row=12 pdi: clicking checkbox id=missionAdId0 value=0 label='None'
+2026-08-28 22:34:48 | DEBUG    | row=12 pdi: after click - is_selected=True dom_checked=True for 'None'
+2026-08-28 22:34:48 | DEBUG    | row=12 pdi: selection_success=True label='None'
+2026-08-28 22:34:48 | DEBUG    | row=12 pdi: total selected indicators: 1
+2026-08-28 22:34:48 | INFO     | row=12 pdi: selection complete
+2026-08-28 22:34:48 | DEBUG    | row=12 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': True, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': False}]}, 'visibleError': False}
+2026-08-28 22:34:48 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-28 22:34:48 | DEBUG    | row=12 targeted_populace: requested indicators (1): ['All']
+2026-08-28 22:34:48 | DEBUG    | row=12 targeted_populace: found 1 total labels in panel
+2026-08-28 22:34:48 | DEBUG    | row=12 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-28 22:34:48 | DEBUG    | row=12 targeted_populace: clicking checkbox: 'All'
+2026-08-28 22:34:48 | DEBUG    | row=12 targeted_populace: checkbox selected successfully: 'All'
+2026-08-28 22:34:48 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-28 22:34:49 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-28 22:35:04 | DEBUG    | row=12: start month options did not populate
+2026-08-28 22:35:04 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-28 22:35:04 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-28 22:35:04 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-28 22:35:04 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-28 22:35:04 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-28 22:35:04 | DEBUG    | start_month: value after events='4' selected_option='4:April'
+2026-08-28 22:35:04 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-28 22:35:04 | DEBUG    | row=12: total indicative cost calculated as: 50 (excel: 50)
+2026-08-28 22:35:04 | DEBUG    | dropdown match selector=#flagshipSchemeId original='Antodaya Anna Yojana - Center Scheme' normalized='antodaya anna yojana - center scheme' matched='Antodaya Anna Yojana - Center Scheme' mode=exact
+2026-08-28 22:35:04 | INFO     | row=12: flagship scheme selected exact_requested='Antodaya Anna Yojana - Center Scheme' matched='Antodaya Anna Yojana - Center Scheme'
+2026-08-28 22:35:04 | DEBUG    | row=12 activity_output: requested='Training/Capacity Building' normalized='training' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-28 22:35:04 | DEBUG    | [ACT-0292] pre_training_validation_state={'checked': [{'id': 'missionAdId0', 'value': '0', 'name': 'missionAntodayaDet[0].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-28 22:35:04 | INFO     | [ACT-0292] Activity Output detail record found
+2026-08-28 22:35:04 | INFO     | [ACT-0292] Activity Output: Training/Capacity Building
+2026-08-28 22:35:04 | INFO     | [ACT-0292] Handler: TrainingOutputHandler
+2026-08-28 22:35:04 | INFO     | [ACT-0292] Detail Sheet: Training
+2026-08-28 22:35:04 | INFO     | [ACT-0292] Radio: outputActvityAstId102
+2026-08-28 22:35:04 | INFO     | [ACT-0292] Modal opened: showTrainingDetailsPopup
+2026-08-28 22:35:05 | DEBUG    | dropdown match selector=#trngCatCdId original='Awareness Campaign' normalized='awareness campaign' matched='Awareness Campaign' mode=exact
+2026-08-28 22:35:05 | DEBUG    | dropdown match selector=#trngOrgByCdId original='Government Institute' normalized='government institute' matched='Government Institute' mode=exact
+2026-08-28 22:35:05 | DEBUG    | dropdown match selector=#trngCatCdId original='Awareness Campaign' normalized='awareness campaign' matched='Awareness Campaign' mode=exact
+2026-08-28 22:35:05 | INFO     | [ACT-0292] Training fields verified: 5/5
+2026-08-28 22:35:05 | INFO     | [ACT-0292] Training popup submitted successfully
+2026-08-28 22:35:05 | INFO     | [ACT-0292] Final Action: Save and Forward
+2026-08-28 22:35:07 | WARNING  | browser_pageerror: Cannot read properties of null (reading 'addEventListener')
+2026-08-28 22:35:08 | INFO     | row 12 SUCCESS
+2026-08-28 22:35:08 | INFO     | -- row 13 | Conduct IEC/awareness and  inclusion camps for social protec
+2026-08-28 22:35:10 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-28 22:35:10 | DEBUG    | dropdown match selector=#themeId original='Theme 1 - Poverty Free and Enhanced Livelihoods Village' normalized='theme 1 - poverty free and enhanced livelihoods village' matched='Theme 1 - Poverty Free and Enhanced Livelihoods Village' mode=exact
+2026-08-28 22:35:11 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-28 22:35:11 | DEBUG    | dropdown match selector=#focusAreaId original='Social welfare' normalized='social welfare' matched='Social welfare' mode=exact
+2026-08-28 22:35:11 | DEBUG    | row=13: watchId spinner finished, checkboxes should be loaded
+2026-08-28 22:35:11 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-28 22:35:11 | DEBUG    | row=13 pdi: raw excel pdi_indicator=''
+2026-08-28 22:35:11 | DEBUG    | row=13 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-28 22:35:11 | DEBUG    | row=13 pdi: #checkboxes not visible, attempting to open
+2026-08-28 22:35:12 | DEBUG    | row=13 pdi: option_count_probe count=3 stable_checks=0
+2026-08-28 22:35:12 | DEBUG    | row=13 pdi: found 3 checkbox inputs in panel
+2026-08-28 22:35:12 | DEBUG    | row=13 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-28 22:35:12 | DEBUG    | row=13 pdi: available checkbox id=missionAdId1 value=70 label='Percentage of Pregnant Women and lactating mothers registered under ICDS out of total Pregnant Women and lactating mothers' enabled=True checked=False
+2026-08-28 22:35:12 | DEBUG    | row=13 pdi: available checkbox id=missionAdId2 value=94 label='Ratio of female-male enrolled in Secondary' enabled=True checked=False
+2026-08-28 22:35:12 | DEBUG    | row=13 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-28 22:35:12 | DEBUG    | row=13 pdi: random selection source=auto parsed_count=0 selected_count=1 selected_labels=['Ratio of female-male enrolled in Secondary']
+2026-08-28 22:35:12 | DEBUG    | row=13 pdi: portal options detected count=3 options=['None', 'Percentage of Pregnant Women and lactating mothers registered under ICDS out of total Pregnant Women and lactating mothers', 'Ratio of female-male enrolled in Secondary']
+2026-08-28 22:35:12 | DEBUG    | row=13 pdi: searching requested indicator='Ratio of female-male enrolled in Secondary' normalized='ratio of female-male enrolled in secondary'
+2026-08-28 22:35:12 | DEBUG    | row=13 pdi: match found requested='Ratio of female-male enrolled in Secondary' portal_label='Ratio of female-male enrolled in Secondary' id=missionAdId2 value=94 enabled=True checked=False
+2026-08-28 22:35:12 | DEBUG    | row=13 pdi: clicking checkbox id=missionAdId2 value=94 label='Ratio of female-male enrolled in Secondary'
+2026-08-28 22:35:12 | DEBUG    | row=13 pdi: after click - is_selected=True dom_checked=True for 'Ratio of female-male enrolled in Secondary'
+2026-08-28 22:35:12 | DEBUG    | row=13 pdi: selection_success=True label='Ratio of female-male enrolled in Secondary'
+2026-08-28 22:35:12 | DEBUG    | row=13 pdi: total selected indicators: 1
+2026-08-28 22:35:12 | INFO     | row=13 pdi: selection complete
+2026-08-28 22:35:12 | DEBUG    | row=13 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': False, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': True}], 'missionAdId1': [{'checked': False, 'value': '70', 'name': 'missionAntodayaDet[1].maCode', 'disabled': False}], 'missionAdId2': [{'checked': True, 'value': '94', 'name': 'missionAntodayaDet[2].maCode', 'disabled': False}]}, 'visibleError': False}
+2026-08-28 22:35:12 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-28 22:35:13 | DEBUG    | row=13 targeted_populace: requested indicators (1): ['All']
+2026-08-28 22:35:13 | DEBUG    | row=13 targeted_populace: found 1 total labels in panel
+2026-08-28 22:35:13 | DEBUG    | row=13 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-28 22:35:13 | DEBUG    | row=13 targeted_populace: clicking checkbox: 'All'
+2026-08-28 22:35:13 | DEBUG    | row=13 targeted_populace: checkbox selected successfully: 'All'
+2026-08-28 22:35:13 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-28 22:35:13 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-28 22:35:13 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-28 22:35:13 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-28 22:35:13 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-28 22:35:13 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-28 22:35:13 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-28 22:35:13 | DEBUG    | start_month: value after events='4' selected_option='4:April'
+2026-08-28 22:35:13 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-28 22:35:14 | DEBUG    | row=13: total indicative cost calculated as: 190 (excel: 190)
+2026-08-28 22:35:14 | DEBUG    | dropdown match selector=#flagshipSchemeId original='Samagara Shikha Abhiyan - Center Scheme' normalized='samagara shikha abhiyan - center scheme' matched='Samagara Shikha Abhiyan - Center Scheme' mode=exact
+2026-08-28 22:35:14 | INFO     | row=13: flagship scheme selected exact_requested='Samagara Shikha Abhiyan - Center Scheme' matched='Samagara Shikha Abhiyan - Center Scheme'
+2026-08-28 22:35:14 | DEBUG    | row=13 activity_output: requested='Training/Capacity Building' normalized='training' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-28 22:35:14 | DEBUG    | [ACT-0001] pre_training_validation_state={'checked': [{'id': 'missionAdId2', 'value': '94', 'name': 'missionAntodayaDet[2].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-28 22:35:14 | INFO     | [ACT-0001] Activity Output detail record found
+2026-08-28 22:35:14 | INFO     | [ACT-0001] Activity Output: Training/Capacity Building
+2026-08-28 22:35:14 | INFO     | [ACT-0001] Handler: TrainingOutputHandler
+2026-08-28 22:35:14 | INFO     | [ACT-0001] Detail Sheet: Training
+2026-08-28 22:35:14 | INFO     | [ACT-0001] Radio: outputActvityAstId102
+2026-08-28 22:35:14 | INFO     | [ACT-0001] Modal opened: showTrainingDetailsPopup
+2026-08-28 22:35:14 | DEBUG    | dropdown match selector=#trngCatCdId original='Awareness Campaign' normalized='awareness campaign' matched='Awareness Campaign' mode=exact
+2026-08-28 22:35:14 | DEBUG    | dropdown match selector=#trngOrgByCdId original='Government Institute' normalized='government institute' matched='Government Institute' mode=exact
+2026-08-28 22:35:14 | INFO     | [ACT-0001] Training fields verified: 5/5
+2026-08-28 22:35:15 | INFO     | [ACT-0001] Training popup submitted successfully
+2026-08-28 22:35:15 | INFO     | [ACT-0001] Final Action: Save and Forward
+2026-08-28 22:35:18 | WARNING  | browser_pageerror: Cannot read properties of null (reading 'addEventListener')
+2026-08-28 22:35:19 | INFO     | row 13 SUCCESS
+2026-08-28 22:35:19 | INFO     | -- row 14 | Create awareness on FPOs and support formation/strngthening 
+2026-08-28 22:35:20 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-28 22:35:21 | DEBUG    | dropdown match selector=#themeId original='Theme 1 - Poverty Free and Enhanced Livelihoods Village' normalized='theme 1 - poverty free and enhanced livelihoods village' matched='Theme 1 - Poverty Free and Enhanced Livelihoods Village' mode=exact
+2026-08-28 22:35:22 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-28 22:35:22 | DEBUG    | dropdown match selector=#focusAreaId original='Agriculture' normalized='agriculture' matched='Agriculture' mode=exact
+2026-08-28 22:35:22 | DEBUG    | row=14: watchId spinner finished, checkboxes should be loaded
+2026-08-28 22:35:22 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-28 22:35:22 | DEBUG    | row=14 pdi: raw excel pdi_indicator=''
+2026-08-28 22:35:22 | DEBUG    | row=14 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-28 22:35:22 | DEBUG    | row=14 pdi: #checkboxes not visible, attempting to open
+2026-08-28 22:35:23 | DEBUG    | row=14 pdi: option_count_probe count=2 stable_checks=0
+2026-08-28 22:35:23 | DEBUG    | row=14 pdi: found 2 checkbox inputs in panel
+2026-08-28 22:35:23 | DEBUG    | row=14 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-28 22:35:23 | DEBUG    | row=14 pdi: available checkbox id=missionAdId1 value=566 label='Percentage of Self Help Group (SHGs) accessed Bank Loans in the reference year' enabled=True checked=False
+2026-08-28 22:35:23 | DEBUG    | row=14 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-28 22:35:23 | DEBUG    | row=14 pdi: random selection source=auto parsed_count=0 selected_count=2 selected_labels=['Percentage of Self Help Group (SHGs) accessed Bank Loans in the reference year', 'None']
+2026-08-28 22:35:23 | DEBUG    | row=14 pdi: portal options detected count=2 options=['None', 'Percentage of Self Help Group (SHGs) accessed Bank Loans in the reference year']
+2026-08-28 22:35:23 | DEBUG    | row=14 pdi: searching requested indicator='Percentage of Self Help Group (SHGs) accessed Bank Loans in the reference year' normalized='percentage of self help group (shgs) accessed bank loans in the reference year'
+2026-08-28 22:35:23 | DEBUG    | row=14 pdi: match found requested='Percentage of Self Help Group (SHGs) accessed Bank Loans in the reference year' portal_label='Percentage of Self Help Group (SHGs) accessed Bank Loans in the reference year' id=missionAdId1 value=566 enabled=True checked=False
+2026-08-28 22:35:23 | DEBUG    | row=14 pdi: searching requested indicator='None' normalized='none'
+2026-08-28 22:35:23 | DEBUG    | row=14 pdi: match found requested='None' portal_label='None' id=missionAdId0 value=0 enabled=True checked=False
+2026-08-28 22:35:23 | DEBUG    | row=14 pdi: clicking checkbox id=missionAdId1 value=566 label='Percentage of Self Help Group (SHGs) accessed Bank Loans in the reference year'
+2026-08-28 22:35:23 | DEBUG    | row=14 pdi: after click - is_selected=True dom_checked=True for 'Percentage of Self Help Group (SHGs) accessed Bank Loans in the reference year'
+2026-08-28 22:35:23 | DEBUG    | row=14 pdi: selection_success=True label='Percentage of Self Help Group (SHGs) accessed Bank Loans in the reference year'
+2026-08-28 22:35:23 | DEBUG    | row=14 pdi: clicking checkbox id=missionAdId0 value=0 label='None'
+2026-08-28 22:35:38 | WARNING  | row=14 pdi: normal click failed: Locator.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#maD, trying label click fallback
+2026-08-28 22:35:53 | ERROR    | row=14 pdi: label click fallback also failed: Locator.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#maD
+2026-08-28 22:35:53 | DEBUG    | row=14 pdi: total selected indicators: 1
+2026-08-28 22:35:53 | INFO     | row=14 pdi: selection complete
+2026-08-28 22:35:53 | DEBUG    | row=14 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': False, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': True}], 'missionAdId1': [{'checked': True, 'value': '566', 'name': 'missionAntodayaDet[1].maCode', 'disabled': False}]}, 'visibleError': False}
+2026-08-28 22:35:53 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-28 22:35:54 | DEBUG    | row=14 targeted_populace: requested indicators (1): ['All']
+2026-08-28 22:35:54 | DEBUG    | row=14 targeted_populace: found 1 total labels in panel
+2026-08-28 22:35:54 | DEBUG    | row=14 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-28 22:35:54 | DEBUG    | row=14 targeted_populace: clicking checkbox: 'All'
+2026-08-28 22:35:54 | DEBUG    | row=14 targeted_populace: checkbox selected successfully: 'All'
+2026-08-28 22:35:54 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-28 22:35:54 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-28 22:35:54 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-28 22:35:54 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-28 22:35:54 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-28 22:35:54 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-28 22:35:54 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-28 22:35:54 | DEBUG    | start_month: value after events='4' selected_option='4:April'
+2026-08-28 22:35:55 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-28 22:35:55 | DEBUG    | row=14: total indicative cost calculated as: 80 (excel: 80)
+2026-08-28 22:35:55 | DEBUG    | dropdown match selector=#flagshipSchemeId original='Poshan Abhiyan/ICDS - Center Scheme' normalized='poshan abhiyan/icds - center scheme' matched='Poshan Abhiyan/ICDS - Center Scheme' mode=exact
+2026-08-28 22:35:55 | INFO     | row=14: flagship scheme selected exact_requested='Poshan Abhiyan/ICDS - Center Scheme' matched='Poshan Abhiyan/ICDS - Center Scheme'
+2026-08-28 22:35:55 | DEBUG    | row=14 activity_output: requested='Training/Capacity Building' normalized='training' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-28 22:35:55 | DEBUG    | [ACT-0002] pre_training_validation_state={'checked': [{'id': 'missionAdId1', 'value': '566', 'name': 'missionAntodayaDet[1].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-28 22:35:55 | INFO     | [ACT-0002] Activity Output detail record found
+2026-08-28 22:35:55 | INFO     | [ACT-0002] Activity Output: Training/Capacity Building
+2026-08-28 22:35:55 | INFO     | [ACT-0002] Handler: TrainingOutputHandler
+2026-08-28 22:35:55 | INFO     | [ACT-0002] Detail Sheet: Training
+2026-08-28 22:35:55 | INFO     | [ACT-0002] Radio: outputActvityAstId102
+2026-08-28 22:35:55 | INFO     | [ACT-0002] Modal opened: showTrainingDetailsPopup
+2026-08-28 22:35:55 | DEBUG    | dropdown match selector=#trngCatCdId original='Awareness Campaign' normalized='awareness campaign' matched='Awareness Campaign' mode=exact
+2026-08-28 22:35:55 | DEBUG    | dropdown match selector=#trngOrgByCdId original='Government Institute' normalized='government institute' matched='Government Institute' mode=exact
+2026-08-28 22:35:55 | INFO     | [ACT-0002] Training fields verified: 5/5
+2026-08-28 22:35:56 | INFO     | [ACT-0002] Training popup submitted successfully
+2026-08-28 22:35:56 | INFO     | [ACT-0002] Final Action: Save and Forward
+2026-08-28 22:35:58 | WARNING  | browser_pageerror: Cannot read properties of null (reading 'addEventListener')
+2026-08-28 22:35:59 | INFO     | row 14 SUCCESS
+2026-08-28 22:35:59 | INFO     | -- row 15 | Create awareness on volunteering and community support initi
+2026-08-28 22:36:01 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-28 22:36:01 | DEBUG    | dropdown match selector=#themeId original='Theme 1 - Poverty Free and Enhanced Livelihoods Village' normalized='theme 1 - poverty free and enhanced livelihoods village' matched='Theme 1 - Poverty Free and Enhanced Livelihoods Village' mode=exact
+2026-08-28 22:36:03 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-28 22:36:03 | DEBUG    | dropdown match selector=#focusAreaId original='Animal husbandry' normalized='animal husbandry' matched='Animal husbandry' mode=exact
+2026-08-28 22:36:03 | DEBUG    | row=15: watchId spinner finished, checkboxes should be loaded
+2026-08-28 22:36:03 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-28 22:36:03 | DEBUG    | vprp_plan: section_found=True original='No' normalized='no' radio_locator=#vprpPlandiv input[type='radio'][name='vprpplan'] options=[{'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}, {'id': 'vprpplan', 'name': 'vprpplan', 'value': 'T', 'checked': False, 'text': 'Yes'}]
+2026-08-28 22:36:03 | INFO     | vprp_plan: selecting original='No' normalized='no' locator=#vprpPlandiv input[type='radio'][name='vprpplan'] matched={'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}
+2026-08-28 22:36:03 | DEBUG    | row=15 pdi: raw excel pdi_indicator=''
+2026-08-28 22:36:03 | DEBUG    | row=15 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-28 22:36:03 | DEBUG    | row=15 pdi: #checkboxes not visible, attempting to open
+2026-08-28 22:36:03 | DEBUG    | row=15 pdi: option_count_probe count=1 stable_checks=0
+2026-08-28 22:36:03 | DEBUG    | row=15 pdi: found 1 checkbox inputs in panel
+2026-08-28 22:36:04 | DEBUG    | row=15 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-28 22:36:04 | DEBUG    | row=15 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-28 22:36:04 | DEBUG    | row=15 pdi: random selection source=auto parsed_count=0 selected_count=1 selected_labels=['None']
+2026-08-28 22:36:04 | DEBUG    | row=15 pdi: portal options detected count=1 options=['None']
+2026-08-28 22:36:04 | DEBUG    | row=15 pdi: searching requested indicator='None' normalized='none'
+2026-08-28 22:36:04 | DEBUG    | row=15 pdi: match found requested='None' portal_label='None' id=missionAdId0 value=0 enabled=True checked=False
+2026-08-28 22:36:04 | DEBUG    | row=15 pdi: clicking checkbox id=missionAdId0 value=0 label='None'
+2026-08-28 22:36:04 | DEBUG    | row=15 pdi: after click - is_selected=True dom_checked=True for 'None'
+2026-08-28 22:36:04 | DEBUG    | row=15 pdi: selection_success=True label='None'
+2026-08-28 22:36:04 | DEBUG    | row=15 pdi: total selected indicators: 1
+2026-08-28 22:36:04 | INFO     | row=15 pdi: selection complete
+2026-08-28 22:36:04 | DEBUG    | row=15 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': True, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': False}]}, 'visibleError': False}
+2026-08-28 22:36:04 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-28 22:36:04 | DEBUG    | row=15 targeted_populace: requested indicators (1): ['All']
+2026-08-28 22:36:04 | DEBUG    | row=15 targeted_populace: found 1 total labels in panel
+2026-08-28 22:36:04 | DEBUG    | row=15 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-28 22:36:04 | DEBUG    | row=15 targeted_populace: clicking checkbox: 'All'
+2026-08-28 22:36:04 | DEBUG    | row=15 targeted_populace: checkbox selected successfully: 'All'
+2026-08-28 22:36:04 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-28 22:36:05 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-28 22:36:05 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-28 22:36:05 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-28 22:36:05 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-28 22:36:05 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-28 22:36:05 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-28 22:36:05 | DEBUG    | start_month: value after events='4' selected_option='4:April'
+2026-08-28 22:36:05 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-28 22:36:05 | DEBUG    | row=15: total indicative cost calculated as: 133 (excel: 133)
+2026-08-28 22:36:05 | DEBUG    | dropdown match selector=#flagshipSchemeId original='Beti Bachao Beti Padao - Center Scheme' normalized='beti bachao beti padao - center scheme' matched='Beti Bachao Beti Padao - Center Scheme' mode=exact
+2026-08-28 22:36:05 | INFO     | row=15: flagship scheme selected exact_requested='Beti Bachao Beti Padao - Center Scheme' matched='Beti Bachao Beti Padao - Center Scheme'
+2026-08-28 22:36:05 | DEBUG    | row=15 activity_output: requested='Training/Capacity Building' normalized='training' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-28 22:36:05 | DEBUG    | [ACT-0003] pre_training_validation_state={'checked': [{'id': 'missionAdId0', 'value': '0', 'name': 'missionAntodayaDet[0].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-28 22:36:05 | INFO     | [ACT-0003] Activity Output detail record found
+2026-08-28 22:36:05 | INFO     | [ACT-0003] Activity Output: Training/Capacity Building
+2026-08-28 22:36:05 | INFO     | [ACT-0003] Handler: TrainingOutputHandler
+2026-08-28 22:36:05 | INFO     | [ACT-0003] Detail Sheet: Training
+2026-08-28 22:36:05 | INFO     | [ACT-0003] Radio: outputActvityAstId102
+2026-08-28 22:36:06 | INFO     | [ACT-0003] Modal opened: showTrainingDetailsPopup
+2026-08-28 22:36:06 | DEBUG    | dropdown match selector=#trngCatCdId original='Awareness Campaign' normalized='awareness campaign' matched='Awareness Campaign' mode=exact
+2026-08-28 22:36:06 | DEBUG    | dropdown match selector=#trngOrgByCdId original='Government Institute' normalized='government institute' matched='Government Institute' mode=exact
+2026-08-28 22:36:06 | INFO     | [ACT-0003] Training fields verified: 5/5
+2026-08-28 22:36:06 | INFO     | [ACT-0003] Training popup submitted successfully
+2026-08-28 22:36:06 | INFO     | [ACT-0003] Final Action: Save and Forward
+2026-08-28 22:36:08 | WARNING  | browser_pageerror: Cannot read properties of null (reading 'addEventListener')
+2026-08-28 22:36:09 | INFO     | row 15 SUCCESS
+2026-08-28 22:36:09 | INFO     | -- row 16 | Facilitate formation oh SHGs and provide support for strengt
+2026-08-28 22:36:11 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-28 22:36:12 | DEBUG    | dropdown match selector=#themeId original='Theme 1 - Poverty Free and Enhanced Livelihoods Village' normalized='theme 1 - poverty free and enhanced livelihoods village' matched='Theme 1 - Poverty Free and Enhanced Livelihoods Village' mode=exact
+2026-08-28 22:36:13 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-28 22:36:13 | DEBUG    | dropdown match selector=#focusAreaId original='Poverty allevation programme' normalized='poverty allevation programme' matched='Poverty allevation programme' mode=exact
+2026-08-28 22:36:13 | DEBUG    | row=16: watchId spinner finished, checkboxes should be loaded
+2026-08-28 22:36:13 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-28 22:36:13 | DEBUG    | row=16 pdi: raw excel pdi_indicator=''
+2026-08-28 22:36:13 | DEBUG    | row=16 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-28 22:36:13 | DEBUG    | row=16 pdi: #checkboxes not visible, attempting to open
+2026-08-28 22:36:13 | DEBUG    | row=16 pdi: option_count_probe count=2 stable_checks=0
+2026-08-28 22:36:14 | DEBUG    | row=16 pdi: found 2 checkbox inputs in panel
+2026-08-28 22:36:14 | DEBUG    | row=16 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-28 22:36:14 | DEBUG    | row=16 pdi: available checkbox id=missionAdId1 value=566 label='Percentage of Self Help Group (SHGs) accessed Bank Loans in the reference year' enabled=True checked=False
+2026-08-28 22:36:14 | DEBUG    | row=16 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-28 22:36:14 | DEBUG    | row=16 pdi: random selection source=auto parsed_count=0 selected_count=1 selected_labels=['None']
+2026-08-28 22:36:14 | DEBUG    | row=16 pdi: portal options detected count=2 options=['None', 'Percentage of Self Help Group (SHGs) accessed Bank Loans in the reference year']
+2026-08-28 22:36:14 | DEBUG    | row=16 pdi: searching requested indicator='None' normalized='none'
+2026-08-28 22:36:14 | DEBUG    | row=16 pdi: match found requested='None' portal_label='None' id=missionAdId0 value=0 enabled=True checked=False
+2026-08-28 22:36:14 | DEBUG    | row=16 pdi: clicking checkbox id=missionAdId0 value=0 label='None'
+2026-08-28 22:36:14 | DEBUG    | row=16 pdi: after click - is_selected=True dom_checked=True for 'None'
+2026-08-28 22:36:14 | DEBUG    | row=16 pdi: selection_success=True label='None'
+2026-08-28 22:36:14 | DEBUG    | row=16 pdi: total selected indicators: 1
+2026-08-28 22:36:14 | INFO     | row=16 pdi: selection complete
+2026-08-28 22:36:14 | DEBUG    | row=16 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': True, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': False}], 'missionAdId1': [{'checked': False, 'value': '566', 'name': 'missionAntodayaDet[1].maCode', 'disabled': True}]}, 'visibleError': False}
+2026-08-28 22:36:14 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-28 22:36:14 | DEBUG    | row=16 targeted_populace: requested indicators (1): ['All']
+2026-08-28 22:36:14 | DEBUG    | row=16 targeted_populace: found 1 total labels in panel
+2026-08-28 22:36:15 | DEBUG    | row=16 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-28 22:36:15 | DEBUG    | row=16 targeted_populace: clicking checkbox: 'All'
+2026-08-28 22:36:15 | DEBUG    | row=16 targeted_populace: checkbox selected successfully: 'All'
+2026-08-28 22:36:15 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-28 22:36:15 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-28 22:36:30 | DEBUG    | row=16: start month options did not populate
+2026-08-28 22:36:30 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-28 22:36:30 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-28 22:36:30 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-28 22:36:30 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-28 22:36:30 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-28 22:36:30 | DEBUG    | start_month: value after events='4' selected_option='4:April'
+2026-08-28 22:36:30 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-28 22:36:30 | DEBUG    | row=16: total indicative cost calculated as: 210 (excel: 210)
+2026-08-28 22:36:30 | DEBUG    | dropdown match selector=#flagshipSchemeId original='National Rural Livelihood Mission (NRLM) - Center Scheme' normalized='national rural livelihood mission(nrlm)- center scheme' matched='National Rural Livelihood Mission (NRLM) - Center Scheme' mode=exact
+2026-08-28 22:36:30 | INFO     | row=16: flagship scheme selected exact_requested='National Rural Livelihood Mission (NRLM) - Center Scheme' matched='National Rural Livelihood Mission (NRLM) - Center Scheme'
+2026-08-28 22:36:30 | DEBUG    | row=16 activity_output: requested='Training/Capacity Building' normalized='training' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-28 22:36:30 | DEBUG    | [ACT-0015] pre_training_validation_state={'checked': [{'id': 'missionAdId0', 'value': '0', 'name': 'missionAntodayaDet[0].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-28 22:36:30 | INFO     | [ACT-0015] Activity Output detail record found
+2026-08-28 22:36:30 | INFO     | [ACT-0015] Activity Output: Training/Capacity Building
+2026-08-28 22:36:30 | INFO     | [ACT-0015] Handler: TrainingOutputHandler
+2026-08-28 22:36:30 | INFO     | [ACT-0015] Detail Sheet: Training
+2026-08-28 22:36:30 | INFO     | [ACT-0015] Radio: outputActvityAstId102
+2026-08-28 22:36:31 | INFO     | [ACT-0015] Modal opened: showTrainingDetailsPopup
+2026-08-28 22:36:31 | DEBUG    | dropdown match selector=#trngCatCdId original='Awareness Campaign' normalized='awareness campaign' matched='Awareness Campaign' mode=exact
+2026-08-28 22:36:31 | DEBUG    | dropdown match selector=#trngOrgByCdId original='Government Institute' normalized='government institute' matched='Government Institute' mode=exact
+2026-08-28 22:36:31 | INFO     | [ACT-0015] Training fields verified: 5/5
+2026-08-28 22:36:31 | INFO     | [ACT-0015] Training popup submitted successfully
+2026-08-28 22:36:32 | INFO     | [ACT-0015] Final Action: Save and Forward
+2026-08-28 22:36:33 | WARNING  | browser_pageerror: Cannot read properties of null (reading 'addEventListener')
+2026-08-28 22:36:34 | INFO     | row 16 SUCCESS
+2026-08-28 22:36:34 | INFO     | -- row 17 | Facilitation/provision of skill development training
+2026-08-28 22:36:36 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-28 22:36:36 | DEBUG    | dropdown match selector=#themeId original='Theme 1 - Poverty Free and Enhanced Livelihoods Village' normalized='theme 1 - poverty free and enhanced livelihoods village' matched='Theme 1 - Poverty Free and Enhanced Livelihoods Village' mode=exact
+2026-08-28 22:36:38 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-28 22:36:38 | DEBUG    | dropdown match selector=#focusAreaId original='Technical training and vocational education' normalized='technical training and vocational education' matched='Technical training and vocational education' mode=exact
+2026-08-28 22:36:38 | DEBUG    | row=17: watchId spinner finished, checkboxes should be loaded
+2026-08-28 22:36:38 | DEBUG    | dropdown match selector=#activityTypeListId original='Beneficiary Oriented Programmes' normalized='beneficiary oriented programmes' matched='Beneficiary Oriented Programmes' mode=exact
+2026-08-28 22:36:38 | DEBUG    | vprp_plan: section_found=True original='No' normalized='no' radio_locator=#vprpPlandiv input[type='radio'][name='vprpplan'] options=[{'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}, {'id': 'vprpplan', 'name': 'vprpplan', 'value': 'T', 'checked': False, 'text': 'Yes'}]
+2026-08-28 22:36:38 | INFO     | vprp_plan: selecting original='No' normalized='no' locator=#vprpPlandiv input[type='radio'][name='vprpplan'] matched={'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}
+2026-08-28 22:36:38 | DEBUG    | row=17 pdi: raw excel pdi_indicator=''
+2026-08-28 22:36:38 | DEBUG    | row=17 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-28 22:36:38 | DEBUG    | row=17 pdi: #checkboxes not visible, attempting to open
+2026-08-28 22:36:38 | DEBUG    | row=17 pdi: option_count_probe count=2 stable_checks=0
+2026-08-28 22:36:39 | DEBUG    | row=17 pdi: found 2 checkbox inputs in panel
+2026-08-28 22:36:39 | DEBUG    | row=17 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-28 22:36:39 | DEBUG    | row=17 pdi: available checkbox id=missionAdId1 value=566 label='Percentage of Self Help Group (SHGs) accessed Bank Loans in the reference year' enabled=True checked=False
+2026-08-28 22:36:39 | DEBUG    | row=17 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-28 22:36:39 | DEBUG    | row=17 pdi: random selection source=auto parsed_count=0 selected_count=2 selected_labels=['None', 'Percentage of Self Help Group (SHGs) accessed Bank Loans in the reference year']
+2026-08-28 22:36:39 | DEBUG    | row=17 pdi: portal options detected count=2 options=['None', 'Percentage of Self Help Group (SHGs) accessed Bank Loans in the reference year']
+2026-08-28 22:36:39 | DEBUG    | row=17 pdi: searching requested indicator='None' normalized='none'
+2026-08-28 22:36:39 | DEBUG    | row=17 pdi: match found requested='None' portal_label='None' id=missionAdId0 value=0 enabled=True checked=False
+2026-08-28 22:36:39 | DEBUG    | row=17 pdi: searching requested indicator='Percentage of Self Help Group (SHGs) accessed Bank Loans in the reference year' normalized='percentage of self help group (shgs) accessed bank loans in the reference year'
+2026-08-28 22:36:39 | DEBUG    | row=17 pdi: match found requested='Percentage of Self Help Group (SHGs) accessed Bank Loans in the reference year' portal_label='Percentage of Self Help Group (SHGs) accessed Bank Loans in the reference year' id=missionAdId1 value=566 enabled=True checked=False
+2026-08-28 22:36:39 | DEBUG    | row=17 pdi: clicking checkbox id=missionAdId0 value=0 label='None'
+2026-08-28 22:36:39 | DEBUG    | row=17 pdi: after click - is_selected=True dom_checked=True for 'None'
+2026-08-28 22:36:39 | DEBUG    | row=17 pdi: selection_success=True label='None'
+2026-08-28 22:36:39 | DEBUG    | row=17 pdi: clicking checkbox id=missionAdId1 value=566 label='Percentage of Self Help Group (SHGs) accessed Bank Loans in the reference year'
+2026-08-28 22:36:54 | WARNING  | row=17 pdi: normal click failed: Locator.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#maD, trying label click fallback
+2026-08-28 22:37:09 | ERROR    | row=17 pdi: label click fallback also failed: Locator.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#maD
+2026-08-28 22:37:09 | DEBUG    | row=17 pdi: total selected indicators: 1
+2026-08-28 22:37:09 | INFO     | row=17 pdi: selection complete
+2026-08-28 22:37:09 | DEBUG    | row=17 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': True, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': False}], 'missionAdId1': [{'checked': False, 'value': '566', 'name': 'missionAntodayaDet[1].maCode', 'disabled': True}]}, 'visibleError': False}
+2026-08-28 22:37:09 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-28 22:37:09 | DEBUG    | row=17 targeted_populace: requested indicators (1): ['All']
+2026-08-28 22:37:09 | DEBUG    | row=17 targeted_populace: found 1 total labels in panel
+2026-08-28 22:37:09 | DEBUG    | row=17 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-28 22:37:09 | DEBUG    | row=17 targeted_populace: clicking checkbox: 'All'
+2026-08-28 22:37:09 | DEBUG    | row=17 targeted_populace: checkbox selected successfully: 'All'
+2026-08-28 22:37:09 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-28 22:37:10 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-28 22:37:10 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-28 22:37:10 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-28 22:37:10 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-28 22:37:10 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-28 22:37:10 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-28 22:37:10 | DEBUG    | start_month: value after events='4' selected_option='4:April'
+2026-08-28 22:37:10 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-28 22:37:10 | DEBUG    | row=17: total indicative cost calculated as: 77 (excel: 77)
+2026-08-28 22:37:10 | DEBUG    | dropdown match selector=#flagshipSchemeId original='Pashudhan Scheme - Center Scheme' normalized='pashudhan scheme - center scheme' matched='Pashudhan Scheme - Center Scheme' mode=exact
+2026-08-28 22:37:10 | INFO     | row=17: flagship scheme selected exact_requested='Pashudhan Scheme - Center Scheme' matched='Pashudhan Scheme - Center Scheme'
+2026-08-28 22:37:11 | DEBUG    | row=17 activity_output: requested='Training/Capacity Building' normalized='training' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-28 22:37:11 | DEBUG    | [ACT-0020] pre_training_validation_state={'checked': [{'id': 'missionAdId0', 'value': '0', 'name': 'missionAntodayaDet[0].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-28 22:37:11 | INFO     | [ACT-0020] Activity Output detail record found
+2026-08-28 22:37:11 | INFO     | [ACT-0020] Activity Output: Training/Capacity Building
+2026-08-28 22:37:11 | INFO     | [ACT-0020] Handler: TrainingOutputHandler
+2026-08-28 22:37:11 | INFO     | [ACT-0020] Detail Sheet: Training
+2026-08-28 22:37:11 | INFO     | [ACT-0020] Radio: outputActvityAstId102
+2026-08-28 22:37:11 | INFO     | [ACT-0020] Modal opened: showTrainingDetailsPopup
+2026-08-28 22:37:11 | DEBUG    | dropdown match selector=#trngCatCdId original='Awareness Campaign' normalized='awareness campaign' matched='Awareness Campaign' mode=exact
+2026-08-28 22:37:11 | DEBUG    | dropdown match selector=#trngOrgByCdId original='Government Institute' normalized='government institute' matched='Government Institute' mode=exact
+2026-08-28 22:37:11 | INFO     | [ACT-0020] Training fields verified: 5/5
+2026-08-28 22:37:11 | INFO     | [ACT-0020] Training popup submitted successfully
+2026-08-28 22:37:12 | INFO     | [ACT-0020] Final Action: Save and Forward
+2026-08-28 22:37:14 | WARNING  | browser_pageerror: Cannot read properties of null (reading 'addEventListener')
+2026-08-28 22:37:15 | INFO     | row 17 SUCCESS
+2026-08-28 22:37:15 | INFO     | -- row 18 | Organise career counselling camps to promote self-employment
+2026-08-28 22:37:17 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-28 22:37:17 | DEBUG    | dropdown match selector=#themeId original='Theme 1 - Poverty Free and Enhanced Livelihoods Village' normalized='theme 1 - poverty free and enhanced livelihoods village' matched='Theme 1 - Poverty Free and Enhanced Livelihoods Village' mode=exact
+2026-08-28 22:37:18 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-28 22:37:18 | DEBUG    | dropdown match selector=#focusAreaId original='Poverty allevation programme' normalized='poverty allevation programme' matched='Poverty allevation programme' mode=exact
+2026-08-28 22:37:19 | DEBUG    | row=18: watchId spinner finished, checkboxes should be loaded
+2026-08-28 22:37:19 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-28 22:37:19 | DEBUG    | row=18 pdi: raw excel pdi_indicator=''
+2026-08-28 22:37:19 | DEBUG    | row=18 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-28 22:37:19 | DEBUG    | row=18 pdi: #checkboxes not visible, attempting to open
+2026-08-28 22:37:19 | DEBUG    | row=18 pdi: option_count_probe count=1 stable_checks=0
+2026-08-28 22:37:19 | DEBUG    | row=18 pdi: found 1 checkbox inputs in panel
+2026-08-28 22:37:19 | DEBUG    | row=18 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-28 22:37:19 | DEBUG    | row=18 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-28 22:37:19 | DEBUG    | row=18 pdi: random selection source=auto parsed_count=0 selected_count=1 selected_labels=['None']
+2026-08-28 22:37:19 | DEBUG    | row=18 pdi: portal options detected count=1 options=['None']
+2026-08-28 22:37:19 | DEBUG    | row=18 pdi: searching requested indicator='None' normalized='none'
+2026-08-28 22:37:19 | DEBUG    | row=18 pdi: match found requested='None' portal_label='None' id=missionAdId0 value=0 enabled=True checked=False
+2026-08-28 22:37:19 | DEBUG    | row=18 pdi: clicking checkbox id=missionAdId0 value=0 label='None'
+2026-08-28 22:37:19 | DEBUG    | row=18 pdi: after click - is_selected=True dom_checked=True for 'None'
+2026-08-28 22:37:19 | DEBUG    | row=18 pdi: selection_success=True label='None'
+2026-08-28 22:37:19 | DEBUG    | row=18 pdi: total selected indicators: 1
+2026-08-28 22:37:19 | INFO     | row=18 pdi: selection complete
+2026-08-28 22:37:19 | DEBUG    | row=18 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': True, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': False}]}, 'visibleError': False}
+2026-08-28 22:37:19 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-28 22:37:20 | DEBUG    | row=18 targeted_populace: requested indicators (1): ['All']
+2026-08-28 22:37:20 | DEBUG    | row=18 targeted_populace: found 1 total labels in panel
+2026-08-28 22:37:20 | DEBUG    | row=18 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-28 22:37:20 | DEBUG    | row=18 targeted_populace: clicking checkbox: 'All'
+2026-08-28 22:37:20 | DEBUG    | row=18 targeted_populace: checkbox selected successfully: 'All'
+2026-08-28 22:37:20 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-28 22:37:20 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-28 22:37:21 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-28 22:37:21 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-28 22:37:21 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-28 22:37:21 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-28 22:37:21 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-28 22:37:21 | DEBUG    | start_month: value after events='4' selected_option='4:April'
+2026-08-28 22:37:21 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-28 22:37:21 | DEBUG    | row=18: total indicative cost calculated as: 135 (excel: 135)
+2026-08-28 22:37:21 | DEBUG    | dropdown match selector=#flagshipSchemeId original='Matsaya Yojna - Center Scheme' normalized='matsaya yojna - center scheme' matched='Matsaya Yojna - Center Scheme' mode=exact
+2026-08-28 22:37:21 | INFO     | row=18: flagship scheme selected exact_requested='Matsaya Yojna - Center Scheme' matched='Matsaya Yojna - Center Scheme'
+2026-08-28 22:37:21 | DEBUG    | row=18 activity_output: requested='Training/Capacity Building' normalized='training' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-28 22:37:21 | DEBUG    | [ACT-0028] pre_training_validation_state={'checked': [{'id': 'missionAdId0', 'value': '0', 'name': 'missionAntodayaDet[0].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-28 22:37:21 | INFO     | [ACT-0028] Activity Output detail record found
+2026-08-28 22:37:21 | INFO     | [ACT-0028] Activity Output: Training/Capacity Building
+2026-08-28 22:37:21 | INFO     | [ACT-0028] Handler: TrainingOutputHandler
+2026-08-28 22:37:21 | INFO     | [ACT-0028] Detail Sheet: Training
+2026-08-28 22:37:21 | INFO     | [ACT-0028] Radio: outputActvityAstId102
+2026-08-28 22:37:21 | INFO     | [ACT-0028] Modal opened: showTrainingDetailsPopup
+2026-08-28 22:37:21 | DEBUG    | dropdown match selector=#trngCatCdId original='Awareness Campaign' normalized='awareness campaign' matched='Awareness Campaign' mode=exact
+2026-08-28 22:37:21 | DEBUG    | dropdown match selector=#trngOrgByCdId original='Government Institute' normalized='government institute' matched='Government Institute' mode=exact
+2026-08-28 22:37:21 | DEBUG    | dropdown match selector=#trngCatCdId original='Awareness Campaign' normalized='awareness campaign' matched='Awareness Campaign' mode=exact
+2026-08-28 22:37:22 | INFO     | [ACT-0028] Training fields verified: 5/5
+2026-08-28 22:37:22 | INFO     | [ACT-0028] Training popup submitted successfully
+2026-08-28 22:37:22 | INFO     | [ACT-0028] Final Action: Save and Forward
+2026-08-28 22:37:24 | WARNING  | browser_pageerror: Cannot read properties of null (reading 'addEventListener')
+2026-08-28 22:37:25 | INFO     | row 18 SUCCESS
+2026-08-28 22:37:25 | INFO     | -- row 19 | Organizing awareness Progarm & IEC campaign on symptoms of V
+2026-08-28 22:37:26 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-28 22:37:27 | DEBUG    | dropdown match selector=#themeId original='Theme 2 - Healthy Village' normalized='theme 2 - healthy village' matched='Theme 2 - Healthy Village' mode=exact
+2026-08-28 22:37:28 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-28 22:37:28 | DEBUG    | dropdown match selector=#focusAreaId original='Health' normalized='health' matched='Health' mode=exact
+2026-08-28 22:37:28 | DEBUG    | row=19: watchId spinner finished, checkboxes should be loaded
+2026-08-28 22:37:29 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-28 22:37:29 | DEBUG    | row=19 pdi: raw excel pdi_indicator=''
+2026-08-28 22:37:29 | DEBUG    | row=19 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-28 22:37:29 | DEBUG    | row=19 pdi: #checkboxes not visible, attempting to open
+2026-08-28 22:37:29 | DEBUG    | row=19 pdi: option_count_probe count=1 stable_checks=0
+2026-08-28 22:37:29 | DEBUG    | row=19 pdi: found 1 checkbox inputs in panel
+2026-08-28 22:37:29 | DEBUG    | row=19 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-28 22:37:29 | DEBUG    | row=19 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-28 22:37:29 | DEBUG    | row=19 pdi: random selection source=auto parsed_count=0 selected_count=1 selected_labels=['None']
+2026-08-28 22:37:29 | DEBUG    | row=19 pdi: portal options detected count=1 options=['None']
+2026-08-28 22:37:29 | DEBUG    | row=19 pdi: searching requested indicator='None' normalized='none'
+2026-08-28 22:37:29 | DEBUG    | row=19 pdi: match found requested='None' portal_label='None' id=missionAdId0 value=0 enabled=True checked=False
+2026-08-28 22:37:29 | DEBUG    | row=19 pdi: clicking checkbox id=missionAdId0 value=0 label='None'
+2026-08-28 22:37:29 | DEBUG    | row=19 pdi: after click - is_selected=True dom_checked=True for 'None'
+2026-08-28 22:37:29 | DEBUG    | row=19 pdi: selection_success=True label='None'
+2026-08-28 22:37:29 | DEBUG    | row=19 pdi: total selected indicators: 1
+2026-08-28 22:37:29 | INFO     | row=19 pdi: selection complete
+2026-08-28 22:37:29 | DEBUG    | row=19 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': True, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': False}]}, 'visibleError': False}
+2026-08-28 22:37:29 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-28 22:37:30 | DEBUG    | row=19 targeted_populace: requested indicators (1): ['All']
+2026-08-28 22:37:30 | DEBUG    | row=19 targeted_populace: found 1 total labels in panel
+2026-08-28 22:37:30 | DEBUG    | row=19 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-28 22:37:30 | DEBUG    | row=19 targeted_populace: clicking checkbox: 'All'
+2026-08-28 22:37:30 | DEBUG    | row=19 targeted_populace: checkbox selected successfully: 'All'
+2026-08-28 22:37:30 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-28 22:37:30 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-28 22:37:30 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-28 22:37:31 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-28 22:37:31 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-28 22:37:31 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-28 22:37:31 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-28 22:37:31 | DEBUG    | start_month: value after events='4' selected_option='4:April'
+2026-08-28 22:37:31 | DEBUG    | start_month: final confirmed value='4' selected_option=':Select'
+2026-08-28 22:37:31 | DEBUG    | row=19: total indicative cost calculated as: 117 (excel: 117)
+2026-08-28 22:37:31 | DEBUG    | dropdown match selector=#flagshipSchemeId original='Janani Surakha Yojna - Center Scheme' normalized='janani surakha yojna - center scheme' matched='Janani Surakha Yojna - Center Scheme' mode=exact
+2026-08-28 22:37:31 | INFO     | row=19: flagship scheme selected exact_requested='Janani Surakha Yojna - Center Scheme' matched='Janani Surakha Yojna - Center Scheme'
+2026-08-28 22:37:31 | DEBUG    | row=19 activity_output: requested='Training/Capacity Building' normalized='training' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-28 22:37:31 | DEBUG    | [ACT-0036] pre_training_validation_state={'checked': [{'id': 'missionAdId0', 'value': '0', 'name': 'missionAntodayaDet[0].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-28 22:37:31 | INFO     | [ACT-0036] Activity Output detail record found
+2026-08-28 22:37:31 | INFO     | [ACT-0036] Activity Output: Training/Capacity Building
+2026-08-28 22:37:31 | INFO     | [ACT-0036] Handler: TrainingOutputHandler
+2026-08-28 22:37:31 | INFO     | [ACT-0036] Detail Sheet: Training
+2026-08-28 22:37:31 | INFO     | [ACT-0036] Radio: outputActvityAstId102
+2026-08-28 22:37:46 | WARNING  | row=19 activity_output_popup Training modal did not open: showTrainingDetailsPopup; diagnostics={'modalExists': True, 'modalClass': 'modal fade', 'modalDisplay': 'none', 'modalVisibility': 'visible', 'modalAriaHidden': None, 'rad
+2026-08-28 22:37:46 | ERROR    | FAIL | row=19 field=activity_output | Training modal did not open: showTrainingDetailsPopup; diagnostics={'modalExists': True, 'modalClass': 'modal fade', 'modalDisplay': 'none', 'modalVisibility': 'visible', 'modalAriaHidden': None, 'radioExists': True, 'radioChecked': True, 'radioDisab
+2026-08-28 22:37:46 | ERROR    | row 19 FAILED (single attempt): [activity_output] Training modal did not open: showTrainingDetailsPopup; diagnostics={'modalExists': True, 'modalClass': 'modal fade', 'modalDisplay': 'none', 'modalVisibility': 'visible', 'modalAriaHidden': None, 'radioExists': True, 'radioChecked': True, 'radioDisabled': False, 'radioOnclick': "re
+2026-08-28 22:37:46 | ERROR    | row 19 FAILED after single attempt
+2026-08-28 22:37:46 | INFO     | -- row 20 | Organizing awareness Progarm & IEC campaign on symptoms of a
+2026-08-28 22:37:49 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-28 22:37:49 | DEBUG    | dropdown match selector=#themeId original='Theme 2 - Healthy Village' normalized='theme 2 - healthy village' matched='Theme 2 - Healthy Village' mode=exact
+2026-08-28 22:37:50 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-28 22:37:50 | DEBUG    | dropdown match selector=#focusAreaId original='Health' normalized='health' matched='Health' mode=exact
+2026-08-28 22:37:50 | DEBUG    | row=20: watchId spinner finished, checkboxes should be loaded
+2026-08-28 22:37:50 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-28 22:37:50 | DEBUG    | vprp_plan: section_found=True original='No' normalized='no' radio_locator=#vprpPlandiv input[type='radio'][name='vprpplan'] options=[{'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}, {'id': 'vprpplan', 'name': 'vprpplan', 'value': 'T', 'checked': False, 'text': 'Yes'}]
+2026-08-28 22:37:50 | INFO     | vprp_plan: selecting original='No' normalized='no' locator=#vprpPlandiv input[type='radio'][name='vprpplan'] matched={'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}
+2026-08-28 22:37:50 | DEBUG    | row=20 pdi: raw excel pdi_indicator=''
+2026-08-28 22:37:50 | DEBUG    | row=20 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-28 22:37:50 | DEBUG    | row=20 pdi: #checkboxes not visible, attempting to open
+2026-08-28 22:37:51 | DEBUG    | row=20 pdi: option_count_probe count=1 stable_checks=0
+2026-08-28 22:37:51 | DEBUG    | row=20 pdi: found 1 checkbox inputs in panel
+2026-08-28 22:37:51 | DEBUG    | row=20 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-28 22:37:51 | DEBUG    | row=20 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-28 22:37:51 | DEBUG    | row=20 pdi: random selection source=auto parsed_count=0 selected_count=1 selected_labels=['None']
+2026-08-28 22:37:51 | DEBUG    | row=20 pdi: portal options detected count=1 options=['None']
+2026-08-28 22:37:51 | DEBUG    | row=20 pdi: searching requested indicator='None' normalized='none'
+2026-08-28 22:37:51 | DEBUG    | row=20 pdi: match found requested='None' portal_label='None' id=missionAdId0 value=0 enabled=True checked=False
+2026-08-28 22:37:51 | DEBUG    | row=20 pdi: clicking checkbox id=missionAdId0 value=0 label='None'
+2026-08-28 22:37:51 | DEBUG    | row=20 pdi: after click - is_selected=True dom_checked=True for 'None'
+2026-08-28 22:37:51 | DEBUG    | row=20 pdi: selection_success=True label='None'
+2026-08-28 22:37:51 | DEBUG    | row=20 pdi: total selected indicators: 1
+2026-08-28 22:37:51 | INFO     | row=20 pdi: selection complete
+2026-08-28 22:37:51 | DEBUG    | row=20 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': True, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': False}]}, 'visibleError': False}
+2026-08-28 22:37:51 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-28 22:37:52 | DEBUG    | row=20 targeted_populace: requested indicators (1): ['All']
+2026-08-28 22:37:52 | DEBUG    | row=20 targeted_populace: found 1 total labels in panel
+2026-08-28 22:37:52 | DEBUG    | row=20 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-28 22:37:52 | DEBUG    | row=20 targeted_populace: clicking checkbox: 'All'
+2026-08-28 22:37:52 | DEBUG    | row=20 targeted_populace: checkbox selected successfully: 'All'
+2026-08-28 22:37:52 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-28 22:37:52 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-28 22:37:53 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-28 22:37:53 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-28 22:37:53 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-28 22:37:53 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-28 22:37:53 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-28 22:37:53 | DEBUG    | start_month: value after events='4' selected_option='4:April'
+2026-08-28 22:37:53 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-28 22:37:53 | DEBUG    | row=20: total indicative cost calculated as: 108 (excel: 108)
+2026-08-28 22:37:53 | DEBUG    | dropdown match selector=#flagshipSchemeId original='Ayushman Bharat - Center Scheme' normalized='ayushman bharat - center scheme' matched='Ayushman Bharat - Center Scheme' mode=exact
+2026-08-28 22:37:53 | INFO     | row=20: flagship scheme selected exact_requested='Ayushman Bharat - Center Scheme' matched='Ayushman Bharat - Center Scheme'
+2026-08-28 22:37:53 | DEBUG    | row=20 activity_output: requested='Training/Capacity Building' normalized='training' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-28 22:37:53 | DEBUG    | [ACT-0037] pre_training_validation_state={'checked': [{'id': 'missionAdId0', 'value': '0', 'name': 'missionAntodayaDet[0].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-28 22:37:53 | INFO     | [ACT-0037] Activity Output detail record found
+2026-08-28 22:37:53 | INFO     | [ACT-0037] Activity Output: Training/Capacity Building
+2026-08-28 22:37:53 | INFO     | [ACT-0037] Handler: TrainingOutputHandler
+2026-08-28 22:37:53 | INFO     | [ACT-0037] Detail Sheet: Training
+2026-08-28 22:37:53 | INFO     | [ACT-0037] Radio: outputActvityAstId102
+2026-08-28 22:37:53 | INFO     | [ACT-0037] Modal opened: showTrainingDetailsPopup
+2026-08-28 22:37:53 | DEBUG    | dropdown match selector=#trngCatCdId original='Awareness Campaign' normalized='awareness campaign' matched='Awareness Campaign' mode=exact
+2026-08-28 22:37:53 | DEBUG    | dropdown match selector=#trngOrgByCdId original='Government Institute' normalized='government institute' matched='Government Institute' mode=exact
+2026-08-28 22:37:54 | INFO     | [ACT-0037] Training fields verified: 5/5
+2026-08-28 22:37:54 | INFO     | [ACT-0037] Training popup submitted successfully
+2026-08-28 22:37:54 | INFO     | [ACT-0037] Final Action: Save and Forward
+2026-08-28 22:37:56 | WARNING  | browser_pageerror: Cannot read properties of null (reading 'addEventListener')
+2026-08-28 22:37:57 | INFO     | row 20 SUCCESS
+2026-08-28 22:37:57 | INFO     | -- row 21 | Oraginizing awareness camp/ program on significance of healt
+2026-08-28 22:37:59 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-28 22:37:59 | DEBUG    | dropdown match selector=#themeId original='Theme 2 - Healthy Village' normalized='theme 2 - healthy village' matched='Theme 2 - Healthy Village' mode=exact
+2026-08-28 22:38:00 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-28 22:38:01 | DEBUG    | dropdown match selector=#focusAreaId original='Family welfare' normalized='family welfare' matched='Family welfare' mode=exact
+2026-08-28 22:38:01 | DEBUG    | row=21: watchId spinner finished, checkboxes should be loaded
+2026-08-28 22:38:01 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-28 22:38:01 | DEBUG    | vprp_plan: section_found=True original='No' normalized='no' radio_locator=#vprpPlandiv input[type='radio'][name='vprpplan'] options=[{'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}, {'id': 'vprpplan', 'name': 'vprpplan', 'value': 'T', 'checked': False, 'text': 'Yes'}]
+2026-08-28 22:38:01 | INFO     | vprp_plan: selecting original='No' normalized='no' locator=#vprpPlandiv input[type='radio'][name='vprpplan'] matched={'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}
+2026-08-28 22:38:01 | DEBUG    | row=21 pdi: raw excel pdi_indicator=''
+2026-08-28 22:38:01 | DEBUG    | row=21 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-28 22:38:01 | DEBUG    | row=21 pdi: #checkboxes not visible, attempting to open
+2026-08-28 22:38:01 | DEBUG    | row=21 pdi: option_count_probe count=2 stable_checks=0
+2026-08-28 22:38:01 | DEBUG    | row=21 pdi: found 2 checkbox inputs in panel
+2026-08-28 22:38:01 | DEBUG    | row=21 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-28 22:38:01 | DEBUG    | row=21 pdi: available checkbox id=missionAdId1 value=76 label='Percentage of children under age 5 years who are stunted under Saksham Anganwadi and Mission Poshan 2.0' enabled=True checked=False
+2026-08-28 22:38:01 | DEBUG    | row=21 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-28 22:38:01 | DEBUG    | row=21 pdi: random selection source=auto parsed_count=0 selected_count=2 selected_labels=['Percentage of children under age 5 years who are stunted under Saksham Anganwadi and Mission Poshan 2.0', 'None']
+2026-08-28 22:38:01 | DEBUG    | row=21 pdi: portal options detected count=2 options=['None', 'Percentage of children under age 5 years who are stunted under Saksham Anganwadi and Mission Poshan 2.0']
+2026-08-28 22:38:01 | DEBUG    | row=21 pdi: searching requested indicator='Percentage of children under age 5 years who are stunted under Saksham Anganwadi and Mission Poshan 2.0' normalized='percentage of children under age 5 years who are stunted under saksham anganwadi and mission poshan 2.0'
+2026-08-28 22:38:01 | DEBUG    | row=21 pdi: match found requested='Percentage of children under age 5 years who are stunted under Saksham Anganwadi and Mission Poshan 2.0' portal_label='Percentage of children under age 5 years who are stunted under Saksham Anganwadi and Mission Poshan 2.0' id=missionAdId1 value=76 enabled=True checked=False
+2026-08-28 22:38:01 | DEBUG    | row=21 pdi: searching requested indicator='None' normalized='none'
+2026-08-28 22:38:01 | DEBUG    | row=21 pdi: match found requested='None' portal_label='None' id=missionAdId0 value=0 enabled=True checked=False
+2026-08-28 22:38:01 | DEBUG    | row=21 pdi: clicking checkbox id=missionAdId1 value=76 label='Percentage of children under age 5 years who are stunted under Saksham Anganwadi and Mission Poshan 2.0'
+2026-08-28 22:38:02 | DEBUG    | row=21 pdi: after click - is_selected=True dom_checked=True for 'Percentage of children under age 5 years who are stunted under Saksham Anganwadi and Mission Poshan 2.0'
+2026-08-28 22:38:02 | DEBUG    | row=21 pdi: selection_success=True label='Percentage of children under age 5 years who are stunted under Saksham Anganwadi and Mission Poshan 2.0'
+2026-08-28 22:38:02 | DEBUG    | row=21 pdi: clicking checkbox id=missionAdId0 value=0 label='None'
+2026-08-28 22:38:17 | WARNING  | row=21 pdi: normal click failed: Locator.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#maD, trying label click fallback
+2026-08-28 22:38:32 | ERROR    | row=21 pdi: label click fallback also failed: Locator.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#maD
+2026-08-28 22:38:32 | DEBUG    | row=21 pdi: total selected indicators: 1
+2026-08-28 22:38:32 | INFO     | row=21 pdi: selection complete
+2026-08-28 22:38:32 | DEBUG    | row=21 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': False, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': True}], 'missionAdId1': [{'checked': True, 'value': '76', 'name': 'missionAntodayaDet[1].maCode', 'disabled': False}]}, 'visibleError': False}
+2026-08-28 22:38:32 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-28 22:38:32 | DEBUG    | row=21 targeted_populace: requested indicators (1): ['All']
+2026-08-28 22:38:32 | DEBUG    | row=21 targeted_populace: found 1 total labels in panel
+2026-08-28 22:38:32 | DEBUG    | row=21 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-28 22:38:32 | DEBUG    | row=21 targeted_populace: clicking checkbox: 'All'
+2026-08-28 22:38:32 | DEBUG    | row=21 targeted_populace: checkbox selected successfully: 'All'
+2026-08-28 22:38:32 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-28 22:38:33 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-28 22:38:33 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-28 22:38:33 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-28 22:38:33 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-28 22:38:33 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-28 22:38:33 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-28 22:38:33 | DEBUG    | start_month: value after events='4' selected_option='4:April'
+2026-08-28 22:38:33 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-28 22:38:33 | DEBUG    | row=21: total indicative cost calculated as: 21 (excel: 21)
+2026-08-28 22:38:33 | DEBUG    | dropdown match selector=#flagshipSchemeId original='National Biogas and Manure Management Programme - Center Scheme' normalized='national biogas and manure management programme - center scheme' matched='National Biogas and Manure Management Programme - Center Scheme' mode=exact
+2026-08-28 22:38:33 | INFO     | row=21: flagship scheme selected exact_requested='National Biogas and Manure Management Programme - Center Scheme' matched='National Biogas and Manure Management Programme - Center Scheme'
+2026-08-28 22:38:33 | DEBUG    | row=21 activity_output: requested='Training/Capacity Building' normalized='training' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-28 22:38:33 | DEBUG    | [ACT-0043] pre_training_validation_state={'checked': [{'id': 'missionAdId1', 'value': '76', 'name': 'missionAntodayaDet[1].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-28 22:38:33 | INFO     | [ACT-0043] Activity Output detail record found
+2026-08-28 22:38:33 | INFO     | [ACT-0043] Activity Output: Training/Capacity Building
+2026-08-28 22:38:33 | INFO     | [ACT-0043] Handler: TrainingOutputHandler
+2026-08-28 22:38:33 | INFO     | [ACT-0043] Detail Sheet: Training
+2026-08-28 22:38:33 | INFO     | [ACT-0043] Radio: outputActvityAstId102
+2026-08-28 22:38:34 | INFO     | [ACT-0043] Modal opened: showTrainingDetailsPopup
+2026-08-28 22:38:34 | DEBUG    | dropdown match selector=#trngCatCdId original='Awareness Campaign' normalized='awareness campaign' matched='Awareness Campaign' mode=exact
+2026-08-28 22:38:34 | DEBUG    | dropdown match selector=#trngOrgByCdId original='Government Institute' normalized='government institute' matched='Government Institute' mode=exact
+2026-08-28 22:38:34 | INFO     | [ACT-0043] Training fields verified: 5/5
+2026-08-28 22:38:34 | INFO     | [ACT-0043] Training popup submitted successfully
+2026-08-28 22:38:34 | INFO     | [ACT-0043] Final Action: Save and Forward
+2026-08-28 22:38:37 | WARNING  | browser_pageerror: Cannot read properties of null (reading 'addEventListener')
+2026-08-28 22:38:38 | INFO     | row 21 SUCCESS
+2026-08-28 22:38:38 | INFO     | DONE 506s total=22 success=21 failed=1 rate=95.5%
