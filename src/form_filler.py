@@ -1642,13 +1642,23 @@ class FormFiller:
             if not major:
                 return
             div = p.locator("#subMajorHeadDivId")
-            if not div.count() or not div.is_visible():
-                logger.debug("row=%d: major head section not visible", row_index)
-                return
+            logger.debug("row=%d: major_head Excel value=%r", row_index, major)
+            if not div.count():
+                raise ValueError("Major Head section #subMajorHeadDivId was not found")
+            div.wait_for(state="visible", timeout=OPTIONS_TIMEOUT)
             select = p.locator("#submjrPrmptId")
-            if select.count():
-                select_by_text(p, "#submjrPrmptId", major)
-                _wait_idle(p)  # Wait for dependent Minor Head to populate
+            if not select.count():
+                raise ValueError("Major Head control #submjrPrmptId was not found")
+            options = wait_for_options(p, "#submjrPrmptId")
+            logger.debug("row=%d: major_head dropdown options=%s", row_index, options)
+            select_by_text(p, "#submjrPrmptId", major)
+            selected = select.locator("option:checked").inner_text().strip()
+            if _dropdown_match_key(selected) != _dropdown_match_key(major):
+                raise ValueError(
+                    f"Major Head selection verification failed: requested={major!r} selected={selected!r}"
+                )
+            logger.info("row=%d: major_head selected Excel=%r matched=%r", row_index, major, selected)
+            _wait_idle(p)  # Wait for dependent Minor Head to populate
         attempt("major_head_choice", _major)
 
         # ── 12. Dynamic Minor Head (conditional) ───────────────────────────────
@@ -1658,13 +1668,23 @@ class FormFiller:
             if not minor:
                 return
             div = p.locator("#subMinorHeadDivId")
-            if not div.count() or not div.is_visible():
-                logger.debug("row=%d: minor head section not visible", row_index)
-                return
+            logger.debug("row=%d: minor_head Excel value=%r", row_index, minor)
+            if not div.count():
+                raise ValueError("Minor Head section #subMinorHeadDivId was not found")
+            div.wait_for(state="visible", timeout=OPTIONS_TIMEOUT)
             select = p.locator("#minorPrmptId")
-            if select.count():
-                select_by_text(p, "#minorPrmptId", minor)
-                _wait_idle(p)
+            if not select.count():
+                raise ValueError("Minor Head control #minorPrmptId was not found")
+            options = wait_for_options(p, "#minorPrmptId")
+            logger.debug("row=%d: minor_head dropdown options=%s", row_index, options)
+            select_by_text(p, "#minorPrmptId", minor)
+            selected = select.locator("option:checked").inner_text().strip()
+            if _dropdown_match_key(selected) != _dropdown_match_key(minor):
+                raise ValueError(
+                    f"Minor Head selection verification failed: requested={minor!r} selected={selected!r}"
+                )
+            logger.info("row=%d: minor_head selected Excel=%r matched=%r", row_index, minor, selected)
+            _wait_idle(p)
         attempt("minor_head_choice", _minor)
 
         # ── 13. Is directly funded by Panchayat? (radio) ─────────────────────
