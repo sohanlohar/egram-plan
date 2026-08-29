@@ -217,25 +217,9 @@ class StructuredModalOutputHandler(BaseOutputHandler):
             )
 
         radio.scroll_into_view_if_needed()
-        try:
-            radio.click(force=True)
-        except Exception:
-            pass
-        self.page.evaluate(
-            """
-            ({ modalId, radioId }) => {
-                const radio = document.getElementById(radioId);
-                if (radio) {
-                    radio.checked = true;
-                    radio.dispatchEvent(new Event('change', { bubbles: true }));
-                }
-                if (typeof window.showAssetDetailsPopup === 'function') {
-                    window.showAssetDetailsPopup(modalId, radioId);
-                }
-            }
-            """,
-            {"modalId": self.definition.modal_id, "radioId": self.definition.radio_id},
-        )
+        # The native click executes the portal's inline onclick exactly once.
+        # Calling showAssetDetailsPopup again can re-run validation and hide the modal.
+        radio.click(force=True)
 
         modal = self.page.locator(f"#{self.definition.modal_id}")
         try:

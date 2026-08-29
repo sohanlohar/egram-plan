@@ -176,21 +176,8 @@ def select_start_month(page: Page, selector: str, requested_value: str) -> None:
         locator.input_value(),
     )
 
-    page.eval_on_selector(
-        selector,
-        """
-        el => {
-            el.dispatchEvent(new Event('input', { bubbles: true }));
-            el.dispatchEvent(new Event('change', { bubbles: true }));
-            el.dispatchEvent(new Event('blur', { bubbles: true }));
-            if (typeof el.onchange === 'function') {
-                try { el.onchange(); } catch (error) { console.error(error); }
-            }
-        }
-        """,
-    )
     logger.debug(
-        "start_month: value after events='%s' selected_option='%s'",
+        "start_month: value after selection events='%s' selected_option='%s'",
         locator.input_value(),
         page.eval_on_selector(selector, "el => (el.selectedOptions[0] ? `${el.selectedOptions[0].value}:${el.selectedOptions[0].textContent.trim()}` : '')"),
     )
@@ -220,6 +207,51 @@ def select_start_month(page: Page, selector: str, requested_value: str) -> None:
         locator.input_value(),
         page.eval_on_selector(selector, "el => (el.selectedOptions[0] ? `${el.selectedOptions[0].value}:${el.selectedOptions[0].textContent.trim()}` : '')"),
     )
+
+
+def ensure_start_month_ready(page: Page, requested_value: str) -> None:
+    """Ensure the portal still has the selected month before dependent validation."""
+    requested_text = str(requested_value or "").strip()
+    if not requested_text:
+        return
+
+    try:
+        page.wait_for_function(
+            """
+            ({ selector, requested }) => {
+                const el = document.querySelector(selector);
+                if (!el || !el.value) return false;
+                const monthError = document.getElementById('activitystartmonthError');
+                if (monthError && monthError.offsetParent !== null) return false;
+                const normalize = value => String(value || '').trim().toLowerCase().replace(/\\s+/g, ' ');
+                const selected = el.selectedOptions && el.selectedOptions[0];
+                if (!selected) return false;
+                const selectedText = normalize(selected.textContent);
+                const selectedValue = normalize(selected.value);
+                const expected = normalize(requested);
+                const monthNumber = value => {
+                    const match = String(value).match(/^(?:0*)?(\\d{1,2})$/);
+                    return match ? Number(match[1]) : null;
+                };
+                const expectedNumber = monthNumber(expected);
+                return selectedText === expected
+                    || selectedValue === expected
+                    || (expectedNumber !== null
+                        && (monthNumber(selectedText) === expectedNumber
+                            || monthNumber(selectedValue) === expectedNumber));
+            }
+            """,
+            arg={"selector": "#startMonthId", "requested": requested_text},
+            timeout=2_000,
+        )
+    except PlaywrightTimeout as exc:
+        state = page.eval_on_selector(
+            "#startMonthId",
+            "el => ({ value: el.value, selected: el.selectedOptions[0] ? el.selectedOptions[0].textContent.trim() : '' })",
+        )
+        raise ValueError(
+            f"Start Month was not ready before Activity Output: requested={requested_text!r} state={state}"
+        ) from exc
 
 
 def _wait_idle(page: Page) -> None:
@@ -1904,6 +1936,9 @@ class FormFiller:
             )
         else:
             try:
+                # Activity Output validation depends on Start Month; re-check the
+                # persisted value after all preceding AJAX-driven form updates.
+                ensure_start_month_ready(p, _v(record, "start_month"))
                 output_processed = self._fill_activity_output(record, row_index)
                 if output_processed:
                     self._verify_main_state_after_output(record)
