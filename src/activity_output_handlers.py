@@ -583,6 +583,14 @@ class AssetOutputHandler(StructuredModalOutputHandler):
             ) from exc
 
     def _fill_fields(self, detail_record: dict) -> None:
+        raw_total_units = detail_record.get("total_units")
+        logger.info(
+            "[Asset] Excel Total Units value=%r type=%s",
+            raw_total_units,
+            type(raw_total_units).__name__,
+        )
+        self._install_total_units_trace()
+        self._log_total_units("Excel value received", detail_record)
         for spec in self.FIELD_SPECS:
             value = _value(detail_record, spec.key)
             field = self.page.locator(spec.selector)
@@ -590,19 +598,39 @@ class AssetOutputHandler(StructuredModalOutputHandler):
             if not field.count():
                 raise ActivityOutputError(f"Asset field not found: {spec.label} ({spec.selector})")
             field.wait_for(state="visible", timeout=SELECTOR_TIMEOUT)
+            if spec.key == "asset_sub_category":
+                self._arm_asset_subcategory_callback_trace()
             if spec.field_type == "select":
                 _select_by_visible_text_stable(self.page, spec.selector, value)
+                if spec.key == "asset_sub_category":
+                    self._wait_for_asset_subcategory_callback()
             else:
-                field.fill(value)
+                if spec.key == "total_units":
+                    field.fill("")
+                    field.press_sequentially(value)
+                else:
+                    field.fill(value)
             after = field.input_value()
             logger.info("Asset field=%s after=%r success=%s", spec.label, after, bool(after))
+            if spec.key == "total_units":
+                self._log_total_units("Immediately after fill", detail_record)
             if spec.field_type == "text" and after != value:
                 raise ActivityOutputError(f"Asset field did not persist: {spec.label}")
 
-        coverage = self.page.locator("input#assetCovgeAreaId, input[name='assetDetails.astCvrgCd'][value='A']").first
-        coverage.check(force=True)
+        coverage = self.page.locator("#assetCovgeAreaId").first
+        if not coverage.count():
+            raise ActivityOutputError("Coverage Area radio not found: #assetCovgeAreaId")
+        logger.info(
+            "Coverage Area before click checked=%s enabled=%s visible=%s",
+            coverage.is_checked(),
+            coverage.is_enabled(),
+            coverage.is_visible(),
+        )
+        self._log_total_units("Before Coverage Area click", detail_record)
+        coverage.click(force=True)
         if not coverage.is_checked():
             raise ActivityOutputError("Coverage Area radio did not become checked")
+        self._log_total_units("After Coverage Area selection", detail_record)
 
         available = self.page.locator("#avlPlanUnitsVillId")
         available.wait_for(state="visible", timeout=SELECTOR_TIMEOUT)
@@ -612,23 +640,161 @@ class AssetOutputHandler(StructuredModalOutputHandler):
         if match is None:
             raise ActivityOutputError(f"Census Village not found: {village}")
         available.select_option(value=match.get_attribute("value"))
+        self._log_total_units("After village selection", detail_record)
         self.page.locator("#selectedPlanUnitsForVillId input[value='>>']").click(force=True)
+        self._log_total_units("After clicking village move button", detail_record)
 
-        selected = self.page.locator("#selPlanUnitsVillId")
         self.page.wait_for_function("""({ village }) => Array.from(document.querySelectorAll('#selPlanUnitsVillId option')).some(o => o.textContent.trim().toLowerCase() === village)""", {"village": _dropdown_match_key(village)}, timeout=SELECTOR_TIMEOUT)
-        unit_input = self.page.locator("#astNoOfUntId0, input[name^='assetDetails.assetLocationList'][name$='.astNoOfUnt']").first
+        unit_input = self.page.locator("#astNoOfUntId0").first
         unit_input.wait_for(state="visible", timeout=SELECTOR_TIMEOUT)
         units = _value(detail_record, "units_per_village")
         logger.info("Units Per Village input found=%s id=%s before=%r expected=%r", bool(unit_input.count()), unit_input.get_attribute("id"), unit_input.input_value(), units)
-        unit_input.fill(units)
-        unit_input.press("Tab")
+        unit_input.fill("")
+        unit_input.press_sequentially(units)
         after = unit_input.input_value()
         logger.info("Units Per Village after=%r success=%s", after, after == units)
         if after != units:
             raise ActivityOutputError(f"Units Per Village value did not persist: expected {units!r}, got {after!r}")
+        self._log_total_units("After dynamic village row generation", detail_record)
+
+    def _log_total_units(self, stage: str, detail_record: dict) -> None:
+        """Log the portal value and relevant callback state without changing it."""
+        expected = _value(detail_record, "total_units")
+        compare_expected = expected if expected != "(runtime)" else None
+        state = self.page.evaluate(
+            """
+            () => {
+                const field = document.querySelector('#totalUntId');
+                const source = typeof window.resetassetnoofUnit === 'function'
+                    ? String(window.resetassetnoofUnit)
+                    : null;
+                return {
+                    exists: !!field,
+                    value: field ? field.value : null,
+                    name: field ? field.name : null,
+                    onchange: field ? field.getAttribute('onchange') : null,
+                    onkeyup: field ? field.getAttribute('onkeyup') : null,
+                    resetFunctionLoaded: !!source,
+                    resetFunctionSource: source,
+                    locationRows: document.querySelectorAll('#astLocationTableId tbody tr').length,
+                    selectedVillages: document.querySelectorAll('#selPlanUnitsVillId option').length
+                };
+            }
+            """
+        )
+        logger.info(
+            "[Asset] %s totalUntId=%r expected=%r state=%s",
+            stage,
+            state.get("value"),
+            compare_expected,
+            state,
+        )
+        if compare_expected is not None and state.get("value") != compare_expected:
+            logger.error(
+                "[Asset] Total Units changed at stage=%s: expected=%r actual=%r",
+                stage,
+                compare_expected,
+                state.get("value"),
+            )
+        self._flush_total_units_trace(stage)
+
+    def _arm_asset_subcategory_callback_trace(self) -> None:
+        self.page.evaluate(
+            """
+            () => {
+                window.__assetSubcategoryCallbackDone = false;
+                const markDone = mutationList => {
+                    for (const mutation of mutationList) {
+                        const target = mutation.target;
+                        if (target.id === 'assetUnitTypeId' || target.id === 'totalUntId'
+                            || (target.closest && target.closest('#assetUnitTypeId, #totalUntId'))) {
+                            window.__assetSubcategoryCallbackDone = true;
+                            return;
+                        }
+                    }
+                };
+                window.__assetSubcategoryObserver = new MutationObserver(markDone);
+                window.__assetSubcategoryObserver.observe(document.body, {
+                    subtree: true,
+                    childList: true,
+                    attributes: true,
+                    attributeFilter: ['value']
+                });
+            }
+            """
+        )
+
+    def _wait_for_asset_subcategory_callback(self) -> None:
+        self.page.wait_for_function(
+            "() => window.__assetSubcategoryCallbackDone === true",
+            timeout=SELECTOR_TIMEOUT,
+        )
+        logger.info(
+            "Asset Sub Category callback completed; Total Units reset is complete and ready for final entry"
+        )
+
+    def _install_total_units_trace(self) -> None:
+        self.page.evaluate(
+            """
+            () => {
+                window.__assetTotalUnitsTrace = [];
+                const record = (kind, element, value) => {
+                    if (!window.__assetTotalUnitsTrace) return;
+                    window.__assetTotalUnitsTrace.push({
+                        kind,
+                        value,
+                        id: element ? element.id : null,
+                        name: element ? element.name : null,
+                        time: Date.now()
+                    });
+                };
+                document.addEventListener('input', event => {
+                    if (event.target && event.target.name === 'assetDetails.astNumOfUnt') {
+                        record('input', event.target, event.target.value);
+                    }
+                }, true);
+                document.addEventListener('change', event => {
+                    if (event.target && event.target.name === 'assetDetails.astNumOfUnt') {
+                        record('change', event.target, event.target.value);
+                    }
+                }, true);
+                document.addEventListener('keyup', event => {
+                    if (event.target && event.target.name === 'assetDetails.astNumOfUnt') {
+                        record('keyup', event.target, event.target.value);
+                    }
+                }, true);
+                window.__assetTotalUnitsObserver = new MutationObserver(mutations => {
+                    mutations.forEach(mutation => {
+                        const field = document.querySelector('#totalUntId');
+                        if (field) record(`mutation:${mutation.type}`, field, field.value);
+                    });
+                });
+                window.__assetTotalUnitsObserver.observe(document.body, {
+                    subtree: true,
+                    childList: true,
+                    attributes: true,
+                    attributeFilter: ['value', 'id', 'name']
+                });
+            }
+            """
+        )
+
+    def _flush_total_units_trace(self, stage: str) -> None:
+        trace = self.page.evaluate(
+            """
+            () => {
+                const entries = window.__assetTotalUnitsTrace || [];
+                window.__assetTotalUnitsTrace = [];
+                return entries;
+            }
+            """
+        )
+        if trace:
+            logger.info("[Asset] Total Units trace stage=%s events=%s", stage, trace)
 
     def _submit(self, activity_key: str) -> None:
         modal = self.page.locator("#showAssetDetailsPopup")
+        self._log_total_units("Before Save", {"total_units": "(runtime)"})
         submit = modal.locator("button[onclick*='validationAsset'], input[onclick*='validationAsset']").first
         if not submit.count():
             raise ActivityOutputError("Asset Save button not found")
@@ -637,6 +803,7 @@ class AssetOutputHandler(StructuredModalOutputHandler):
             raise ActivityOutputError("Asset Save button is disabled")
         logger.info("[%s] Clicking Asset Save", activity_key)
         submit.click()
+        self._log_total_units("After Save attempt", {"total_units": "(runtime)"})
         modal.wait_for(state="hidden", timeout=SELECTOR_TIMEOUT)
         logger.info("[%s] Asset popup saved and closed", activity_key)
 

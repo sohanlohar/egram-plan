@@ -47258,3 +47258,806 @@ Call log:
     - locator resolved to <input value="A" type="radio" id="assetCovgeAreaId" name="assetDetails.astCvrgC
 2026-08-30 22:52:21 | ERROR    | row 0 FAILED after single attempt
 2026-08-30 22:52:21 | INFO     | DONE 17s total=1 success=0 failed=1 rate=0.0%
+2026-08-30 22:55:18 | INFO     | ============================================================
+2026-08-30 22:55:18 | INFO     | eGramSwaraj Bot START (v5)
+2026-08-30 22:55:18 | INFO     | ============================================================
+2026-08-30 22:55:18 | INFO     | rows: total=1 done=0 pending=1
+2026-08-30 22:55:19 | INFO     | Waiting for manual login -> addactivity.htm ...
+2026-08-30 22:55:19 | INFO     | Form ready at: https://egramswaraj.gov.in/addactivity.htm
+2026-08-30 22:55:19 | INFO     | -- row 0 | Creation of other water recharging structure/Recharge pit,sh
+2026-08-30 22:55:22 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-30 22:55:22 | DEBUG    | dropdown match selector=#themeId original='Theme 4 - Water Sufficient Village' normalized='theme 4 - water sufficient village' matched='Theme 4 - Water Sufficient Village' mode=exact
+2026-08-30 22:55:24 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-30 22:55:24 | DEBUG    | dropdown match selector=#focusAreaId original='Water Conservation' normalized='water conservation' matched='Water Conservation' mode=exact
+2026-08-30 22:55:24 | DEBUG    | row=0: watchId spinner finished, checkboxes should be loaded
+2026-08-30 22:55:24 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-30 22:55:24 | DEBUG    | vprp_plan: section_found=True original='No' normalized='no' radio_locator=#vprpPlandiv input[type='radio'][name='vprpplan'] options=[{'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}, {'id': 'vprpplan', 'name': 'vprpplan', 'value': 'T', 'checked': False, 'text': 'Yes'}]
+2026-08-30 22:55:24 | INFO     | vprp_plan: selecting original='No' normalized='no' locator=#vprpPlandiv input[type='radio'][name='vprpplan'] matched={'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}
+2026-08-30 22:55:24 | DEBUG    | row=0 pdi: raw excel pdi_indicator=''
+2026-08-30 22:55:24 | DEBUG    | row=0 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-30 22:55:24 | DEBUG    | row=0 pdi: #checkboxes not visible, attempting to open
+2026-08-30 22:55:25 | DEBUG    | row=0 pdi: option_count_probe count=2 stable_checks=0
+2026-08-30 22:55:25 | DEBUG    | row=0 pdi: found 2 checkbox inputs in panel
+2026-08-30 22:55:25 | DEBUG    | row=0 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-30 22:55:25 | DEBUG    | row=0 pdi: available checkbox id=missionAdId1 value=172 label='Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair' enabled=True checked=False
+2026-08-30 22:55:25 | DEBUG    | row=0 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-30 22:55:25 | DEBUG    | row=0 pdi: random selection source=auto parsed_count=0 selected_count=2 selected_labels=['Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair', 'None']
+2026-08-30 22:55:25 | DEBUG    | row=0 pdi: portal options detected count=2 options=['None', 'Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair']
+2026-08-30 22:55:25 | DEBUG    | row=0 pdi: searching requested indicator='Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair' normalized='percentage of water bodies (ponds, lakes, well etc) taken up for desilting /deepening or special repair'
+2026-08-30 22:55:25 | DEBUG    | row=0 pdi: match found requested='Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair' portal_label='Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair' id=missionAdId1 value=172 enabled=True checked=False
+2026-08-30 22:55:25 | DEBUG    | row=0 pdi: searching requested indicator='None' normalized='none'
+2026-08-30 22:55:25 | DEBUG    | row=0 pdi: match found requested='None' portal_label='None' id=missionAdId0 value=0 enabled=True checked=False
+2026-08-30 22:55:25 | DEBUG    | row=0 pdi: clicking checkbox id=missionAdId1 value=172 label='Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair'
+2026-08-30 22:55:25 | DEBUG    | row=0 pdi: after click - is_selected=True dom_checked=True for 'Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair'
+2026-08-30 22:55:25 | DEBUG    | row=0 pdi: selection_success=True label='Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair'
+2026-08-30 22:55:25 | DEBUG    | row=0 pdi: clicking checkbox id=missionAdId0 value=0 label='None'
+2026-08-30 22:55:40 | WARNING  | row=0 pdi: normal click failed: Locator.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#maD, trying label click fallback
+2026-08-30 22:55:55 | ERROR    | row=0 pdi: label click fallback also failed: Locator.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#maD
+2026-08-30 22:55:55 | DEBUG    | row=0 pdi: total selected indicators: 1
+2026-08-30 22:55:55 | INFO     | row=0 pdi: selection complete
+2026-08-30 22:55:55 | DEBUG    | row=0 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': False, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': True}], 'missionAdId1': [{'checked': True, 'value': '172', 'name': 'missionAntodayaDet[1].maCode', 'disabled': False}]}, 'visibleError': False}
+2026-08-30 22:55:55 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-30 22:55:56 | DEBUG    | row=0 targeted_populace: requested indicators (1): ['All']
+2026-08-30 22:55:56 | DEBUG    | row=0 targeted_populace: found 1 total labels in panel
+2026-08-30 22:55:56 | DEBUG    | row=0 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-30 22:55:56 | DEBUG    | row=0 targeted_populace: clicking checkbox: 'All'
+2026-08-30 22:55:56 | DEBUG    | row=0 targeted_populace: checkbox selected successfully: 'All'
+2026-08-30 22:55:56 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-30 22:55:56 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-30 22:55:57 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-30 22:55:57 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-30 22:55:57 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-30 22:55:57 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-30 22:55:57 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-30 22:55:57 | DEBUG    | start_month: value after selection events='4' selected_option='4:April'
+2026-08-30 22:55:57 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-30 22:55:57 | DEBUG    | row=0: indicative unit cost section not visible
+2026-08-30 22:55:57 | DEBUG    | row=0: expected result section not visible
+2026-08-30 22:55:57 | DEBUG    | row=0 activity_output: requested='Asset' normalized='asset' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-30 22:55:57 | DEBUG    | [ACT-0122] pre_training_validation_state={'checked': [{'id': 'missionAdId1', 'value': '172', 'name': 'missionAntodayaDet[1].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-30 22:55:57 | INFO     | [ACT-0122] Activity Output detail record found
+2026-08-30 22:55:57 | INFO     | [ACT-0122] Activity Output: Asset
+2026-08-30 22:55:57 | INFO     | [ACT-0122] Handler: AssetOutputHandler
+2026-08-30 22:55:57 | INFO     | [ACT-0122] Detail Sheet: Asset
+2026-08-30 22:55:57 | INFO     | [ACT-0122] Radio: outputActvityAstId101
+2026-08-30 22:55:57 | INFO     | [ACT-0122] Asset radio found=True visible=True enabled=True checked_before=False
+2026-08-30 22:55:57 | INFO     | [ACT-0122] Asset radio checked_after=True
+2026-08-30 22:55:57 | INFO     | [ACT-0122] Asset modal selector=#showAssetDetailsPopup
+2026-08-30 22:55:57 | INFO     | [ACT-0122] Asset popup opened
+2026-08-30 22:55:57 | INFO     | Asset field=Asset Type found=True visible=True enabled=True excel='Immovable' before=''
+2026-08-30 22:55:57 | DEBUG    | dropdown match selector=#astTypId original='Immovable' normalized='immovable' matched='Immovable' mode=exact
+2026-08-30 22:55:57 | INFO     | Asset field=Asset Type after='2' success=True
+2026-08-30 22:55:57 | INFO     | Asset field=Asset Category found=True visible=True enabled=True excel='Water Sources & Structures' before=''
+2026-08-30 22:55:58 | DEBUG    | dropdown match selector=#assetCategoryId original='Water Sources & Structures' normalized='water sources & structures' matched='Water Sources & Structures' mode=exact
+2026-08-30 22:55:58 | INFO     | Asset field=Asset Category after='10' success=True
+2026-08-30 22:55:58 | INFO     | Asset field=Asset Sub Category found=True visible=True enabled=True excel='Water Tank' before=''
+2026-08-30 22:55:58 | DEBUG    | dropdown match selector=#astSubCtgryId original='Water Tank' normalized='water tank' matched='Water Tank' mode=exact
+2026-08-30 22:55:58 | INFO     | Asset field=Asset Sub Category after='452' success=True
+2026-08-30 22:55:58 | INFO     | Asset field=Total Units found=True visible=True enabled=True excel='2' before=''
+2026-08-30 22:55:58 | INFO     | Asset field=Total Units after='2' success=True
+2026-08-30 22:55:58 | INFO     | Asset field=Unit Cost found=True visible=True enabled=True excel='10000' before=''
+2026-08-30 22:55:58 | INFO     | Asset field=Unit Cost after='10000' success=True
+2026-08-30 22:55:58 | WARNING  | row=0 activity_output_popup Locator.check: Clicking the checkbox did not change its state
+Call log:
+  - waiting for locator("input#assetCovgeAreaId, input[name='assetDetails.astCvrgCd'][value='A']").first
+    - locator resolved 
+2026-08-30 22:55:58 | ERROR    | FAIL | row=0 field=activity_output | Locator.check: Clicking the checkbox did not change its state
+Call log:
+  - waiting for locator("input#assetCovgeAreaId, input[name='assetDetails.astCvrgCd'][value='A']").first
+    - locator resolved to <input value="A" type="radio" id="assetCovgeAre
+2026-08-30 22:55:58 | ERROR    | row 0 FAILED (single attempt): [activity_output] Locator.check: Clicking the checkbox did not change its state
+Call log:
+  - waiting for locator("input#assetCovgeAreaId, input[name='assetDetails.astCvrgCd'][value='A']").first
+    - locator resolved to <input value="A" type="radio" id="assetCovgeAreaId" name="assetDetails.astCvrgC
+2026-08-30 22:55:58 | ERROR    | row 0 FAILED after single attempt
+2026-08-30 22:55:58 | INFO     | DONE 41s total=1 success=0 failed=1 rate=0.0%
+2026-08-30 22:59:29 | INFO     | ============================================================
+2026-08-30 22:59:29 | INFO     | eGramSwaraj Bot START (v5)
+2026-08-30 22:59:29 | INFO     | ============================================================
+2026-08-30 22:59:29 | INFO     | rows: total=1 done=0 pending=1
+2026-08-30 22:59:30 | INFO     | Waiting for manual login -> addactivity.htm ...
+2026-08-30 22:59:30 | INFO     | Form ready at: https://egramswaraj.gov.in/addactivity.htm
+2026-08-30 22:59:31 | INFO     | -- row 0 | Creation of other water recharging structure/Recharge pit,sh
+2026-08-30 22:59:33 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-30 22:59:34 | DEBUG    | dropdown match selector=#themeId original='Theme 4 - Water Sufficient Village' normalized='theme 4 - water sufficient village' matched='Theme 4 - Water Sufficient Village' mode=exact
+2026-08-30 22:59:35 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-30 22:59:35 | DEBUG    | dropdown match selector=#focusAreaId original='Water Conservation' normalized='water conservation' matched='Water Conservation' mode=exact
+2026-08-30 22:59:35 | DEBUG    | row=0: watchId spinner finished, checkboxes should be loaded
+2026-08-30 22:59:36 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-30 22:59:36 | DEBUG    | vprp_plan: section_found=True original='No' normalized='no' radio_locator=#vprpPlandiv input[type='radio'][name='vprpplan'] options=[{'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}, {'id': 'vprpplan', 'name': 'vprpplan', 'value': 'T', 'checked': False, 'text': 'Yes'}]
+2026-08-30 22:59:36 | INFO     | vprp_plan: selecting original='No' normalized='no' locator=#vprpPlandiv input[type='radio'][name='vprpplan'] matched={'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}
+2026-08-30 22:59:36 | DEBUG    | row=0 pdi: raw excel pdi_indicator=''
+2026-08-30 22:59:36 | DEBUG    | row=0 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-30 22:59:36 | DEBUG    | row=0 pdi: #checkboxes not visible, attempting to open
+2026-08-30 22:59:36 | DEBUG    | row=0 pdi: option_count_probe count=2 stable_checks=0
+2026-08-30 22:59:36 | DEBUG    | row=0 pdi: found 2 checkbox inputs in panel
+2026-08-30 22:59:36 | DEBUG    | row=0 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-30 22:59:36 | DEBUG    | row=0 pdi: available checkbox id=missionAdId1 value=172 label='Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair' enabled=True checked=False
+2026-08-30 22:59:36 | DEBUG    | row=0 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-30 22:59:36 | DEBUG    | row=0 pdi: random selection source=auto parsed_count=0 selected_count=1 selected_labels=['None']
+2026-08-30 22:59:36 | DEBUG    | row=0 pdi: portal options detected count=2 options=['None', 'Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair']
+2026-08-30 22:59:36 | DEBUG    | row=0 pdi: searching requested indicator='None' normalized='none'
+2026-08-30 22:59:36 | DEBUG    | row=0 pdi: match found requested='None' portal_label='None' id=missionAdId0 value=0 enabled=True checked=False
+2026-08-30 22:59:36 | DEBUG    | row=0 pdi: clicking checkbox id=missionAdId0 value=0 label='None'
+2026-08-30 22:59:37 | DEBUG    | row=0 pdi: after click - is_selected=True dom_checked=True for 'None'
+2026-08-30 22:59:37 | DEBUG    | row=0 pdi: selection_success=True label='None'
+2026-08-30 22:59:37 | DEBUG    | row=0 pdi: total selected indicators: 1
+2026-08-30 22:59:37 | INFO     | row=0 pdi: selection complete
+2026-08-30 22:59:37 | DEBUG    | row=0 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': True, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': False}], 'missionAdId1': [{'checked': False, 'value': '172', 'name': 'missionAntodayaDet[1].maCode', 'disabled': True}]}, 'visibleError': False}
+2026-08-30 22:59:37 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-30 22:59:37 | DEBUG    | row=0 targeted_populace: requested indicators (1): ['All']
+2026-08-30 22:59:37 | DEBUG    | row=0 targeted_populace: found 1 total labels in panel
+2026-08-30 22:59:37 | DEBUG    | row=0 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-30 22:59:37 | DEBUG    | row=0 targeted_populace: clicking checkbox: 'All'
+2026-08-30 22:59:37 | DEBUG    | row=0 targeted_populace: checkbox selected successfully: 'All'
+2026-08-30 22:59:37 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-30 22:59:37 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-30 22:59:38 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-30 22:59:38 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-30 22:59:38 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-30 22:59:38 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-30 22:59:38 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-30 22:59:38 | DEBUG    | start_month: value after selection events='4' selected_option='4:April'
+2026-08-30 22:59:38 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-30 22:59:38 | DEBUG    | row=0: indicative unit cost section not visible
+2026-08-30 22:59:38 | DEBUG    | row=0: expected result section not visible
+2026-08-30 22:59:38 | DEBUG    | row=0 activity_output: requested='Asset' normalized='asset' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-30 22:59:38 | DEBUG    | [ACT-0122] pre_training_validation_state={'checked': [{'id': 'missionAdId0', 'value': '0', 'name': 'missionAntodayaDet[0].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-30 22:59:38 | INFO     | [ACT-0122] Activity Output detail record found
+2026-08-30 22:59:38 | INFO     | [ACT-0122] Activity Output: Asset
+2026-08-30 22:59:38 | INFO     | [ACT-0122] Handler: AssetOutputHandler
+2026-08-30 22:59:38 | INFO     | [ACT-0122] Detail Sheet: Asset
+2026-08-30 22:59:38 | INFO     | [ACT-0122] Radio: outputActvityAstId101
+2026-08-30 22:59:38 | INFO     | [ACT-0122] Asset radio found=True visible=True enabled=True checked_before=False
+2026-08-30 22:59:39 | INFO     | [ACT-0122] Asset radio checked_after=True
+2026-08-30 22:59:39 | INFO     | [ACT-0122] Asset modal selector=#showAssetDetailsPopup
+2026-08-30 22:59:39 | INFO     | [ACT-0122] Asset popup opened
+2026-08-30 22:59:39 | INFO     | [Asset] Excel value received totalUntId='' expected='2' state={'exists': True, 'value': '', 'name': 'assetDetails.astNumOfUnt', 'onchange': None, 'onkeyup': 'resetassetnoofUnit(this.value)', 'resetFunctionLoaded': True, 'resetFunctionSource': 'function resetassetnoofUnit(data){\n\tif($("#astUntTypHiddId").val()==2){\n\t\t$("#totalNoUntId").html(data);\n\t\t\n\t\t$("#gisMapDivId").addClass("hidden");\n\t\t$("#gisMapTableId tr").remove();\n\t}\n\t\n}', 'locationRows': 0, 'selectedVillages': 0}
+2026-08-30 22:59:39 | ERROR    | [Asset] Total Units changed at stage=Excel value received: expected='2' actual=''
+2026-08-30 22:59:39 | INFO     | Asset field=Asset Type found=True visible=True enabled=True excel='Immovable' before=''
+2026-08-30 22:59:39 | DEBUG    | dropdown match selector=#astTypId original='Immovable' normalized='immovable' matched='Immovable' mode=exact
+2026-08-30 22:59:39 | INFO     | Asset field=Asset Type after='2' success=True
+2026-08-30 22:59:39 | INFO     | Asset field=Asset Category found=True visible=True enabled=True excel='Water Sources & Structures' before=''
+2026-08-30 22:59:39 | DEBUG    | dropdown match selector=#assetCategoryId original='Water Sources & Structures' normalized='water sources & structures' matched='Water Sources & Structures' mode=exact
+2026-08-30 22:59:39 | INFO     | Asset field=Asset Category after='10' success=True
+2026-08-30 22:59:39 | INFO     | Asset field=Asset Sub Category found=True visible=True enabled=True excel='Water Tank' before=''
+2026-08-30 22:59:39 | DEBUG    | dropdown match selector=#astSubCtgryId original='Water Tank' normalized='water tank' matched='Water Tank' mode=exact
+2026-08-30 22:59:39 | INFO     | Asset field=Asset Sub Category after='452' success=True
+2026-08-30 22:59:39 | INFO     | Asset field=Total Units found=True visible=True enabled=True excel='2' before=''
+2026-08-30 22:59:39 | INFO     | Asset field=Total Units after='2' success=True
+2026-08-30 22:59:39 | INFO     | [Asset] Immediately after fill totalUntId='2' expected='2' state={'exists': True, 'value': '2', 'name': 'assetDetails.astNumOfUnt', 'onchange': None, 'onkeyup': 'resetassetnoofUnit(this.value)', 'resetFunctionLoaded': True, 'resetFunctionSource': 'function resetassetnoofUnit(data){\n\tif($("#astUntTypHiddId").val()==2){\n\t\t$("#totalNoUntId").html(data);\n\t\t\n\t\t$("#gisMapDivId").addClass("hidden");\n\t\t$("#gisMapTableId tr").remove();\n\t}\n\t\n}', 'locationRows': 0, 'selectedVillages': 0}
+2026-08-30 22:59:39 | INFO     | Asset field=Unit Cost found=True visible=True enabled=True excel='10000' before=''
+2026-08-30 22:59:39 | INFO     | Asset field=Unit Cost after='10000' success=True
+2026-08-30 22:59:39 | WARNING  | row=0 activity_output_popup Locator.check: Clicking the checkbox did not change its state
+Call log:
+  - waiting for locator("input#assetCovgeAreaId, input[name='assetDetails.astCvrgCd'][value='A']").first
+    - locator resolved 
+2026-08-30 22:59:40 | ERROR    | FAIL | row=0 field=activity_output | Locator.check: Clicking the checkbox did not change its state
+Call log:
+  - waiting for locator("input#assetCovgeAreaId, input[name='assetDetails.astCvrgCd'][value='A']").first
+    - locator resolved to <input value="A" type="radio" id="assetCovgeAre
+2026-08-30 22:59:40 | ERROR    | row 0 FAILED (single attempt): [activity_output] Locator.check: Clicking the checkbox did not change its state
+Call log:
+  - waiting for locator("input#assetCovgeAreaId, input[name='assetDetails.astCvrgCd'][value='A']").first
+    - locator resolved to <input value="A" type="radio" id="assetCovgeAreaId" name="assetDetails.astCvrgC
+2026-08-30 22:59:40 | ERROR    | row 0 FAILED after single attempt
+2026-08-30 22:59:40 | INFO     | DONE 11s total=1 success=0 failed=1 rate=0.0%
+2026-08-30 23:00:52 | INFO     | ============================================================
+2026-08-30 23:00:52 | INFO     | eGramSwaraj Bot START (v5)
+2026-08-30 23:00:52 | INFO     | ============================================================
+2026-08-30 23:00:52 | INFO     | rows: total=1 done=0 pending=1
+2026-08-30 23:00:53 | INFO     | Waiting for manual login -> addactivity.htm ...
+2026-08-30 23:00:53 | INFO     | Form ready at: https://egramswaraj.gov.in/addactivity.htm
+2026-08-30 23:00:59 | INFO     | -- row 0 | Creation of other water recharging structure/Recharge pit,sh
+2026-08-30 23:01:02 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-30 23:01:02 | DEBUG    | dropdown match selector=#themeId original='Theme 4 - Water Sufficient Village' normalized='theme 4 - water sufficient village' matched='Theme 4 - Water Sufficient Village' mode=exact
+2026-08-30 23:01:04 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-30 23:01:04 | DEBUG    | dropdown match selector=#focusAreaId original='Water Conservation' normalized='water conservation' matched='Water Conservation' mode=exact
+2026-08-30 23:01:04 | DEBUG    | row=0: watchId spinner finished, checkboxes should be loaded
+2026-08-30 23:01:04 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-30 23:01:04 | DEBUG    | vprp_plan: section_found=True original='No' normalized='no' radio_locator=#vprpPlandiv input[type='radio'][name='vprpplan'] options=[{'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}, {'id': 'vprpplan', 'name': 'vprpplan', 'value': 'T', 'checked': False, 'text': 'Yes'}]
+2026-08-30 23:01:04 | INFO     | vprp_plan: selecting original='No' normalized='no' locator=#vprpPlandiv input[type='radio'][name='vprpplan'] matched={'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}
+2026-08-30 23:01:04 | DEBUG    | row=0 pdi: raw excel pdi_indicator=''
+2026-08-30 23:01:04 | DEBUG    | row=0 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-30 23:01:04 | DEBUG    | row=0 pdi: #checkboxes not visible, attempting to open
+2026-08-30 23:01:04 | DEBUG    | row=0 pdi: option_count_probe count=2 stable_checks=0
+2026-08-30 23:01:05 | DEBUG    | row=0 pdi: found 2 checkbox inputs in panel
+2026-08-30 23:01:05 | DEBUG    | row=0 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-30 23:01:05 | DEBUG    | row=0 pdi: available checkbox id=missionAdId1 value=172 label='Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair' enabled=True checked=False
+2026-08-30 23:01:05 | DEBUG    | row=0 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-30 23:01:05 | DEBUG    | row=0 pdi: random selection source=auto parsed_count=0 selected_count=1 selected_labels=['None']
+2026-08-30 23:01:05 | DEBUG    | row=0 pdi: portal options detected count=2 options=['None', 'Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair']
+2026-08-30 23:01:05 | DEBUG    | row=0 pdi: searching requested indicator='None' normalized='none'
+2026-08-30 23:01:05 | DEBUG    | row=0 pdi: match found requested='None' portal_label='None' id=missionAdId0 value=0 enabled=True checked=False
+2026-08-30 23:01:05 | DEBUG    | row=0 pdi: clicking checkbox id=missionAdId0 value=0 label='None'
+2026-08-30 23:01:05 | DEBUG    | row=0 pdi: after click - is_selected=True dom_checked=True for 'None'
+2026-08-30 23:01:05 | DEBUG    | row=0 pdi: selection_success=True label='None'
+2026-08-30 23:01:05 | DEBUG    | row=0 pdi: total selected indicators: 1
+2026-08-30 23:01:05 | INFO     | row=0 pdi: selection complete
+2026-08-30 23:01:05 | DEBUG    | row=0 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': True, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': False}], 'missionAdId1': [{'checked': False, 'value': '172', 'name': 'missionAntodayaDet[1].maCode', 'disabled': True}]}, 'visibleError': False}
+2026-08-30 23:01:05 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-30 23:01:06 | DEBUG    | row=0 targeted_populace: requested indicators (1): ['All']
+2026-08-30 23:01:06 | DEBUG    | row=0 targeted_populace: found 1 total labels in panel
+2026-08-30 23:01:06 | DEBUG    | row=0 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-30 23:01:06 | DEBUG    | row=0 targeted_populace: clicking checkbox: 'All'
+2026-08-30 23:01:06 | DEBUG    | row=0 targeted_populace: checkbox selected successfully: 'All'
+2026-08-30 23:01:06 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-30 23:01:06 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-30 23:01:07 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-30 23:01:07 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-30 23:01:07 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-30 23:01:07 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-30 23:01:07 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-30 23:01:07 | DEBUG    | start_month: value after selection events='4' selected_option='4:April'
+2026-08-30 23:01:07 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-30 23:01:07 | DEBUG    | row=0: indicative unit cost section not visible
+2026-08-30 23:01:07 | DEBUG    | row=0: expected result section not visible
+2026-08-30 23:01:07 | DEBUG    | row=0 activity_output: requested='Asset' normalized='asset' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-30 23:01:07 | DEBUG    | [ACT-0122] pre_training_validation_state={'checked': [{'id': 'missionAdId0', 'value': '0', 'name': 'missionAntodayaDet[0].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-30 23:01:07 | INFO     | [ACT-0122] Activity Output detail record found
+2026-08-30 23:01:07 | INFO     | [ACT-0122] Activity Output: Asset
+2026-08-30 23:01:07 | INFO     | [ACT-0122] Handler: AssetOutputHandler
+2026-08-30 23:01:07 | INFO     | [ACT-0122] Detail Sheet: Asset
+2026-08-30 23:01:07 | INFO     | [ACT-0122] Radio: outputActvityAstId101
+2026-08-30 23:01:07 | INFO     | [ACT-0122] Asset radio found=True visible=True enabled=True checked_before=False
+2026-08-30 23:01:07 | INFO     | [ACT-0122] Asset radio checked_after=True
+2026-08-30 23:01:07 | INFO     | [ACT-0122] Asset modal selector=#showAssetDetailsPopup
+2026-08-30 23:01:07 | INFO     | [ACT-0122] Asset popup opened
+2026-08-30 23:01:07 | INFO     | [Asset] Excel value received totalUntId='' expected='2' state={'exists': True, 'value': '', 'name': 'assetDetails.astNumOfUnt', 'onchange': None, 'onkeyup': 'resetassetnoofUnit(this.value)', 'resetFunctionLoaded': True, 'resetFunctionSource': 'function resetassetnoofUnit(data){\n\tif($("#astUntTypHiddId").val()==2){\n\t\t$("#totalNoUntId").html(data);\n\t\t\n\t\t$("#gisMapDivId").addClass("hidden");\n\t\t$("#gisMapTableId tr").remove();\n\t}\n\t\n}', 'locationRows': 0, 'selectedVillages': 0}
+2026-08-30 23:01:07 | ERROR    | [Asset] Total Units changed at stage=Excel value received: expected='2' actual=''
+2026-08-30 23:01:07 | INFO     | Asset field=Asset Type found=True visible=True enabled=True excel='Immovable' before=''
+2026-08-30 23:01:07 | DEBUG    | dropdown match selector=#astTypId original='Immovable' normalized='immovable' matched='Immovable' mode=exact
+2026-08-30 23:01:07 | INFO     | Asset field=Asset Type after='2' success=True
+2026-08-30 23:01:08 | INFO     | Asset field=Asset Category found=True visible=True enabled=True excel='Water Sources & Structures' before=''
+2026-08-30 23:01:08 | DEBUG    | dropdown match selector=#assetCategoryId original='Water Sources & Structures' normalized='water sources & structures' matched='Water Sources & Structures' mode=exact
+2026-08-30 23:01:08 | INFO     | Asset field=Asset Category after='10' success=True
+2026-08-30 23:01:08 | INFO     | Asset field=Asset Sub Category found=True visible=True enabled=True excel='Water Tank' before=''
+2026-08-30 23:01:08 | DEBUG    | dropdown match selector=#astSubCtgryId original='Water Tank' normalized='water tank' matched='Water Tank' mode=exact
+2026-08-30 23:01:08 | INFO     | Asset field=Asset Sub Category after='452' success=True
+2026-08-30 23:01:08 | INFO     | Asset field=Total Units found=True visible=True enabled=True excel='2' before=''
+2026-08-30 23:01:08 | INFO     | Asset field=Total Units after='2' success=True
+2026-08-30 23:01:08 | INFO     | [Asset] Immediately after fill totalUntId='2' expected='2' state={'exists': True, 'value': '2', 'name': 'assetDetails.astNumOfUnt', 'onchange': None, 'onkeyup': 'resetassetnoofUnit(this.value)', 'resetFunctionLoaded': True, 'resetFunctionSource': 'function resetassetnoofUnit(data){\n\tif($("#astUntTypHiddId").val()==2){\n\t\t$("#totalNoUntId").html(data);\n\t\t\n\t\t$("#gisMapDivId").addClass("hidden");\n\t\t$("#gisMapTableId tr").remove();\n\t}\n\t\n}', 'locationRows': 0, 'selectedVillages': 0}
+2026-08-30 23:01:08 | INFO     | Asset field=Unit Cost found=True visible=True enabled=True excel='10000' before=''
+2026-08-30 23:01:08 | INFO     | Asset field=Unit Cost after='10000' success=True
+2026-08-30 23:01:08 | INFO     | Coverage Area before click checked=False enabled=True visible=True
+2026-08-30 23:01:08 | WARNING  | row=0 activity_output_popup Coverage Area radio did not become checked
+2026-08-30 23:01:08 | ERROR    | FAIL | row=0 field=activity_output | Coverage Area radio did not become checked
+2026-08-30 23:01:08 | ERROR    | row 0 FAILED (single attempt): [activity_output] Coverage Area radio did not become checked
+2026-08-30 23:01:08 | ERROR    | row 0 FAILED after single attempt
+2026-08-30 23:01:08 | INFO     | DONE 17s total=1 success=0 failed=1 rate=0.0%
+2026-08-30 23:02:13 | INFO     | ============================================================
+2026-08-30 23:02:13 | INFO     | eGramSwaraj Bot START (v5)
+2026-08-30 23:02:13 | INFO     | ============================================================
+2026-08-30 23:02:13 | INFO     | rows: total=1 done=0 pending=1
+2026-08-30 23:02:14 | INFO     | Waiting for manual login -> addactivity.htm ...
+2026-08-30 23:02:14 | INFO     | Form ready at: https://egramswaraj.gov.in/addactivity.htm
+2026-08-30 23:02:14 | INFO     | -- row 0 | Creation of other water recharging structure/Recharge pit,sh
+2026-08-30 23:02:17 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-30 23:02:18 | DEBUG    | dropdown match selector=#themeId original='Theme 4 - Water Sufficient Village' normalized='theme 4 - water sufficient village' matched='Theme 4 - Water Sufficient Village' mode=exact
+2026-08-30 23:02:19 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-30 23:02:19 | DEBUG    | dropdown match selector=#focusAreaId original='Water Conservation' normalized='water conservation' matched='Water Conservation' mode=exact
+2026-08-30 23:02:19 | DEBUG    | row=0: watchId spinner finished, checkboxes should be loaded
+2026-08-30 23:02:19 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-30 23:02:19 | DEBUG    | vprp_plan: section_found=True original='No' normalized='no' radio_locator=#vprpPlandiv input[type='radio'][name='vprpplan'] options=[{'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}, {'id': 'vprpplan', 'name': 'vprpplan', 'value': 'T', 'checked': False, 'text': 'Yes'}]
+2026-08-30 23:02:19 | INFO     | vprp_plan: selecting original='No' normalized='no' locator=#vprpPlandiv input[type='radio'][name='vprpplan'] matched={'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}
+2026-08-30 23:02:19 | DEBUG    | row=0 pdi: raw excel pdi_indicator=''
+2026-08-30 23:02:19 | DEBUG    | row=0 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-30 23:02:19 | DEBUG    | row=0 pdi: #checkboxes not visible, attempting to open
+2026-08-30 23:02:20 | DEBUG    | row=0 pdi: option_count_probe count=2 stable_checks=0
+2026-08-30 23:02:20 | DEBUG    | row=0 pdi: found 2 checkbox inputs in panel
+2026-08-30 23:02:20 | DEBUG    | row=0 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-30 23:02:20 | DEBUG    | row=0 pdi: available checkbox id=missionAdId1 value=172 label='Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair' enabled=True checked=False
+2026-08-30 23:02:20 | DEBUG    | row=0 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-30 23:02:20 | DEBUG    | row=0 pdi: random selection source=auto parsed_count=0 selected_count=1 selected_labels=['Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair']
+2026-08-30 23:02:20 | DEBUG    | row=0 pdi: portal options detected count=2 options=['None', 'Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair']
+2026-08-30 23:02:20 | DEBUG    | row=0 pdi: searching requested indicator='Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair' normalized='percentage of water bodies (ponds, lakes, well etc) taken up for desilting /deepening or special repair'
+2026-08-30 23:02:20 | DEBUG    | row=0 pdi: match found requested='Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair' portal_label='Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair' id=missionAdId1 value=172 enabled=True checked=False
+2026-08-30 23:02:20 | DEBUG    | row=0 pdi: clicking checkbox id=missionAdId1 value=172 label='Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair'
+2026-08-30 23:02:20 | DEBUG    | row=0 pdi: after click - is_selected=True dom_checked=True for 'Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair'
+2026-08-30 23:02:20 | DEBUG    | row=0 pdi: selection_success=True label='Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair'
+2026-08-30 23:02:20 | DEBUG    | row=0 pdi: total selected indicators: 1
+2026-08-30 23:02:20 | INFO     | row=0 pdi: selection complete
+2026-08-30 23:02:20 | DEBUG    | row=0 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': False, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': True}], 'missionAdId1': [{'checked': True, 'value': '172', 'name': 'missionAntodayaDet[1].maCode', 'disabled': False}]}, 'visibleError': False}
+2026-08-30 23:02:20 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-30 23:02:21 | DEBUG    | row=0 targeted_populace: requested indicators (1): ['All']
+2026-08-30 23:02:21 | DEBUG    | row=0 targeted_populace: found 1 total labels in panel
+2026-08-30 23:02:21 | DEBUG    | row=0 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-30 23:02:21 | DEBUG    | row=0 targeted_populace: clicking checkbox: 'All'
+2026-08-30 23:02:21 | DEBUG    | row=0 targeted_populace: checkbox selected successfully: 'All'
+2026-08-30 23:02:21 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-30 23:02:21 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-30 23:02:21 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-30 23:02:21 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-30 23:02:21 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-30 23:02:21 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-30 23:02:21 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-30 23:02:22 | DEBUG    | start_month: value after selection events='4' selected_option='4:April'
+2026-08-30 23:02:22 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-30 23:02:22 | DEBUG    | row=0: indicative unit cost section not visible
+2026-08-30 23:02:22 | DEBUG    | row=0: expected result section not visible
+2026-08-30 23:02:22 | DEBUG    | row=0 activity_output: requested='Asset' normalized='asset' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-30 23:02:22 | DEBUG    | [ACT-0122] pre_training_validation_state={'checked': [{'id': 'missionAdId1', 'value': '172', 'name': 'missionAntodayaDet[1].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-30 23:02:22 | INFO     | [ACT-0122] Activity Output detail record found
+2026-08-30 23:02:22 | INFO     | [ACT-0122] Activity Output: Asset
+2026-08-30 23:02:22 | INFO     | [ACT-0122] Handler: AssetOutputHandler
+2026-08-30 23:02:22 | INFO     | [ACT-0122] Detail Sheet: Asset
+2026-08-30 23:02:22 | INFO     | [ACT-0122] Radio: outputActvityAstId101
+2026-08-30 23:02:22 | INFO     | [ACT-0122] Asset radio found=True visible=True enabled=True checked_before=False
+2026-08-30 23:02:22 | INFO     | [ACT-0122] Asset radio checked_after=True
+2026-08-30 23:02:22 | INFO     | [ACT-0122] Asset modal selector=#showAssetDetailsPopup
+2026-08-30 23:02:22 | INFO     | [ACT-0122] Asset popup opened
+2026-08-30 23:02:22 | INFO     | [Asset] Excel value received totalUntId='' expected='2' state={'exists': True, 'value': '', 'name': 'assetDetails.astNumOfUnt', 'onchange': None, 'onkeyup': 'resetassetnoofUnit(this.value)', 'resetFunctionLoaded': True, 'resetFunctionSource': 'function resetassetnoofUnit(data){\n\tif($("#astUntTypHiddId").val()==2){\n\t\t$("#totalNoUntId").html(data);\n\t\t\n\t\t$("#gisMapDivId").addClass("hidden");\n\t\t$("#gisMapTableId tr").remove();\n\t}\n\t\n}', 'locationRows': 0, 'selectedVillages': 0}
+2026-08-30 23:02:22 | ERROR    | [Asset] Total Units changed at stage=Excel value received: expected='2' actual=''
+2026-08-30 23:02:22 | INFO     | Asset field=Asset Type found=True visible=True enabled=True excel='Immovable' before=''
+2026-08-30 23:02:22 | DEBUG    | dropdown match selector=#astTypId original='Immovable' normalized='immovable' matched='Immovable' mode=exact
+2026-08-30 23:02:22 | INFO     | Asset field=Asset Type after='2' success=True
+2026-08-30 23:02:22 | INFO     | Asset field=Asset Category found=True visible=True enabled=True excel='Water Sources & Structures' before=''
+2026-08-30 23:02:22 | DEBUG    | dropdown match selector=#assetCategoryId original='Water Sources & Structures' normalized='water sources & structures' matched='Water Sources & Structures' mode=exact
+2026-08-30 23:02:22 | INFO     | Asset field=Asset Category after='10' success=True
+2026-08-30 23:02:22 | INFO     | Asset field=Asset Sub Category found=True visible=True enabled=True excel='Water Tank' before=''
+2026-08-30 23:02:23 | DEBUG    | dropdown match selector=#astSubCtgryId original='Water Tank' normalized='water tank' matched='Water Tank' mode=exact
+2026-08-30 23:02:23 | INFO     | Asset field=Asset Sub Category after='452' success=True
+2026-08-30 23:02:23 | INFO     | Asset field=Total Units found=True visible=True enabled=True excel='2' before=''
+2026-08-30 23:02:23 | INFO     | Asset field=Total Units after='2' success=True
+2026-08-30 23:02:23 | INFO     | [Asset] Immediately after fill totalUntId='2' expected='2' state={'exists': True, 'value': '2', 'name': 'assetDetails.astNumOfUnt', 'onchange': None, 'onkeyup': 'resetassetnoofUnit(this.value)', 'resetFunctionLoaded': True, 'resetFunctionSource': 'function resetassetnoofUnit(data){\n\tif($("#astUntTypHiddId").val()==2){\n\t\t$("#totalNoUntId").html(data);\n\t\t\n\t\t$("#gisMapDivId").addClass("hidden");\n\t\t$("#gisMapTableId tr").remove();\n\t}\n\t\n}', 'locationRows': 0, 'selectedVillages': 0}
+2026-08-30 23:02:23 | INFO     | Asset field=Unit Cost found=True visible=True enabled=True excel='10000' before=''
+2026-08-30 23:02:23 | INFO     | Asset field=Unit Cost after='10000' success=True
+2026-08-30 23:02:23 | INFO     | Coverage Area before click checked=False enabled=True visible=True
+2026-08-30 23:02:23 | WARNING  | row=0 activity_output_popup Coverage Area radio did not become checked
+2026-08-30 23:02:23 | ERROR    | FAIL | row=0 field=activity_output | Coverage Area radio did not become checked
+2026-08-30 23:02:23 | ERROR    | row 0 FAILED (single attempt): [activity_output] Coverage Area radio did not become checked
+2026-08-30 23:02:23 | ERROR    | row 0 FAILED after single attempt
+2026-08-30 23:02:23 | INFO     | DONE 11s total=1 success=0 failed=1 rate=0.0%
+2026-08-30 23:03:58 | INFO     | ============================================================
+2026-08-30 23:03:58 | INFO     | eGramSwaraj Bot START (v5)
+2026-08-30 23:03:58 | INFO     | ============================================================
+2026-08-30 23:03:58 | INFO     | rows: total=1 done=0 pending=1
+2026-08-30 23:04:00 | INFO     | Waiting for manual login -> addactivity.htm ...
+2026-08-30 23:04:00 | INFO     | Form ready at: https://egramswaraj.gov.in/addactivity.htm
+2026-08-30 23:04:01 | INFO     | -- row 0 | Creation of other water recharging structure/Recharge pit,sh
+2026-08-30 23:04:03 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-30 23:04:03 | DEBUG    | dropdown match selector=#themeId original='Theme 4 - Water Sufficient Village' normalized='theme 4 - water sufficient village' matched='Theme 4 - Water Sufficient Village' mode=exact
+2026-08-30 23:04:05 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-30 23:04:05 | DEBUG    | dropdown match selector=#focusAreaId original='Water Conservation' normalized='water conservation' matched='Water Conservation' mode=exact
+2026-08-30 23:04:05 | DEBUG    | row=0: watchId spinner finished, checkboxes should be loaded
+2026-08-30 23:04:05 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-30 23:04:05 | DEBUG    | vprp_plan: section_found=True original='No' normalized='no' radio_locator=#vprpPlandiv input[type='radio'][name='vprpplan'] options=[{'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}, {'id': 'vprpplan', 'name': 'vprpplan', 'value': 'T', 'checked': False, 'text': 'Yes'}]
+2026-08-30 23:04:05 | INFO     | vprp_plan: selecting original='No' normalized='no' locator=#vprpPlandiv input[type='radio'][name='vprpplan'] matched={'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}
+2026-08-30 23:04:05 | DEBUG    | row=0 pdi: raw excel pdi_indicator=''
+2026-08-30 23:04:05 | DEBUG    | row=0 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-30 23:04:05 | DEBUG    | row=0 pdi: #checkboxes not visible, attempting to open
+2026-08-30 23:04:05 | DEBUG    | row=0 pdi: option_count_probe count=2 stable_checks=0
+2026-08-30 23:04:05 | DEBUG    | row=0 pdi: found 2 checkbox inputs in panel
+2026-08-30 23:04:05 | DEBUG    | row=0 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-30 23:04:06 | DEBUG    | row=0 pdi: available checkbox id=missionAdId1 value=172 label='Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair' enabled=True checked=False
+2026-08-30 23:04:06 | DEBUG    | row=0 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-30 23:04:06 | DEBUG    | row=0 pdi: random selection source=auto parsed_count=0 selected_count=2 selected_labels=['Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair', 'None']
+2026-08-30 23:04:06 | DEBUG    | row=0 pdi: portal options detected count=2 options=['None', 'Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair']
+2026-08-30 23:04:06 | DEBUG    | row=0 pdi: searching requested indicator='Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair' normalized='percentage of water bodies (ponds, lakes, well etc) taken up for desilting /deepening or special repair'
+2026-08-30 23:04:06 | DEBUG    | row=0 pdi: match found requested='Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair' portal_label='Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair' id=missionAdId1 value=172 enabled=True checked=False
+2026-08-30 23:04:06 | DEBUG    | row=0 pdi: searching requested indicator='None' normalized='none'
+2026-08-30 23:04:06 | DEBUG    | row=0 pdi: match found requested='None' portal_label='None' id=missionAdId0 value=0 enabled=True checked=False
+2026-08-30 23:04:06 | DEBUG    | row=0 pdi: clicking checkbox id=missionAdId1 value=172 label='Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair'
+2026-08-30 23:04:06 | DEBUG    | row=0 pdi: after click - is_selected=True dom_checked=True for 'Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair'
+2026-08-30 23:04:06 | DEBUG    | row=0 pdi: selection_success=True label='Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair'
+2026-08-30 23:04:06 | DEBUG    | row=0 pdi: clicking checkbox id=missionAdId0 value=0 label='None'
+2026-08-30 23:04:21 | WARNING  | row=0 pdi: normal click failed: Locator.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#maD, trying label click fallback
+2026-08-30 23:04:36 | ERROR    | row=0 pdi: label click fallback also failed: Locator.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#maD
+2026-08-30 23:04:36 | DEBUG    | row=0 pdi: total selected indicators: 1
+2026-08-30 23:04:36 | INFO     | row=0 pdi: selection complete
+2026-08-30 23:04:36 | DEBUG    | row=0 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': False, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': True}], 'missionAdId1': [{'checked': True, 'value': '172', 'name': 'missionAntodayaDet[1].maCode', 'disabled': False}]}, 'visibleError': False}
+2026-08-30 23:04:36 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-30 23:04:36 | DEBUG    | row=0 targeted_populace: requested indicators (1): ['All']
+2026-08-30 23:04:36 | DEBUG    | row=0 targeted_populace: found 1 total labels in panel
+2026-08-30 23:04:36 | DEBUG    | row=0 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-30 23:04:36 | DEBUG    | row=0 targeted_populace: clicking checkbox: 'All'
+2026-08-30 23:04:36 | DEBUG    | row=0 targeted_populace: checkbox selected successfully: 'All'
+2026-08-30 23:04:36 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-30 23:04:37 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-30 23:04:37 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-30 23:04:37 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-30 23:04:37 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-30 23:04:37 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-30 23:04:37 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-30 23:04:37 | DEBUG    | start_month: value after selection events='4' selected_option='4:April'
+2026-08-30 23:04:37 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-30 23:04:37 | DEBUG    | row=0: indicative unit cost section not visible
+2026-08-30 23:04:37 | DEBUG    | row=0: expected result section not visible
+2026-08-30 23:04:38 | DEBUG    | row=0 activity_output: requested='Asset' normalized='asset' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-30 23:04:38 | DEBUG    | [ACT-0122] pre_training_validation_state={'checked': [{'id': 'missionAdId1', 'value': '172', 'name': 'missionAntodayaDet[1].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-30 23:04:38 | INFO     | [ACT-0122] Activity Output detail record found
+2026-08-30 23:04:38 | INFO     | [ACT-0122] Activity Output: Asset
+2026-08-30 23:04:38 | INFO     | [ACT-0122] Handler: AssetOutputHandler
+2026-08-30 23:04:38 | INFO     | [ACT-0122] Detail Sheet: Asset
+2026-08-30 23:04:38 | INFO     | [ACT-0122] Radio: outputActvityAstId101
+2026-08-30 23:04:38 | INFO     | [ACT-0122] Asset radio found=True visible=True enabled=True checked_before=False
+2026-08-30 23:04:38 | INFO     | [ACT-0122] Asset radio checked_after=True
+2026-08-30 23:04:38 | INFO     | [ACT-0122] Asset modal selector=#showAssetDetailsPopup
+2026-08-30 23:04:38 | INFO     | [ACT-0122] Asset popup opened
+2026-08-30 23:04:38 | INFO     | [Asset] Excel value received totalUntId='' expected='2' state={'exists': True, 'value': '', 'name': 'assetDetails.astNumOfUnt', 'onchange': None, 'onkeyup': 'resetassetnoofUnit(this.value)', 'resetFunctionLoaded': True, 'resetFunctionSource': 'function resetassetnoofUnit(data){\n\tif($("#astUntTypHiddId").val()==2){\n\t\t$("#totalNoUntId").html(data);\n\t\t\n\t\t$("#gisMapDivId").addClass("hidden");\n\t\t$("#gisMapTableId tr").remove();\n\t}\n\t\n}', 'locationRows': 0, 'selectedVillages': 0}
+2026-08-30 23:04:38 | ERROR    | [Asset] Total Units changed at stage=Excel value received: expected='2' actual=''
+2026-08-30 23:04:38 | INFO     | Asset field=Asset Type found=True visible=True enabled=True excel='Immovable' before=''
+2026-08-30 23:04:38 | DEBUG    | dropdown match selector=#astTypId original='Immovable' normalized='immovable' matched='Immovable' mode=exact
+2026-08-30 23:04:38 | INFO     | Asset field=Asset Type after='2' success=True
+2026-08-30 23:04:38 | INFO     | Asset field=Asset Category found=True visible=True enabled=True excel='Water Sources & Structures' before=''
+2026-08-30 23:04:38 | DEBUG    | dropdown match selector=#assetCategoryId original='Water Sources & Structures' normalized='water sources & structures' matched='Water Sources & Structures' mode=exact
+2026-08-30 23:04:38 | INFO     | Asset field=Asset Category after='10' success=True
+2026-08-30 23:04:38 | INFO     | Asset field=Asset Sub Category found=True visible=True enabled=True excel='Water Tank' before=''
+2026-08-30 23:04:38 | DEBUG    | dropdown match selector=#astSubCtgryId original='Water Tank' normalized='water tank' matched='Water Tank' mode=exact
+2026-08-30 23:04:38 | INFO     | Asset field=Asset Sub Category after='452' success=True
+2026-08-30 23:04:38 | INFO     | Asset field=Total Units found=True visible=True enabled=True excel='2' before=''
+2026-08-30 23:04:38 | INFO     | Asset field=Total Units after='2' success=True
+2026-08-30 23:04:38 | INFO     | [Asset] Immediately after fill totalUntId='2' expected='2' state={'exists': True, 'value': '2', 'name': 'assetDetails.astNumOfUnt', 'onchange': None, 'onkeyup': 'resetassetnoofUnit(this.value)', 'resetFunctionLoaded': True, 'resetFunctionSource': 'function resetassetnoofUnit(data){\n\tif($("#astUntTypHiddId").val()==2){\n\t\t$("#totalNoUntId").html(data);\n\t\t\n\t\t$("#gisMapDivId").addClass("hidden");\n\t\t$("#gisMapTableId tr").remove();\n\t}\n\t\n}', 'locationRows': 0, 'selectedVillages': 0}
+2026-08-30 23:04:38 | INFO     | Asset field=Unit Cost found=True visible=True enabled=True excel='10000' before=''
+2026-08-30 23:04:38 | INFO     | Asset field=Unit Cost after='10000' success=True
+2026-08-30 23:04:38 | INFO     | Coverage Area before click checked=False enabled=True visible=True
+2026-08-30 23:04:39 | INFO     | [Asset] Before Coverage Area click totalUntId='' expected='2' state={'exists': True, 'value': '', 'name': 'assetDetails.astNumOfUnt', 'onchange': None, 'onkeyup': 'resetassetnoofUnit(this.value)', 'resetFunctionLoaded': True, 'resetFunctionSource': 'function resetassetnoofUnit(data){\n\tif($("#astUntTypHiddId").val()==2){\n\t\t$("#totalNoUntId").html(data);\n\t\t\n\t\t$("#gisMapDivId").addClass("hidden");\n\t\t$("#gisMapTableId tr").remove();\n\t}\n\t\n}', 'locationRows': 0, 'selectedVillages': 0}
+2026-08-30 23:04:39 | ERROR    | [Asset] Total Units changed at stage=Before Coverage Area click: expected='2' actual=''
+2026-08-30 23:04:39 | WARNING  | row=0 activity_output_popup Coverage Area radio did not become checked
+2026-08-30 23:04:39 | ERROR    | FAIL | row=0 field=activity_output | Coverage Area radio did not become checked
+2026-08-30 23:04:39 | ERROR    | row 0 FAILED (single attempt): [activity_output] Coverage Area radio did not become checked
+2026-08-30 23:04:39 | ERROR    | row 0 FAILED after single attempt
+2026-08-30 23:04:39 | INFO     | DONE 40s total=1 success=0 failed=1 rate=0.0%
+2026-08-30 23:09:19 | INFO     | ============================================================
+2026-08-30 23:09:19 | INFO     | eGramSwaraj Bot START (v5)
+2026-08-30 23:09:19 | INFO     | ============================================================
+2026-08-30 23:09:20 | INFO     | rows: total=1 done=0 pending=1
+2026-08-30 23:09:21 | INFO     | Waiting for manual login -> addactivity.htm ...
+2026-08-30 23:09:21 | INFO     | Form ready at: https://egramswaraj.gov.in/addactivity.htm
+2026-08-30 23:09:22 | INFO     | -- row 0 | Creation of other water recharging structure/Recharge pit,sh
+2026-08-30 23:09:25 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-30 23:09:25 | DEBUG    | dropdown match selector=#themeId original='Theme 4 - Water Sufficient Village' normalized='theme 4 - water sufficient village' matched='Theme 4 - Water Sufficient Village' mode=exact
+2026-08-30 23:09:27 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-30 23:09:27 | DEBUG    | dropdown match selector=#focusAreaId original='Water Conservation' normalized='water conservation' matched='Water Conservation' mode=exact
+2026-08-30 23:09:27 | DEBUG    | row=0: watchId spinner finished, checkboxes should be loaded
+2026-08-30 23:09:27 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-30 23:09:27 | DEBUG    | vprp_plan: section_found=True original='No' normalized='no' radio_locator=#vprpPlandiv input[type='radio'][name='vprpplan'] options=[{'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}, {'id': 'vprpplan', 'name': 'vprpplan', 'value': 'T', 'checked': False, 'text': 'Yes'}]
+2026-08-30 23:09:27 | INFO     | vprp_plan: selecting original='No' normalized='no' locator=#vprpPlandiv input[type='radio'][name='vprpplan'] matched={'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}
+2026-08-30 23:09:27 | DEBUG    | row=0 pdi: raw excel pdi_indicator=''
+2026-08-30 23:09:27 | DEBUG    | row=0 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-30 23:09:27 | DEBUG    | row=0 pdi: #checkboxes not visible, attempting to open
+2026-08-30 23:09:28 | DEBUG    | row=0 pdi: option_count_probe count=2 stable_checks=0
+2026-08-30 23:09:28 | DEBUG    | row=0 pdi: found 2 checkbox inputs in panel
+2026-08-30 23:09:28 | DEBUG    | row=0 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-30 23:09:28 | DEBUG    | row=0 pdi: available checkbox id=missionAdId1 value=172 label='Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair' enabled=True checked=False
+2026-08-30 23:09:28 | DEBUG    | row=0 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-30 23:09:28 | DEBUG    | row=0 pdi: random selection source=auto parsed_count=0 selected_count=1 selected_labels=['None']
+2026-08-30 23:09:28 | DEBUG    | row=0 pdi: portal options detected count=2 options=['None', 'Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair']
+2026-08-30 23:09:28 | DEBUG    | row=0 pdi: searching requested indicator='None' normalized='none'
+2026-08-30 23:09:28 | DEBUG    | row=0 pdi: match found requested='None' portal_label='None' id=missionAdId0 value=0 enabled=True checked=False
+2026-08-30 23:09:28 | DEBUG    | row=0 pdi: clicking checkbox id=missionAdId0 value=0 label='None'
+2026-08-30 23:09:28 | DEBUG    | row=0 pdi: after click - is_selected=True dom_checked=True for 'None'
+2026-08-30 23:09:28 | DEBUG    | row=0 pdi: selection_success=True label='None'
+2026-08-30 23:09:28 | DEBUG    | row=0 pdi: total selected indicators: 1
+2026-08-30 23:09:28 | INFO     | row=0 pdi: selection complete
+2026-08-30 23:09:28 | DEBUG    | row=0 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': True, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': False}], 'missionAdId1': [{'checked': False, 'value': '172', 'name': 'missionAntodayaDet[1].maCode', 'disabled': True}]}, 'visibleError': False}
+2026-08-30 23:09:28 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-30 23:09:29 | DEBUG    | row=0 targeted_populace: requested indicators (1): ['All']
+2026-08-30 23:09:29 | DEBUG    | row=0 targeted_populace: found 1 total labels in panel
+2026-08-30 23:09:29 | DEBUG    | row=0 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-30 23:09:29 | DEBUG    | row=0 targeted_populace: clicking checkbox: 'All'
+2026-08-30 23:09:29 | DEBUG    | row=0 targeted_populace: checkbox selected successfully: 'All'
+2026-08-30 23:09:29 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-30 23:09:29 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-30 23:09:29 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-30 23:09:29 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-30 23:09:29 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-30 23:09:29 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-30 23:09:29 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-30 23:09:29 | DEBUG    | start_month: value after selection events='4' selected_option='4:April'
+2026-08-30 23:09:29 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-30 23:09:30 | DEBUG    | row=0: indicative unit cost section not visible
+2026-08-30 23:09:30 | DEBUG    | row=0: expected result section not visible
+2026-08-30 23:09:30 | DEBUG    | row=0 activity_output: requested='Asset' normalized='asset' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-30 23:09:30 | DEBUG    | [ACT-0122] pre_training_validation_state={'checked': [{'id': 'missionAdId0', 'value': '0', 'name': 'missionAntodayaDet[0].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-30 23:09:30 | INFO     | [ACT-0122] Activity Output detail record found
+2026-08-30 23:09:30 | INFO     | [ACT-0122] Activity Output: Asset
+2026-08-30 23:09:30 | INFO     | [ACT-0122] Handler: AssetOutputHandler
+2026-08-30 23:09:30 | INFO     | [ACT-0122] Detail Sheet: Asset
+2026-08-30 23:09:30 | INFO     | [ACT-0122] Radio: outputActvityAstId101
+2026-08-30 23:09:30 | INFO     | [ACT-0122] Asset radio found=True visible=True enabled=True checked_before=False
+2026-08-30 23:09:30 | INFO     | [ACT-0122] Asset radio checked_after=True
+2026-08-30 23:09:30 | INFO     | [ACT-0122] Asset modal selector=#showAssetDetailsPopup
+2026-08-30 23:09:30 | INFO     | [ACT-0122] Asset popup opened
+2026-08-30 23:09:30 | INFO     | [Asset] Excel value received totalUntId='' expected='2' state={'exists': True, 'value': '', 'name': 'assetDetails.astNumOfUnt', 'onchange': None, 'onkeyup': 'resetassetnoofUnit(this.value)', 'resetFunctionLoaded': True, 'resetFunctionSource': 'function resetassetnoofUnit(data){\n\tif($("#astUntTypHiddId").val()==2){\n\t\t$("#totalNoUntId").html(data);\n\t\t\n\t\t$("#gisMapDivId").addClass("hidden");\n\t\t$("#gisMapTableId tr").remove();\n\t}\n\t\n}', 'locationRows': 0, 'selectedVillages': 0}
+2026-08-30 23:09:30 | ERROR    | [Asset] Total Units changed at stage=Excel value received: expected='2' actual=''
+2026-08-30 23:09:30 | INFO     | Asset field=Asset Type found=True visible=True enabled=True excel='Immovable' before=''
+2026-08-30 23:09:30 | DEBUG    | dropdown match selector=#astTypId original='Immovable' normalized='immovable' matched='Immovable' mode=exact
+2026-08-30 23:09:30 | INFO     | Asset field=Asset Type after='2' success=True
+2026-08-30 23:09:30 | INFO     | Asset field=Asset Category found=True visible=True enabled=True excel='Water Sources & Structures' before=''
+2026-08-30 23:09:30 | DEBUG    | dropdown match selector=#assetCategoryId original='Water Sources & Structures' normalized='water sources & structures' matched='Water Sources & Structures' mode=exact
+2026-08-30 23:09:30 | INFO     | Asset field=Asset Category after='10' success=True
+2026-08-30 23:09:30 | INFO     | Asset field=Asset Sub Category found=True visible=True enabled=True excel='Water Tank' before=''
+2026-08-30 23:09:31 | DEBUG    | dropdown match selector=#astSubCtgryId original='Water Tank' normalized='water tank' matched='Water Tank' mode=exact
+2026-08-30 23:09:31 | INFO     | Asset field=Asset Sub Category after='452' success=True
+2026-08-30 23:09:31 | INFO     | Asset field=Total Units found=True visible=True enabled=True excel='2' before=''
+2026-08-30 23:09:31 | INFO     | Asset field=Total Units after='2' success=True
+2026-08-30 23:09:31 | INFO     | [Asset] Immediately after fill totalUntId='2' expected='2' state={'exists': True, 'value': '2', 'name': 'assetDetails.astNumOfUnt', 'onchange': None, 'onkeyup': 'resetassetnoofUnit(this.value)', 'resetFunctionLoaded': True, 'resetFunctionSource': 'function resetassetnoofUnit(data){\n\tif($("#astUntTypHiddId").val()==2){\n\t\t$("#totalNoUntId").html(data);\n\t\t\n\t\t$("#gisMapDivId").addClass("hidden");\n\t\t$("#gisMapTableId tr").remove();\n\t}\n\t\n}', 'locationRows': 0, 'selectedVillages': 0}
+2026-08-30 23:09:31 | INFO     | Asset field=Unit Cost found=True visible=True enabled=True excel='10000' before=''
+2026-08-30 23:09:31 | INFO     | Asset field=Unit Cost after='10000' success=True
+2026-08-30 23:09:31 | INFO     | Coverage Area before click checked=False enabled=True visible=True
+2026-08-30 23:09:31 | INFO     | [Asset] Before Coverage Area click totalUntId='' expected='2' state={'exists': True, 'value': '', 'name': 'assetDetails.astNumOfUnt', 'onchange': None, 'onkeyup': 'resetassetnoofUnit(this.value)', 'resetFunctionLoaded': True, 'resetFunctionSource': 'function resetassetnoofUnit(data){\n\tif($("#astUntTypHiddId").val()==2){\n\t\t$("#totalNoUntId").html(data);\n\t\t\n\t\t$("#gisMapDivId").addClass("hidden");\n\t\t$("#gisMapTableId tr").remove();\n\t}\n\t\n}', 'locationRows': 0, 'selectedVillages': 0}
+2026-08-30 23:09:31 | ERROR    | [Asset] Total Units changed at stage=Before Coverage Area click: expected='2' actual=''
+2026-08-30 23:09:31 | WARNING  | row=0 activity_output_popup Coverage Area radio did not become checked
+2026-08-30 23:09:31 | ERROR    | FAIL | row=0 field=activity_output | Coverage Area radio did not become checked
+2026-08-30 23:09:31 | ERROR    | row 0 FAILED (single attempt): [activity_output] Coverage Area radio did not become checked
+2026-08-30 23:09:31 | ERROR    | row 0 FAILED after single attempt
+2026-08-30 23:09:31 | INFO     | DONE 12s total=1 success=0 failed=1 rate=0.0%
+2026-08-30 23:11:33 | INFO     | ============================================================
+2026-08-30 23:11:33 | INFO     | eGramSwaraj Bot START (v5)
+2026-08-30 23:11:33 | INFO     | ============================================================
+2026-08-30 23:11:33 | INFO     | rows: total=1 done=0 pending=1
+2026-08-30 23:11:34 | INFO     | Waiting for manual login -> addactivity.htm ...
+2026-08-30 23:11:34 | INFO     | Form ready at: https://egramswaraj.gov.in/addactivity.htm
+2026-08-30 23:11:34 | INFO     | -- row 0 | Creation of other water recharging structure/Recharge pit,sh
+2026-08-30 23:11:37 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-30 23:11:37 | DEBUG    | dropdown match selector=#themeId original='Theme 4 - Water Sufficient Village' normalized='theme 4 - water sufficient village' matched='Theme 4 - Water Sufficient Village' mode=exact
+2026-08-30 23:11:39 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-30 23:11:39 | DEBUG    | dropdown match selector=#focusAreaId original='Water Conservation' normalized='water conservation' matched='Water Conservation' mode=exact
+2026-08-30 23:11:39 | DEBUG    | row=0: watchId spinner finished, checkboxes should be loaded
+2026-08-30 23:11:39 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-30 23:11:39 | DEBUG    | vprp_plan: section_found=True original='No' normalized='no' radio_locator=#vprpPlandiv input[type='radio'][name='vprpplan'] options=[{'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}, {'id': 'vprpplan', 'name': 'vprpplan', 'value': 'T', 'checked': False, 'text': 'Yes'}]
+2026-08-30 23:11:39 | INFO     | vprp_plan: selecting original='No' normalized='no' locator=#vprpPlandiv input[type='radio'][name='vprpplan'] matched={'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}
+2026-08-30 23:11:39 | DEBUG    | row=0 pdi: raw excel pdi_indicator=''
+2026-08-30 23:11:39 | DEBUG    | row=0 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-30 23:11:39 | DEBUG    | row=0 pdi: #checkboxes not visible, attempting to open
+2026-08-30 23:11:39 | DEBUG    | row=0 pdi: option_count_probe count=2 stable_checks=0
+2026-08-30 23:11:40 | DEBUG    | row=0 pdi: found 2 checkbox inputs in panel
+2026-08-30 23:11:40 | DEBUG    | row=0 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-30 23:11:40 | DEBUG    | row=0 pdi: available checkbox id=missionAdId1 value=172 label='Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair' enabled=True checked=False
+2026-08-30 23:11:40 | DEBUG    | row=0 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-30 23:11:40 | DEBUG    | row=0 pdi: random selection source=auto parsed_count=0 selected_count=1 selected_labels=['None']
+2026-08-30 23:11:40 | DEBUG    | row=0 pdi: portal options detected count=2 options=['None', 'Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair']
+2026-08-30 23:11:40 | DEBUG    | row=0 pdi: searching requested indicator='None' normalized='none'
+2026-08-30 23:11:40 | DEBUG    | row=0 pdi: match found requested='None' portal_label='None' id=missionAdId0 value=0 enabled=True checked=False
+2026-08-30 23:11:40 | DEBUG    | row=0 pdi: clicking checkbox id=missionAdId0 value=0 label='None'
+2026-08-30 23:11:40 | DEBUG    | row=0 pdi: after click - is_selected=True dom_checked=True for 'None'
+2026-08-30 23:11:40 | DEBUG    | row=0 pdi: selection_success=True label='None'
+2026-08-30 23:11:40 | DEBUG    | row=0 pdi: total selected indicators: 1
+2026-08-30 23:11:40 | INFO     | row=0 pdi: selection complete
+2026-08-30 23:11:40 | DEBUG    | row=0 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': True, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': False}], 'missionAdId1': [{'checked': False, 'value': '172', 'name': 'missionAntodayaDet[1].maCode', 'disabled': True}]}, 'visibleError': False}
+2026-08-30 23:11:40 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-30 23:11:40 | DEBUG    | row=0 targeted_populace: requested indicators (1): ['All']
+2026-08-30 23:11:40 | DEBUG    | row=0 targeted_populace: found 1 total labels in panel
+2026-08-30 23:11:40 | DEBUG    | row=0 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-30 23:11:40 | DEBUG    | row=0 targeted_populace: clicking checkbox: 'All'
+2026-08-30 23:11:40 | DEBUG    | row=0 targeted_populace: checkbox selected successfully: 'All'
+2026-08-30 23:11:40 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-30 23:11:41 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-30 23:11:41 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-30 23:11:41 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-30 23:11:41 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-30 23:11:41 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-30 23:11:41 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-30 23:11:41 | DEBUG    | start_month: value after selection events='4' selected_option='4:April'
+2026-08-30 23:11:41 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-30 23:11:41 | DEBUG    | row=0: indicative unit cost section not visible
+2026-08-30 23:11:41 | DEBUG    | row=0: expected result section not visible
+2026-08-30 23:11:42 | DEBUG    | row=0 activity_output: requested='Asset' normalized='asset' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-30 23:11:42 | DEBUG    | [ACT-0122] pre_training_validation_state={'checked': [{'id': 'missionAdId0', 'value': '0', 'name': 'missionAntodayaDet[0].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-30 23:11:42 | INFO     | [ACT-0122] Activity Output detail record found
+2026-08-30 23:11:42 | INFO     | [ACT-0122] Activity Output: Asset
+2026-08-30 23:11:42 | INFO     | [ACT-0122] Handler: AssetOutputHandler
+2026-08-30 23:11:42 | INFO     | [ACT-0122] Detail Sheet: Asset
+2026-08-30 23:11:42 | INFO     | [ACT-0122] Radio: outputActvityAstId101
+2026-08-30 23:11:42 | INFO     | [ACT-0122] Asset radio found=True visible=True enabled=True checked_before=False
+2026-08-30 23:11:42 | INFO     | [ACT-0122] Asset radio checked_after=True
+2026-08-30 23:11:42 | INFO     | [ACT-0122] Asset modal selector=#showAssetDetailsPopup
+2026-08-30 23:11:42 | INFO     | [ACT-0122] Asset popup opened
+2026-08-30 23:11:42 | INFO     | [Asset] Excel Total Units value='2' type=str
+2026-08-30 23:11:42 | INFO     | [Asset] Excel value received totalUntId='' expected='2' state={'exists': True, 'value': '', 'name': 'assetDetails.astNumOfUnt', 'onchange': None, 'onkeyup': 'resetassetnoofUnit(this.value)', 'resetFunctionLoaded': True, 'resetFunctionSource': 'function resetassetnoofUnit(data){\n\tif($("#astUntTypHiddId").val()==2){\n\t\t$("#totalNoUntId").html(data);\n\t\t\n\t\t$("#gisMapDivId").addClass("hidden");\n\t\t$("#gisMapTableId tr").remove();\n\t}\n\t\n}', 'locationRows': 0, 'selectedVillages': 0}
+2026-08-30 23:11:42 | ERROR    | [Asset] Total Units changed at stage=Excel value received: expected='2' actual=''
+2026-08-30 23:11:42 | INFO     | Asset field=Asset Type found=True visible=True enabled=True excel='Immovable' before=''
+2026-08-30 23:11:42 | DEBUG    | dropdown match selector=#astTypId original='Immovable' normalized='immovable' matched='Immovable' mode=exact
+2026-08-30 23:11:42 | INFO     | Asset field=Asset Type after='2' success=True
+2026-08-30 23:11:42 | INFO     | Asset field=Asset Category found=True visible=True enabled=True excel='Water Sources & Structures' before=''
+2026-08-30 23:11:42 | DEBUG    | dropdown match selector=#assetCategoryId original='Water Sources & Structures' normalized='water sources & structures' matched='Water Sources & Structures' mode=exact
+2026-08-30 23:11:42 | INFO     | Asset field=Asset Category after='10' success=True
+2026-08-30 23:11:42 | INFO     | Asset field=Asset Sub Category found=True visible=True enabled=True excel='Water Tank' before=''
+2026-08-30 23:11:42 | DEBUG    | dropdown match selector=#astSubCtgryId original='Water Tank' normalized='water tank' matched='Water Tank' mode=exact
+2026-08-30 23:11:43 | INFO     | Asset field=Asset Sub Category after='452' success=True
+2026-08-30 23:11:43 | INFO     | Asset field=Total Units found=True visible=True enabled=True excel='2' before=''
+2026-08-30 23:11:43 | INFO     | Asset field=Total Units after='2' success=True
+2026-08-30 23:11:43 | INFO     | [Asset] Immediately after fill totalUntId='2' expected='2' state={'exists': True, 'value': '2', 'name': 'assetDetails.astNumOfUnt', 'onchange': None, 'onkeyup': 'resetassetnoofUnit(this.value)', 'resetFunctionLoaded': True, 'resetFunctionSource': 'function resetassetnoofUnit(data){\n\tif($("#astUntTypHiddId").val()==2){\n\t\t$("#totalNoUntId").html(data);\n\t\t\n\t\t$("#gisMapDivId").addClass("hidden");\n\t\t$("#gisMapTableId tr").remove();\n\t}\n\t\n}', 'locationRows': 0, 'selectedVillages': 0}
+2026-08-30 23:11:43 | INFO     | [Asset] Total Units trace stage=Immediately after fill events=[{'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111702657}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111702657}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111702657}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111702657}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111702786}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111702786}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111702786}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111702944}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111702944}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111702944}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111702944}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111702944}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111702944}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111702944}, {'kind': 'keyup', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111703105}, {'kind': 'input', 'value': '2', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111703111}, {'kind': 'keyup', 'value': '2', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111703112}]
+2026-08-30 23:11:43 | INFO     | Asset field=Unit Cost found=True visible=True enabled=True excel='10000' before=''
+2026-08-30 23:11:43 | INFO     | Asset field=Unit Cost after='10000' success=True
+2026-08-30 23:11:43 | INFO     | Coverage Area before click checked=False enabled=True visible=True
+2026-08-30 23:11:43 | INFO     | [Asset] Before Coverage Area click totalUntId='' expected='2' state={'exists': True, 'value': '', 'name': 'assetDetails.astNumOfUnt', 'onchange': None, 'onkeyup': 'resetassetnoofUnit(this.value)', 'resetFunctionLoaded': True, 'resetFunctionSource': 'function resetassetnoofUnit(data){\n\tif($("#astUntTypHiddId").val()==2){\n\t\t$("#totalNoUntId").html(data);\n\t\t\n\t\t$("#gisMapDivId").addClass("hidden");\n\t\t$("#gisMapTableId tr").remove();\n\t}\n\t\n}', 'locationRows': 0, 'selectedVillages': 0}
+2026-08-30 23:11:43 | ERROR    | [Asset] Total Units changed at stage=Before Coverage Area click: expected='2' actual=''
+2026-08-30 23:11:43 | INFO     | [Asset] Total Units trace stage=Before Coverage Area click events=[{'kind': 'mutation:attributes', 'value': '2', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111703144}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111703146}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111703146}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111703146}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111703146}, {'kind': 'mutation:attributes', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111703146}, {'kind': 'mutation:attributes', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111703146}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111703146}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111703146}]
+2026-08-30 23:11:43 | WARNING  | row=0 activity_output_popup Coverage Area radio did not become checked
+2026-08-30 23:11:43 | ERROR    | FAIL | row=0 field=activity_output | Coverage Area radio did not become checked
+2026-08-30 23:11:43 | ERROR    | row 0 FAILED (single attempt): [activity_output] Coverage Area radio did not become checked
+2026-08-30 23:11:43 | ERROR    | row 0 FAILED after single attempt
+2026-08-30 23:11:43 | INFO     | DONE 10s total=1 success=0 failed=1 rate=0.0%
+2026-08-30 23:14:00 | INFO     | ============================================================
+2026-08-30 23:14:00 | INFO     | eGramSwaraj Bot START (v5)
+2026-08-30 23:14:00 | INFO     | ============================================================
+2026-08-30 23:14:00 | INFO     | rows: total=1 done=0 pending=1
+2026-08-30 23:14:02 | INFO     | Waiting for manual login -> addactivity.htm ...
+2026-08-30 23:14:02 | INFO     | Form ready at: https://egramswaraj.gov.in/addactivity.htm
+2026-08-30 23:14:02 | INFO     | -- row 0 | Creation of other water recharging structure/Recharge pit,sh
+2026-08-30 23:14:05 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-30 23:14:06 | DEBUG    | dropdown match selector=#themeId original='Theme 4 - Water Sufficient Village' normalized='theme 4 - water sufficient village' matched='Theme 4 - Water Sufficient Village' mode=exact
+2026-08-30 23:14:07 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-30 23:14:07 | DEBUG    | dropdown match selector=#focusAreaId original='Water Conservation' normalized='water conservation' matched='Water Conservation' mode=exact
+2026-08-30 23:14:07 | DEBUG    | row=0: watchId spinner finished, checkboxes should be loaded
+2026-08-30 23:14:07 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-30 23:14:07 | DEBUG    | vprp_plan: section_found=True original='No' normalized='no' radio_locator=#vprpPlandiv input[type='radio'][name='vprpplan'] options=[{'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}, {'id': 'vprpplan', 'name': 'vprpplan', 'value': 'T', 'checked': False, 'text': 'Yes'}]
+2026-08-30 23:14:07 | INFO     | vprp_plan: selecting original='No' normalized='no' locator=#vprpPlandiv input[type='radio'][name='vprpplan'] matched={'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}
+2026-08-30 23:14:07 | DEBUG    | row=0 pdi: raw excel pdi_indicator=''
+2026-08-30 23:14:07 | DEBUG    | row=0 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-30 23:14:08 | DEBUG    | row=0 pdi: #checkboxes not visible, attempting to open
+2026-08-30 23:14:08 | DEBUG    | row=0 pdi: option_count_probe count=2 stable_checks=0
+2026-08-30 23:14:08 | DEBUG    | row=0 pdi: found 2 checkbox inputs in panel
+2026-08-30 23:14:08 | DEBUG    | row=0 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-30 23:14:08 | DEBUG    | row=0 pdi: available checkbox id=missionAdId1 value=172 label='Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair' enabled=True checked=False
+2026-08-30 23:14:08 | DEBUG    | row=0 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-30 23:14:08 | DEBUG    | row=0 pdi: random selection source=auto parsed_count=0 selected_count=1 selected_labels=['Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair']
+2026-08-30 23:14:08 | DEBUG    | row=0 pdi: portal options detected count=2 options=['None', 'Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair']
+2026-08-30 23:14:08 | DEBUG    | row=0 pdi: searching requested indicator='Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair' normalized='percentage of water bodies (ponds, lakes, well etc) taken up for desilting /deepening or special repair'
+2026-08-30 23:14:08 | DEBUG    | row=0 pdi: match found requested='Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair' portal_label='Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair' id=missionAdId1 value=172 enabled=True checked=False
+2026-08-30 23:14:08 | DEBUG    | row=0 pdi: clicking checkbox id=missionAdId1 value=172 label='Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair'
+2026-08-30 23:14:09 | DEBUG    | row=0 pdi: after click - is_selected=True dom_checked=True for 'Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair'
+2026-08-30 23:14:09 | DEBUG    | row=0 pdi: selection_success=True label='Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair'
+2026-08-30 23:14:09 | DEBUG    | row=0 pdi: total selected indicators: 1
+2026-08-30 23:14:09 | INFO     | row=0 pdi: selection complete
+2026-08-30 23:14:09 | DEBUG    | row=0 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': False, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': True}], 'missionAdId1': [{'checked': True, 'value': '172', 'name': 'missionAntodayaDet[1].maCode', 'disabled': False}]}, 'visibleError': False}
+2026-08-30 23:14:09 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-30 23:14:09 | DEBUG    | row=0 targeted_populace: requested indicators (1): ['All']
+2026-08-30 23:14:09 | DEBUG    | row=0 targeted_populace: found 1 total labels in panel
+2026-08-30 23:14:09 | DEBUG    | row=0 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-30 23:14:09 | DEBUG    | row=0 targeted_populace: clicking checkbox: 'All'
+2026-08-30 23:14:09 | DEBUG    | row=0 targeted_populace: checkbox selected successfully: 'All'
+2026-08-30 23:14:09 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-30 23:14:09 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-30 23:14:10 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-30 23:14:10 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-30 23:14:10 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-30 23:14:10 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-30 23:14:10 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-30 23:14:10 | DEBUG    | start_month: value after selection events='4' selected_option='4:April'
+2026-08-30 23:14:10 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-30 23:14:10 | DEBUG    | row=0: indicative unit cost section not visible
+2026-08-30 23:14:10 | DEBUG    | row=0: expected result section not visible
+2026-08-30 23:14:10 | DEBUG    | row=0 activity_output: requested='Asset' normalized='asset' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-30 23:14:10 | DEBUG    | [ACT-0122] pre_training_validation_state={'checked': [{'id': 'missionAdId1', 'value': '172', 'name': 'missionAntodayaDet[1].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-30 23:14:10 | INFO     | [ACT-0122] Activity Output detail record found
+2026-08-30 23:14:10 | INFO     | [ACT-0122] Activity Output: Asset
+2026-08-30 23:14:10 | INFO     | [ACT-0122] Handler: AssetOutputHandler
+2026-08-30 23:14:10 | INFO     | [ACT-0122] Detail Sheet: Asset
+2026-08-30 23:14:10 | INFO     | [ACT-0122] Radio: outputActvityAstId101
+2026-08-30 23:14:10 | INFO     | [ACT-0122] Asset radio found=True visible=True enabled=True checked_before=False
+2026-08-30 23:14:10 | INFO     | [ACT-0122] Asset radio checked_after=True
+2026-08-30 23:14:10 | INFO     | [ACT-0122] Asset modal selector=#showAssetDetailsPopup
+2026-08-30 23:14:11 | INFO     | [ACT-0122] Asset popup opened
+2026-08-30 23:14:11 | INFO     | [Asset] Excel Total Units value='2' type=str
+2026-08-30 23:14:11 | INFO     | [Asset] Excel value received totalUntId='' expected='2' state={'exists': True, 'value': '', 'name': 'assetDetails.astNumOfUnt', 'onchange': None, 'onkeyup': 'resetassetnoofUnit(this.value)', 'resetFunctionLoaded': True, 'resetFunctionSource': 'function resetassetnoofUnit(data){\n\tif($("#astUntTypHiddId").val()==2){\n\t\t$("#totalNoUntId").html(data);\n\t\t\n\t\t$("#gisMapDivId").addClass("hidden");\n\t\t$("#gisMapTableId tr").remove();\n\t}\n\t\n}', 'locationRows': 0, 'selectedVillages': 0}
+2026-08-30 23:14:11 | ERROR    | [Asset] Total Units changed at stage=Excel value received: expected='2' actual=''
+2026-08-30 23:14:11 | INFO     | Asset field=Asset Type found=True visible=True enabled=True excel='Immovable' before=''
+2026-08-30 23:14:11 | DEBUG    | dropdown match selector=#astTypId original='Immovable' normalized='immovable' matched='Immovable' mode=exact
+2026-08-30 23:14:11 | INFO     | Asset field=Asset Type after='2' success=True
+2026-08-30 23:14:11 | INFO     | Asset field=Asset Category found=True visible=True enabled=True excel='Water Sources & Structures' before=''
+2026-08-30 23:14:11 | DEBUG    | dropdown match selector=#assetCategoryId original='Water Sources & Structures' normalized='water sources & structures' matched='Water Sources & Structures' mode=exact
+2026-08-30 23:14:11 | INFO     | Asset field=Asset Category after='10' success=True
+2026-08-30 23:14:11 | INFO     | Asset field=Asset Sub Category found=True visible=True enabled=True excel='Water Tank' before=''
+2026-08-30 23:14:11 | DEBUG    | dropdown match selector=#astSubCtgryId original='Water Tank' normalized='water tank' matched='Water Tank' mode=exact
+2026-08-30 23:14:11 | INFO     | Asset field=Asset Sub Category after='452' success=True
+2026-08-30 23:14:11 | INFO     | Asset field=Total Units found=True visible=True enabled=True excel='2' before=''
+2026-08-30 23:14:11 | INFO     | Asset field=Total Units after='2' success=True
+2026-08-30 23:14:11 | INFO     | [Asset] Immediately after fill totalUntId='2' expected='2' state={'exists': True, 'value': '2', 'name': 'assetDetails.astNumOfUnt', 'onchange': None, 'onkeyup': 'resetassetnoofUnit(this.value)', 'resetFunctionLoaded': True, 'resetFunctionSource': 'function resetassetnoofUnit(data){\n\tif($("#astUntTypHiddId").val()==2){\n\t\t$("#totalNoUntId").html(data);\n\t\t\n\t\t$("#gisMapDivId").addClass("hidden");\n\t\t$("#gisMapTableId tr").remove();\n\t}\n\t\n}', 'locationRows': 0, 'selectedVillages': 0}
+2026-08-30 23:14:11 | INFO     | [Asset] Total Units trace stage=Immediately after fill events=[{'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111851184}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111851184}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111851184}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111851184}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111851314}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111851314}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111851314}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111851592}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111851592}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111851592}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111851592}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111851592}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111851592}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111851592}, {'kind': 'keyup', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111851710}, {'kind': 'input', 'value': '2', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111851717}, {'kind': 'keyup', 'value': '2', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111851718}]
+2026-08-30 23:14:11 | INFO     | Asset field=Unit Cost found=True visible=True enabled=True excel='10000' before=''
+2026-08-30 23:14:11 | INFO     | Asset field=Unit Cost after='10000' success=True
+2026-08-30 23:14:11 | INFO     | Coverage Area before click checked=False enabled=True visible=True
+2026-08-30 23:14:11 | INFO     | [Asset] Before Coverage Area click totalUntId='' expected='2' state={'exists': True, 'value': '', 'name': 'assetDetails.astNumOfUnt', 'onchange': None, 'onkeyup': 'resetassetnoofUnit(this.value)', 'resetFunctionLoaded': True, 'resetFunctionSource': 'function resetassetnoofUnit(data){\n\tif($("#astUntTypHiddId").val()==2){\n\t\t$("#totalNoUntId").html(data);\n\t\t\n\t\t$("#gisMapDivId").addClass("hidden");\n\t\t$("#gisMapTableId tr").remove();\n\t}\n\t\n}', 'locationRows': 0, 'selectedVillages': 0}
+2026-08-30 23:14:11 | ERROR    | [Asset] Total Units changed at stage=Before Coverage Area click: expected='2' actual=''
+2026-08-30 23:14:11 | INFO     | [Asset] Total Units trace stage=Before Coverage Area click events=[{'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111851746}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111851746}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111851746}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111851746}, {'kind': 'mutation:attributes', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111851746}, {'kind': 'mutation:attributes', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111851746}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111851746}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111851746}, {'kind': 'mutation:attributes', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788111851778}]
+2026-08-30 23:14:11 | WARNING  | row=0 activity_output_popup Coverage Area radio did not become checked
+2026-08-30 23:14:12 | ERROR    | FAIL | row=0 field=activity_output | Coverage Area radio did not become checked
+2026-08-30 23:14:12 | ERROR    | row 0 FAILED (single attempt): [activity_output] Coverage Area radio did not become checked
+2026-08-30 23:14:12 | ERROR    | row 0 FAILED after single attempt
+2026-08-30 23:14:12 | INFO     | DONE 11s total=1 success=0 failed=1 rate=0.0%
+2026-08-30 23:19:37 | INFO     | ============================================================
+2026-08-30 23:19:37 | INFO     | eGramSwaraj Bot START (v5)
+2026-08-30 23:19:37 | INFO     | ============================================================
+2026-08-30 23:19:38 | INFO     | rows: total=1 done=0 pending=1
+2026-08-30 23:19:39 | INFO     | Waiting for manual login -> addactivity.htm ...
+2026-08-30 23:19:39 | INFO     | Form ready at: https://egramswaraj.gov.in/addactivity.htm
+2026-08-30 23:19:40 | INFO     | -- row 0 | Creation of other water recharging structure/Recharge pit,sh
+2026-08-30 23:19:43 | DEBUG    | browser_console[error]: Permissions policy violation: unload is not allowed in this document.
+2026-08-30 23:19:43 | DEBUG    | dropdown match selector=#themeId original='Theme 4 - Water Sufficient Village' normalized='theme 4 - water sufficient village' matched='Theme 4 - Water Sufficient Village' mode=exact
+2026-08-30 23:19:44 | DEBUG    | browser_console[error]: Failed to load resource: the server responded with a status of 404 ()
+2026-08-30 23:19:45 | DEBUG    | dropdown match selector=#focusAreaId original='Water Conservation' normalized='water conservation' matched='Water Conservation' mode=exact
+2026-08-30 23:19:45 | DEBUG    | row=0: watchId spinner finished, checkboxes should be loaded
+2026-08-30 23:19:45 | DEBUG    | dropdown match selector=#activityTypeListId original='Community Works' normalized='community works' matched='Community Works' mode=exact
+2026-08-30 23:19:45 | DEBUG    | vprp_plan: section_found=True original='No' normalized='no' radio_locator=#vprpPlandiv input[type='radio'][name='vprpplan'] options=[{'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}, {'id': 'vprpplan', 'name': 'vprpplan', 'value': 'T', 'checked': False, 'text': 'Yes'}]
+2026-08-30 23:19:45 | INFO     | vprp_plan: selecting original='No' normalized='no' locator=#vprpPlandiv input[type='radio'][name='vprpplan'] matched={'id': 'vprpplan', 'name': 'vprpplan', 'value': 'F', 'checked': True, 'text': 'No'}
+2026-08-30 23:19:45 | DEBUG    | row=0 pdi: raw excel pdi_indicator=''
+2026-08-30 23:19:45 | DEBUG    | row=0 pdi: excel value is empty, continuing with portal-driven auto-selection
+2026-08-30 23:19:45 | DEBUG    | row=0 pdi: #checkboxes not visible, attempting to open
+2026-08-30 23:19:45 | DEBUG    | row=0 pdi: option_count_probe count=2 stable_checks=0
+2026-08-30 23:19:45 | DEBUG    | row=0 pdi: found 2 checkbox inputs in panel
+2026-08-30 23:19:45 | DEBUG    | row=0 pdi: available checkbox id=missionAdId0 value=0 label='None' enabled=True checked=False
+2026-08-30 23:19:45 | DEBUG    | row=0 pdi: available checkbox id=missionAdId1 value=172 label='Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair' enabled=True checked=False
+2026-08-30 23:19:45 | DEBUG    | row=0 pdi: parsed indicators from excel delimiter='|' parsed=[] deduped=[]
+2026-08-30 23:19:45 | DEBUG    | row=0 pdi: random selection source=auto parsed_count=0 selected_count=1 selected_labels=['None']
+2026-08-30 23:19:45 | DEBUG    | row=0 pdi: portal options detected count=2 options=['None', 'Percentage of water bodies (Ponds, Lakes, Well etc) taken up for desilting /deepening or Special repair']
+2026-08-30 23:19:45 | DEBUG    | row=0 pdi: searching requested indicator='None' normalized='none'
+2026-08-30 23:19:45 | DEBUG    | row=0 pdi: match found requested='None' portal_label='None' id=missionAdId0 value=0 enabled=True checked=False
+2026-08-30 23:19:45 | DEBUG    | row=0 pdi: clicking checkbox id=missionAdId0 value=0 label='None'
+2026-08-30 23:19:46 | DEBUG    | row=0 pdi: after click - is_selected=True dom_checked=True for 'None'
+2026-08-30 23:19:46 | DEBUG    | row=0 pdi: selection_success=True label='None'
+2026-08-30 23:19:46 | DEBUG    | row=0 pdi: total selected indicators: 1
+2026-08-30 23:19:46 | INFO     | row=0 pdi: selection complete
+2026-08-30 23:19:46 | DEBUG    | row=0 pdi: portal_diagnostic={'missionAdStatus': True, 'byId': {'missionAdId0': [{'checked': True, 'value': '0', 'name': 'missionAntodayaDet[0].maCode', 'disabled': False}], 'missionAdId1': [{'checked': False, 'value': '172', 'name': 'missionAntodayaDet[1].maCode', 'disabled': True}]}, 'visibleError': False}
+2026-08-30 23:19:46 | DEBUG    | dropdown match selector=#activityFor original='All' normalized='all' matched='All' mode=exact
+2026-08-30 23:19:46 | DEBUG    | row=0 targeted_populace: requested indicators (1): ['All']
+2026-08-30 23:19:46 | DEBUG    | row=0 targeted_populace: found 1 total labels in panel
+2026-08-30 23:19:46 | DEBUG    | row=0 targeted_populace: checkbox 'All' enabled=True checked=False
+2026-08-30 23:19:46 | DEBUG    | row=0 targeted_populace: clicking checkbox: 'All'
+2026-08-30 23:19:46 | DEBUG    | row=0 targeted_populace: checkbox selected successfully: 'All'
+2026-08-30 23:19:46 | DEBUG    | dropdown match selector=#workTypId original='New/Fresh' normalized='new/fresh' matched='New/Fresh' mode=exact
+2026-08-30 23:19:46 | DEBUG    | dropdown match selector=#startYearId original='2026' normalized='2026' matched='2026' mode=exact
+2026-08-30 23:19:47 | DEBUG    | start_month: requested raw='April' normalized='april' selector=#startMonthId
+2026-08-30 23:19:47 | DEBUG    | start_month: selector state present=True visible=True enabled=True
+2026-08-30 23:19:47 | DEBUG    | start_month: options before select=['4:April', '5:May', '6:June', '7:July', '8:August', '9:September', '10:October', '11:November', '12:December']
+2026-08-30 23:19:47 | DEBUG    | start_month: matched option text='April' value='4'
+2026-08-30 23:19:47 | DEBUG    | start_month: value immediately after select_option='4'
+2026-08-30 23:19:47 | DEBUG    | start_month: value after selection events='4' selected_option='4:April'
+2026-08-30 23:19:47 | DEBUG    | start_month: final confirmed value='4' selected_option='4:April'
+2026-08-30 23:19:47 | DEBUG    | row=0: indicative unit cost section not visible
+2026-08-30 23:19:47 | DEBUG    | row=0: expected result section not visible
+2026-08-30 23:19:47 | DEBUG    | row=0 activity_output: requested='Asset' normalized='asset' diagnostics=[{'id': 'outputActvityAstId101', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': True, 'checked': False, 'label': 'Asset'}, {'id': 'outputActvityAstId102', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Training/Capacity Building'}, {'id': 'outputActvityAstId103', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Community Service'}, {'id': 'outputActvityAstId109', 'name': 'outputTyp', 'value': '', 'visible': True, 'enabled': False, 'checked': False, 'label': 'Beneficiaries'}]
+2026-08-30 23:19:47 | DEBUG    | [ACT-0122] pre_training_validation_state={'checked': [{'id': 'missionAdId0', 'value': '0', 'name': 'missionAntodayaDet[0].maCode'}], 'activityMAErrorVisible': False, 'outputAreaVisible': True}
+2026-08-30 23:19:47 | INFO     | [ACT-0122] Activity Output detail record found
+2026-08-30 23:19:47 | INFO     | [ACT-0122] Activity Output: Asset
+2026-08-30 23:19:47 | INFO     | [ACT-0122] Handler: AssetOutputHandler
+2026-08-30 23:19:47 | INFO     | [ACT-0122] Detail Sheet: Asset
+2026-08-30 23:19:47 | INFO     | [ACT-0122] Radio: outputActvityAstId101
+2026-08-30 23:19:47 | INFO     | [ACT-0122] Asset radio found=True visible=True enabled=True checked_before=False
+2026-08-30 23:19:47 | INFO     | [ACT-0122] Asset radio checked_after=True
+2026-08-30 23:19:47 | INFO     | [ACT-0122] Asset modal selector=#showAssetDetailsPopup
+2026-08-30 23:19:48 | INFO     | [ACT-0122] Asset popup opened
+2026-08-30 23:19:48 | INFO     | [Asset] Excel Total Units value='2' type=str
+2026-08-30 23:19:48 | INFO     | [Asset] Excel value received totalUntId='' expected='2' state={'exists': True, 'value': '', 'name': 'assetDetails.astNumOfUnt', 'onchange': None, 'onkeyup': 'resetassetnoofUnit(this.value)', 'resetFunctionLoaded': True, 'resetFunctionSource': 'function resetassetnoofUnit(data){\n\tif($("#astUntTypHiddId").val()==2){\n\t\t$("#totalNoUntId").html(data);\n\t\t\n\t\t$("#gisMapDivId").addClass("hidden");\n\t\t$("#gisMapTableId tr").remove();\n\t}\n\t\n}', 'locationRows': 0, 'selectedVillages': 0}
+2026-08-30 23:19:48 | ERROR    | [Asset] Total Units changed at stage=Excel value received: expected='2' actual=''
+2026-08-30 23:19:48 | INFO     | Asset field=Asset Type found=True visible=True enabled=True excel='Immovable' before=''
+2026-08-30 23:19:48 | DEBUG    | dropdown match selector=#astTypId original='Immovable' normalized='immovable' matched='Immovable' mode=exact
+2026-08-30 23:19:48 | INFO     | Asset field=Asset Type after='2' success=True
+2026-08-30 23:19:48 | INFO     | Asset field=Asset Category found=True visible=True enabled=True excel='Water Sources & Structures' before=''
+2026-08-30 23:19:48 | DEBUG    | dropdown match selector=#assetCategoryId original='Water Sources & Structures' normalized='water sources & structures' matched='Water Sources & Structures' mode=exact
+2026-08-30 23:19:48 | INFO     | Asset field=Asset Category after='10' success=True
+2026-08-30 23:19:48 | INFO     | Asset field=Asset Sub Category found=True visible=True enabled=True excel='Water Tank' before=''
+2026-08-30 23:19:48 | DEBUG    | dropdown match selector=#astSubCtgryId original='Water Tank' normalized='water tank' matched='Water Tank' mode=exact
+2026-08-30 23:19:48 | INFO     | Asset Sub Category callback completed; Total Units reset is complete and ready for final entry
+2026-08-30 23:19:48 | INFO     | Asset field=Asset Sub Category after='452' success=True
+2026-08-30 23:19:48 | INFO     | Asset field=Total Units found=True visible=True enabled=True excel='2' before=''
+2026-08-30 23:19:48 | INFO     | Asset field=Total Units after='2' success=True
+2026-08-30 23:19:48 | INFO     | [Asset] Immediately after fill totalUntId='2' expected='2' state={'exists': True, 'value': '2', 'name': 'assetDetails.astNumOfUnt', 'onchange': None, 'onkeyup': 'resetassetnoofUnit(this.value)', 'resetFunctionLoaded': True, 'resetFunctionSource': 'function resetassetnoofUnit(data){\n\tif($("#astUntTypHiddId").val()==2){\n\t\t$("#totalNoUntId").html(data);\n\t\t\n\t\t$("#gisMapDivId").addClass("hidden");\n\t\t$("#gisMapTableId tr").remove();\n\t}\n\t\n}', 'locationRows': 0, 'selectedVillages': 0}
+2026-08-30 23:19:48 | INFO     | [Asset] Total Units trace stage=Immediately after fill events=[{'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112188258}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112188258}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112188258}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112188258}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112188392}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112188392}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112188392}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112188620}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112188620}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112188620}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112188620}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112188620}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112188620}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112188620}, {'kind': 'mutation:attributes', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112188781}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112188782}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112188782}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112188782}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112188782}, {'kind': 'mutation:attributes', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112188782}, {'kind': 'mutation:attributes', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112188782}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112188782}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112188782}, {'kind': 'keyup', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112188876}, {'kind': 'mutation:childList', 'value': '', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112188876}, {'kind': 'input', 'value': '2', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112188882}, {'kind': 'keyup', 'value': '2', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112188883}, {'kind': 'mutation:childList', 'value': '2', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112188883}]
+2026-08-30 23:19:48 | INFO     | Asset field=Unit Cost found=True visible=True enabled=True excel='10000' before=''
+2026-08-30 23:19:48 | INFO     | Asset field=Unit Cost after='10000' success=True
+2026-08-30 23:19:48 | INFO     | Coverage Area before click checked=False enabled=True visible=True
+2026-08-30 23:19:48 | INFO     | [Asset] Before Coverage Area click totalUntId='2' expected='2' state={'exists': True, 'value': '2', 'name': 'assetDetails.astNumOfUnt', 'onchange': None, 'onkeyup': 'resetassetnoofUnit(this.value)', 'resetFunctionLoaded': True, 'resetFunctionSource': 'function resetassetnoofUnit(data){\n\tif($("#astUntTypHiddId").val()==2){\n\t\t$("#totalNoUntId").html(data);\n\t\t\n\t\t$("#gisMapDivId").addClass("hidden");\n\t\t$("#gisMapTableId tr").remove();\n\t}\n\t\n}', 'locationRows': 0, 'selectedVillages': 0}
+2026-08-30 23:19:48 | INFO     | [Asset] Total Units trace stage=Before Coverage Area click events=[{'kind': 'change', 'value': '2', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112188964}]
+2026-08-30 23:19:49 | INFO     | [Asset] After Coverage Area selection totalUntId='2' expected='2' state={'exists': True, 'value': '2', 'name': 'assetDetails.astNumOfUnt', 'onchange': None, 'onkeyup': 'resetassetnoofUnit(this.value)', 'resetFunctionLoaded': True, 'resetFunctionSource': 'function resetassetnoofUnit(data){\n\tif($("#astUntTypHiddId").val()==2){\n\t\t$("#totalNoUntId").html(data);\n\t\t\n\t\t$("#gisMapDivId").addClass("hidden");\n\t\t$("#gisMapTableId tr").remove();\n\t}\n\t\n}', 'locationRows': 0, 'selectedVillages': 0}
+2026-08-30 23:19:49 | INFO     | [Asset] Total Units trace stage=After Coverage Area selection events=[{'kind': 'mutation:childList', 'value': '2', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112189013}]
+2026-08-30 23:19:49 | INFO     | [Asset] After village selection totalUntId='2' expected='2' state={'exists': True, 'value': '2', 'name': 'assetDetails.astNumOfUnt', 'onchange': None, 'onkeyup': 'resetassetnoofUnit(this.value)', 'resetFunctionLoaded': True, 'resetFunctionSource': 'function resetassetnoofUnit(data){\n\tif($("#astUntTypHiddId").val()==2){\n\t\t$("#totalNoUntId").html(data);\n\t\t\n\t\t$("#gisMapDivId").addClass("hidden");\n\t\t$("#gisMapTableId tr").remove();\n\t}\n\t\n}', 'locationRows': 0, 'selectedVillages': 0}
+2026-08-30 23:19:49 | INFO     | [Asset] Total Units trace stage=After village selection events=[{'kind': 'mutation:childList', 'value': '2', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112189386}, {'kind': 'mutation:childList', 'value': '2', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112189386}]
+2026-08-30 23:19:49 | INFO     | [Asset] After clicking village move button totalUntId='2' expected='2' state={'exists': True, 'value': '2', 'name': 'assetDetails.astNumOfUnt', 'onchange': None, 'onkeyup': 'resetassetnoofUnit(this.value)', 'resetFunctionLoaded': True, 'resetFunctionSource': 'function resetassetnoofUnit(data){\n\tif($("#astUntTypHiddId").val()==2){\n\t\t$("#totalNoUntId").html(data);\n\t\t\n\t\t$("#gisMapDivId").addClass("hidden");\n\t\t$("#gisMapTableId tr").remove();\n\t}\n\t\n}', 'locationRows': 1, 'selectedVillages': 1}
+2026-08-30 23:19:49 | INFO     | [Asset] Total Units trace stage=After clicking village move button events=[{'kind': 'mutation:childList', 'value': '2', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112189951}, {'kind': 'mutation:childList', 'value': '2', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112189951}, {'kind': 'mutation:childList', 'value': '2', 'id': 'totalUntId', 'name': 'assetDetails.astNumOfUnt', 'time': 1788112189951}]
+2026-08-30 23:19:49 | WARNING  | row=0 activity_output_popup Page.wait_for_function() takes 2 positional arguments but 3 positional arguments (and 1 keyword-only argument) were given
+2026-08-30 23:19:50 | ERROR    | FAIL | row=0 field=activity_output | Page.wait_for_function() takes 2 positional arguments but 3 positional arguments (and 1 keyword-only argument) were given
+2026-08-30 23:19:50 | ERROR    | row 0 FAILED (single attempt): [activity_output] Page.wait_for_function() takes 2 positional arguments but 3 positional arguments (and 1 keyword-only argument) were given
+2026-08-30 23:19:50 | ERROR    | row 0 FAILED after single attempt
+2026-08-30 23:19:50 | INFO     | DONE 12s total=1 success=0 failed=1 rate=0.0%
