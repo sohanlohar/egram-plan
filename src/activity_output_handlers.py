@@ -422,13 +422,35 @@ class TrainingOutputHandler(StructuredModalOutputHandler):
         OutputFieldSpec("Training Category", "training_category", "#trngCatCdId", "select", _normalize_text),
         OutputFieldSpec("Organized By", "organized_by", "#trngOrgByCdId", "select", _normalize_text),
         OutputFieldSpec("Subject of Training", "subject_of_training", "#trngSubjectId", "text"),
+        OutputFieldSpec("Village", "village", "#trngLocCd", "select", _normalize_text),
+        OutputFieldSpec("Amount", "amount", "#trngAmount", "text"),
         OutputFieldSpec("Total Trainees", "total_trainees", "#totTraineesId", "text"),
         OutputFieldSpec("Total Duration", "total_duration", "#totDurationDaysId", "text"),
     )
 
     @classmethod
     def validate_detail_record(cls, detail_record: dict, activity_key: str) -> None:
-        super().validate_detail_record(detail_record, activity_key)
+        for spec in cls.FIELD_SPECS:
+            if spec.key == "village":
+                continue
+            if not _value(detail_record, spec.key):
+                raise ActivityOutputError(
+                    f"{cls._error_prefix()} output data invalid for Activity_Key {activity_key}: {spec.label} is required"
+                )
+
+        amount = _value(detail_record, "amount")
+        if not amount:
+            raise ActivityOutputError(
+                f"Training output data invalid for Activity_Key {activity_key}: Amount is required"
+            )
+        if not re.fullmatch(r"\d+(?:\.\d+)?", amount):
+            raise ActivityOutputError(
+                f"Training output data invalid for Activity_Key {activity_key}: Amount must be numeric"
+            )
+        if float(amount) <= 0:
+            raise ActivityOutputError(
+                f"Training output data invalid for Activity_Key {activity_key}: Amount must be greater than zero"
+            )
 
         trainees = _value(detail_record, "total_trainees")
         duration = _value(detail_record, "total_duration")
@@ -459,7 +481,21 @@ class TrainingOutputHandler(StructuredModalOutputHandler):
                 f"Training output data invalid for Activity_Key {activity_key}: Total Duration exceeds maxlength 3"
             )
 
+    def _first_available_dropdown_option(self, selector: str) -> str:
+        options = self.page.eval_on_selector(
+            selector,
+            "el => Array.from(el.options).filter(o => (o.value || '').trim() !== '').map(o => ({value: o.value, text: (o.textContent || '').trim()}))",
+        )
+        if not options:
+            raise ActivityOutputError(f"No valid options available in {selector}")
+        return str(options[0]["text"] or options[0]["value"] or "").strip()
+
     def _fill_fields(self, detail_record: dict) -> None:
+        village_value = _value(detail_record, "village")
+        if not village_value:
+            village_value = self._first_available_dropdown_option("#trngLocCd")
+            detail_record["village"] = village_value
+
         super()._fill_fields(detail_record)
 
         # Some portal runs re-render Organized By after category callbacks settle.

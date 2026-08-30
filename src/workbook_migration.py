@@ -50,6 +50,8 @@ TRAINING_HEADERS = [
     "Training Category",
     "Organized By",
     "Subject of Training",
+    "Village",
+    "Amount",
     "Total Trainees",
     "Total Duration",
 ]
@@ -59,6 +61,8 @@ INLINE_TRAINING_SOURCE_HEADERS = {
     "training_organized_by": "Organized By",
     "training_organised_by": "Organized By",
     "training_subject": "Subject of Training",
+    "training_village": "Village",
+    "training_amount": "Amount",
     "training_total_trainees": "Total Trainees",
     "training_total_duration_days": "Total Duration",
 }
@@ -170,6 +174,8 @@ def migrate_input_workbook(workbook_path: str) -> MigrationReport:
                 "Training Category": "",
                 "Organized By": "",
                 "Subject of Training": "",
+                "Village": "",
+                "Amount": "",
                 "Total Trainees": "",
                 "Total Duration": "",
             }

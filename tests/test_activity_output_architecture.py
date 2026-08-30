@@ -46,23 +46,60 @@ class ActivityArchitectureTests(unittest.TestCase):
             "training_category": "Skill",
             "organized_by": "Department",
             "subject_of_training": "Watershed",
+            "village": "Bapod",
+            "amount": "2500",
             "total_trainees": "abcd",
             "total_duration": "5",
         }
         with self.assertRaisesRegex(ActivityOutputError, "Total Trainees must be numeric"):
             TrainingOutputHandler.validate_detail_record(detail, "ACT-0001")
 
-    def test_training_validation_required(self) -> None:
+    def test_training_validation_allows_blank_village_and_rejects_invalid_amount(self) -> None:
         detail = {
             "activity_key": "ACT-0001",
-            "training_category": "",
+            "training_category": "Skill",
             "organized_by": "Department",
             "subject_of_training": "Watershed",
+            "village": "",
+            "amount": "abc",
             "total_trainees": "10",
             "total_duration": "5",
         }
-        with self.assertRaisesRegex(ActivityOutputError, "Training Category is required"):
+        with self.assertRaisesRegex(ActivityOutputError, "Amount must be numeric"):
             TrainingOutputHandler.validate_detail_record(detail, "ACT-0001")
+
+    def test_excel_training_record_maps_village_and_amount_columns(self) -> None:
+        with tempfile.TemporaryDirectory() as td:
+            file_path = Path(td) / "input.xlsx"
+            activities_df = pd.DataFrame([
+                {
+                    "Activity_Key": "ACT-2001",
+                    "Theme": "A",
+                    "Activity Output": "Training/Capacity Building",
+                    "Final Action": "Save",
+                }
+            ])
+            training_df = pd.DataFrame([
+                {
+                    "Activity_Key": "ACT-2001",
+                    "Training Category": "Skill",
+                    "Organized By": "Department",
+                    "Subject of Training": "Watershed",
+                    "Village": "Bapod",
+                    "Amount": "2500",
+                    "Total Trainees": "10",
+                    "Total Duration": "5",
+                }
+            ])
+            with pd.ExcelWriter(file_path, engine="openpyxl") as writer:
+                activities_df.to_excel(writer, sheet_name="Activities", index=False)
+                training_df.to_excel(writer, sheet_name="Training", index=False)
+
+            reader = ExcelReader(str(file_path))
+            reader.load()
+            detail = reader.get_output_record("Training/Capacity Building", "ACT-2001")
+            self.assertEqual(detail["village"], "Bapod")
+            self.assertEqual(detail["amount"], "2500")
 
 
 class WorkbookIndexTests(unittest.TestCase):
