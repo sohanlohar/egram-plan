@@ -12,7 +12,12 @@ import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 import form_filler
-from activity_output_handlers import ActivityOutputError, ActivityOutputHandlerRegistry, TrainingOutputHandler
+from activity_output_handlers import (
+    ActivityOutputError,
+    ActivityOutputHandlerRegistry,
+    AssetOutputHandler,
+    TrainingOutputHandler,
+)
 from activity_output_registry import normalize_output_type
 from excel_reader import ExcelReader, normalize_activity_key, normalize_final_action
 
@@ -68,6 +73,21 @@ class ActivityArchitectureTests(unittest.TestCase):
         with self.assertRaisesRegex(ActivityOutputError, "Amount must be numeric"):
             TrainingOutputHandler.validate_detail_record(detail, "ACT-0001")
 
+    def test_asset_validation_numeric(self) -> None:
+        detail = {
+            "activity_key": "ACT-0002",
+            "asset_type": "Immovable",
+            "asset_category": "Water Sources & Structures",
+            "asset_sub_category": "Water Tank",
+            "total_units": "0",
+            "unit_cost": "1200",
+            "coverage_area": "Area",
+            "census_village": "Kundwasa",
+            "units_per_village": "5",
+        }
+        with self.assertRaisesRegex(ActivityOutputError, "Total Units must be greater than zero"):
+            AssetOutputHandler.validate_detail_record(detail, "ACT-0002")
+
     def test_excel_training_record_maps_village_and_amount_columns(self) -> None:
         with tempfile.TemporaryDirectory() as td:
             file_path = Path(td) / "input.xlsx"
@@ -100,6 +120,42 @@ class ActivityArchitectureTests(unittest.TestCase):
             detail = reader.get_output_record("Training/Capacity Building", "ACT-2001")
             self.assertEqual(detail["village"], "Bapod")
             self.assertEqual(detail["amount"], "2500")
+
+    def test_excel_asset_record_maps_fields(self) -> None:
+        with tempfile.TemporaryDirectory() as td:
+            file_path = Path(td) / "input.xlsx"
+            activities_df = pd.DataFrame([
+                {
+                    "Activity_Key": "ACT-2002",
+                    "Theme": "A",
+                    "Activity Output": "Asset",
+                    "Final Action": "Save",
+                }
+            ])
+            asset_df = pd.DataFrame([
+                {
+                    "Activity_Key": "ACT-2002",
+                    "Asset Type": "Immovable",
+                    "Asset Category": "Water Sources & Structures",
+                    "Asset Sub Category": "Water Tank",
+                    "Total Units": "1",
+                    "Unit Cost": "1200",
+                    "Coverage Area": "Area",
+                    "Census Village": "Kundwasa",
+                    "Units Per Village": "1",
+                }
+            ])
+            with pd.ExcelWriter(file_path, engine="openpyxl") as writer:
+                activities_df.to_excel(writer, sheet_name="Activities", index=False)
+                asset_df.to_excel(writer, sheet_name="Asset", index=False)
+
+            reader = ExcelReader(str(file_path))
+            reader.load()
+            detail = reader.get_output_record("Asset", "ACT-2002")
+            self.assertEqual(detail["asset_type"], "Immovable")
+            self.assertEqual(detail["asset_category"], "Water Sources & Structures")
+            self.assertEqual(detail["census_village"], "Kundwasa")
+            self.assertEqual(detail["units_per_village"], "1")
 
 
 class WorkbookIndexTests(unittest.TestCase):

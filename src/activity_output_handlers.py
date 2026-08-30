@@ -431,25 +431,15 @@ class TrainingOutputHandler(StructuredModalOutputHandler):
     @classmethod
     def validate_detail_record(cls, detail_record: dict, activity_key: str) -> None:
         for spec in cls.FIELD_SPECS:
-            if spec.key == "village":
-                continue
-            if not _value(detail_record, spec.key):
+            if spec.key != "village" and not _value(detail_record, spec.key):
                 raise ActivityOutputError(
-                    f"{cls._error_prefix()} output data invalid for Activity_Key {activity_key}: {spec.label} is required"
+                    f"Training output data invalid for Activity_Key {activity_key}: {spec.label} is required"
                 )
 
         amount = _value(detail_record, "amount")
-        if not amount:
-            raise ActivityOutputError(
-                f"Training output data invalid for Activity_Key {activity_key}: Amount is required"
-            )
         if not re.fullmatch(r"\d+(?:\.\d+)?", amount):
             raise ActivityOutputError(
                 f"Training output data invalid for Activity_Key {activity_key}: Amount must be numeric"
-            )
-        if float(amount) <= 0:
-            raise ActivityOutputError(
-                f"Training output data invalid for Activity_Key {activity_key}: Amount must be greater than zero"
             )
 
         trainees = _value(detail_record, "total_trainees")
@@ -481,21 +471,7 @@ class TrainingOutputHandler(StructuredModalOutputHandler):
                 f"Training output data invalid for Activity_Key {activity_key}: Total Duration exceeds maxlength 3"
             )
 
-    def _first_available_dropdown_option(self, selector: str) -> str:
-        options = self.page.eval_on_selector(
-            selector,
-            "el => Array.from(el.options).filter(o => (o.value || '').trim() !== '').map(o => ({value: o.value, text: (o.textContent || '').trim()}))",
-        )
-        if not options:
-            raise ActivityOutputError(f"No valid options available in {selector}")
-        return str(options[0]["text"] or options[0]["value"] or "").strip()
-
     def _fill_fields(self, detail_record: dict) -> None:
-        village_value = _value(detail_record, "village")
-        if not village_value:
-            village_value = self._first_available_dropdown_option("#trngLocCd")
-            detail_record["village"] = village_value
-
         super()._fill_fields(detail_record)
 
         # Some portal runs re-render Organized By after category callbacks settle.
@@ -517,11 +493,160 @@ class TrainingOutputHandler(StructuredModalOutputHandler):
             _select_by_visible_text_stable(self.page, "#trngOrgByCdId", _value(detail_record, "organized_by"))
 
 
+class AssetOutputHandler(StructuredModalOutputHandler):
+    TITLE_EXPECTED_TEXT = "asset details"
+    FIELD_SPECS = (
+        OutputFieldSpec("Asset Type", "asset_type", "#astTypId", "select", _normalize_text),
+        OutputFieldSpec("Asset Category", "asset_category", "#assetCategoryId", "select", _normalize_text),
+        OutputFieldSpec("Asset Sub Category", "asset_sub_category", "#astSubCtgryId", "select", _normalize_text),
+        OutputFieldSpec("Total Units", "total_units", "#totalUntId", "text"),
+        OutputFieldSpec("Unit Cost", "unit_cost", "#untCostId", "text"),
+    )
+
+    @classmethod
+    def validate_detail_record(cls, detail_record: dict, activity_key: str) -> None:
+        super().validate_detail_record(detail_record, activity_key)
+        for key, label in (("coverage_area", "Coverage Area"), ("census_village", "Census Village"), ("units_per_village", "Units Per Village")):
+            if not _value(detail_record, key):
+                raise ActivityOutputError(f"Asset output data invalid for Activity_Key {activity_key}: {label} is required")
+        if _value(detail_record, "coverage_area").lower() not in {"area", "a"}:
+            raise ActivityOutputError(f"Asset output data invalid for Activity_Key {activity_key}: Coverage Area must be 'Area'")
+        for key, label in (("total_units", "Total Units"), ("units_per_village", "Units Per Village")):
+            value = _value(detail_record, key)
+            if not value.isdigit():
+                raise ActivityOutputError(f"Asset output data invalid for Activity_Key {activity_key}: {label} must be numeric")
+            if int(value) <= 0:
+                raise ActivityOutputError(f"Asset output data invalid for Activity_Key {activity_key}: {label} must be greater than zero")
+        unit_cost = _value(detail_record, "unit_cost")
+        if not re.fullmatch(r"\d+(?:\.\d+)?", unit_cost) or float(unit_cost) <= 0:
+            raise ActivityOutputError(f"Asset output data invalid for Activity_Key {activity_key}: Unit Cost must be numeric and greater than zero")
+
+    def _open_modal(self, activity_key: str) -> None:
+        section = self.page.locator("#outputActvityTypeDivId")
+        section.wait_for(state="visible", timeout=SELECTOR_TIMEOUT)
+        radio = self.page.locator("#outputActvityAstId101")
+        logger.info("[%s] Asset radio found=%s visible=%s enabled=%s checked_before=%s", activity_key, bool(radio.count()), radio.is_visible() if radio.count() else False, radio.is_enabled() if radio.count() else False, radio.is_checked() if radio.count() else False)
+        if not radio.count():
+            raise ActivityOutputError("Asset radio not found: #outputActvityAstId101")
+        radio.scroll_into_view_if_needed()
+        radio.click()
+        logger.info("[%s] Asset radio checked_after=%s", activity_key, radio.is_checked())
+        if not radio.is_checked():
+            radio.click(force=True)
+        if not radio.is_checked():
+            self.page.evaluate("document.querySelector('#outputActvityAstId101').click()")
+        if not radio.is_checked():
+            raise ActivityOutputError("Asset radio did not become checked")
+
+        modal = self.page.locator("#showAssetDetailsPopup")
+        logger.info("[%s] Asset modal selector=#showAssetDetailsPopup", activity_key)
+        try:
+            self.page.wait_for_function(
+                """
+                () => {
+                    const modal = document.querySelector('#showAssetDetailsPopup');
+                    if (!modal) return false;
+                    const style = window.getComputedStyle(modal);
+                    const field = modal.querySelector('#astTypId');
+                    const shown = modal.classList.contains('show') || modal.classList.contains('in');
+                    const displayed = style.display !== 'none' && style.visibility !== 'hidden';
+                    const ariaOpen = modal.getAttribute('aria-hidden') === 'false';
+                    return (shown && displayed) || ariaOpen || (displayed && !!field);
+                }
+                """,
+                timeout=SELECTOR_TIMEOUT,
+            )
+            modal.wait_for(state="attached", timeout=SELECTOR_TIMEOUT)
+            logger.info("[%s] Asset popup opened", activity_key)
+        except PlaywrightTimeout as exc:
+            diagnostics = self.page.evaluate(
+                """
+                () => {
+                    const modal = document.querySelector('#showAssetDetailsPopup');
+                    const style = modal ? getComputedStyle(modal) : null;
+                    const field = modal ? modal.querySelector('#astTypId') : null;
+                    return {
+                        found: !!modal,
+                        className: modal ? modal.className : null,
+                        display: style ? style.display : null,
+                        visibility: style ? style.visibility : null,
+                        ariaHidden: modal ? modal.getAttribute('aria-hidden') : null,
+                        assetTypeFound: !!field,
+                        assetTypeVisible: !!field && getComputedStyle(field).display !== 'none'
+                    };
+                }
+                """
+            )
+            logger.error("[%s] Asset popup did not open; diagnostics=%s", activity_key, diagnostics)
+            raise ActivityOutputError(
+                f"Asset popup did not open: #showAssetDetailsPopup; diagnostics={diagnostics}"
+            ) from exc
+
+    def _fill_fields(self, detail_record: dict) -> None:
+        for spec in self.FIELD_SPECS:
+            value = _value(detail_record, spec.key)
+            field = self.page.locator(spec.selector)
+            logger.info("Asset field=%s found=%s visible=%s enabled=%s excel=%r before=%r", spec.label, bool(field.count()), field.is_visible() if field.count() else False, field.is_enabled() if field.count() else False, value, field.input_value() if field.count() else None)
+            if not field.count():
+                raise ActivityOutputError(f"Asset field not found: {spec.label} ({spec.selector})")
+            field.wait_for(state="visible", timeout=SELECTOR_TIMEOUT)
+            if spec.field_type == "select":
+                _select_by_visible_text_stable(self.page, spec.selector, value)
+            else:
+                field.fill(value)
+            after = field.input_value()
+            logger.info("Asset field=%s after=%r success=%s", spec.label, after, bool(after))
+            if spec.field_type == "text" and after != value:
+                raise ActivityOutputError(f"Asset field did not persist: {spec.label}")
+
+        coverage = self.page.locator("input#assetCovgeAreaId, input[name='assetDetails.astCvrgCd'][value='A']").first
+        coverage.check(force=True)
+        if not coverage.is_checked():
+            raise ActivityOutputError("Coverage Area radio did not become checked")
+
+        available = self.page.locator("#avlPlanUnitsVillId")
+        available.wait_for(state="visible", timeout=SELECTOR_TIMEOUT)
+        options = self.page.locator("#avlPlanUnitsVillId option").all()
+        village = _value(detail_record, "census_village")
+        match = next((option for option in options if _dropdown_match_key(option.inner_text()) == _dropdown_match_key(village)), None)
+        if match is None:
+            raise ActivityOutputError(f"Census Village not found: {village}")
+        available.select_option(value=match.get_attribute("value"))
+        self.page.locator("#selectedPlanUnitsForVillId input[value='>>']").click(force=True)
+
+        selected = self.page.locator("#selPlanUnitsVillId")
+        self.page.wait_for_function("""({ village }) => Array.from(document.querySelectorAll('#selPlanUnitsVillId option')).some(o => o.textContent.trim().toLowerCase() === village)""", {"village": _dropdown_match_key(village)}, timeout=SELECTOR_TIMEOUT)
+        unit_input = self.page.locator("#astNoOfUntId0, input[name^='assetDetails.assetLocationList'][name$='.astNoOfUnt']").first
+        unit_input.wait_for(state="visible", timeout=SELECTOR_TIMEOUT)
+        units = _value(detail_record, "units_per_village")
+        logger.info("Units Per Village input found=%s id=%s before=%r expected=%r", bool(unit_input.count()), unit_input.get_attribute("id"), unit_input.input_value(), units)
+        unit_input.fill(units)
+        unit_input.press("Tab")
+        after = unit_input.input_value()
+        logger.info("Units Per Village after=%r success=%s", after, after == units)
+        if after != units:
+            raise ActivityOutputError(f"Units Per Village value did not persist: expected {units!r}, got {after!r}")
+
+    def _submit(self, activity_key: str) -> None:
+        modal = self.page.locator("#showAssetDetailsPopup")
+        submit = modal.locator("button[onclick*='validationAsset'], input[onclick*='validationAsset']").first
+        if not submit.count():
+            raise ActivityOutputError("Asset Save button not found")
+        submit.wait_for(state="visible", timeout=SELECTOR_TIMEOUT)
+        if not submit.is_enabled():
+            raise ActivityOutputError("Asset Save button is disabled")
+        logger.info("[%s] Clicking Asset Save", activity_key)
+        submit.click()
+        modal.wait_for(state="hidden", timeout=SELECTOR_TIMEOUT)
+        logger.info("[%s] Asset popup saved and closed", activity_key)
+
+
 class ActivityOutputHandlerRegistry:
     def __init__(self, page: Page) -> None:
         self.page = page
         self._handlers: dict[str, type[BaseOutputHandler]] = {
             "training": TrainingOutputHandler,
+            "asset": AssetOutputHandler,
         }
 
     def resolve(self, output_type: str) -> BaseOutputHandler:

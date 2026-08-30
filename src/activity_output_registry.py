@@ -49,7 +49,7 @@ ACTIVITY_OUTPUT_DEFINITIONS: dict[str, ActivityOutputDefinition] = {
         radio_id="outputActvityAstId101",
         modal_id="showAssetDetailsPopup",
         handler_name="AssetOutputHandler",
-        implemented=False,
+        implemented=True,
     ),
 }
 

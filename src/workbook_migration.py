@@ -56,6 +56,18 @@ TRAINING_HEADERS = [
     "Total Duration",
 ]
 
+ASSET_HEADERS = [
+    "Activity_Key",
+    "Asset Type",
+    "Asset Category",
+    "Asset Sub Category",
+    "Total Units",
+    "Unit Cost",
+    "Coverage Area",
+    "Census Village",
+    "Units Per Village",
+]
+
 INLINE_TRAINING_SOURCE_HEADERS = {
     "training_category": "Training Category",
     "training_organized_by": "Organized By",
@@ -67,12 +79,24 @@ INLINE_TRAINING_SOURCE_HEADERS = {
     "training_total_duration_days": "Total Duration",
 }
 
+INLINE_ASSET_SOURCE_HEADERS = {
+    "asset_type": "Asset Type",
+    "asset_category": "Asset Category",
+    "asset_sub_category": "Asset Sub Category",
+    "asset_total_units": "Total Units",
+    "asset_unit_cost": "Unit Cost",
+    "asset_coverage_area": "Coverage Area",
+    "asset_census_village": "Census Village",
+    "asset_units_per_village": "Units Per Village",
+}
+
 
 @dataclass
 class MigrationReport:
     backup_path: Path
     activity_rows: int
     training_rows: int
+    asset_rows: int
     migrated_columns: list[str]
     created_sheets: list[str]
 
@@ -123,9 +147,11 @@ def migrate_input_workbook(workbook_path: str) -> MigrationReport:
 
     activity_records: list[dict[str, str]] = []
     training_records: list[dict[str, str]] = []
+    asset_records: list[dict[str, str]] = []
 
     seen_activity_keys: set[str] = set()
     seen_training_keys: set[str] = set()
+    seen_asset_keys: set[str] = set()
 
     for row_idx, row in enumerate(rows[1:], start=1):
         row_values = ["" if v is None else str(v).strip() for v in row]
@@ -189,6 +215,29 @@ def migrate_input_workbook(workbook_path: str) -> MigrationReport:
             seen_training_keys.add(key)
             training_records.append(training_record)
 
+        output_type = normalize_output_type(activity_record.get("activity_output_type", ""))
+        if output_type == "asset":
+            asset_record = {
+                "Activity_Key": key,
+                "Asset Type": "",
+                "Asset Category": "",
+                "Asset Sub Category": "",
+                "Total Units": "",
+                "Unit Cost": "",
+                "Coverage Area": "",
+                "Census Village": "",
+                "Units Per Village": "",
+            }
+            for src, dst in INLINE_ASSET_SOURCE_HEADERS.items():
+                idx = normalized_headers.get(src)
+                if idx is not None and idx < len(row_values):
+                    asset_record[dst] = row_values[idx]
+
+            if key in seen_asset_keys:
+                raise WorkbookMigrationError(f"Duplicate Asset output data for Activity_Key {key}")
+            seen_asset_keys.add(key)
+            asset_records.append(asset_record)
+
     if ACTIVITY_SHEET_NAME in wb.sheetnames:
         del wb[ACTIVITY_SHEET_NAME]
     activities_ws = wb.create_sheet(ACTIVITY_SHEET_NAME, 0)
@@ -209,6 +258,14 @@ def migrate_input_workbook(workbook_path: str) -> MigrationReport:
     for record in training_records:
         training_ws.append([record[h] for h in TRAINING_HEADERS])
 
+    if "Asset" in wb.sheetnames:
+        del wb["Asset"]
+    asset_ws = wb.create_sheet("Asset")
+    created_sheets.append("Asset")
+    asset_ws.append(ASSET_HEADERS)
+    for record in asset_records:
+        asset_ws.append([record[h] for h in ASSET_HEADERS])
+
     for sheet_name in [
         ACTIVITY_OUTPUT_DEFINITIONS["community_service"].sheet_name,
         ACTIVITY_OUTPUT_DEFINITIONS["beneficiaries"].sheet_name,
@@ -227,7 +284,8 @@ def migrate_input_workbook(workbook_path: str) -> MigrationReport:
         backup_path=backup,
         activity_rows=len(activity_records),
         training_rows=len(training_records),
-        migrated_columns=list(INLINE_TRAINING_SOURCE_HEADERS.keys()),
+        asset_rows=len(asset_records),
+        migrated_columns=list(INLINE_TRAINING_SOURCE_HEADERS.keys()) + list(INLINE_ASSET_SOURCE_HEADERS.keys()),
         created_sheets=created_sheets,
     )
 
@@ -268,6 +326,7 @@ def main() -> None:
     print(f"Backup created: {report.backup_path}")
     print(f"Activities rows: {report.activity_rows}")
     print(f"Training rows: {report.training_rows}")
+    print(f"Asset rows: {report.asset_rows}")
     print(f"Sheets created: {', '.join(report.created_sheets)}")
 
 

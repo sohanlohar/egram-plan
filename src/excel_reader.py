@@ -78,6 +78,17 @@ HEADER_ALIASES = {
     "village": "village",
     "training_amount": "amount",
     "amount": "amount",
+    "asset_type": "asset_type",
+    "asset_category": "asset_category",
+    "asset_sub_category": "asset_sub_category",
+    "asset_total_units": "total_units",
+    "total_units": "total_units",
+    "asset_unit_cost": "unit_cost",
+    "unit_cost": "unit_cost",
+    "asset_coverage_area": "coverage_area",
+    "coverage_area": "coverage_area",
+    "census_village": "census_village",
+    "units_per_village": "units_per_village",
     "major_head": "major_head_choice",
     "major_head_prompt": "major_head_choice",
     "minor_head": "minor_head_choice",
@@ -95,6 +106,18 @@ TRAINING_COLUMNS = [
     "amount",
     "total_trainees",
     "total_duration",
+]
+
+ASSET_COLUMNS = [
+    "activity_key",
+    "asset_type",
+    "asset_category",
+    "asset_sub_category",
+    "total_units",
+    "unit_cost",
+    "coverage_area",
+    "census_village",
+    "units_per_village",
 ]
 
 FINAL_ACTION_ALIASES = {
@@ -259,6 +282,11 @@ class ExcelReader:
                     if col not in raw.columns:
                         raw[col] = ""
                 use_df = raw[TRAINING_COLUMNS]
+            elif canonical == "asset":
+                for col in ASSET_COLUMNS:
+                    if col not in raw.columns:
+                        raw[col] = ""
+                use_df = raw[ASSET_COLUMNS]
             else:
                 if "activity_key" not in raw.columns:
                     raw["activity_key"] = ""
@@ -271,6 +299,8 @@ class ExcelReader:
             for _, row in use_df.iterrows():
                 record = row.to_dict()  # type: ignore[arg-type]
                 if canonical == "training" and self._has_training_payload(record):
+                    shared_candidates.append(record.copy())
+                if canonical == "asset" and self._has_asset_payload(record):
                     shared_candidates.append(record.copy())
 
                 key = normalize_activity_key(record.get("activity_key", ""))
@@ -294,5 +324,13 @@ class ExcelReader:
         return any(
             str(record.get(col, "") or "").strip()
             for col in TRAINING_COLUMNS
+            if col != "activity_key"
+        )
+
+    @staticmethod
+    def _has_asset_payload(record: dict) -> bool:
+        return any(
+            str(record.get(col, "") or "").strip()
+            for col in ASSET_COLUMNS
             if col != "activity_key"
         )
