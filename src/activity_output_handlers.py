@@ -471,8 +471,62 @@ class TrainingOutputHandler(StructuredModalOutputHandler):
                 f"Training output data invalid for Activity_Key {activity_key}: Total Duration exceeds maxlength 3"
             )
 
+    # (label, detail_record key, selector) for the extra fields we log in detail.
+    _CAPACITY_LOG_SPECS = (
+        ("Total Trainees", "total_trainees", "#totTraineesId"),
+        ("Total Duration", "total_duration", "#totDurationDaysId"),
+    )
+
+    # Basename of the Excel workbook this handler reads Training data from (see config/config.json input_file).
+    EXCEL_FILE_NAME = "input.xlsx"
+
+    def _first_available_dropdown_option(self, selector: str) -> str:
+        options = self.page.eval_on_selector(
+            selector,
+            "el => Array.from(el.options).filter(o => (o.value || '').trim() !== '').map(o => ({value: o.value, text: (o.textContent || '').trim()}))",
+        )
+        if not options:
+            raise ActivityOutputError(f"No valid options available in {selector}")
+        return str(options[0]["text"] or options[0]["value"] or "").strip()
+
     def _fill_fields(self, detail_record: dict) -> None:
+        logger.info("[Training] Using Excel file: %s", self.EXCEL_FILE_NAME)
+
+        village_field = self.page.locator("#trngLocCd")
+        village_found = bool(village_field.count())
+        village_value = _value(detail_record, "village")
+        logger.info("[Training] Village from Excel = %s", village_value)
+        logger.info("[Training] Village dropdown found = %s", village_found)
+        if not village_value:
+            village_value = self._first_available_dropdown_option("#trngLocCd")
+            detail_record["village"] = village_value
+            logger.info("[Training] Village blank in Excel, auto-selected fallback = %s", village_value)
+
+        for label, key, selector in self._CAPACITY_LOG_SPECS:
+            excel_value = _value(detail_record, key)
+            field = self.page.locator(selector)
+            found = bool(field.count())
+            before = field.input_value().strip() if found else None
+            logger.info("[Training] %s from Excel = %s", label, excel_value)
+            logger.info("[Training] %s field found=%s value_before_fill=%r", label, found, before)
+
         super()._fill_fields(detail_record)
+
+        selected_text = self.page.locator("#trngLocCd option:checked").inner_text().strip() if village_found else ""
+        if _normalize_text(selected_text) == _normalize_text(village_value):
+            logger.info("[Training] Village selected successfully = %s", selected_text)
+        else:
+            logger.warning("[Training] Village selection mismatch: expected=%r actual=%r", village_value, selected_text)
+
+        for label, key, selector in self._CAPACITY_LOG_SPECS:
+            expected = _value(detail_record, key)
+            field = self.page.locator(selector)
+            after = field.input_value().strip() if field.count() else None
+            logger.info("[Training] %s value_after_fill=%r", label, after)
+            if after == expected:
+                logger.info("[Training] %s entered successfully", label)
+            else:
+                logger.warning("[Training] %s mismatch after fill: expected=%r actual=%r", label, expected, after)
 
         # Some portal runs re-render Organized By after category callbacks settle.
         try:
@@ -491,6 +545,12 @@ class TrainingOutputHandler(StructuredModalOutputHandler):
             )
         except PlaywrightTimeout:
             _select_by_visible_text_stable(self.page, "#trngOrgByCdId", _value(detail_record, "organized_by"))
+
+    def _verify_filled_values(self, detail_record: dict, activity_key: str) -> None:
+        super()._verify_filled_values(detail_record, activity_key)
+        for label, key, selector in self._CAPACITY_LOG_SPECS:
+            actual = self.page.locator(selector).input_value().strip()
+            logger.info("[Training] %s final verification value=%r (expected=%r)", label, actual, _value(detail_record, key))
 
 
 class AssetOutputHandler(StructuredModalOutputHandler):
@@ -583,6 +643,7 @@ class AssetOutputHandler(StructuredModalOutputHandler):
             ) from exc
 
     def _fill_fields(self, detail_record: dict) -> None:
+        self._active_detail_record = detail_record
         raw_total_units = detail_record.get("total_units")
         logger.info(
             "[Asset] Excel Total Units value=%r type=%s",
@@ -644,18 +705,68 @@ class AssetOutputHandler(StructuredModalOutputHandler):
         self.page.locator("#selectedPlanUnitsForVillId input[value='>>']").click(force=True)
         self._log_total_units("After clicking village move button", detail_record)
 
-        self.page.wait_for_function("""({ village }) => Array.from(document.querySelectorAll('#selPlanUnitsVillId option')).some(o => o.textContent.trim().toLowerCase() === village)""", {"village": _dropdown_match_key(village)}, timeout=SELECTOR_TIMEOUT)
-        unit_input = self.page.locator("#astNoOfUntId0").first
-        unit_input.wait_for(state="visible", timeout=SELECTOR_TIMEOUT)
-        units = _value(detail_record, "units_per_village")
-        logger.info("Units Per Village input found=%s id=%s before=%r expected=%r", bool(unit_input.count()), unit_input.get_attribute("id"), unit_input.input_value(), units)
-        unit_input.fill("")
-        unit_input.press_sequentially(units)
-        after = unit_input.input_value()
-        logger.info("Units Per Village after=%r success=%s", after, after == units)
-        if after != units:
-            raise ActivityOutputError(f"Units Per Village value did not persist: expected {units!r}, got {after!r}")
+        self.page.wait_for_function(
+            """({ village }) => Array.from(document.querySelectorAll('#selPlanUnitsVillId option')).some(o => o.textContent.trim().toLowerCase() === village)""",
+            arg={"village": _dropdown_match_key(village)},
+            timeout=SELECTOR_TIMEOUT,
+        )
+        self._fill_units_per_village(detail_record, village)
         self._log_total_units("After dynamic village row generation", detail_record)
+
+    def _fill_units_per_village(self, detail_record: dict, village: str) -> None:
+        """Fill and verify the input generated for the selected census village."""
+        units = _value(detail_record, "units_per_village")
+        logger.info(
+            "[Asset] Excel Units Per Village value=%r type=%s",
+            detail_record.get("units_per_village"),
+            type(detail_record.get("units_per_village")).__name__,
+        )
+        unit_input = self.page.locator(
+            "#astLocationTableId tbody tr input[name='assetDetails.assetLocationList[0].astNoOfUnt']"
+        ).first
+        if not unit_input.count():
+            unit_input = self.page.locator("#astNoOfUntId0").first
+        if not unit_input.count():
+            raise ActivityOutputError(
+                f"Units Per Village input #astNoOfUntId0 was not generated for {village}"
+            )
+        unit_input.wait_for(state="visible", timeout=SELECTOR_TIMEOUT)
+        if not unit_input.is_enabled():
+            raise ActivityOutputError("Units Per Village input #astNoOfUntId0 is disabled")
+
+        before = unit_input.input_value()
+        logger.info(
+            "[Asset] Units Per Village found=True id=%s name=%s visible=%s enabled=%s before=%r expected=%r",
+            unit_input.get_attribute("id"),
+            unit_input.get_attribute("name"),
+            unit_input.is_visible(),
+            unit_input.is_enabled(),
+            before,
+            units,
+        )
+        units_text = str(units)
+        if not units_text:
+            raise ActivityOutputError("Units Per Village value from Excel is empty")
+        unit_input.evaluate(
+            """
+            (element, value) => {
+                const setter = Object.getOwnPropertyDescriptor(
+                    HTMLInputElement.prototype, 'value'
+                ).set;
+                setter.call(element, value);
+                element.dispatchEvent(new Event('input', { bubbles: true }));
+                element.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+            """,
+            units_text,
+        )
+        after = unit_input.input_value()
+        logger.info("[Asset] Units Per Village after fill=%r success=%s", after, after == units)
+        if after != units:
+            raise ActivityOutputError(
+                f"Units Per Village value did not persist for {village}: "
+                f"expected {units!r}, got {after!r}"
+            )
 
     def _log_total_units(self, stage: str, detail_record: dict) -> None:
         """Log the portal value and relevant callback state without changing it."""
@@ -795,6 +906,16 @@ class AssetOutputHandler(StructuredModalOutputHandler):
     def _submit(self, activity_key: str) -> None:
         modal = self.page.locator("#showAssetDetailsPopup")
         self._log_total_units("Before Save", {"total_units": "(runtime)"})
+        units_input = self.page.locator(
+            "#astLocationTableId input[name='assetDetails.assetLocationList[0].astNoOfUnt']"
+        ).first
+        expected_units = _value(self._active_detail_record, "units_per_village") if hasattr(self, "_active_detail_record") else ""
+        if units_input.count():
+            logger.info("[Asset] Units Per Village before Save=%r", units_input.input_value())
+            if expected_units and units_input.input_value() != expected_units:
+                raise ActivityOutputError(
+                    f"Units Per Village missing before Save: expected {expected_units!r}, got {units_input.input_value()!r}"
+                )
         submit = modal.locator("button[onclick*='validationAsset'], input[onclick*='validationAsset']").first
         if not submit.count():
             raise ActivityOutputError("Asset Save button not found")
