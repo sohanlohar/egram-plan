@@ -431,13 +431,14 @@ class TrainingOutputHandler(StructuredModalOutputHandler):
     @classmethod
     def validate_detail_record(cls, detail_record: dict, activity_key: str) -> None:
         for spec in cls.FIELD_SPECS:
-            if spec.key != "village" and not _value(detail_record, spec.key):
+            if spec.key not in cls.OPTIONAL_FIELD_KEYS and not _value(detail_record, spec.key):
                 raise ActivityOutputError(
                     f"Training output data invalid for Activity_Key {activity_key}: {spec.label} is required"
                 )
 
+        # Amount, like Village, is absent from some Training popup variants; only validate when provided.
         amount = _value(detail_record, "amount")
-        if not re.fullmatch(r"\d+(?:\.\d+)?", amount):
+        if amount and not re.fullmatch(r"\d+(?:\.\d+)?", amount):
             raise ActivityOutputError(
                 f"Training output data invalid for Activity_Key {activity_key}: Amount must be numeric"
             )
@@ -480,6 +481,9 @@ class TrainingOutputHandler(StructuredModalOutputHandler):
     # Basename of the Excel workbook this handler reads Training data from (see config/config.json input_file).
     EXCEL_FILE_NAME = "input.xlsx"
 
+    # Some Training popup variants (depending on Training Category) omit these fields entirely.
+    OPTIONAL_FIELD_KEYS = ("village", "amount")
+
     def _first_available_dropdown_option(self, selector: str) -> str:
         options = self.page.eval_on_selector(
             selector,
@@ -494,13 +498,27 @@ class TrainingOutputHandler(StructuredModalOutputHandler):
 
         village_field = self.page.locator("#trngLocCd")
         village_found = bool(village_field.count())
+        self._village_present = village_found
         village_value = _value(detail_record, "village")
+        logger.info("[Training] Village dropdown exists = %s", village_found)
         logger.info("[Training] Village from Excel = %s", village_value)
-        logger.info("[Training] Village dropdown found = %s", village_found)
-        if not village_value:
-            village_value = self._first_available_dropdown_option("#trngLocCd")
-            detail_record["village"] = village_value
-            logger.info("[Training] Village blank in Excel, auto-selected fallback = %s", village_value)
+
+        if village_found:
+            if not village_value:
+                village_value = self._first_available_dropdown_option("#trngLocCd")
+                detail_record["village"] = village_value
+                logger.info("[Training] Village blank in Excel, auto-selected fallback = %s", village_value)
+        else:
+            detail_record["village"] = ""
+            logger.info("[Training] Village dropdown not present in this popup; skipping Village selection")
+
+        amount_field = self.page.locator("#trngAmount")
+        amount_found = bool(amount_field.count())
+        self._amount_present = amount_found
+        logger.info("[Training] Amount field exists = %s", amount_found)
+        if not amount_found:
+            detail_record["amount"] = ""
+            logger.info("[Training] Amount field not present in this popup; skipping Amount entry")
 
         for label, key, selector in self._CAPACITY_LOG_SPECS:
             excel_value = _value(detail_record, key)
@@ -510,13 +528,24 @@ class TrainingOutputHandler(StructuredModalOutputHandler):
             logger.info("[Training] %s from Excel = %s", label, excel_value)
             logger.info("[Training] %s field found=%s value_before_fill=%r", label, found, before)
 
-        super()._fill_fields(detail_record)
+        # Some Training popup variants omit Village and/or Amount entirely; skip absent ones rather than fail.
+        present_optional = {key for key, found in (("village", village_found), ("amount", amount_found)) if found}
+        active_specs = tuple(
+            spec for spec in self.FIELD_SPECS
+            if spec.key not in self.OPTIONAL_FIELD_KEYS or spec.key in present_optional
+        )
+        self.FIELD_SPECS = active_specs
+        try:
+            super()._fill_fields(detail_record)
+        finally:
+            del self.FIELD_SPECS
 
-        selected_text = self.page.locator("#trngLocCd option:checked").inner_text().strip() if village_found else ""
-        if _normalize_text(selected_text) == _normalize_text(village_value):
-            logger.info("[Training] Village selected successfully = %s", selected_text)
-        else:
-            logger.warning("[Training] Village selection mismatch: expected=%r actual=%r", village_value, selected_text)
+        if village_found:
+            selected_text = self.page.locator("#trngLocCd option:checked").inner_text().strip()
+            if _normalize_text(selected_text) == _normalize_text(village_value):
+                logger.info("[Training] Village selected successfully = %s", selected_text)
+            else:
+                logger.warning("[Training] Village selection mismatch: expected=%r actual=%r", village_value, selected_text)
 
         for label, key, selector in self._CAPACITY_LOG_SPECS:
             expected = _value(detail_record, key)
@@ -547,7 +576,21 @@ class TrainingOutputHandler(StructuredModalOutputHandler):
             _select_by_visible_text_stable(self.page, "#trngOrgByCdId", _value(detail_record, "organized_by"))
 
     def _verify_filled_values(self, detail_record: dict, activity_key: str) -> None:
-        super()._verify_filled_values(detail_record, activity_key)
+        village_present = getattr(self, "_village_present", True)
+        amount_present = getattr(self, "_amount_present", True)
+        if village_present and amount_present:
+            super()._verify_filled_values(detail_record, activity_key)
+        else:
+            present_optional = {key for key, found in (("village", village_present), ("amount", amount_present)) if found}
+            original_specs = self.FIELD_SPECS
+            self.FIELD_SPECS = tuple(
+                spec for spec in original_specs
+                if spec.key not in self.OPTIONAL_FIELD_KEYS or spec.key in present_optional
+            )
+            try:
+                super()._verify_filled_values(detail_record, activity_key)
+            finally:
+                del self.FIELD_SPECS
         for label, key, selector in self._CAPACITY_LOG_SPECS:
             actual = self.page.locator(selector).input_value().strip()
             logger.info("[Training] %s final verification value=%r (expected=%r)", label, actual, _value(detail_record, key))
