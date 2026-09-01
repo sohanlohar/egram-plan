@@ -1521,10 +1521,35 @@ class FormFiller:
         )
         logger.debug("[%s] pre_training_validation_state=%s", activity_key, portal_validation_state)
 
-        detail_record = self.output_repository.get_output_record(
-            output_type_raw,
-            activity_key,
-        )
+        if selected_output == "asset":
+            logger.info("[Asset] Current Activity_Key = %s", activity_key)
+            try:
+                detail_record = self.output_repository.get_output_record(
+                    output_type_raw,
+                    activity_key,
+                )
+            except ValueError:
+                logger.warning("[Asset] No matching Asset record found for Activity_Key = %s", activity_key)
+                logger.warning("[Asset] Skipping Asset popup.")
+                return False
+            logger.info("[Asset] Matching Asset row found:")
+            logger.info("[Asset] Activity_Key = %s", detail_record.get("activity_key", activity_key))
+            for label, key in (
+                ("Asset Type", "asset_type"),
+                ("Asset Category", "asset_category"),
+                ("Asset Sub Category", "asset_sub_category"),
+                ("Total Units", "total_units"),
+                ("Unit Cost", "unit_cost"),
+                ("Coverage Area", "coverage_area"),
+                ("Census Village", "census_village"),
+                ("Units Per Village", "units_per_village"),
+            ):
+                logger.info("[Asset] %s = %s", label, detail_record.get(key, ""))
+        else:
+            detail_record = self.output_repository.get_output_record(
+                output_type_raw,
+                activity_key,
+            )
         logger.info("[%s] Activity Output detail record found", activity_key)
 
         handler = self.output_registry.resolve(output_type_raw)
